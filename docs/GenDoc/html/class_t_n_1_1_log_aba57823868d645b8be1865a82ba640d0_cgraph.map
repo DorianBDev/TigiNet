@@ -1,0 +1,6 @@
+<map id="TN::Log::vsPrint" name="TN::Log::vsPrint">
+<area shape="rect" id="node2" href="$class_t_n_1_1_log.html#a6cb8305d870f5931cf7e7429d2c7648f" title="Print in a file without starting a new line after that. " alt="" coords="168,23,303,50"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_log.html#a0abe6b3dcbfa68d3442fd7abd2f5bace" title="Print in the console without starting a new line after that. " alt="" coords="351,74,512,100"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="560,23,705,50"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_file.html#a29508a19f7d0d0f5c347902f7ecadca4" title="Write in the file. " alt="" coords="378,23,485,50"/>
+</map>

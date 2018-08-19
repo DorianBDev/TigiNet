@@ -1,0 +1,2 @@
+doxygen.exe config
+pause

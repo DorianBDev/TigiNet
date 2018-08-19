@@ -1,0 +1,8 @@
+<map id="TN::MLP::Learn" name="TN::MLP::Learn">
+<area shape="rect" id="node2" href="$class_t_n_1_1_layers.html#a0ae44c7a7842cab049d36c2ddc11a75d" title="Get a layer from an index. " alt="" coords="401,11,547,38"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_m_l_p.html#a257ea7946a1e2592abfa86cf7cec5336" title="To get the last layer size. " alt="" coords="167,36,352,63"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_m_l_p.html#a301ca2fc50184981380ca52e5dfd044c" title="Browse from a table with all first layer neurones values. " alt="" coords="197,87,321,114"/>
+<area shape="rect" id="node6" href="$class_t_n_1_1_m_l_p.html#aab4e96a7d0b58ff1054dc2a8a994d065" title="Retropropagate from a table with all last layer neurones values. " alt="" coords="169,138,350,164"/>
+<area shape="rect" id="node7" href="$class_t_n_1_1_m_l_p.html#ae68324ddf4646db20af1ed03b2ba93eb" title="Calculate the error of the actual network state with an output table. " alt="" coords="178,188,341,215"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_layers.html#aa135d5cbbfe06d9f274ada1bf724ddc8" title="Get the count of layers. " alt="" coords="400,87,548,114"/>
+</map>

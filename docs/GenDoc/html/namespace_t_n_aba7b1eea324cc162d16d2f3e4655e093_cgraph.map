@@ -1,0 +1,5 @@
+<map id="TN::LinkNeurones" name="TN::LinkNeurones">
+<area shape="rect" id="node2" href="$class_t_n_1_1_neurone.html#a3269a0e0a15866ed1faa591c62ddb16a" title="Get the origin links of the neurone. " alt="" coords="180,5,368,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_links.html#ad18ba5d97f66f663e295b47a8ffc2557" title="Add a link. " alt="" coords="208,56,340,83"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_neurone.html#a9bf924636dff86dfe69409b24f3fac98" title="Get the target links of the neurone. " alt="" coords="179,107,369,133"/>
+</map>

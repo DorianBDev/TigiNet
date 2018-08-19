@@ -1,0 +1,16 @@
+v0.0.5-release
+
+# vMAJOR.MINOR.PATCH-{release/nightly/hotfix/rc}
+# Use this version as git tag with 'release' for master branch, 'nightly' for develop branch, 'hotfix' for hotfix branch and 'rc' for release branch (release candidate).
+# For a new version change this file in a commit and only this file and tag it with this version naming.
+# All changements and new features for a new version need to appear in the CHANGELOG file.
+# Need to push the new version commit and after that create the tag and push it.
+#
+# All branches :
+# master branch : only for release.
+# develop branch : nightly branch, to prepare a new version, the working branch.
+# hotfix branch : to fix a previous release without new features.
+# release branch : pre release/release candidate branch.
+#
+# See : git tag commands, git commands for changing branch.
+# Use git describe to know the version of a commit (with the form : vMAJOR.MINOR.PATCH-{release/nightly/hotfix/rc}-{Number of commit for this verison}-{actual commit hash} )

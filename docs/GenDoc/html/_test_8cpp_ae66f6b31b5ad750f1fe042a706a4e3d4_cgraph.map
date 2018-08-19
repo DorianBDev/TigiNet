@@ -1,0 +1,15 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$namespace_t_n.html#a9eb252949c1d1bfe5dc520190942fa40" title="The Sigmoide function. " alt="" coords="134,13,234,39"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_m_l_p.html#a063fdc092003f86ead6ad4cb6499d352" title="Print all datas. " alt="" coords="123,63,245,90"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_m_l_p.html#a2789b4e8dc10f61c207b417c3c46ede7" title="Learn from matrices with size training elements. " alt="" coords="127,114,241,141"/>
+<area shape="rect" id="node7" href="$class_t_n_1_1_m_l_p.html#a301ca2fc50184981380ca52e5dfd044c" title="Browse from a table with all first layer neurones values. " alt="" coords="343,190,467,217"/>
+<area shape="rect" id="node11" href="$class_t_n_1_1_m_l_p.html#ae666114a3e874c7db3ce83f7a0ddec31" title="Print only results (first and last layers neurones values). " alt="" coords="108,215,260,242"/>
+<area shape="rect" id="node12" href="$class_t_n_1_1_m_l_p.html#a2433405825d124b418908be91d02055d" title="Save a Multilayer Preceptron in a file. " alt="" coords="114,266,254,293"/>
+<area shape="rect" id="node13" href="$class_t_n_1_1_m_l_p.html#a2ddbb8cb214b454b02a6e9dc4b285f32" title="Ask the network from a table of input values with all first layer neurones values. " alt="" coords="132,317,236,343"/>
+<area shape="rect" id="node14" href="$class_t_n_1_1_m_l_p.html#a8eb8354533966d7962f03a81bde73449" title="Load a Multilayer Preceptron from a file. " alt="" coords="104,367,264,394"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_layers.html#a0ae44c7a7842cab049d36c2ddc11a75d" title="Get a layer from an index. " alt="" coords="546,63,693,90"/>
+<area shape="rect" id="node6" href="$class_t_n_1_1_m_l_p.html#a257ea7946a1e2592abfa86cf7cec5336" title="To get the last layer size. " alt="" coords="312,38,497,65"/>
+<area shape="rect" id="node9" href="$class_t_n_1_1_m_l_p.html#aab4e96a7d0b58ff1054dc2a8a994d065" title="Retropropagate from a table with all last layer neurones values. " alt="" coords="314,89,495,115"/>
+<area shape="rect" id="node10" href="$class_t_n_1_1_m_l_p.html#ae68324ddf4646db20af1ed03b2ba93eb" title="Calculate the error of the actual network state with an output table. " alt="" coords="323,139,486,166"/>
+<area shape="rect" id="node8" href="$class_t_n_1_1_layers.html#aa135d5cbbfe06d9f274ada1bf724ddc8" title="Get the count of layers. " alt="" coords="545,190,693,217"/>
+</map>

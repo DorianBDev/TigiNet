@@ -1,0 +1,6 @@
+<map id="TN::MLP::Browse" name="TN::MLP::Browse">
+<area shape="rect" id="node2" href="$class_t_n_1_1_file.html#ad04b03a4ca862589ff36d854a6676bcc" title="Tell you if the file is open or not. " alt="" coords="182,5,319,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_layers.html#a0ae44c7a7842cab049d36c2ddc11a75d" title="Get a layer from an index. " alt="" coords="177,56,324,83"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_file.html#a958402f626f475bcd3cae524040f11b5" title="Read in the file. " alt="" coords="198,107,303,133"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="372,107,517,133"/>
+</map>

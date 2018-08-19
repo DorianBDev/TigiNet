@@ -1,0 +1,43 @@
+language: cpp
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+sudo:
+  required
+
+compiler:
+  - gcc
+  
+before_install:
+  - sudo apt-get update
+  - sudo apt-get install -y libc6-dev-i386
+  - sudo apt-get install -y g++-multilib
+  - sudo apt-get install -y cmake
+
+before_script:
+  - mkdir build_travis
+  - cd build_travis
+  
+matrix:
+  include:
+  - os: linux
+    compiler: g++
+    env: CONFIG=x64
+  - os: linux
+    compiler: g++
+    env: CONFIG=x86
+
+script:
+  - |
+    if [ "$CONFIG" = "x64" ]; then 
+        cmake ..
+    fi
+
+  - |
+    if [ "$CONFIG" = "x86" ]; then 
+        cmake .. -DCMAKE_CXX_FLAGS=-m32 -DCMAKE_C_FLAGS=-m32
+    fi
+  - make

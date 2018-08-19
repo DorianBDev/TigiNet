@@ -1,0 +1,194 @@
+<!doctype html>
+
+<meta charset="utf-8"/>
+
+<script>
+
+// from https://github.com/developit/snarkdown/blob/master/src/index.js
+// MIT License
+
+const TAGS = {
+	'' : ['<em>','</em>'],
+	_ : ['<strong>','</strong>'],
+	'~' : ['<s>','</s>'],
+	'\n' : ['<br />'],
+	' ' : ['<br />'],
+	'-': ['<hr />']
+};
+
+/** Outdent a string based on the first indented line's leading whitespace
+ *	@private
+ */
+function outdent(str) {
+	return str.replace(RegExp('^'+(str.match(/^(\t| )+/) || '')[0], 'gm'), '');
+}
+
+/** Encode special attribute characters to HTML entities in a String.
+ *	@private
+ */
+function encodeAttr(str) {
+	return (str+'').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+/** Parse Markdown into an HTML String. */
+function parse(md, prevLinks) {
+	let tokenizer = /((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:\!\[([^\]]*?)\]\(([^\)]+?)\))|(\[)|(\](?:\(([^\)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(\-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm,
+		context = [],
+		out = '',
+		links = prevLinks || {},
+		last = 0,
+		chunk, prev, token, inner, t;
+
+	function tag(token) {
+		var desc = TAGS[token.replace(/\*/g,'_')[1] || ''],
+			end = context[context.length-1]==token;
+		if (!desc) return token;
+		if (!desc[1]) return desc[0];
+		context[end?'pop':'push'](token);
+		return desc[end|0];
+	}
+
+	function flush() {
+		let str = '';
+		while (context.length) str += tag(context[context.length-1]);
+		return str;
+	}
+
+	md = md.replace(/^\[(.+?)\]:\s*(.+)$/gm, (s, name, url) => {
+		links[name.toLowerCase()] = url;
+		return '';
+	}).replace(/^\n+|\n+$/g, '');
+
+	while ( (token=tokenizer.exec(md)) ) {
+		prev = md.substring(last, token.index);
+		last = tokenizer.lastIndex;
+		chunk = token[0];
+		if (prev.match(/[^\\](\\\\)*\\$/)) {
+			// escaped
+		}
+		// Code/Indent blocks:
+		else if (token[3] || token[4]) {
+			chunk = '<pre class="code '+(token[4]?'poetry':token[2].toLowerCase())+'">'+outdent(encodeAttr(token[3] || token[4]).replace(/^\n+|\n+$/g, ''))+'</pre>';
+		}
+		// > Quotes, -* lists:
+		else if (token[6]) {
+			t = token[6];
+			if (t.match(/\./)) {
+				token[5] = token[5].replace(/^\d+/gm, '');
+			}
+			inner = parse(outdent(token[5].replace(/^\s*[>*+.-]/gm, '')));
+			if (t==='>') t = 'blockquote';
+			else {
+				t = t.match(/\./) ? 'ol' : 'ul';
+				inner = inner.replace(/^(.*)(\n|$)/gm, '<li>$1</li>');
+			}
+			chunk = '<'+t+'>' + inner + '</'+t+'>';
+		}
+		// Images:
+		else if (token[8]) {
+			chunk = `<img src="${encodeAttr(token[8])}" alt="${encodeAttr(token[7])}">`;
+		}
+		// Links:
+		else if (token[10]) {
+			out = out.replace('<a>', `<a href="${encodeAttr(token[11] || links[prev.toLowerCase()])}">`);
+			chunk = flush() + '</a>';
+		}
+		else if (token[9]) {
+			chunk = '<a>';
+		}
+		// Headings:
+		else if (token[12] || token[14]) {
+			t = 'h' + (token[14] ? token[14].length : (token[13][0]==='='?1:2));
+			chunk = '<'+t+'>' + parse(token[12] || token[15], links) + '</'+t+'>';
+		}
+		// `code`:
+		else if (token[16]) {
+			chunk = '<code>'+encodeAttr(token[16])+'</code>';
+		}
+		// Inline formatting: *em*, **strong** & friends
+		else if (token[17] || token[1]) {
+			chunk = tag(token[17] || '--');
+		}
+		out += prev;
+		out += chunk;
+	}
+
+	return (out + md.substring(last) + flush()).trim();
+}
+
+</script>
+
+
+<html>
+<head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <title>TigiNet</title>
+  <link href="css/main.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href="css/index.css" media="screen" rel="stylesheet" type="text/css"/>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Raleway:400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="menu-container noselect">
+  <div class="menu">
+    <table class="menu-table">
+      <tr>
+        <td>
+          <div class="logo">
+            <a href="index.html">TIGINET</a>
+			<font size="2">by Dorian'B</font>
+          </div>
+        </td>
+        <td>
+          <div class="menu-items">
+            <a href="index.html">Overview</a>
+			<a href="changelog.html" class="menu-highlight">Changelog</a>
+			<a href="roadmap.html">Roadmap</a>
+			<a href="GenDoc/html/index.html">Documentation</a>
+            <a target="_blank" href="https://github.com/DorianBDev/TigiNet">GitHub</a>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div class="content-container">
+  <div class="content">
+    <table class="content-table">
+	
+	<center>
+	  <p id="demo">
+		  <script>
+		  
+			  var txt = 'lol';
+			  $(function() {
+			  $.get('../CHANGELOG.md', doSomethingWithData);
+			  });
+
+				function doSomethingWithData(data) {
+					  var txt1 = parse(data);
+					  var txt = txt1.replace(/\n/g,"<br />");
+					  document.getElementById("demo").innerHTML = txt;
+				}
+				
+		  </script>
+		</p>
+	  </center>
+	
+    </table>
+  </div>
+</div>
+</body>
+
+<footer>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+    <p class="copyright">Copyright (&copy;) 2018, <a href="https://dorianbdev.github.io/">Dorian'B</a></p>
+</footer>
+
+</html>

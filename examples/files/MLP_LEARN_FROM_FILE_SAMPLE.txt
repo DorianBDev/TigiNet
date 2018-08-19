@@ -1,0 +1,19 @@
+count: 4
+
+0 0
+0
+
+0 1
+1
+
+1 0
+1
+
+1 1
+1
+
+
+===== THIS IS A COMMENT, DELETE THIS LINE AND ALL AFTER =====
+
+This file is a training file with 4 samples, this is for a Multilayer Perceptron network and
+make him learn XOR.

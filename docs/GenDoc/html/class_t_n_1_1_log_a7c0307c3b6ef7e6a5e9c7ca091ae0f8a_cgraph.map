@@ -1,0 +1,6 @@
+<map id="TN::Log::PrintMessage" name="TN::Log::PrintMessage">
+<area shape="rect" id="node2" href="$class_t_n_1_1_log.html#a07b8f5b56ea544bfcbc3d4f08d87700d" title="Print a message without date and message type. " alt="" coords="208,24,384,51"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_log.html#af2efd0e5f27eee8ff570e0cc95ee0be0" title="Print a message without date and message type. " alt="" coords="432,75,635,101"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="683,24,828,51"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_file.html#a29508a19f7d0d0f5c347902f7ecadca4" title="Write in the file. " alt="" coords="480,24,587,51"/>
+</map>

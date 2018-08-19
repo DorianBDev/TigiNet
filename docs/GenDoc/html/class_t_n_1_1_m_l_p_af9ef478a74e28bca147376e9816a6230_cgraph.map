@@ -1,0 +1,12 @@
+<map id="TN::MLP::Learn" name="TN::MLP::Learn">
+<area shape="rect" id="node2" href="$class_t_n_1_1_file.html#ad04b03a4ca862589ff36d854a6676bcc" title="Tell you if the file is open or not. " alt="" coords="167,5,304,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_layers.html#a0ae44c7a7842cab049d36c2ddc11a75d" title="Get a layer from an index. " alt="" coords="586,208,733,235"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_m_l_p.html#a257ea7946a1e2592abfa86cf7cec5336" title="To get the last layer size. " alt="" coords="352,157,537,184"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_file.html#a958402f626f475bcd3cae524040f11b5" title="Read in the file. " alt="" coords="183,56,288,83"/>
+<area shape="rect" id="node7" href="$class_t_n_1_1_m_l_p.html#a2789b4e8dc10f61c207b417c3c46ede7" title="Learn from matrices with size training elements. " alt="" coords="179,233,292,260"/>
+<area shape="rect" id="node6" href="$class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="372,56,517,83"/>
+<area shape="rect" id="node8" href="$class_t_n_1_1_m_l_p.html#a301ca2fc50184981380ca52e5dfd044c" title="Browse from a table with all first layer neurones values. " alt="" coords="383,360,507,387"/>
+<area shape="rect" id="node10" href="$class_t_n_1_1_m_l_p.html#aab4e96a7d0b58ff1054dc2a8a994d065" title="Retropropagate from a table with all last layer neurones values. " alt="" coords="354,259,535,285"/>
+<area shape="rect" id="node11" href="$class_t_n_1_1_m_l_p.html#ae68324ddf4646db20af1ed03b2ba93eb" title="Calculate the error of the actual network state with an output table. " alt="" coords="363,309,526,336"/>
+<area shape="rect" id="node9" href="$class_t_n_1_1_layers.html#aa135d5cbbfe06d9f274ada1bf724ddc8" title="Get the count of layers. " alt="" coords="585,360,733,387"/>
+</map>
