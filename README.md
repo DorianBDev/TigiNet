@@ -4,8 +4,8 @@ By **Dorian'B**.
 
 | Platform| x64 | x32 |
 |--|--|--|
-| Windows |  |  |
-| Linux|  |  |
+| Windows | [![Build status](https://ci.appveyor.com/api/projects/status/07vjqfu6jo79obtt/branch/master?svg=true)](https://ci.appveyor.com/project/DorianBDev/tiginet/branch/master) | [![Build status](https://ci.appveyor.com/api/projects/status/07vjqfu6jo79obtt/branch/master?svg=true)](https://ci.appveyor.com/project/DorianBDev/tiginet/branch/master) |
+| Linux| [![Build Status](https://travis-ci.org/DorianBDev/TigiNet.svg?branch=master)](https://travis-ci.org/DorianBDev/TigiNet) | [![Build Status](https://travis-ci.org/DorianBDev/TigiNet.svg?branch=master)](https://travis-ci.org/DorianBDev/TigiNet) |
 
 
 
