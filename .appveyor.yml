@@ -3,7 +3,7 @@ image:
 environment: 
   matrix: 
     - platform: "Visual Studio 15 2017 Win64"
-    - platform: "Visual Studio 15 2017 ARM"
+    - platform: "Visual Studio 15 2017"
 before_build:
     - ps : mkdir build_appveyor
     - ps : cd build_appveyor
