@@ -121,7 +121,7 @@ To build with CMake you need :
  2. Call cmake ../../ -G [YOUR TARGETED GENERATORS/IDE X86 OR X64]
 
 e.g. : Visual studio :
-*cmake ../../ -G "Visual Studio 15 2017 ARM"* (for x86)
+*cmake ../../ -G "Visual Studio 15 2017"* (for x86)
 *cmake ../../ -G "Visual Studio 15 2017 Win64"* (for x64)
 
 **call : *cmake --help for generators list.***
@@ -198,7 +198,7 @@ To compile for *32* or *64 bits* you need :
 
 On windows :
 
- - Build your project for *Visual Studio [VERSION] ARM* for *x86*
+ - Build your project for *Visual Studio [VERSION]* for *x86*
  - Build your project for *Visual Studio [VERSION] WIN64* for *x64*
 
 On linux :

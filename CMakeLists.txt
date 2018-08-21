@@ -15,7 +15,11 @@ project (TigiNet)																																					# project name
 # cxx flag
 set(CMAKE_BUILD_TYPE Debug)																																		# choose language en flags
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+if (MSVC)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
+else()
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+endif(MSVC)
 
 # property for folders
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
