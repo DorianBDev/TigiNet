@@ -107,10 +107,10 @@ void TN::Log::Print(String messageType, String message, ...)
 {
 	va_list _va;
 	va_start(_va, message);
-	PrintFile(messageType, message, _va);
-	va_end(_va);
-
-	va_start(_va, message);
+	va_list _vab;
+	va_copy(_vab, _va);
+	PrintFile(messageType, message, _vab);
+	va_end(_vab);
 	PrintConsole(messageType, message, _va);
 	va_end(_va);
 }
@@ -132,10 +132,18 @@ void TN::Log::PrintFile(String messageType, String message, ...)
 
 	messageType.Upcase();
 
-	char * _res = new char[TN_MESSAGE_MAX_LENGTH];
 	va_list _va;
+
 	va_start(_va, message);
-	vsnprintf(_res, TN_MESSAGE_MAX_LENGTH, message.ToCString(), _va);
+	va_list _vab;
+	va_copy(_vab, _va);
+
+	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
+	va_end(_vab);
+
+	char * _res = new char[_size + 1];
+
+	vsnprintf(_res, _size + 1, message.ToCString(), _va);
 	va_end(_va);
 
 	m_pFile->Write(Form(messageType, _res, true));
@@ -154,9 +162,17 @@ void TN::Log::PrintFile(String messageType, String message, va_list va)
 
 	messageType.Upcase();
 
-	char * _res = new char[TN_MESSAGE_MAX_LENGTH];
+	va_list _vab;
 
-	vsnprintf(_res, TN_MESSAGE_MAX_LENGTH, message.ToCString(), va);
+	va_copy(_vab, va);
+	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
+	va_end(_vab);
+
+	char * _res = new char[_size + 1];
+
+	va_copy(_vab, va);
+	vsnprintf(_res, _size + 1, message.ToCString(), _vab);
+	va_end(_vab);
 
 	m_pFile->Write(Form(messageType, _res, true));
 
@@ -171,10 +187,19 @@ void TN::Log::PrintConsole(String messageType, String message, ...)
 
 	messageType.Upcase();
 
-	char * _res = new char[TN_MESSAGE_MAX_LENGTH];
 	va_list _va;
+
 	va_start(_va, message);
-	vsnprintf(_res, TN_MESSAGE_MAX_LENGTH, message.ToCString(), _va);
+	va_list _vab;
+	va_copy(_vab, _va);
+
+	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
+
+	va_end(_vab);
+
+	char * _res = new char[_size + 1];
+
+	vsnprintf(_res, _size + 1, message.ToCString(), _va);
 	va_end(_va);
 
 	printf("%s", Form(messageType, _res, true).ToCString());
@@ -190,9 +215,17 @@ void TN::Log::PrintConsole(String messageType, String message, va_list va)
 
 	messageType.Upcase();
 
-	char * _res = new char[TN_MESSAGE_MAX_LENGTH];
+	va_list _vab;
 
-	vsnprintf(_res, TN_MESSAGE_MAX_LENGTH, message.ToCString(), va);
+	va_copy(_vab, va);
+	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
+	va_end(_vab);
+
+	char * _res = new char[_size + 1];
+
+	va_copy(_vab, va);
+	vsnprintf(_res, _size + 1, message.ToCString(), _vab);
+	va_end(_vab);
 
 	printf("%s", Form(messageType, _res, true).ToCString());
 
@@ -204,10 +237,10 @@ void TN::Log::Write(String message, ...)
 	va_list _va;
 
 	va_start(_va, message);
-	PrintFile("Info", message, _va);
-	va_end(_va);
-
-	va_start(_va, message);
+	va_list _vab;
+	va_copy(_vab, _va);
+	PrintFile("Info", message, _vab);
+	va_end(_vab);
 	PrintConsole("Info", message, _va);
 	va_end(_va);
 }

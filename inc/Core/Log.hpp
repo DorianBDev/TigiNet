@@ -64,17 +64,6 @@
 */
 #define TN_LOG_FILE(msg, ...) TN::Log::GetInstance().PrintFile("INFO", msg, ## __VA_ARGS__);
 
-/**
-* @brief The message type max length in logs.
-*
-*/
-#define TN_MESSAGE_TYPE_MAX_LENGTH 40
-
-/**
-* @brief The message max length in logs.
-*
-*/
-#define TN_MESSAGE_MAX_LENGTH 412
 
 namespace TN
 {

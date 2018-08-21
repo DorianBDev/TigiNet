@@ -26,10 +26,23 @@
 #include <Core/Log.hpp>
 
 #include <cstdlib>
+#include <stdio.h>
 
 void TN::Error::Send(ErrorType_e errorType, const char* message, unsigned int line, const char* file, const char* function, ...)
 {
 	va_list _va;
+	char * _res;
+
+	va_start(_va, function);
+	va_list _vab;
+	va_copy(_vab, _va);
+	int _size = vsnprintf(NULL, 0, message, _vab);
+	va_end(_vab);
+
+	_res = new char[_size + 1];
+
+	vsnprintf(_res, _size + 1, message, _va);
+	va_end(_va);
 
 	switch (errorType)
 	{
@@ -39,26 +52,14 @@ void TN::Error::Send(ErrorType_e errorType, const char* message, unsigned int li
 
 	case ET_ERROR:
 
-		va_start(_va, function);
-		TN_LOGGER.PrintConsole("ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, message, _va);
-		va_end(_va);
-
-		va_start(_va, function);
-		TN_LOGGER.PrintFile("ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, message, _va);
-		va_end(_va);
+		TN_LOGGER.Print("ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, _res);
 
 		std::abort();
 		break;
 
 	case ET_ASSERTION_FAILED:
 
-		va_start(_va, function);
-		TN_LOGGER.PrintConsole("ASSERT ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, message, _va);
-		va_end(_va);
-
-		va_start(_va, function);
-		TN_LOGGER.PrintFile("ASSERT ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, message, _va);
-		va_end(_va);
+		TN_LOGGER.Print("ASSERT ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, _res);
 
 		std::abort();
 		break;
@@ -66,15 +67,11 @@ void TN::Error::Send(ErrorType_e errorType, const char* message, unsigned int li
 	case ET_WARNING:
 		WARNING:
 
-		va_start(_va, function);
-		TN_LOGGER.PrintConsole("WARNING", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, message, _va);
-		va_end(_va);
-
-		va_start(_va, function);
-		TN_LOGGER.PrintFile("WARNING", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, message, _va);
-		va_end(_va);
+		TN_LOGGER.Print("WARNING", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, _res);
 
 		break;
 	}
+
+	delete[] _res;
 
 }
