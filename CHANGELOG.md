@@ -5,6 +5,16 @@
 
 
 
+## [v0.0.51-release] - 2018-08-22 :
+
+### GENERAL :
+ - Fixed the Windows x86 version.
+
+### CORE :
+ - Fixed and added new features to the Log and Error system.
+
+
+
 ## [v0.0.5-release] - 2018-08-19 :
 
 ### GENERAL :
