@@ -28,10 +28,10 @@
 #include <Core/Config.hpp>
 
 /**
-* @brief Use TN_Assert to test an expression and send error if the expression is false
+* @brief Use TN_Assert to test an expression and send error if the expression is false.
 *
-* @param test : the expression to test
-* @param message : the message to send with error
+* @param test : the expression to test.
+* @param message : the message to send with error.
 *
 */
 #if TN_ENABLE_ASSERT
@@ -41,20 +41,32 @@
 #endif
 
 /**
-* @brief Send an error with his message
+* @brief Send an error with his message.
 *
-* @param message : the message to send with error
+* @param message : the message to send with error.
 *
 */
 #define TN_ERROR(message, ...) TN::Error::Send(TN::ErrorType_e::ET_ERROR, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
 
 /**
-* @brief Send a warning with his message
+* @brief Send an error with his message and abort.
 *
-* @param message : the message to send with warning
+* @param message : the message to send with error.
 *
 */
-#if TN_ENABLED_WARNING
+#if TN_ENABLE_ABORT
+#define TN_ABORT(message, ...) TN::Error::Send(TN::ErrorType_e::ET_ABORT, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#else
+#define TN_ABORT(message, ...) TN::Error::Send(TN::ErrorType_e::ET_ERROR, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#endif
+
+/**
+* @brief Send a warning with his message.
+*
+* @param message : the message to send with warning.
+*
+*/
+#if TN_ENABLE_WARNING
 #define TN_WARNING(message, ...) TN::Error::Send(TN::ErrorType_e::ET_WARNING, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
 #else
 #define TN_WARNING(message, ...)
@@ -67,6 +79,7 @@ namespace TN
 	{
 		ET_ERROR,				/*!< For error */
 		ET_ASSERTION_FAILED,	/*!< For assertion failed, if enable */
+		ET_ABORT,				/*!< For error with abortion */
 		ET_WARNING				/*!< For warning */
 	}ErrorType_e;
 

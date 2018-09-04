@@ -32,7 +32,10 @@
 #define TN_ENABLE_ASSERT 1
 
 /* Are warning enabled */
-#define TN_ENABLED_WARNING 1
+#define TN_ENABLE_WARNING 1
+
+/* Are abort enabled */
+#define TN_ENABLE_ABORT 1
 
 /* Use a thread safe approach */
 #define TN_THREAD_SAFE 1

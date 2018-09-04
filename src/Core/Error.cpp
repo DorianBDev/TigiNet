@@ -57,6 +57,13 @@ void TN::Error::Send(ErrorType_e errorType, const char* message, unsigned int li
 		std::exit(-1);
 		break;
 
+	case ET_ABORT:
+
+		TN_LOGGER.Print("ABORT", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, _res);
+
+		std::abort();
+		break;
+
 	case ET_ASSERTION_FAILED:
 
 		TN_LOGGER.Print("ASSERT ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, _res);
