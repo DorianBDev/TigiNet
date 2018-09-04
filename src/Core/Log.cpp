@@ -149,6 +149,8 @@ void TN::Log::PrintFile(String messageType, String message, ...)
 	m_pFile->Write(Form(messageType, _res, true));
 
 	delete[] _res;
+
+	m_pFile->Flush();
 }
 
 void TN::Log::PrintFile(String messageType, String message, va_list va)
@@ -177,6 +179,8 @@ void TN::Log::PrintFile(String messageType, String message, va_list va)
 	m_pFile->Write(Form(messageType, _res, true));
 
 	delete[] _res;
+
+	m_pFile->Flush();
 }
 
 void TN::Log::PrintConsole(String messageType, String message, ...)
