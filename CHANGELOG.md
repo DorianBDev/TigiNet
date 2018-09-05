@@ -11,6 +11,7 @@
  - Added a new error type : ABORT.
  - Fixed the Error system.
  - Added flush of the log stream in the log system.
+ - Added a new DEBUG option.
 
 
 ## [v0.0.51-release] - 2018-08-22 :

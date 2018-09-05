@@ -37,6 +37,9 @@
 /* Are abort enabled */
 #define TN_ENABLE_ABORT 1
 
+/* Is debugging enable */
+#define TN_DEBUG 1
+
 /* Use a thread safe approach */
 #define TN_THREAD_SAFE 1
 

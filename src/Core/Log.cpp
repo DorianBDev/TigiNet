@@ -83,7 +83,7 @@ TN::String TN::Log::Form(String messageType, String message, bool endl)
 	res_header = "[" + messageType + "] : ";
 
 	/* Date */
-	char * date;
+	char *date;
 	date = (char*)calloc(MESSAGE_DATE_MAX_LENGTH, sizeof(char));
 
 	time_t t = time(NULL);
@@ -105,14 +105,14 @@ TN::String TN::Log::Form(String messageType, String message, bool endl)
 
 void TN::Log::Print(String messageType, String message, ...)
 {
-	va_list _va;
-	va_start(_va, message);
-	va_list _vab;
-	va_copy(_vab, _va);
-	PrintFile(messageType, message, _vab);
-	va_end(_vab);
-	PrintConsole(messageType, message, _va);
-	va_end(_va);
+	va_list vaList;
+	va_start(vaList, message);
+	va_list vaListBis;
+	va_copy(vaListBis, vaList);
+	PrintFile(messageType, message, vaListBis);
+	va_end(vaListBis);
+	PrintConsole(messageType, message, vaList);
+	va_end(vaList);
 }
 
 void TN::Log::Print(String messageType, String message, va_list va)
@@ -132,23 +132,23 @@ void TN::Log::PrintFile(String messageType, String message, ...)
 
 	messageType.Upcase();
 
-	va_list _va;
+	va_list vaList;
 
-	va_start(_va, message);
-	va_list _vab;
-	va_copy(_vab, _va);
+	va_start(vaList, message);
+	va_list vaListBis;
+	va_copy(vaListBis, vaList);
 
-	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
-	va_end(_vab);
+	int size = vsnprintf(NULL, 0, message.ToCString(), vaListBis);
+	va_end(vaListBis);
 
-	char * _res = new char[_size + 1];
+	char * finalString = new char[size + 1];
 
-	vsnprintf(_res, _size + 1, message.ToCString(), _va);
-	va_end(_va);
+	vsnprintf(finalString, size + 1, message.ToCString(), vaList);
+	va_end(vaList);
 
-	m_pFile->Write(Form(messageType, _res, true));
+	m_pFile->Write(Form(messageType, finalString, true));
 
-	delete[] _res;
+	delete[] finalString;
 
 	m_pFile->Flush();
 }
@@ -164,21 +164,21 @@ void TN::Log::PrintFile(String messageType, String message, va_list va)
 
 	messageType.Upcase();
 
-	va_list _vab;
+	va_list vaListBis;
 
-	va_copy(_vab, va);
-	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
-	va_end(_vab);
+	va_copy(vaListBis, va);
+	int size = vsnprintf(NULL, 0, message.ToCString(), vaListBis);
+	va_end(vaListBis);
 
-	char * _res = new char[_size + 1];
+	char * finalString = new char[size + 1];
 
-	va_copy(_vab, va);
-	vsnprintf(_res, _size + 1, message.ToCString(), _vab);
-	va_end(_vab);
+	va_copy(vaListBis, va);
+	vsnprintf(finalString, size + 1, message.ToCString(), vaListBis);
+	va_end(vaListBis);
 
-	m_pFile->Write(Form(messageType, _res, true));
+	m_pFile->Write(Form(messageType, finalString, true));
 
-	delete[] _res;
+	delete[] finalString;
 
 	m_pFile->Flush();
 }
@@ -191,24 +191,24 @@ void TN::Log::PrintConsole(String messageType, String message, ...)
 
 	messageType.Upcase();
 
-	va_list _va;
+	va_list vaList;
 
-	va_start(_va, message);
-	va_list _vab;
-	va_copy(_vab, _va);
+	va_start(vaList, message);
+	va_list vaListBis;
+	va_copy(vaListBis, vaList);
 
-	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
+	int size = vsnprintf(NULL, 0, message.ToCString(), vaListBis);
 
-	va_end(_vab);
+	va_end(vaListBis);
 
-	char * _res = new char[_size + 1];
+	char * finalString = new char[size + 1];
 
-	vsnprintf(_res, _size + 1, message.ToCString(), _va);
-	va_end(_va);
+	vsnprintf(finalString, size + 1, message.ToCString(), vaList);
+	va_end(vaList);
 
-	printf("%s", Form(messageType, _res, true).ToCString());
+	printf("%s", Form(messageType, finalString, true).ToCString());
 
-	delete[] _res;
+	delete[] finalString;
 }
 
 void TN::Log::PrintConsole(String messageType, String message, va_list va)
@@ -219,32 +219,32 @@ void TN::Log::PrintConsole(String messageType, String message, va_list va)
 
 	messageType.Upcase();
 
-	va_list _vab;
+	va_list vaListBis;
 
-	va_copy(_vab, va);
-	int _size = vsnprintf(NULL, 0, message.ToCString(), _vab);
-	va_end(_vab);
+	va_copy(vaListBis, va);
+	int size = vsnprintf(NULL, 0, message.ToCString(), vaListBis);
+	va_end(vaListBis);
 
-	char * _res = new char[_size + 1];
+	char * finalString = new char[size + 1];
 
-	va_copy(_vab, va);
-	vsnprintf(_res, _size + 1, message.ToCString(), _vab);
-	va_end(_vab);
+	va_copy(vaListBis, va);
+	vsnprintf(finalString, size + 1, message.ToCString(), vaListBis);
+	va_end(vaListBis);
 
-	printf("%s", Form(messageType, _res, true).ToCString());
+	printf("%s", Form(messageType, finalString, true).ToCString());
 
-	delete[] _res;
+	delete[] finalString;
 }
 
 void TN::Log::Write(String message, ...)
 {
-	va_list _va;
+	va_list vaList;
 
-	va_start(_va, message);
-	va_list _vab;
-	va_copy(_vab, _va);
-	PrintFile("Info", message, _vab);
-	va_end(_vab);
-	PrintConsole("Info", message, _va);
-	va_end(_va);
+	va_start(vaList, message);
+	va_list vaListBis;
+	va_copy(vaListBis, vaList);
+	PrintFile("Info", message, vaListBis);
+	va_end(vaListBis);
+	PrintConsole("Info", message, vaList);
+	va_end(vaList);
 }

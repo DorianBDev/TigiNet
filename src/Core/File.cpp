@@ -36,45 +36,45 @@
 
 TN::File::File(String path, FileMode_e mode)
 {
-	String _mode;
+	String sMode;
 
 	switch (mode)
 	{
 	case FM_READ:
-		_mode = "r";
+		sMode = "r";
 		break;
 
 	case FM_WRITE:
-		_mode = "a+";
+		sMode = "a+";
 		break;
 
 	case FM_OVERWRITE :
-		_mode = "w+";
+		sMode = "w+";
 		break;
 	
 	case FM_READ_BINARY:
-		_mode = "rb";
+		sMode = "rb";
 		break;
 
 	case FM_WRITE_BINARY:
-		_mode = "ab+";
+		sMode = "ab+";
 		break;
 
 	case FM_OVERWRITE_BINARY:
-		_mode = "wb+";
+		sMode = "wb+";
 		break;
 
 	default:
-		_mode = "r";
+		sMode = "r";
 		break;
 	}
 
-	m_file = fopen(path.ToCString(), _mode.ToCString());
+	m_file = fopen(path.ToCString(), sMode.ToCString());
 	m_mode = mode;
 
 	if (m_file == NULL)
 	{
-		TN_ERROR("Can't open the file '%s' with mode '%s'...", path.ToCString(), _mode.ToCString());
+		TN_ERROR("Can't open the file '%s' with mode '%s'...", path.ToCString(), sMode.ToCString());
 	}
 }
 
@@ -92,20 +92,20 @@ void TN::File::Close()
 
 void TN::File::Write(String text, ...)
 {
-	va_list _va;
-	va_start(_va, text);
-	vfprintf(M_FILE, text.ToCString(), _va);
-	va_end(_va);
+	va_list vaList;
+	va_start(vaList, text);
+	vfprintf(M_FILE, text.ToCString(), vaList);
+	va_end(vaList);
 }
 
 void TN::File::Write(long cursorPosition, String text, ...)
 {
 	SetCursorPosition(cursorPosition);
 
-	va_list _va;
-	va_start(_va, text);
-	vfprintf(M_FILE, text.ToCString(), _va);
-	va_end(_va);
+	va_list vaList;
+	va_start(vaList, text);
+	vfprintf(M_FILE, text.ToCString(), vaList);
+	va_end(vaList);
 }
 
 void TN::File::Read(int size, String& buffer)
@@ -122,20 +122,20 @@ void TN::File::Read(long cursorPosition, String& buffer, int size)
 
 void TN::File::Read(String form, ...)
 {
-	va_list _va;
-	va_start(_va, form);
-	vfscanf(M_FILE, form.ToCString(), _va);
-	va_end(_va);
+	va_list vaList;
+	va_start(vaList, form);
+	vfscanf(M_FILE, form.ToCString(), vaList);
+	va_end(vaList);
 }
 
 void TN::File::Read(long cursorPosition, String form, ...)
 {
 	SetCursorPosition(cursorPosition);
 
-	va_list _va;
-	va_start(_va, form);
-	vfscanf(M_FILE, form.ToCString(), _va);
-	va_end(_va);
+	va_list vaList;
+	va_start(vaList, form);
+	vfscanf(M_FILE, form.ToCString(), vaList);
+	va_end(vaList);
 }
 
 long TN::File::GetCursorPosition()
