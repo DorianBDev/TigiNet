@@ -27,6 +27,8 @@
 #include <MLP/MLP.hpp>
 #include <Utility/Math.hpp>
 
+#define TN_SCRIPT(test) #test
+
 int main()
 {
 	unsigned int neuronePerLayer[3] = { 2, 2, 1 };
@@ -40,6 +42,12 @@ int main()
 	double **in = new double*[4];
 	for (i = 0; i < 4; i++)
 		in[i] = new double[2];
+
+	TN::String my_test =
+		#include <Test/test.vs>
+	;
+
+	TN_LOG(my_test);
 
 	in[0][0] = 1;
 	in[0][1] = 0;

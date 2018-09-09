@@ -1,0 +1,3 @@
+TN_SCRIPT(
+test
+)
