@@ -27,8 +27,6 @@
 #include <MLP/MLP.hpp>
 #include <Utility/Math.hpp>
 
-#define TN_SCRIPT(test) #test
-
 int main()
 {
 	unsigned int neuronePerLayer[3] = { 2, 2, 1 };
@@ -43,11 +41,29 @@ int main()
 	for (i = 0; i < 4; i++)
 		in[i] = new double[2];
 
-	TN::String my_test =
+	TN::String Script1 =
 		#include <Test/test.vs>
 	;
 
-	TN_LOG(my_test);
+	TN::String Script2 =
+		TN_SCRIPT(
+			test;
+			test line 2;
+			"quoted";
+		)
+	;
+
+	TN::String Script3 =	//TODO: See if it possible to encapsulate that in a macro
+		R"delimiter(
+			test;
+			test line 2;
+			"quoted";
+		)delimiter"
+	;
+
+	TN_LOG(Script1);
+	TN_LOG(Script2);
+	TN_LOG(Script3);
 
 	in[0][0] = 1;
 	in[0][1] = 0;

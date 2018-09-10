@@ -76,6 +76,13 @@
 #define TN_LINE_NUMBER __LINE__
 
 
+/* Stringify */
+#define TN_STRINGIFY(s) #s
+
+/* Create a script (not raw string, use R"delimiter()delimiter" for that) */
+#define TN_SCRIPT(s) TN_STRINGIFY(s)
+
+
 /* Types tests */	
 
 #include <climits>

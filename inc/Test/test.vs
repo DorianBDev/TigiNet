@@ -1,3 +1,5 @@
 TN_SCRIPT(
-test
+test;
+test line 2;
+"quoted";
 )
