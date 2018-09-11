@@ -43,6 +43,10 @@
 /* Use a thread safe approach */
 #define TN_THREAD_SAFE 1
 
+/* Can we use OpenCl or not */
+#define TN_USE_OPEN_CL 1
+
+
 /* TN_DEPRECATED Definition */
 #if defined(__GNUC__) || defined(__MINGW32__) || defined(__clang__)
 	#define TN_DEPRECATED(inf) __attribute__((__deprecated__("[TIGINET] This function is deprecated : " # inf)))
