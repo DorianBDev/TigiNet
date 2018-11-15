@@ -99,6 +99,16 @@ TN::Links* TN::Neurone::GetTargetLinks()
 	return m_targetLinks;
 }
 
+TN::Neurone* TN::Neurone::GetOriginNeurone(size_t linkIndice)
+{
+	return m_targetLinks->GetLink(linkIndice)->GetLinkedNeurone(AS_TARGET);
+}
+
+TN::Neurone* TN::Neurone::GetTargetNeurone(size_t linkIndice)
+{
+	return m_originLinks->GetLink(linkIndice)->GetLinkedNeurone(AS_ORIGIN);
+}
+
 std::shared_ptr<TN::Link> TN::LinkNeurones(Neurone* firstNeurone, Neurone* secondNeurone, double max, double min)
 {
 	std::shared_ptr<Link> link = std::shared_ptr<Link>(new Link(firstNeurone, secondNeurone, max, min));

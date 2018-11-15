@@ -155,6 +155,26 @@ namespace TN
 		*/
 		Links* GetTargetLinks();
 
+		/**
+		* @brief Get the origin neurone of the link, actual neurone is the target.
+		*
+		* @param linkIndice : indice of the link.
+		*
+		* @return Return the origin of the link.
+		*
+		*/
+		Neurone* GetOriginNeurone(size_t linkIndice);
+
+		/**
+		* @brief Get the target neurone of the link, actual neurone is the origin.
+		*
+		* @param linkIndice : indice of the link.
+		*
+		* @return Return the target of the link.
+		*
+		*/
+		Neurone* GetTargetNeurone(size_t linkIndice);
+
 
 	private:
 
