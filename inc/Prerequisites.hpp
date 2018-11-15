@@ -146,9 +146,4 @@ namespace TN
 
 }
 
-
-/* Other base types definition */
-
-//typedef TN::uint_64 size_t;
-
 #endif

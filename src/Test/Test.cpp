@@ -26,9 +26,14 @@
 #include <Core/Log.hpp>
 #include <MLP/MLP.hpp>
 #include <Utility/Math.hpp>
+#include <CNN/CNN.hpp>
 
 int main()
 {
+	TN::CNN cnn;
+
+
+	/**
 	unsigned int neuronePerLayer[3] = { 2, 2, 1 };
 
 	TN::MLP* net = new TN::MLP(0.1, 0.01, 0.00001, &TN::Sigmoide, 3, neuronePerLayer);
@@ -40,6 +45,7 @@ int main()
 	double **in = new double*[4];
 	for (i = 0; i < 4; i++)
 		in[i] = new double[2];
+
 
 	TN::String Script1 =
 		#include <Test/test.vs>
@@ -53,7 +59,7 @@ int main()
 		)
 	;
 
-	TN::String Script3 =	//TODO: See if it possible to encapsulate that in a macro
+	TN::String Script3 =
 		R"delimiter(
 			test;
 			test line 2;
@@ -147,9 +153,9 @@ int main()
 
 	delete net;
 
-	TN_LOG("End")
+	**/
 
-	system("pause");
+	TN_LOG("End")
 
 	return 0;
 }
