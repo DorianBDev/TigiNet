@@ -72,8 +72,11 @@
 #define TN_WARNING(message, ...)
 #endif
 
+
 namespace TN
 {
+	class String;
+
 	/*! Error types */
 	typedef enum __error_type_e
 	{
@@ -95,16 +98,16 @@ namespace TN
 		~Error() = delete;
 
 		/**
-		* @brief Send an error
+		* @brief Send an error.
 		*
-		* @param errorType : the error type see ErrorType_e for more
-		* @param message : the message corresponding with the error
-		* @param line : the line of the error (use TN_LINE_NUMBER)
-		* @param file : the file path where the error is (use TN_FILE_PATH)
-		* @param function : the function name where the error is (use TN_FUNCTION_NAME)
+		* @param errorType : the error type see ErrorType_e for more.
+		* @param message : the message corresponding with the error.
+		* @param line : the line of the error (use TN_LINE_NUMBER).
+		* @param file : the file path where the error is (use TN_FILE_PATH).
+		* @param function : the function name where the error is (use TN_FUNCTION_NAME).
 		*
 		*/
-		static void Send(ErrorType_e errorType, const char* message, unsigned int line, const char* file, const char* function, ...);
+		static void Send(ErrorType_e errorType, String message, unsigned int line, const char* file, const char* function, ...);
 	};
 }
 

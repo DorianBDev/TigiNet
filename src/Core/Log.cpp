@@ -42,13 +42,13 @@ TN::Log::Log()
 
 	if (m_pFile == NULL)
 	{
-		Print("INFO", "Logger on...");
+		Print("INFO", "Logger ON.");
 		TN_WARNING("Can't create 'Tiginet.log', no file logger...")
 	}
 	else
 	{
 		m_fileReady = true;
-		Print("INFO", "Logger on...");
+		Print("INFO", "Logger ON.");
 	}
 
 	Print("INFO", "---------------------------------------------------");
@@ -57,7 +57,7 @@ TN::Log::Log()
 TN::Log::~Log()
 {
 	Print("INFO", "---------------------------------------------------");
-	Print("INFO", "Logger off...");
+	Print("INFO", "Logger OFF.");
 
 	if (m_fileMutex.IsLock())
 		m_fileMutex.Unlock();

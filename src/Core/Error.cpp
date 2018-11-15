@@ -28,7 +28,7 @@
 #include <cstdlib>
 #include <stdio.h>
 
-void TN::Error::Send(ErrorType_e errorType, const char* message, unsigned int line, const char* file, const char* function, ...)
+void TN::Error::Send(ErrorType_e errorType, String message, unsigned int line, const char* file, const char* function, ...)
 {
 	va_list vaList;
 	char * finalMessage;
@@ -36,12 +36,12 @@ void TN::Error::Send(ErrorType_e errorType, const char* message, unsigned int li
 	va_start(vaList, function);
 	va_list vaListBis;
 	va_copy(vaListBis, vaList);
-	int size = vsnprintf(NULL, 0, message, vaListBis);
+	int size = vsnprintf(NULL, 0, message.ToCString(), vaListBis);
 	va_end(vaListBis);
 
 	finalMessage = new char[size + 1];
 
-	vsnprintf(finalMessage, size + 1, message, vaList);
+	vsnprintf(finalMessage, size + 1, message.ToCString(), vaList);
 	va_end(vaList);
 
 	switch (errorType)
