@@ -31,7 +31,7 @@
 
 TN::MLP::MLP(double errorAcceptance, double learningLevel, double momentum, double(*activationFunction)(double), size_t layerCount, unsigned int* neuronePerLayerTable)
 {
-	TN_LOG("A NEURAL NETWORK IS IN CREATION...")
+	TN_LOG("[MLP] Creating a multilayer perceptron.")
 
 	srand((unsigned int)time(NULL));
 
@@ -56,9 +56,7 @@ TN::MLP::MLP(double errorAcceptance, double learningLevel, double momentum, doub
 			m_neuronePerLayerTable[i] = neuronePerLayerTable[i];
 	}
 
-	TN_LOG("Layer count : %zu", m_layerCount);
-
-	TN_LOG("THE NETWORK IS : A MULTILAYER PERCEPTRON WITH BIAS")
+	TN_LOG("[MLP] Layer count : %zu.", m_layerCount);
 			
 	unsigned int i;
 	for (i = 0; i < m_layerCount; i++)
@@ -81,23 +79,23 @@ TN::MLP::~MLP()
 
 void TN::MLP::LearnSimple(double* valIn, double* valOut)
 {
-	TN_LOG("Learning single sample...")
+	TN_LOG("[MLP] Learning single sample.")
 
 	do
 	{
 		Browse(valIn);
 		RetroPropagation(valOut);
 		CalculateError(valOut);
-		TN_LOG_CONSOLE("INFO", "Learning error : %f", m_error);
+		TN_LOG_CONSOLE("INFO", "[MLP] Learning error : %f.", m_error);
 
 	} while (sqrt(m_error) > m_errorAcceptance);
 
-	TN_LOG("Stopping learning single sample, error : %f", m_error);
+	TN_LOG("[MLP] Stopping learning single sample, error : %f.", m_error);
 }
 
 void TN::MLP::Learn(double** valIn, double** valOut, size_t size)
 {
-	TN_LOG("Learning...")
+	TN_LOG("[MLP] Learning...")
 
 	double moy_error;
 
@@ -154,7 +152,7 @@ void TN::MLP::Learn(double** valIn, double** valOut, size_t size)
 
 	} while (moy_error > m_errorAcceptance);
 
-	TN_LOG("Stopping learning, error : %f", moy_error);
+	TN_LOG("[MLP] Stopping learning, error : %f.", moy_error);
 }
 
 void TN::MLP::Learn(String path)
@@ -162,7 +160,7 @@ void TN::MLP::Learn(String path)
 	TN::File file(path, TN::FileMode_e::FM_READ);
 
 	if (!file.IsFileOpen())
-		TN_ERROR("File can't be open")
+		TN_ERROR("[MLP] Learn file can't be open.")
 
 	size_t size = 0;
 	size_t inSize = m_layers.GetLayer(0)->GetSize();
@@ -226,7 +224,7 @@ void TN::MLP::Browse(double* valIn)
 			for (k = 0; k < m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetCount(); k++)
 			{
 				/* SUM IN i TO link number = previous k link weight TIMES previous neurone value in the k link PLUS threshold value */
-				sum += m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetWeight() * m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetLinkedNeurone(AS_TARGET)->GetValue();
+				sum += m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetWeight() * m_layers.GetLayer(i)->GetNeurone(j)->GetOriginNeurone(k)->GetValue();
 			}
 
 			/* Add bias */
@@ -243,7 +241,7 @@ void TN::MLP::Browse(String path, unsigned int index)
 	TN::File file(path, TN::FileMode_e::FM_READ);
 
 	if (!file.IsFileOpen())
-		TN_ERROR("File can't be open")
+		TN_ERROR("[MLP] Browse file can't be open.")
 
 	size_t size = 0;
 	size_t inSize = m_layers.GetLayer(0)->GetSize();
@@ -252,8 +250,8 @@ void TN::MLP::Browse(String path, unsigned int index)
 
 	file.Read("count: %zu\n\n", &size);
 
-	TN_ASSERT(index <= size, "Wrong index, index > size can't be possible")
-	TN_ASSERT(index > 0, "Wrong index, index < 1 can't be possible")
+	TN_ASSERT(index <= size, "[MLP] Wrong index, index > size can't be possible.")
+	TN_ASSERT(index > 0, "[MLP] Wrong index, index < 1 can't be possible.")
 
 	double *in = new double[inSize];
 
@@ -301,7 +299,7 @@ void TN::MLP::RetroPropagation(double* valOut)
 		delta = 0;
 		for (k = 0; k < m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetTargetLinks()->GetCount(); k++)
 		{
-			delta = m_learningLevel * m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetLocalGradiant() * m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetLinkedNeurone(AS_TARGET)->GetValue();
+			delta = m_learningLevel * m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetLocalGradiant() * m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetOriginNeurone(k)->GetValue();
 			m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetTargetLinks()->GetLink(k)->SetWeight(m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetWeight() + m_momentum * delta + (1 - m_momentum) * m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetPreviousDelta());
 			m_layers.GetLayer(GetLastLayerIndice())->GetNeurone(j)->GetTargetLinks()->GetLink(k)->SetPreviousDelta(delta);
 			delta = 0;
@@ -320,7 +318,7 @@ void TN::MLP::RetroPropagation(double* valOut)
 
 			/* For all next link */
 			for (l = 0; l < m_layers.GetLayer(i)->GetNeurone(j)->GetOriginLinks()->GetCount(); l++)
-				sum += m_layers.GetLayer(i)->GetNeurone(j)->GetOriginLinks()->GetLink(l)->GetLinkedNeurone(AS_ORIGIN)->GetLocalGradiant() * m_layers.GetLayer(i)->GetNeurone(j)->GetOriginLinks()->GetLink(l)->GetWeight();
+				sum += m_layers.GetLayer(i)->GetNeurone(j)->GetTargetNeurone(l)->GetLocalGradiant() * m_layers.GetLayer(i)->GetNeurone(j)->GetOriginLinks()->GetLink(l)->GetWeight();
 
 			/* Set local gradiant */
 			m_layers.GetLayer(i)->GetNeurone(j)->SetLocalGradiant(m_layers.GetLayer(i)->GetNeurone(j)->GetValue() * (1 - m_layers.GetLayer(i)->GetNeurone(j)->GetValue()) * sum);
@@ -334,7 +332,7 @@ void TN::MLP::RetroPropagation(double* valOut)
 			delta = 0;
 			for (k = 0; k < m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetCount(); k++)
 			{
-				delta = m_learningLevel * m_layers.GetLayer(i)->GetNeurone(j)->GetLocalGradiant() * m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetLinkedNeurone(AS_TARGET)->GetValue();
+				delta = m_learningLevel * m_layers.GetLayer(i)->GetNeurone(j)->GetLocalGradiant() * m_layers.GetLayer(i)->GetNeurone(j)->GetOriginNeurone(k)->GetValue();
 				m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->SetWeight(m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetWeight() + m_momentum * delta + (1 - m_momentum) * m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->GetPreviousDelta());
 				m_layers.GetLayer(i)->GetNeurone(j)->GetTargetLinks()->GetLink(k)->SetPreviousDelta(delta);
 				delta = 0;
@@ -362,47 +360,47 @@ void TN::MLP::PrintNeuronesValues()
 {
 	unsigned int i, j;
 
-	TN_LOG("")
-	TN_LOG("-----------------------------------------")
-	TN_LOG("Printing neurones values...")
-	TN_LOG("-----------------------------------------")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] -----------------------------------------")
+	TN_LOG("[MLP] Printing neurones values...")
+	TN_LOG("[MLP] -----------------------------------------")
 
 	for (i = 0; i < m_layers.GetCount(); i++)
 	{
 		String txt;
 
-		TN_LOG("Layer %u :", static_cast<unsigned int>(i + 1));
+		TN_LOG("[MLP] Layer %u :", static_cast<unsigned int>(i + 1));
 
 		for (j = 0; j < m_layers.GetLayer(i)->GetSize(); j++)
 		{
 			txt += ToString("%lf (%lf) ", m_layers.GetLayer(i)->GetNeuroneValue(j), m_layers.GetLayer(i)->GetNeurone(j)->GetThresholdValue());
 		}
 
-		TN_LOG(txt)
+		TN_LOG("[MLP] " + txt)
 	}
 
-	TN_LOG("-----------------------------------------")
-	TN_LOG("")
+	TN_LOG("[MLP] -----------------------------------------")
+	TN_LOG("[MLP] ")
 }
 
 void TN::MLP::PrintLinksValues()
 {
 	unsigned int i, j, k;
 
-	TN_LOG("")
-	TN_LOG("-----------------------------------------")
-	TN_LOG("Printing links values...")
-	TN_LOG("-----------------------------------------")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] -----------------------------------------")
+	TN_LOG("[MLP] Printing links values...")
+	TN_LOG("[MLP] -----------------------------------------")
 
 	for (i = 0; i < m_layers.GetCount(); i++)
 	{
-		TN_LOG("Layer %u :", static_cast<unsigned int>(i + 1));
+		TN_LOG("[MLP] Layer %u :", static_cast<unsigned int>(i + 1));
 
 		for (j = 0; j < m_layers.GetLayer(i)->GetSize(); j++)
 		{
 			String txt;
 
-			TN_LOG("Neurone %u (%lf) :", static_cast<unsigned int>(j + 1), m_layers.GetLayer(i)->GetNeurone(j)->GetThresholdWeight());
+			TN_LOG("[MLP] Neurone %u (%lf) :", static_cast<unsigned int>(j + 1), m_layers.GetLayer(i)->GetNeurone(j)->GetThresholdWeight());
 
 
 			for (k = 0; k < m_layers.GetLayer(i)->GetNeurone(j)->GetOriginLinks()->GetCount(); k++)
@@ -410,61 +408,61 @@ void TN::MLP::PrintLinksValues()
 				txt += ToString("%lf ", m_layers.GetLayer(i)->GetNeurone(j)->GetOriginLinks()->GetLink(k)->GetWeight());
 			}
 
-			TN_LOG(txt)
+			TN_LOG("[MLP] " + txt)
 		}
 
-		TN_LOG("")
+		TN_LOG("[MLP] ")
 	}
 
-	TN_LOG("-----------------------------------------")
-	TN_LOG("")
+	TN_LOG("[MLP] -----------------------------------------")
+	TN_LOG("[MLP] ")
 }
 
 void TN::MLP::PrintLayersData()
 {
 	unsigned int i;
 
-	TN_LOG("")
-	TN_LOG("-----------------------------------------")
-	TN_LOG("Printing layers data...");
-	TN_LOG("-----------------------------------------")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] -----------------------------------------")
+	TN_LOG("[MLP] Printing layers data...");
+	TN_LOG("[MLP] -----------------------------------------")
 
 	for (i = 0; i < m_layers.GetCount(); i++)
 	{
-		TN_LOG(ToString("Layer %u : %u neurones", i + 1, m_layers.GetLayer(i)->GetSize()))
+		TN_LOG(ToString("[MLP] Layer %u : %u neurones.", i + 1, m_layers.GetLayer(i)->GetSize()))
 	}
 
-	TN_LOG("-----------------------------------------")
-	TN_LOG("")
+	TN_LOG("[MLP] -----------------------------------------")
+	TN_LOG("[MLP] ")
 }
 
 void TN::MLP::PrintAll()
 {
-	TN_LOG("")
-	TN_LOG("")
-	TN_LOG("=========================================")
-	TN_LOG("Printing all data...")
-	TN_LOG("=========================================")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] =========================================")
+	TN_LOG("[MLP] Printing all data...")
+	TN_LOG("[MLP] =========================================")
 	PrintLayersData();
 	PrintNeuronesValues();
 	PrintLinksValues();
-	TN_LOG("=========================================")
-	TN_LOG("")
-	TN_LOG("")
+	TN_LOG("[MLP] =========================================")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] ")
 }
 
 void TN::MLP::PrintResults()
 {
 	unsigned int j;
 
-	TN_LOG("")
-	TN_LOG("=========================================")
-	TN_LOG("Printing neurones values...")
-	TN_LOG("=========================================")
+	TN_LOG("[MLP] ")
+	TN_LOG("[MLP] =========================================")
+	TN_LOG("[MLP] Printing neurones values...")
+	TN_LOG("[MLP] =========================================")
 
 	String txt;
 
-	TN_LOG("In values :")
+	TN_LOG("[MLP] In values :")
 
 	txt += ToString("N%u : %lf", 0, m_layers.GetLayer(0)->GetNeuroneValue(0));
 	for (j = 1; j < m_layers.GetLayer(0)->GetSize(); j++)
@@ -473,13 +471,13 @@ void TN::MLP::PrintResults()
 		txt += ToString("N%u : %lf", j, m_layers.GetLayer(0)->GetNeuroneValue(j));
 	}
 
-	TN_LOG(txt)
+	TN_LOG("[MLP] " + txt)
 
 	txt = "";
 
-	TN_LOG("-----------------------------------------")
+	TN_LOG("[MLP] -----------------------------------------")
 
-	TN_LOG("Out values :");
+	TN_LOG("[MLP] Out values :");
 
 	txt += ToString("N%u : %lf", 0, m_layers.GetLayer(GetLastLayerIndice())->GetNeuroneValue(0));
 	for (j = 1; j < m_layers.GetLayer(GetLastLayerIndice())->GetSize(); j++)
@@ -488,10 +486,10 @@ void TN::MLP::PrintResults()
 		txt += ToString("N%u : %lf", j, m_layers.GetLayer(GetLastLayerIndice())->GetNeuroneValue(j));
 	}
 
-	TN_LOG(txt)
+	TN_LOG("[MLP] " + txt)
 
-	TN_LOG("=========================================")
-	TN_LOG("")
+	TN_LOG("[MLP] =========================================")
+	TN_LOG("[MLP] ")
 }
 
 void TN::MLP::Ask(double* valIn)
@@ -517,7 +515,7 @@ void TN::MLP::LoadFromFile(String path)
 	TN::File file(path, TN::FileMode_e::FM_READ);
 
 	if (!file.IsFileOpen())
-		TN_ERROR("File can't be open")
+		TN_ERROR("[MLP] Load file can't be open")
 
 	file.Read("lc %d\n\n", &m_layerCount);
 
@@ -576,7 +574,7 @@ void TN::MLP::SaveInFile(String path)
 	TN::File file(path, TN::FileMode_e::FM_OVERWRITE);
 
 	if (!file.IsFileOpen())
-		TN_ERROR("File can't be open")
+		TN_ERROR("[MLP] Save file can't be open")
 
 	file.Write("lc %zu\n\n", m_layerCount);
 
