@@ -1,4 +1,4 @@
-v0.0.53-nightly
+v0.0.53-release
 
 # vMAJOR.MINOR.PATCH-{release/nightly/hotfix/rc}
 # Use this version as git tag with 'release' for master branch, 'nightly' for develop branch, 'hotfix' for hotfix branch and 'rc' for release branch (release candidate).

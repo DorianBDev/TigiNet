@@ -5,7 +5,7 @@
 
 
 
-## [v0.0.53-nightly] - 2019-02-26 :
+## [v0.0.53-release] - 2019-02-26 :
 
 ### CORE :
  - Fixed log system.
