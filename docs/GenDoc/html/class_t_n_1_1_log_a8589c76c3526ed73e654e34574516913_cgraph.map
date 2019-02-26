@@ -1,7 +1,8 @@
 <map id="TN::Log::Write" name="TN::Log::Write">
-<area shape="rect" id="node2" href="$class_t_n_1_1_log.html#a54792a0d3a8a844ab33ad2db2fd3f8b4" title="Print in a file. " alt="" coords="173,22,296,49"/>
-<area shape="rect" id="node6" href="$class_t_n_1_1_log.html#a6f3c7f28ef4a62314a1f9e3bc1a696c8" title="Print in the console. " alt="" coords="160,73,309,99"/>
-<area shape="rect" id="node3" href="$class_t_n_1_1_string.html#a02bcb345495c6d5d156639338440fdf6" title="Upcase all characters of the string. " alt="" coords="357,73,489,99"/>
-<area shape="rect" id="node4" href="$class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="537,22,683,49"/>
-<area shape="rect" id="node5" href="$class_t_n_1_1_file.html#a29508a19f7d0d0f5c347902f7ecadca4" title="Write in the file. " alt="" coords="370,22,477,49"/>
+<area shape="rect" id="node2" href="$class_t_n_1_1_log.html#a54792a0d3a8a844ab33ad2db2fd3f8b4" title="Print in a file. " alt="" coords="173,78,296,104"/>
+<area shape="rect" id="node7" href="$class_t_n_1_1_log.html#a6f3c7f28ef4a62314a1f9e3bc1a696c8" title="Print in the console. " alt="" coords="160,128,309,155"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_string.html#a02bcb345495c6d5d156639338440fdf6" title="Upcase all characters of the string. " alt="" coords="357,128,489,155"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="537,27,683,54"/>
+<area shape="rect" id="node5" href="$class_t_n_1_1_file.html#a29508a19f7d0d0f5c347902f7ecadca4" title="Write in the file. " alt="" coords="370,27,477,54"/>
+<area shape="rect" id="node6" href="$class_t_n_1_1_file.html#af1049bdfb94cba005b2413a2b2340361" title="Flush the file. " alt="" coords="370,78,477,104"/>
 </map>

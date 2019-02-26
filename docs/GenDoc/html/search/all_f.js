@@ -1,12 +1,6 @@
 var searchData=
 [
-  ['prerequisites_2ehpp',['Prerequisites.hpp',['../_prerequisites_8hpp.html',1,'']]],
-  ['print',['Print',['../class_t_n_1_1_log.html#a970f0cc815b06f22e79b1b1d504d4310',1,'TN::Log::Print(String messageType, String message,...)'],['../class_t_n_1_1_log.html#a3ff7f78ea61bbd1db257ba410f3b1530',1,'TN::Log::Print(String messageType, String message, va_list va)']]],
-  ['printall',['PrintAll',['../class_t_n_1_1_m_l_p.html#a063fdc092003f86ead6ad4cb6499d352',1,'TN::MLP']]],
-  ['printconsole',['PrintConsole',['../class_t_n_1_1_log.html#a6f3c7f28ef4a62314a1f9e3bc1a696c8',1,'TN::Log::PrintConsole(String messageType, String message,...)'],['../class_t_n_1_1_log.html#a0f1cbb96b150be469a9480ba4551735e',1,'TN::Log::PrintConsole(String messageType, String message, va_list va)']]],
-  ['printfile',['PrintFile',['../class_t_n_1_1_log.html#a54792a0d3a8a844ab33ad2db2fd3f8b4',1,'TN::Log::PrintFile(String messageType, String message,...)'],['../class_t_n_1_1_log.html#a3b2c8e35a31a46baac8a9b119d9b75f8',1,'TN::Log::PrintFile(String messageType, String message, va_list va)']]],
-  ['printlayersdata',['PrintLayersData',['../class_t_n_1_1_m_l_p.html#ae7fa5f404d9eda53653dc25dd98bfcae',1,'TN::MLP']]],
-  ['printlinksvalues',['PrintLinksValues',['../class_t_n_1_1_m_l_p.html#a712d73d3f511dfbb28fa1005838d31d3',1,'TN::MLP']]],
-  ['printneuronesvalues',['PrintNeuronesValues',['../class_t_n_1_1_m_l_p.html#abfcd56b7947e1780cade18e971b8170d',1,'TN::MLP']]],
-  ['printresults',['PrintResults',['../class_t_n_1_1_m_l_p.html#ae666114a3e874c7db3ce83f7a0ddec31',1,'TN::MLP']]]
+  ['read',['Read',['../class_t_n_1_1_file.html#a958402f626f475bcd3cae524040f11b5',1,'TN::File::Read(int size, String &amp;buffer)'],['../class_t_n_1_1_file.html#a9f022861da526efb48c0042a5523e680',1,'TN::File::Read(long cursorPosition, String &amp;buffer, int size)'],['../class_t_n_1_1_file.html#a8ad6bd6688d850cfc15b861ab5f4cd45',1,'TN::File::Read(String form,...)'],['../class_t_n_1_1_file.html#a3c5d70f227af41e89c8911ffaca62b5a',1,'TN::File::Read(long cursorPosition, String form,...)']]],
+  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['run',['Run',['../class_t_n_1_1_a_functor.html#a91a286369cac4af40ae3f214cf3bc8b3',1,'TN::AFunctor::Run()'],['../class_t_n_1_1_functor.html#a0fb2454192d3f0e02aa1cfeb6495eaf2',1,'TN::Functor::Run()']]]
 ];

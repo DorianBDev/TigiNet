@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['print',['Print',['../class_t_n_1_1_log.html#a970f0cc815b06f22e79b1b1d504d4310',1,'TN::Log::Print(String messageType, String message,...)'],['../class_t_n_1_1_log.html#a3ff7f78ea61bbd1db257ba410f3b1530',1,'TN::Log::Print(String messageType, String message, va_list va)']]],
-  ['printall',['PrintAll',['../class_t_n_1_1_m_l_p.html#a063fdc092003f86ead6ad4cb6499d352',1,'TN::MLP']]],
-  ['printconsole',['PrintConsole',['../class_t_n_1_1_log.html#a6f3c7f28ef4a62314a1f9e3bc1a696c8',1,'TN::Log::PrintConsole(String messageType, String message,...)'],['../class_t_n_1_1_log.html#a0f1cbb96b150be469a9480ba4551735e',1,'TN::Log::PrintConsole(String messageType, String message, va_list va)']]],
-  ['printfile',['PrintFile',['../class_t_n_1_1_log.html#a54792a0d3a8a844ab33ad2db2fd3f8b4',1,'TN::Log::PrintFile(String messageType, String message,...)'],['../class_t_n_1_1_log.html#a3b2c8e35a31a46baac8a9b119d9b75f8',1,'TN::Log::PrintFile(String messageType, String message, va_list va)']]],
-  ['printlayersdata',['PrintLayersData',['../class_t_n_1_1_m_l_p.html#ae7fa5f404d9eda53653dc25dd98bfcae',1,'TN::MLP']]],
-  ['printlinksvalues',['PrintLinksValues',['../class_t_n_1_1_m_l_p.html#a712d73d3f511dfbb28fa1005838d31d3',1,'TN::MLP']]],
-  ['printneuronesvalues',['PrintNeuronesValues',['../class_t_n_1_1_m_l_p.html#abfcd56b7947e1780cade18e971b8170d',1,'TN::MLP']]],
-  ['printresults',['PrintResults',['../class_t_n_1_1_m_l_p.html#ae666114a3e874c7db3ce83f7a0ddec31',1,'TN::MLP']]]
+  ['send',['Send',['../class_t_n_1_1_error.html#a23e91a0ee7e3d91523dded71080fad4e',1,'TN::Error']]],
+  ['setcursorposition',['SetCursorPosition',['../class_t_n_1_1_file.html#a75c1024e64534ba707229fa0d22155b7',1,'TN::File']]],
+  ['setname',['SetName',['../class_t_n_1_1_thread.html#ad775d21bef0ced9992f677b718cf2a69',1,'TN::Thread']]],
+  ['sigmoide',['Sigmoide',['../namespace_t_n.html#a9eb252949c1d1bfe5dc520190942fa40',1,'TN']]],
+  ['skiplines',['SkipLines',['../class_t_n_1_1_file.html#a5b1bddfda78e18907315e72c8f92d6ff',1,'TN::File']]],
+  ['start',['Start',['../class_t_n_1_1_clock.html#a4913474baa9d875131628f6a555b106d',1,'TN::Clock']]],
+  ['stop',['Stop',['../class_t_n_1_1_clock.html#a3f709b7f9fe1c742f4156e6354053899',1,'TN::Clock']]],
+  ['string',['String',['../class_t_n_1_1_string.html#ab3ac35409eec3c50a7f7b9379a2b60ec',1,'TN::String::String()'],['../class_t_n_1_1_string.html#a673cb7c02a84b1fe085730d455f9a34a',1,'TN::String::String(const char txt)'],['../class_t_n_1_1_string.html#ae5bdc4e162912ac029081893e74f53de',1,'TN::String::String(const char *txt)'],['../class_t_n_1_1_string.html#a85dd89c5fa8c8afef011377116ec9de7',1,'TN::String::String(const String &amp;txt)']]]
 ];

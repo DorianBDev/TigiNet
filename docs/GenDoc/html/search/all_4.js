@@ -1,7 +1,11 @@
 var searchData=
 [
-  ['deletelayer',['DeleteLayer',['../class_t_n_1_1_layers.html#a55fbbf57160817c3d724afa008808080',1,'TN::Layers']]],
-  ['deletelink',['DeleteLink',['../class_t_n_1_1_links.html#a2af3d87de329ad645bb7192dd1abe190',1,'TN::Links']]],
-  ['detach',['Detach',['../class_t_n_1_1_thread.html#a03961a484aaa556894b1c986c986f53e',1,'TN::Thread']]],
-  ['downcase',['Downcase',['../class_t_n_1_1_string.html#ac0dacca883bde2a6a813e5f2cfa3e41f',1,'TN::String::Downcase()'],['../class_t_n_1_1_string.html#a943f7ebe53e589135cb124fc48c8a866',1,'TN::String::Downcase(unsigned int first, unsigned int last)']]]
+  ['error',['Error',['../class_t_n_1_1_error.html',1,'TN::Error'],['../class_t_n_1_1_error.html#a2cebffab64e0d18a3c0b18469466c511',1,'TN::Error::Error()']]],
+  ['error_2ecpp',['Error.cpp',['../_error_8cpp.html',1,'']]],
+  ['error_2ehpp',['Error.hpp',['../_error_8hpp.html',1,'']]],
+  ['errortype_5fe',['ErrorType_e',['../namespace_t_n.html#a1f5c586829796f73b10fe036f9974539',1,'TN']]],
+  ['et_5fabort',['ET_ABORT',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a626454db94910e19aca65b3bc174b052',1,'TN']]],
+  ['et_5fassertion_5ffailed',['ET_ASSERTION_FAILED',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a3da5abc39bb1006830f65bfcb4103a69',1,'TN']]],
+  ['et_5ferror',['ET_ERROR',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a0411f6dd999cc32fa7f7f9db58873dc7',1,'TN']]],
+  ['et_5fwarning',['ET_WARNING',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a10ac8891a5fb89d025c357b48bde5cbd',1,'TN']]]
 ];

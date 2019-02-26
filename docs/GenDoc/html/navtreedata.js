@@ -1,6 +1,7 @@
 var NAVTREE =
 [
   [ "TigiNet", "index.html", [
+    [ "TIGINET ([PROJECT WEBSITE](https://dorianbdev.github.io/TigiNet/docs/index.html))", "index.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -19,7 +20,6 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
-        [ "Variables", "functions_vars.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -36,8 +36,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_clock_8cpp.html",
-"class_t_n_1_1_m_l_p.html#a257ea7946a1e2592abfa86cf7cec5336"
+"_clock_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
