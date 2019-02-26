@@ -20,7 +20,7 @@ set(TARGET_TYPE "EXE" CACHE STRING "Type of the target : EXE for executable and 
 
 # Dependencies list
 # DOC : List of others dependencies name (CARE : YOU NEED TO HAVE A ';' BETWEEN EACH DEPENDENCY)
-set(TARGET_DEPENDENCIES "Core;MLP;Utility;CNN" CACHE STRING "List of others dependencies name." FORCE)
+set(TARGET_DEPENDENCIES "Core;MLP;Utility" CACHE STRING "List of others dependencies name." FORCE)
 
 ################################################
 # if dependencies
