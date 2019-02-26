@@ -5,7 +5,13 @@
 
 
 
-## [v0.0.53-nightly] - 2018-10-30 :
+## [v0.0.53-nightly] - 2019-02-26 :
+
+### CORE :
+ - Fixed log system.
+
+### MLP :
+ - Added new functions.
 
 
 ## [v0.0.52-release] - 2018-10-30 :

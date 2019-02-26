@@ -26,14 +26,10 @@
 #include <Core/Log.hpp>
 #include <MLP/MLP.hpp>
 #include <Utility/Math.hpp>
-#include <CNN/CNN.hpp>
 
 int main()
 {
-	TN::CNN cnn;
 
-
-	/**
 	unsigned int neuronePerLayer[3] = { 2, 2, 1 };
 
 	TN::MLP* net = new TN::MLP(0.1, 0.01, 0.00001, &TN::Sigmoide, 3, neuronePerLayer);
@@ -152,8 +148,7 @@ int main()
 	delete[] out;
 
 	delete net;
-
-	**/
+	
 
 	TN_LOG("End")
 
