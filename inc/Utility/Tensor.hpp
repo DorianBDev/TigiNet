@@ -98,12 +98,31 @@ namespace TN
 		*
 		* @param rank : the rank of the tensor.
 		* @param shape : the shape of the tensor.
+		*
+		*/
+		Tensor(unsigned int rank, TensorShape & shape);
+
+		/**
+		* @brief Create a tensor.
+		*
+		* @param rank : the rank of the tensor.
+		* @param shape : the shape of the tensor.
+		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
+		*
+		*/
+		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank);
+
+		/**
+		* @brief Create a tensor.
+		*
+		* @param rank : the rank of the tensor.
+		* @param shape : the shape of the tensor.
 		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
 		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
-		Tensor();
+		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank, T* data);
+		Tensor(void);
 		~Tensor();
 
 		/**
@@ -156,7 +175,7 @@ namespace TN
 		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		void Initialize(unsigned rank, TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
+		void Initialize(unsigned rank, TensorShape & shape, unsigned int allocationRank, T* data);
 
 
 	private:

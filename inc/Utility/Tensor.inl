@@ -28,6 +28,74 @@ namespace TN
 {
 	/// @private
 	template<typename T>
+	TN::Tensor<T>::Tensor(unsigned int rank, TensorShape & shape)
+	{
+		m_shape = &shape;
+		m_rank = rank;
+		m_allocationRank = 0;
+
+		if (rank == 0)
+		{
+			m_tensors = NULL;
+			m_data = new T[shape.GetDimension(rank)];
+		}
+		else
+		{
+			m_tensors = new Tensor[shape.GetDimension(rank)];
+
+			m_data = NULL;
+
+			for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
+				m_tensors[i].Initialize(rank - 1, shape, m_allocationRank, NULL);
+		}
+	}
+
+	/// @private
+	template<typename T>
+	TN::Tensor<T>::Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank)
+	{
+		m_shape = &shape;
+		m_rank = rank;
+		m_allocationRank = allocationRank;
+
+		if (rank == 0)
+		{
+			m_tensors = NULL;
+			m_data = new T[shape.GetDimension(rank)];
+		}
+		else
+		{
+			m_tensors = new Tensor[shape.GetDimension(rank)];
+
+			unsigned int dim = 1;
+
+			for (unsigned int j = 0; j < rank; j++)
+			{
+				dim *= shape.GetDimension(j);
+			}
+
+			if (allocationRank == rank)
+			{
+				m_data = new T[dim * shape.GetDimension(rank)];
+			}
+			else
+				m_data = NULL;
+
+			if (m_data == NULL)
+			{
+				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
+					m_tensors[i].Initialize(rank - 1, shape, allocationRank, NULL);
+			}
+			else
+			{
+				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
+					m_tensors[i].Initialize(rank - 1, shape, allocationRank, &m_data[dim * i]);
+			}
+		}
+	}
+
+	/// @private
+	template<typename T>
 	TN::Tensor<T>::Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank, T* data)
 	{
 		m_shape = &shape;
@@ -80,7 +148,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	TN::Tensor<T>::Tensor()
+	TN::Tensor<T>::Tensor(void)
 	{
 		m_shape = NULL;
 		m_tensors = NULL;
