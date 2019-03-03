@@ -51,7 +51,7 @@ namespace TN
 		*
 		*/
 		TensorShape(unsigned int shape[]);
-		TensorShape() = default;
+		TensorShape();
 		~TensorShape();
 
 		/**
@@ -117,7 +117,7 @@ namespace TN
 		*
 		*/
 		Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
-		Tensor() = default;
+		Tensor();
 		~Tensor();
 
 		/**
@@ -158,9 +158,6 @@ namespace TN
 		*/
 		T& operator() (unsigned int index);
 
-
-	protected:
-
 		/**
 		* @brief Initialize a sub tensor.
 		*
@@ -170,11 +167,11 @@ namespace TN
 		* @param data : an tensor allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		void Initialize(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 0, T* data = NULL);
+		void InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 0, T* data = NULL);
 
 
 	private:
-		std::shared_ptr<TensorShape> m_shape = NULL;
+		std::shared_ptr<TensorShape> m_shape;
 		Tensor* m_tensors = NULL;
 		unsigned int m_allocationRank = 0;
 		unsigned int m_rank = 0;

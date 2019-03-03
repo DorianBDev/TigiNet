@@ -68,14 +68,24 @@ namespace TN
 			if (m_data == NULL)
 			{
 				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, NULL);
+					m_tensors[i].InitializeSub(rank - 1, m_shape, allocationRank, NULL);
 			}
 			else
 			{
 				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
+					m_tensors[i].InitializeSub(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
 			}
 		}
+	}
+
+	/// @private
+	template<typename T>
+	TN::Tensor<T>::Tensor()
+	{
+		m_tensors = NULL;
+		m_allocationRank = 0;
+		m_rank = 0;
+		m_data = NULL;
 	}
 
 	/// @private
@@ -91,7 +101,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::Tensor<T>::Initialize(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank, T* data)
+	void TN::Tensor<T>::InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank, T* data)
 	{
 		m_shape = shape;
 		m_rank = rank;
@@ -131,12 +141,12 @@ namespace TN
 			if (m_data == NULL)
 			{
 				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, NULL);
+					m_tensors[i].InitializeSub(rank - 1, m_shape, allocationRank, NULL);
 			}
 			else
 			{
 				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
+					m_tensors[i].InitializeSub(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
 			}
 			
 		}

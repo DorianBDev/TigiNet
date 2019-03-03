@@ -28,11 +28,18 @@
 TN::TensorShape::TensorShape(unsigned int shape[])
 {
 	m_shape = shape;
+	m_copy = false;
+}
+
+TN::TensorShape::TensorShape()
+{
+	m_shape = NULL;
+	m_copy = false;
 }
 
 TN::TensorShape::~TensorShape()
 {
-	if (m_copy == true)
+	if (m_copy == true && m_shape != NULL)
 		delete[] m_shape;
 }
 
@@ -40,6 +47,7 @@ unsigned int TN::TensorShape::GetDimension(unsigned int index) const
 {
 #if TN_SAFEMODE_TENSOR
 	TN_ASSERT(index >= 0, "Wrong index while trying to access to a TensorShape : %d", index);
+	TN_ASSERT(m_shape != NULL, "Trying to access to a non initialized TensorShape");
 #endif
 
 	return m_shape[index];
@@ -49,6 +57,7 @@ std::shared_ptr<TN::TensorShape> TN::TensorShape::Copy(unsigned int rank) const
 {
 #if TN_SAFEMODE_TENSOR
 	TN_ASSERT(rank > 0, "Wrong rank while trying to copy a TensorShape");
+	TN_ASSERT(m_shape != NULL, "Trying to access to a non initialized TensorShape");
 #endif
 
 	std::shared_ptr<TensorShape> res = std::make_shared<TensorShape>();
