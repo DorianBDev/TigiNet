@@ -103,7 +103,7 @@ namespace TN
 		*
 		*/
 		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
-		Tensor() = default;
+		Tensor();
 		~Tensor();
 
 		/**

@@ -80,6 +80,15 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	TN::Tensor<T>::Tensor()
+	{
+		m_shape = NULL;
+		m_tensors = NULL;
+		m_data = NULL;
+	}
+
+	/// @private
+	template<typename T>
 	TN::Tensor<T>::~Tensor()
 	{
 		if (m_data != NULL && m_allocationRank == m_rank)
