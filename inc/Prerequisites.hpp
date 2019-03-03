@@ -46,6 +46,9 @@
 /* Can we use OpenCl or not */
 #define TN_USE_OPEN_CL 1
 
+/* Use safemode with Tensor or not, better performances without */
+#define TN_SAFEMODE_TENSOR 1
+
 
 /* TN_DEPRECATED Definition */
 #if defined(__GNUC__) || defined(__MINGW32__) || defined(__clang__)

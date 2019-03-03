@@ -1,0 +1,164 @@
+/**
+*
+*   TIGINET
+*   Copyright (C) 2018  BACHELOT Dorian
+*
+*   For contact see CONTACT.md file.
+*
+*   This program is free software: you can redistribute it and/or modify
+*   it under the terms of the GNU General Public License as published by
+*   the Free Software Foundation, either version 3 of the License, or
+*   (at your option) any later version.
+*
+*   This program is distributed in the hope that it will be useful,
+*   but WITHOUT ANY WARRANTY; without even the implied warranty of
+*   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*   GNU General Public License for more details.
+*
+*   You should have received a copy of the GNU General Public License
+*   along with this program.  If not, see <https://www.gnu.org/licenses/>.
+*
+*	See LICENSE file for more.
+*
+*/
+
+#ifndef TN_UTILITY_TENSOR_HPP
+#define TN_UTILITY_TENSOR_HPP
+
+#include <Utility/Config.hpp>
+
+namespace TN
+{
+	/**
+	* @class TensorShape
+	* @brief Define a shape to a tensor with this class.
+	*
+	* A class that handle dimensions for use with a tensor 
+	*
+	* @see Tensor
+	*
+	*/
+	class TN_UTILITY TensorShape
+	{
+	public:
+
+		/**
+		* @brief Create a tensor shape.
+		*
+		* @param shape : the table of dimension, one dimension per rank.
+		*
+		*/
+		TensorShape(unsigned int shape[]);
+		~TensorShape() = default;
+
+		/**
+		* @brief Get the dimension of a rank.
+		*
+		* @param index : the desired rank.
+		*
+		* @return Return the desired rank dimension.
+		*
+		*/
+		unsigned int GetDimension(unsigned int index);
+
+	private:
+		unsigned int* m_shape;
+
+	};
+
+
+	/**
+	* @class Tensor
+	* @brief A n-tensor class.
+	*
+	* A class that provide an entire toolkit for Tensors.
+	*
+	* () -> Access data,
+	* [] -> Access sub-tensor.
+	*
+	*/
+	template<typename T>
+	class Tensor
+	{
+	public:
+
+		/**
+		* @brief Create a tensor.
+		*
+		* @param rank : the rank of the tensor.
+		* @param shape : the shape of the tensor.
+		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
+		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
+		*
+		*/
+		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
+		Tensor() = default;
+		~Tensor();
+
+		/**
+		* @brief Get the datas of this tensor.
+		*
+		* @return Return the datas of this tensor, can be NULL.
+		*
+		*/
+		T* GetData();
+
+		/**
+		* @brief Access to a sub Tensor (with rank - 1).
+		*
+		* @param index : the desired index.
+		*
+		* @return Return the desired sub tensor.
+		*
+		*/
+		Tensor& operator[] (unsigned int index);
+
+		/**
+		* @brief Access to data (read only).
+		*
+		* @param index : the desired index.
+		*
+		* @return Return the desired data.
+		*
+		*/
+		T operator() (unsigned int index) const;
+
+		/**
+		* @brief Access to data (read write).
+		*
+		* @param index : the desired index.
+		*
+		* @return Return the desired data.
+		*
+		*/
+		T& operator() (unsigned int index);
+
+
+	protected:
+
+		/**
+		* @brief Initialize a tensor if you called the default construct with no argument.
+		*
+		* @param rank : the rank of the tensor.
+		* @param shape : the shape of the tensor.
+		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
+		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
+		*
+		*/
+		void Initialize(unsigned rank, TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
+
+
+	private:
+		TensorShape * m_shape = NULL;
+		Tensor* m_tensors = NULL;
+		unsigned int m_allocationRank = 0;
+		unsigned int m_rank;
+		T* m_data = NULL;
+
+	};
+
+}
+
+#include<Utility/Tensor.inl>
+
+#endif
