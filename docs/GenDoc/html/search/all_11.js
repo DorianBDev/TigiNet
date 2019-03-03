@@ -2,11 +2,11 @@ var searchData=
 [
   ['tiginet_20_28_5bproject_20website_5d_28https_3a_2f_2fdorianbdev_2egithub_2eio_2ftiginet_2fdocs_2findex_2ehtml_29_29',['TIGINET ([PROJECT WEBSITE](https://dorianbdev.github.io/TigiNet/docs/index.html))',['../index.html',1,'']]],
   ['tangente',['Tangente',['../namespace_t_n.html#a9f426d5c61631ed0fa9e4b0a906c3782',1,'TN']]],
-  ['tensor',['Tensor',['../class_t_n_1_1_tensor.html',1,'TN::Tensor&lt; T &gt;'],['../class_t_n_1_1_tensor.html#a77bc124921077695846eb39591e6c954',1,'TN::Tensor::Tensor(unsigned int rank, TensorShape &amp;shape, unsigned int allocationRank=0, T *data=NULL)'],['../class_t_n_1_1_tensor.html#a58a24baa3d284a0c114f793d1b5b860c',1,'TN::Tensor::Tensor()=default']]],
+  ['tensor',['Tensor',['../class_t_n_1_1_tensor.html',1,'TN::Tensor&lt; T &gt;'],['../class_t_n_1_1_tensor.html#a48af3e11fad5fe9fe64b2d7316bb320e',1,'TN::Tensor::Tensor(unsigned int rank, const TensorShape &amp;shape, unsigned int allocationRank=0, T *data=NULL)'],['../class_t_n_1_1_tensor.html#a58a24baa3d284a0c114f793d1b5b860c',1,'TN::Tensor::Tensor()=default']]],
   ['tensor_2ecpp',['Tensor.cpp',['../_tensor_8cpp.html',1,'']]],
   ['tensor_2ehpp',['Tensor.hpp',['../_tensor_8hpp.html',1,'']]],
   ['tensor_2einl',['Tensor.inl',['../_tensor_8inl.html',1,'']]],
-  ['tensorshape',['TensorShape',['../class_t_n_1_1_tensor_shape.html',1,'TN::TensorShape'],['../class_t_n_1_1_tensor_shape.html#a0c1c4ff99158296641c399821f812c8a',1,'TN::TensorShape::TensorShape()']]],
+  ['tensorshape',['TensorShape',['../class_t_n_1_1_tensor_shape.html',1,'TN::TensorShape'],['../class_t_n_1_1_tensor_shape.html#a0c1c4ff99158296641c399821f812c8a',1,'TN::TensorShape::TensorShape(unsigned int shape[])'],['../class_t_n_1_1_tensor_shape.html#ae6c28e475bd15830273ba5a4305b085b',1,'TN::TensorShape::TensorShape()=default']]],
   ['test_2ecpp',['Test.cpp',['../_test_8cpp.html',1,'']]],
   ['test_2ehpp',['Test.hpp',['../_test_8hpp.html',1,'']]],
   ['thread',['Thread',['../class_t_n_1_1_thread.html',1,'TN::Thread'],['../class_t_n_1_1_thread.html#a947ff4228a76f206bcfd38657baf8cba',1,'TN::Thread::Thread()'],['../class_t_n_1_1_thread.html#aa0c8719a2a06045cfd6749714938f676',1,'TN::Thread::Thread(F function)'],['../class_t_n_1_1_thread.html#af42ab660b6f15329093913ea2fee99ed',1,'TN::Thread::Thread(F function, Args &amp;&amp;... args)'],['../class_t_n_1_1_thread.html#a0e9fb5361da6d4b1f96c3f4fefb552b4',1,'TN::Thread::Thread(char *name, F function, Args &amp;&amp;... args)']]],

@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('class_t_n_1_1_tensor.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a77bc124921077695846eb39591e6c954"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a77bc124921077695846eb39591e6c954">Tensor</a> (unsigned int rank, <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
-<tr class="memdesc:a77bc124921077695846eb39591e6c954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tensor.  <a href="#a77bc124921077695846eb39591e6c954">More...</a><br /></td></tr>
-<tr class="separator:a77bc124921077695846eb39591e6c954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48af3e11fad5fe9fe64b2d7316bb320e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a48af3e11fad5fe9fe64b2d7316bb320e">Tensor</a> (unsigned int rank, const <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
+<tr class="memdesc:a48af3e11fad5fe9fe64b2d7316bb320e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tensor.  <a href="#a48af3e11fad5fe9fe64b2d7316bb320e">More...</a><br /></td></tr>
+<tr class="separator:a48af3e11fad5fe9fe64b2d7316bb320e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58a24baa3d284a0c114f793d1b5b860c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a58a24baa3d284a0c114f793d1b5b860c">Tensor</a> ()=default</td></tr>
 <tr class="separator:a58a24baa3d284a0c114f793d1b5b860c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e9c56ded7eae18a606f25591e49001d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d">~Tensor</a> ()</td></tr>
@@ -120,9 +120,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ab88432b71692e946e37bdf03c92f0543"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#ab88432b71692e946e37bdf03c92f0543">Initialize</a> (unsigned rank, <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
-<tr class="memdesc:ab88432b71692e946e37bdf03c92f0543"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a tensor if you called the default construct with no argument.  <a href="#ab88432b71692e946e37bdf03c92f0543">More...</a><br /></td></tr>
-<tr class="separator:ab88432b71692e946e37bdf03c92f0543"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5d5a5126b6a8963ee42fc8a7855e224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#ac5d5a5126b6a8963ee42fc8a7855e224">Initialize</a> (unsigned rank, std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt; shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
+<tr class="memdesc:ac5d5a5126b6a8963ee42fc8a7855e224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a sub tensor.  <a href="#ac5d5a5126b6a8963ee42fc8a7855e224">More...</a><br /></td></tr>
+<tr class="separator:ac5d5a5126b6a8963ee42fc8a7855e224"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -133,8 +133,8 @@ class TN::Tensor&lt; T &gt;</h3>
 <p>Use : () to access data and [] to access sub-tensor.</p>
 <p>Example : For a 2*2 matrix (1 rank tensor)</p>
 <div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> shape[] = { 2, 2 };</div><div class="line"><a class="code" href="class_t_n_1_1_tensor.html">TN::Tensor&lt;int&gt;</a> t(1, <a class="code" href="class_t_n_1_1_tensor_shape.html">TN::TensorShape</a>(shape));</div><div class="line"></div><div class="line">t[0](0) = 1;</div><div class="line">t[0](1) = 2;</div><div class="line">t[1](0) = 3;</div><div class="line">t[1](1) = 4;</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a77bc124921077695846eb39591e6c954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77bc124921077695846eb39591e6c954">&#9670;&nbsp;</a></span>Tensor() <span class="overload">[1/2]</span></h2>
+<a id="a48af3e11fad5fe9fe64b2d7316bb320e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48af3e11fad5fe9fe64b2d7316bb320e">&#9670;&nbsp;</a></span>Tensor() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +150,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;&#160;</td>
           <td class="paramname"><em>shape</em>, </td>
         </tr>
         <tr>
@@ -186,9 +186,9 @@ template&lt;typename T &gt; </div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_a77bc124921077695846eb39591e6c954_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a77bc124921077695846eb39591e6c954_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_a77bc124921077695846eb39591e6c954_cgraph" id="class_t_n_1_1_tensor_a77bc124921077695846eb39591e6c954_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor_shape.html#a9b63296c8345c9a85e5965790de1354d" title="Get the dimension of a rank. " alt="" coords="185,5,397,32"/>
+<div class="center"><img src="class_t_n_1_1_tensor_a48af3e11fad5fe9fe64b2d7316bb320e_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a48af3e11fad5fe9fe64b2d7316bb320e_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_tensor_a48af3e11fad5fe9fe64b2d7316bb320e_cgraph" id="class_t_n_1_1_tensor_a48af3e11fad5fe9fe64b2d7316bb320e_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e" title="Copy a TensorShape. " alt="" coords="185,5,345,32"/>
 </map>
 </div>
 
@@ -263,8 +263,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ab88432b71692e946e37bdf03c92f0543"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab88432b71692e946e37bdf03c92f0543">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="ac5d5a5126b6a8963ee42fc8a7855e224"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5d5a5126b6a8963ee42fc8a7855e224">&#9670;&nbsp;</a></span>Initialize()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +283,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt;&#160;</td>
           <td class="paramname"><em>shape</em>, </td>
         </tr>
         <tr>
@@ -311,24 +311,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Initialize a tensor if you called the default construct with no argument. </p>
+<p>Initialize a sub tensor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rank</td><td>: the rank of the tensor. </td></tr>
-    <tr><td class="paramname">shape</td><td>: the shape of the tensor. </td></tr>
+    <tr><td class="paramname">rank</td><td>: the rank of the sub tensor. </td></tr>
+    <tr><td class="paramname">shape</td><td>: the shape pointer of the tensor. </td></tr>
     <tr><td class="paramname">allocationRank</td><td>: the rank where the datas will be allocated (useful for contiguous datas). </td></tr>
-    <tr><td class="paramname">data</td><td>: an user allocated data array, it will be deleted at the end, no bound check. </td></tr>
+    <tr><td class="paramname">data</td><td>: an tensor allocated data array, it will be deleted at the end, no bound check. </td></tr>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_ab88432b71692e946e37bdf03c92f0543_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_ab88432b71692e946e37bdf03c92f0543_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_ab88432b71692e946e37bdf03c92f0543_cgraph" id="class_t_n_1_1_tensor_ab88432b71692e946e37bdf03c92f0543_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor_shape.html#a9b63296c8345c9a85e5965790de1354d" title="Get the dimension of a rank. " alt="" coords="193,5,405,32"/>
-</map>
-</div>
 
 </div>
 </div>
