@@ -28,78 +28,10 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	TN::Tensor<T>::Tensor(unsigned int rank, TensorShape & shape)
+	TN::Tensor<T>::Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank, T* data)
 	{
-		m_shape = &shape;
 		m_rank = rank;
-		m_allocationRank = 0;
-
-		if (rank == 0)
-		{
-			m_tensors = NULL;
-			m_data = new T[shape.GetDimension(rank)];
-		}
-		else
-		{
-			m_tensors = new Tensor[shape.GetDimension(rank)];
-
-			m_data = NULL;
-
-			for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-				m_tensors[i].Initialize(rank - 1, shape, m_allocationRank, NULL);
-		}
-	}
-
-	/// @private
-	template<typename T>
-	TN::Tensor<T>::Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank)
-	{
-		m_shape = &shape;
-		m_rank = rank;
-		m_allocationRank = allocationRank;
-
-		if (rank == 0)
-		{
-			m_tensors = NULL;
-			m_data = new T[shape.GetDimension(rank)];
-		}
-		else
-		{
-			m_tensors = new Tensor[shape.GetDimension(rank)];
-
-			unsigned int dim = 1;
-
-			for (unsigned int j = 0; j < rank; j++)
-			{
-				dim *= shape.GetDimension(j);
-			}
-
-			if (allocationRank == rank)
-			{
-				m_data = new T[dim * shape.GetDimension(rank)];
-			}
-			else
-				m_data = NULL;
-
-			if (m_data == NULL)
-			{
-				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, shape, allocationRank, NULL);
-			}
-			else
-			{
-				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, shape, allocationRank, &m_data[dim * i]);
-			}
-		}
-	}
-
-	/// @private
-	template<typename T>
-	TN::Tensor<T>::Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank, T* data)
-	{
-		m_shape = &shape;
-		m_rank = rank;
+		m_shape = shape.Copy(rank);
 		m_allocationRank = allocationRank;
 
 		if(rank == 0)
@@ -109,17 +41,17 @@ namespace TN
 			if (data != NULL)
 				m_data = data;
 			else
-				m_data = new T[shape.GetDimension(rank)];
+				m_data = new T[m_shape->GetDimension(rank)];
 		}
 		else
 		{
-			m_tensors = new Tensor[shape.GetDimension(rank)];
+			m_tensors = new Tensor[m_shape->GetDimension(rank)];
 			
 			unsigned int dim = 1;
 
 			for (unsigned int j = 0; j < rank; j++)
 			{
-				dim *= shape.GetDimension(j);
+				dim *= m_shape->GetDimension(j);
 			}
 
 			if (data != NULL)
@@ -128,31 +60,22 @@ namespace TN
 			}
 			else if (allocationRank == rank)
 			{
-				m_data = new T[dim * shape.GetDimension(rank)];
+				m_data = new T[dim * m_shape->GetDimension(rank)];
 			}
 			else
 				m_data = NULL;
 				
 			if (m_data == NULL)
 			{
-				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, shape, allocationRank, NULL);
+				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
+					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, NULL);
 			}
 			else
 			{
-				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, shape, allocationRank, &m_data[dim * i]);
+				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
+					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
 			}
 		}
-	}
-
-	/// @private
-	template<typename T>
-	TN::Tensor<T>::Tensor(void)
-	{
-		m_shape = NULL;
-		m_tensors = NULL;
-		m_data = NULL;
 	}
 
 	/// @private
@@ -168,9 +91,9 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::Tensor<T>::Initialize(unsigned rank, TensorShape & shape, unsigned int allocationRank, T* data)
+	void TN::Tensor<T>::Initialize(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank, T* data)
 	{
-		m_shape = &shape;
+		m_shape = shape;
 		m_rank = rank;
 		m_allocationRank = allocationRank;
 
@@ -181,17 +104,17 @@ namespace TN
 			if (data != NULL)
 				m_data = data;
 			else
-				m_data = new T[shape.GetDimension(rank)];
+				m_data = new T[m_shape->GetDimension(rank)];
 		}
 		else
 		{
-			m_tensors = new Tensor[shape.GetDimension(rank)];
+			m_tensors = new Tensor[m_shape->GetDimension(rank)];
 
 			unsigned int dim = 1;
 
 			for (unsigned int j = 0; j < rank; j++)
 			{
-				dim *= shape.GetDimension(j);
+				dim *= m_shape->GetDimension(j);
 			}
 
 			if (data != NULL)
@@ -200,20 +123,20 @@ namespace TN
 			}
 			else if (allocationRank == rank)
 			{
-				m_data = new T[dim * shape.GetDimension(rank)];
+				m_data = new T[dim * m_shape->GetDimension(rank)];
 			}
 			else
 				m_data = NULL;
 
 			if (m_data == NULL)
 			{
-				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, shape, allocationRank, NULL);
+				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
+					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, NULL);
 			}
 			else
 			{
-				for (unsigned int i = 0; i < shape.GetDimension(rank); i++)
-					m_tensors[i].Initialize(rank - 1, shape, allocationRank, &m_data[dim * i]);
+				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
+					m_tensors[i].Initialize(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
 			}
 			
 		}

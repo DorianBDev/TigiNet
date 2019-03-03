@@ -26,9 +26,11 @@
 #define TN_UTILITY_TENSOR_HPP
 
 #include <Utility/Config.hpp>
+#include <memory>
 
 namespace TN
 {
+
 	/**
 	* @class TensorShape
 	* @brief Define a shape to a tensor with this class.
@@ -49,7 +51,8 @@ namespace TN
 		*
 		*/
 		TensorShape(unsigned int shape[]);
-		~TensorShape() = default;
+		TensorShape() = default;
+		~TensorShape();
 
 		/**
 		* @brief Get the dimension of a rank.
@@ -59,10 +62,21 @@ namespace TN
 		* @return Return the desired rank dimension.
 		*
 		*/
-		unsigned int GetDimension(unsigned int index);
+		unsigned int GetDimension(unsigned int index) const;
+
+		/**
+		* @brief Copy a TensorShape.
+		*
+		* @param rank : the rank of the tensor.
+		*
+		* @return Return a shared pointer on the new copy.
+		*
+		*/
+		std::shared_ptr<TensorShape> Copy(unsigned int rank) const;
 
 	private:
-		unsigned int* m_shape;
+		unsigned int* m_shape = NULL;
+		bool m_copy = false;
 
 	};
 
@@ -98,31 +112,12 @@ namespace TN
 		*
 		* @param rank : the rank of the tensor.
 		* @param shape : the shape of the tensor.
-		*
-		*/
-		Tensor(unsigned int rank, TensorShape & shape);
-
-		/**
-		* @brief Create a tensor.
-		*
-		* @param rank : the rank of the tensor.
-		* @param shape : the shape of the tensor.
-		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
-		*
-		*/
-		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank);
-
-		/**
-		* @brief Create a tensor.
-		*
-		* @param rank : the rank of the tensor.
-		* @param shape : the shape of the tensor.
 		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
 		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		Tensor(unsigned int rank, TensorShape & shape, unsigned int allocationRank, T* data);
-		Tensor(void);
+		Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
+		Tensor() = default;
 		~Tensor();
 
 		/**
@@ -167,22 +162,22 @@ namespace TN
 	protected:
 
 		/**
-		* @brief Initialize a tensor if you called the default construct with no argument.
+		* @brief Initialize a sub tensor.
 		*
-		* @param rank : the rank of the tensor.
-		* @param shape : the shape of the tensor.
+		* @param rank : the rank of the sub tensor.
+		* @param shape : the shape pointer of the tensor.
 		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
-		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
+		* @param data : an tensor allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		void Initialize(unsigned rank, TensorShape & shape, unsigned int allocationRank, T* data);
+		void Initialize(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 0, T* data = NULL);
 
 
 	private:
-		TensorShape * m_shape = NULL;
+		std::shared_ptr<TensorShape> m_shape = NULL;
 		Tensor* m_tensors = NULL;
 		unsigned int m_allocationRank = 0;
-		unsigned int m_rank;
+		unsigned int m_rank = 0;
 		T* m_data = NULL;
 
 	};

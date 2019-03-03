@@ -30,11 +30,33 @@ TN::TensorShape::TensorShape(unsigned int shape[])
 	m_shape = shape;
 }
 
-unsigned int TN::TensorShape::GetDimension(unsigned int index)
+TN::TensorShape::~TensorShape()
+{
+	if (m_copy == true)
+		delete[] m_shape;
+}
+
+unsigned int TN::TensorShape::GetDimension(unsigned int index) const
 {
 #if TN_SAFEMODE_TENSOR
 	TN_ASSERT(index >= 0, "Wrong index while trying to access to a TensorShape : %d", index);
 #endif
 
 	return m_shape[index];
+}
+
+std::shared_ptr<TN::TensorShape> TN::TensorShape::Copy(unsigned int rank) const
+{
+#if TN_SAFEMODE_TENSOR
+	TN_ASSERT(rank > 0, "Wrong rank while trying to copy a TensorShape");
+#endif
+
+	std::shared_ptr<TensorShape> res = std::make_shared<TensorShape>();
+	res->m_copy = true;
+	res->m_shape = new unsigned int[rank + 1];
+
+	for (unsigned int i = 0; i <= rank; i++)
+		res->m_shape[i] = m_shape[i];
+
+	return res;
 }
