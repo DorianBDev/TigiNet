@@ -1,7 +1,10 @@
 <map id="D:/DEV/Projects/TigiNet/inc/Core/Error.hpp" name="D:/DEV/Projects/TigiNet/inc/Core/Error.hpp">
-<area shape="rect" id="node2" href="$_error_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Error.cpp" alt="" coords="5,95,168,136"/>
-<area shape="rect" id="node3" href="$_file_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/File.cpp" alt="" coords="192,95,355,136"/>
-<area shape="rect" id="node4" href="$_log_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Log.cpp" alt="" coords="379,95,541,136"/>
-<area shape="rect" id="node5" href="$_string_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/String.cpp" alt="" coords="565,95,728,136"/>
-<area shape="rect" id="node6" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="752,95,915,136"/>
+<area shape="rect" id="node2" href="$_tensor_8inl.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Tensor.inl" alt="" coords="73,95,236,136"/>
+<area shape="rect" id="node5" href="$_tensor_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Tensor.cpp" alt="" coords="192,273,355,315"/>
+<area shape="rect" id="node6" href="$_error_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Error.cpp" alt="" coords="311,95,473,136"/>
+<area shape="rect" id="node7" href="$_file_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/File.cpp" alt="" coords="497,95,660,136"/>
+<area shape="rect" id="node8" href="$_log_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Log.cpp" alt="" coords="684,95,847,136"/>
+<area shape="rect" id="node9" href="$_string_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/String.cpp" alt="" coords="871,95,1033,136"/>
+<area shape="rect" id="node3" href="$_tensor_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Tensor.hpp" alt="" coords="73,184,236,225"/>
+<area shape="rect" id="node4" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="5,273,168,315"/>
 </map>

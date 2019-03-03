@@ -10,5 +10,7 @@ var namespace_t_n =
     [ "Mutex", "class_t_n_1_1_mutex.html", "class_t_n_1_1_mutex" ],
     [ "Singleton", "class_t_n_1_1_singleton.html", "class_t_n_1_1_singleton" ],
     [ "String", "class_t_n_1_1_string.html", "class_t_n_1_1_string" ],
+    [ "Tensor", "class_t_n_1_1_tensor.html", "class_t_n_1_1_tensor" ],
+    [ "TensorShape", "class_t_n_1_1_tensor_shape.html", "class_t_n_1_1_tensor_shape" ],
     [ "Thread", "class_t_n_1_1_thread.html", "class_t_n_1_1_thread" ]
 ];

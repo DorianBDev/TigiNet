@@ -8,5 +8,7 @@ var searchData=
   ['_7elockguard',['~LockGuard',['../class_t_n_1_1_lock_guard.html#a81bcca57b1995bd4c65e8a5f9a885de2',1,'TN::LockGuard']]],
   ['_7emutex',['~Mutex',['../class_t_n_1_1_mutex.html#aa11641ed8959196c08848d79dec636eb',1,'TN::Mutex']]],
   ['_7estring',['~String',['../class_t_n_1_1_string.html#ad65705116a6a33852aed1c706beffe4d',1,'TN::String']]],
+  ['_7etensor',['~Tensor',['../class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d',1,'TN::Tensor']]],
+  ['_7etensorshape',['~TensorShape',['../class_t_n_1_1_tensor_shape.html#ab5a2c60638ab880cf9b01214747bfd10',1,'TN::TensorShape']]],
   ['_7ethread',['~Thread',['../class_t_n_1_1_thread.html#a689244a02eb24d4a3baf232c47c01b9c',1,'TN::Thread']]]
 ];

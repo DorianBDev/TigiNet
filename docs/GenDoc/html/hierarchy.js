@@ -13,5 +13,7 @@ var hierarchy =
       [ "TN::Log", "class_t_n_1_1_log.html", null ]
     ] ],
     [ "TN::String", "class_t_n_1_1_string.html", null ],
+    [ "TN::Tensor< T >", "class_t_n_1_1_tensor.html", null ],
+    [ "TN::TensorShape", "class_t_n_1_1_tensor_shape.html", null ],
     [ "TN::Thread", "class_t_n_1_1_thread.html", null ]
 ];

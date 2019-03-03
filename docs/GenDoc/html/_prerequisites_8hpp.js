@@ -11,6 +11,7 @@ var _prerequisites_8hpp =
     [ "TN_FUNCTION_NAME", "_prerequisites_8hpp.html#a48497b4e8a927df3b4c16feda663e350", null ],
     [ "TN_IMPORT", "_prerequisites_8hpp.html#addac055008b27cde5ecd9792791dfe2c", null ],
     [ "TN_LINE_NUMBER", "_prerequisites_8hpp.html#af6c0d02bf3ba91757fb9a29bb32385cb", null ],
+    [ "TN_SAFEMODE_TENSOR", "_prerequisites_8hpp.html#a675433ba47f4fa1e556bbd0fcd09cea3", null ],
     [ "TN_SCRIPT", "_prerequisites_8hpp.html#a6dc8d89cfbbbbeebeb1cfe3344a03dc8", null ],
     [ "TN_STRINGIFY", "_prerequisites_8hpp.html#a14e1dd2468cf4a4c8a8a0149ad6b9382", null ],
     [ "TN_THREAD_SAFE", "_prerequisites_8hpp.html#af12a60dc09c97a5e822d6e0cacd6e92e", null ],

@@ -2,6 +2,8 @@ var searchData=
 [
   ['getactualtime',['GetActualTime',['../namespace_t_n.html#ace84ea3162efac1ef61c9e2a1faa375b',1,'TN']]],
   ['getcursorposition',['GetCursorPosition',['../class_t_n_1_1_file.html#a3748d9eda100cb29defba6c2209fcfea',1,'TN::File']]],
+  ['getdata',['GetData',['../class_t_n_1_1_tensor.html#a533bd74bcf1fbf74c6734e82000abff5',1,'TN::Tensor']]],
+  ['getdimension',['GetDimension',['../class_t_n_1_1_tensor_shape.html#a9b63296c8345c9a85e5965790de1354d',1,'TN::TensorShape']]],
   ['getelapsedtime',['GetElapsedTime',['../class_t_n_1_1_clock.html#a0de34e7c58a5b32bcf0ea022577aaa81',1,'TN::Clock']]],
   ['getid',['GetID',['../class_t_n_1_1_thread.html#a0523b48974263413d89a64c257426ea4',1,'TN::Thread']]],
   ['getindex',['GetIndex',['../class_t_n_1_1_string.html#a8a951aab68d812ce93eb2ac88eb1cde3',1,'TN::String']]],
