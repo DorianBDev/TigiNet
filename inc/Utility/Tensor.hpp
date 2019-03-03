@@ -73,8 +73,19 @@ namespace TN
 	*
 	* A class that provide an entire toolkit for Tensors.
 	*
-	* () -> Access data,
-	* [] -> Access sub-tensor.
+	* Use : () to access data and [] to access sub-tensor.
+	*
+	* Example : For a 2*2 matrix (1 rank tensor)
+	*
+	* @code
+	* unsigned int shape[] = { 2, 2 };
+	* TN::Tensor<int> t(1, TN::TensorShape(shape));
+	*
+	* t[0](0) = 1;
+	* t[0](1) = 2;
+	* t[1](0) = 3;
+	* t[1](1) = 4;
+	* @endcode
 	*
 	*/
 	template<typename T>
