@@ -26,6 +26,7 @@
 #define TN_CORE_ERROR_HPP
 
 #include <Core/Config.hpp>
+#include <Core/String.hpp>
 
 /**
 * @brief Use TN_Assert to test an expression and send error if the expression is false.
@@ -75,8 +76,6 @@
 
 namespace TN
 {
-	class String;
-
 	/*! Error types */
 	typedef enum __error_type_e
 	{
