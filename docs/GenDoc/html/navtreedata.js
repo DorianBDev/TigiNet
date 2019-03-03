@@ -1,7 +1,6 @@
 var NAVTREE =
 [
   [ "TigiNet", "index.html", [
-    [ "TIGINET ([PROJECT WEBSITE](https://dorianbdev.github.io/TigiNet/docs/index.html))", "index.html", null ],
     [ "Namespaces", null, [
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [

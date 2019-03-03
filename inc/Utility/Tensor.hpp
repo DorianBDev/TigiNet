@@ -162,9 +162,9 @@ namespace TN
 		* @brief Initialize a sub tensor.
 		*
 		* @param rank : the rank of the sub tensor.
-		* @param shape : the shape pointer of the tensor.
+		* @param shape : the shared pointer of the tensor shape.
 		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
-		* @param data : an tensor allocated data array, it will be deleted at the end, no bound check.
+		* @param data : a tensor allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
 		void InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 0, T* data = NULL);

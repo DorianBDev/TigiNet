@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../class_t_n_1_1_tensor.html#ac5d5a5126b6a8963ee42fc8a7855e224',1,'TN::Tensor']]],
+  ['initializesub',['InitializeSub',['../class_t_n_1_1_tensor.html#a6d96928bdfcc317afb7a9aa5b24b962e',1,'TN::Tensor']]],
   ['int_5f16',['int_16',['../namespace_t_n.html#a3b2b7d96e3712d7781f94f74e8ec38b3',1,'TN']]],
   ['int_5f32',['int_32',['../namespace_t_n.html#aa35deb0214b54cd93ffc21f20235c3a4',1,'TN']]],
   ['int_5f64',['int_64',['../namespace_t_n.html#a5097e5ce8decd1371165a7643bb711d0',1,'TN']]],

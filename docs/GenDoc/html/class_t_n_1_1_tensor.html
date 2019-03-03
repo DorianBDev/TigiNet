@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('class_t_n_1_1_tensor.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="class_t_n_1_1_tensor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TN::Tensor&lt; T &gt; Class Template Reference</div>  </div>
@@ -101,8 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a48af3e11fad5fe9fe64b2d7316bb320e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a48af3e11fad5fe9fe64b2d7316bb320e">Tensor</a> (unsigned int rank, const <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &amp;shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
 <tr class="memdesc:a48af3e11fad5fe9fe64b2d7316bb320e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tensor.  <a href="#a48af3e11fad5fe9fe64b2d7316bb320e">More...</a><br /></td></tr>
 <tr class="separator:a48af3e11fad5fe9fe64b2d7316bb320e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58a24baa3d284a0c114f793d1b5b860c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a58a24baa3d284a0c114f793d1b5b860c">Tensor</a> ()=default</td></tr>
-<tr class="separator:a58a24baa3d284a0c114f793d1b5b860c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a694e83fca06a5a0fd082dbf662b9bc28"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a694e83fca06a5a0fd082dbf662b9bc28">Tensor</a> ()</td></tr>
+<tr class="separator:a694e83fca06a5a0fd082dbf662b9bc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e9c56ded7eae18a606f25591e49001d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d">~Tensor</a> ()</td></tr>
 <tr class="separator:a5e9c56ded7eae18a606f25591e49001d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a533bd74bcf1fbf74c6734e82000abff5"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a533bd74bcf1fbf74c6734e82000abff5">GetData</a> ()</td></tr>
@@ -117,12 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0994efbbf5a52b392b30dfb79c19f210"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a0994efbbf5a52b392b30dfb79c19f210">operator()</a> (unsigned int index)</td></tr>
 <tr class="memdesc:a0994efbbf5a52b392b30dfb79c19f210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to data (read write).  <a href="#a0994efbbf5a52b392b30dfb79c19f210">More...</a><br /></td></tr>
 <tr class="separator:a0994efbbf5a52b392b30dfb79c19f210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac5d5a5126b6a8963ee42fc8a7855e224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#ac5d5a5126b6a8963ee42fc8a7855e224">Initialize</a> (unsigned rank, std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt; shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
-<tr class="memdesc:ac5d5a5126b6a8963ee42fc8a7855e224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a sub tensor.  <a href="#ac5d5a5126b6a8963ee42fc8a7855e224">More...</a><br /></td></tr>
-<tr class="separator:ac5d5a5126b6a8963ee42fc8a7855e224"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d96928bdfcc317afb7a9aa5b24b962e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a6d96928bdfcc317afb7a9aa5b24b962e">InitializeSub</a> (unsigned rank, std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt; shape, unsigned int allocationRank=0, T *data=NULL)</td></tr>
+<tr class="memdesc:a6d96928bdfcc317afb7a9aa5b24b962e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a sub tensor.  <a href="#a6d96928bdfcc317afb7a9aa5b24b962e">More...</a><br /></td></tr>
+<tr class="separator:a6d96928bdfcc317afb7a9aa5b24b962e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -194,16 +190,13 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a58a24baa3d284a0c114f793d1b5b860c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58a24baa3d284a0c114f793d1b5b860c">&#9670;&nbsp;</a></span>Tensor() <span class="overload">[2/2]</span></h2>
+<a id="a694e83fca06a5a0fd082dbf662b9bc28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a694e83fca06a5a0fd082dbf662b9bc28">&#9670;&nbsp;</a></span>Tensor() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> </td>
@@ -212,11 +205,6 @@ template&lt;typename T&gt; </div>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">default</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -263,19 +251,16 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ac5d5a5126b6a8963ee42fc8a7855e224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac5d5a5126b6a8963ee42fc8a7855e224">&#9670;&nbsp;</a></span>Initialize()</h2>
+<a id="a6d96928bdfcc317afb7a9aa5b24b962e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d96928bdfcc317afb7a9aa5b24b962e">&#9670;&nbsp;</a></span>InitializeSub()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::Initialize </td>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::InitializeSub </td>
           <td>(</td>
           <td class="paramtype">unsigned&#160;</td>
           <td class="paramname"><em>rank</em>, </td>
@@ -304,20 +289,15 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Initialize a sub tensor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rank</td><td>: the rank of the sub tensor. </td></tr>
-    <tr><td class="paramname">shape</td><td>: the shape pointer of the tensor. </td></tr>
+    <tr><td class="paramname">shape</td><td>: the shared pointer of the tensor shape. </td></tr>
     <tr><td class="paramname">allocationRank</td><td>: the rank where the datas will be allocated (useful for contiguous datas). </td></tr>
-    <tr><td class="paramname">data</td><td>: an tensor allocated data array, it will be deleted at the end, no bound check. </td></tr>
+    <tr><td class="paramname">data</td><td>: a tensor allocated data array, it will be deleted at the end, no bound check. </td></tr>
   </table>
   </dd>
 </dl>

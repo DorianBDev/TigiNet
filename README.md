@@ -1,5 +1,6 @@
+# TIGINET
+**Projet website** : https://dorianbdev.github.io/TigiNet/docs/index.html
 
-# TIGINET ([PROJECT WEBSITE](https://dorianbdev.github.io/TigiNet/docs/index.html))
 By **Dorian'B**.
 
 | Platform| Status |
