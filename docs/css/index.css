@@ -9,6 +9,14 @@
         width: 100%;
         background-color: white;
     }
+	
+	.myHover{
+      color: rgba(255, 255, 255, 0.8);
+    }
+    .myHover:hover
+    {
+      color: rgba(255, 255, 255);
+    }
 
     p.copyright {
         position: relative;
@@ -27,54 +35,10 @@
 	}
 	
 	a:link {
-	color: #cc0000;
+	color: rgba(255, 255, 255, 0.8);
 	}
 	a:hover {
-	color: #ff3300;
-	}
-	
-progress {
-   display: block; /* default: inline-block */
-   width: 500px;
-   margin: 1em auto;
-   padding: 2px;
-   border: 0 none;
-   background: #444;
-   border-radius: 1px;
-
-}
-
-
-
-	progress[value='100'] span{
-    width: 100%;
-	}
-	progress[value^='9']:not([value^='9.']):not([value='9']) span{
-		width: 95%;
-	}
-	progress[value^='8']:not([value^='8.']):not([value='8']) span{
-		width: 85%;
-	}
-	progress[value^='7']:not([value^='7.']):not([value='7']) span{
-		width: 75%;
-	}
-	progress[value^='6']:not([value^='6.']):not([value='6']) span{
-		width: 65%;
-	}
-	progress[value^='5']:not([value^='5.']):not([value='5']) span{
-		width: 55%;
-	}
-	progress[value^='4']:not([value^='4.']):not([value='4']) span{
-		width: 45%;
-	}
-	progress[value^='3']:not([value^='3.']):not([value='3']) span{
-		width: 35%;
-	}
-	progress[value^='2']:not([value^='2.']):not([value='2']) span{
-		width: 25%;
-	}
-	progress[value^='1']:not([value^='1.']):not([value='1']):not([value='100']) span{
-		width: 15%;
+	color: rgba(255, 255, 255);
 	}
 	
 </style>
