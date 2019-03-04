@@ -104,9 +104,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a18c493901ddfe717917243cf9ea4bd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee4f28e7581e1f9911bb3c5c3e556d07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#aee4f28e7581e1f9911bb3c5c3e556d07">~TensorShape</a> ()</td></tr>
 <tr class="separator:aee4f28e7581e1f9911bb3c5c3e556d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8311ea2964adae5c622df6aa69c8aa89"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#a8311ea2964adae5c622df6aa69c8aa89">GetDimension</a> (unsigned int index) const</td></tr>
-<tr class="memdesc:a8311ea2964adae5c622df6aa69c8aa89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dimension of a rank.  <a href="#a8311ea2964adae5c622df6aa69c8aa89">More...</a><br /></td></tr>
-<tr class="separator:a8311ea2964adae5c622df6aa69c8aa89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143cfded7e3567dd4cf933748a27603f"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#a143cfded7e3567dd4cf933748a27603f">GetDimension</a> (unsigned int rank) const</td></tr>
+<tr class="memdesc:a143cfded7e3567dd4cf933748a27603f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dimension of a rank.  <a href="#a143cfded7e3567dd4cf933748a27603f">More...</a><br /></td></tr>
+<tr class="separator:a143cfded7e3567dd4cf933748a27603f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7510d9c753e4b7bdf4d6c59b73805a0e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e">Copy</a> (unsigned int rank) const</td></tr>
 <tr class="memdesc:a7510d9c753e4b7bdf4d6c59b73805a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a <a class="el" href="class_t_n_1_1_tensor_shape.html" title="Define a shape to a tensor with this class. ">TensorShape</a>.  <a href="#a7510d9c753e4b7bdf4d6c59b73805a0e">More...</a><br /></td></tr>
 <tr class="separator:a7510d9c753e4b7bdf4d6c59b73805a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,7 +135,7 @@ Public Member Functions</h2></td></tr>
 <p>Create a tensor shape. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">shape</td><td>: the table of dimension, one dimension per rank.</td></tr>
+    <tr><td class="paramname">shape</td><td>: the table of dimension, one dimension per rank and start with the tiniest.</td></tr>
   </table>
   </dd>
 </dl>
@@ -210,8 +210,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8311ea2964adae5c622df6aa69c8aa89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8311ea2964adae5c622df6aa69c8aa89">&#9670;&nbsp;</a></span>GetDimension()</h2>
+<a id="a143cfded7e3567dd4cf933748a27603f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143cfded7e3567dd4cf933748a27603f">&#9670;&nbsp;</a></span>GetDimension()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -220,7 +220,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">unsigned int TN::TensorShape::GetDimension </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>index</em></td><td>)</td>
+          <td class="paramname"><em>rank</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -229,7 +229,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the dimension of a rank. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>: the desired rank.</td></tr>
+    <tr><td class="paramname">rank</td><td>: the desired rank.</td></tr>
   </table>
   </dd>
 </dl>
@@ -238,8 +238,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/DEV/Projects/TigiNet/inc/Utility/<a class="el" href="_tensor_8hpp_source.html">Tensor.hpp</a></li>
-<li>D:/DEV/Projects/TigiNet/src/Utility/<a class="el" href="_tensor_8cpp.html">Tensor.cpp</a></li>
+<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/Utility/<a class="el" href="_tensor_8hpp_source.html">Tensor.hpp</a></li>
+<li>C:/Users/Doria/Documents/Projects/TigiNet/src/Utility/<a class="el" href="_tensor_8cpp.html">Tensor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

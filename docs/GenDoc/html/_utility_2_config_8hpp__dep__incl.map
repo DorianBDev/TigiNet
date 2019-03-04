@@ -1,7 +1,7 @@
-<map id="D:/DEV/Projects/TigiNet/inc/Utility/Config.hpp" name="D:/DEV/Projects/TigiNet/inc/Utility/Config.hpp">
-<area shape="rect" id="node2" href="$_math_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Math.hpp" alt="" coords="5,95,168,136"/>
-<area shape="rect" id="node4" href="$_tensor_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Tensor.hpp" alt="" coords="192,95,355,136"/>
-<area shape="rect" id="node3" href="$_math_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Math.cpp" alt="" coords="5,184,168,225"/>
-<area shape="rect" id="node5" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="192,184,355,225"/>
-<area shape="rect" id="node6" href="$_tensor_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Tensor.cpp" alt="" coords="379,184,541,225"/>
+<map id="C:/Users/Doria/Documents/Projects/TigiNet/inc/Utility/Config.hpp" name="C:/Users/Doria/Documents/Projects/TigiNet/inc/Utility/Config.hpp">
+<area shape="rect" id="node2" href="$_math_8hpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/inc/Utility\l/Math.hpp" alt="" coords="5,109,183,165"/>
+<area shape="rect" id="node4" href="$_tensor_8hpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/inc/Utility\l/Tensor.hpp" alt="" coords="207,109,384,165"/>
+<area shape="rect" id="node3" href="$_math_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Utility\l/Math.cpp" alt="" coords="5,213,183,269"/>
+<area shape="rect" id="node5" href="$_test_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Test\l/Test.cpp" alt="" coords="207,213,384,269"/>
+<area shape="rect" id="node6" href="$_tensor_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Utility\l/Tensor.cpp" alt="" coords="408,213,585,269"/>
 </map>

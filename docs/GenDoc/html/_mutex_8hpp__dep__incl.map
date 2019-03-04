@@ -1,8 +1,8 @@
-<map id="D:/DEV/Projects/TigiNet/inc/Core/Mutex.hpp" name="D:/DEV/Projects/TigiNet/inc/Core/Mutex.hpp">
-<area shape="rect" id="node2" href="$_log_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Core/Log.hpp" alt="" coords="285,95,448,136"/>
-<area shape="rect" id="node7" href="$_mutex_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Mutex.cpp" alt="" coords="472,95,635,136"/>
-<area shape="rect" id="node3" href="$_error_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Error.cpp" alt="" coords="5,184,168,225"/>
-<area shape="rect" id="node4" href="$_file_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/File.cpp" alt="" coords="192,184,355,225"/>
-<area shape="rect" id="node5" href="$_log_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Core/Log.cpp" alt="" coords="379,184,541,225"/>
-<area shape="rect" id="node6" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="565,184,728,225"/>
+<map id="C:/Users/Doria/Documents/Projects/TigiNet/inc/Core/Mutex.hpp" name="C:/Users/Doria/Documents/Projects/TigiNet/inc/Core/Mutex.hpp">
+<area shape="rect" id="node2" href="$_log_8hpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/inc/Core\l/Log.hpp" alt="" coords="307,109,484,165"/>
+<area shape="rect" id="node7" href="$_mutex_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Core\l/Mutex.cpp" alt="" coords="508,109,685,165"/>
+<area shape="rect" id="node3" href="$_error_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Core\l/Error.cpp" alt="" coords="5,213,183,269"/>
+<area shape="rect" id="node4" href="$_file_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Core\l/File.cpp" alt="" coords="207,213,384,269"/>
+<area shape="rect" id="node5" href="$_log_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Core\l/Log.cpp" alt="" coords="408,213,585,269"/>
+<area shape="rect" id="node6" href="$_test_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Test\l/Test.cpp" alt="" coords="609,213,787,269"/>
 </map>

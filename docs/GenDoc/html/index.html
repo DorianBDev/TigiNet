@@ -103,6 +103,8 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li>Support for <b>Multilayer Perceptron</b>.</li>
 <li><b>Multithreading</b> support.</li>
 </ul>
+<h3>Wiki :</h3>
+<p>Visit the wiki here : <a href="https://github.com/DorianBDev/TigiNet/wiki">https://github.com/DorianBDev/TigiNet/wiki</a></p>
 <h3>Todo/Future :</h3>
 <ul>
 <li>[ ] Support more neural network type.</li>
@@ -128,31 +130,6 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p class="startli">call "(ABSOLUTE PATH FOR VISUAL STUDIO)\VC\Auxiliary\Build\vcvars32.bat"</p>
 </li>
 </ul>
-<h2>Other</h2>
-<ul>
-<li>One commit per module (e.g : [Core] Changement in core.)</li>
-</ul>
-<h2>Versioning</h2>
-<h3>Fomat :</h3>
-<ul>
-<li>vMAJOR.MINOR.PATCH-{release/nightly/hotfix/rc}</li>
-<li>Use this version as git tag with 'release' for master branch, 'nightly' for develop branch, 'hotfix' for hotfix branch and 'rc' for release branch (release candidate).</li>
-<li>For a new version change this file in a commit and only this file and tag it with this version naming.</li>
-<li>All changements and new features for a new version need to appear in the CHANGELOG file.</li>
-<li>Need to push the new version commit and after that create the tag and push it.</li>
-</ul>
-<h3>All branches :</h3>
-<ul>
-<li>master branch : only for release.</li>
-<li>develop branch : nightly branch, to prepare a new version, the working branch.</li>
-<li>hotfix branch : to fix a previous release without new features.</li>
-<li>release branch : pre release/release candidate branch.</li>
-</ul>
-<h3>Other :</h3>
-<ul>
-<li>See : git tag commands, git commands for changing branch.</li>
-<li>Use git describe to know the version of a commit (with the form : vMAJOR.MINOR.PATCH-{release/nightly/hotfix/rc}-{Number of commit for this verison}-{actual commit hash} )</li>
-</ul>
 <h2>License</h2>
 <p>Under GNU General Public License v3.0. See LICENSE file for more. </p><pre class="fragment">TIGINET
 Copyright (C) 2018  BACHELOT Dorian
@@ -175,100 +152,6 @@ along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.
 See LICENSE file for more.
 </pre><h2>Contact</h2>
 <p>For contact see CONTACT.md file.</p>
-<h2>Wiki</h2>
-<h3>Add dependencies</h3>
-<p>To add a dependency you simply need : (<em>If the dependency is a module/subproject/subdir you can jump to 3. directly.</em>)</p>
-<ol type="1">
-<li>Add all dependency headers in <em>thirdparty/inc/</em></li>
-<li>Add the dependency <b>shared or static</b> lib in the <em>lib/[x86 AND x64]/</em></li>
-<li>Go to your targeted module/subproject/subdir folder in <em>src/[YOUR MODULE]/</em> and open the CMakeLists.txt</li>
-<li>Add the name of the dependency to this line : <em>set(TARGET_DEPENDENCIES "name_of_the_dependency_1;name_of_the_dependency_2;[THE NAME HERE]" CACHE STRING "List of others dependencies name." FORCE)</em></li>
-<li>Rebuild the project with CMake</li>
-</ol>
-<h3>Build</h3>
-<p>To build with CMake you need :</p>
-<ol type="1">
-<li>Go to <em>build/[x86 OR x64]/</em></li>
-<li>Call cmake ../../ -G [YOUR TARGETED GENERATORS/IDE X86 OR X64]</li>
-</ol>
-<p>e.g. : Visual studio : <em>cmake ../../ -G "Visual Studio 15 2017"</em> (for x86) <em>cmake ../../ -G "Visual Studio 15 2017 Win64"</em> (for x64)</p>
-<p>**call : *cmake &ndash;help for generators list.***</p>
-<h3>Project Tree</h3>
-<pre class="fragment">build/
-    |   - x86/
-    |   - x64/
-    |  - .../
-inc/
-    |   - Module_A/
-    |   - Module_B/
-    |   - sharedHeaders.h
-src/
-    |   - Module_A/
-    |   - Module_B/
-thirdparty/
-    |   - inc/
-    |   - lib/
-    |       |   - x86/
-    |       |   - x64/
-docs/
-examples/
-res/
-</pre><ul>
-<li><em>build/</em> : where generate project with cmake.</li>
-<li><em>inc/</em> : your project headers.</li>
-<li><em>src/</em> : your project sources.</li>
-<li><em>thirdparty/</em> : all dependencies.</li>
-<li><em>docs/</em> : where are the documentations and the website.</li>
-<li><em>examples/</em> : where are some examples and all file form samples.</li>
-<li><em>res/</em> : all ressources for the library.</li>
-</ul>
-<h3>Project organization</h3>
-<p>This sample project is organized in 'Module', each can be build separately. Each module need to have :</p>
-<ol type="1">
-<li>His folder in <em>inc/</em></li>
-<li>His folder in <em>src/</em></li>
-<li>His <em>CMakeLists.txt</em> in <em>src/[YOUR MODULE NAME]/</em></li>
-</ol>
-<p>Each module can be configured in his <em>CMakeLists.txt</em>.</p>
-<p>You can have <em>Shared Headers</em> in <em>inc/</em>.</p>
-<h3>Add module/subproject/subdir</h3>
-<p>To add a module you need :</p>
-<ol type="1">
-<li>Add folder in (name of the module) <em>inc/</em></li>
-<li>Add folder in (name of the module) <em>src/</em></li>
-<li>Add a <em>CMakeLists.txt</em> in <em>src/[YOUR MODULE NAME]/</em> (you can copy one <em>CMakeLists.txt</em> from another module and just change dependency list and target type (executable or library))</li>
-</ol>
-<p>To configure you module you need to set the target type :</p>
-<p>Change this two lines :</p>
-<ul>
-<li><em>set(TARGET_TYPE "[YOUR TYPE]" CACHE STRING "Type of the target : EXE for executable and LIB:&lt;type&gt; for a library (&lt;type&gt; can be : SHARED or STATIC or MODULE)." FORCE)</em></li>
-<li><p class="startli">set(TARGET_DEPENDENCIES "[YOUR DEPENDENCIES LIST]" CACHE STRING "List of others dependencies name." FORCE)</p>
-<p class="startli">[YOUR TYPE] can be :</p><ul>
-<li><em>EXE</em> for create an executable.</li>
-<li><em>LIB:SHARED</em> for create a shared library.</li>
-<li><em>LIB:STATIC</em> for create a static library.</li>
-</ul>
-</li>
-</ul>
-<p>[YOUR DEPENDENCIES LIST] need to be like this : name_of_the_dependency_1;name_of_the_dependency_2... See the <b>Add dependencies</b> point for more. <b>Write <em>NONE</em> if you have no dependencies</b></p>
-<h3>Compile for 32 or 64 bits</h3>
-<p>To compile for <em>32</em> or <em>64 bits</em> you need :</p>
-<p>On windows :</p>
-<ul>
-<li>Build your project for <em>Visual Studio [VERSION]</em> for <em>x86</em></li>
-<li>Build your project for <em>Visual Studio [VERSION] WIN64</em> for <em>x64</em></li>
-</ul>
-<p>On linux :</p>
-<ul>
-<li>Build your project with CMake normaly for <em>x64</em></li>
-<li>Build your project with CMake with the options : <em>-DCMAKE_CXX_FLAGS=-m32 -DCMAKE_C_FLAGS=-m32</em> for <em>x86</em></li>
-</ul>
-<p>(for linux care you have already the package to compile c++ in 32bits, otherwise you need this two packages : <em>sudo apt-get install libc6-dev-i386</em> and <em>sudo apt-get install g++-7-multilib</em></p>
-<p>You already got two folder in the <em>build/</em> directory for <em>x64</em> and <em>x86</em>.</p>
-<h3>Other</h3>
-<ul>
-<li><b>If you want to add a file with Visual Studio, add it manually and not in VS !</b></li>
-</ul>
 <h2>TIGINET</h2>
 <div class="image">
 <img src="res/logo/logo_sp_text.png" alt="TIGINET Logo"/>
