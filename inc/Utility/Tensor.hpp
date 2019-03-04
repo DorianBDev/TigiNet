@@ -47,7 +47,7 @@ namespace TN
 		/**
 		* @brief Create a tensor shape.
 		*
-		* @param shape : the table of dimension, one dimension per rank.
+		* @param shape : the table of dimension, one dimension per rank and start with the tiniest.
 		*
 		*/
 		TensorShape(unsigned int shape[]);
@@ -57,12 +57,12 @@ namespace TN
 		/**
 		* @brief Get the dimension of a rank.
 		*
-		* @param index : the desired rank.
+		* @param rank : the desired rank.
 		*
 		* @return Return the desired rank dimension.
 		*
 		*/
-		unsigned int GetDimension(unsigned int index) const;
+		unsigned int GetDimension(unsigned int rank) const;
 
 		/**
 		* @brief Copy a TensorShape.
@@ -89,11 +89,11 @@ namespace TN
 	*
 	* Use : () to access data and [] to access sub-tensor.
 	*
-	* Example : For a 2*2 matrix (1 rank tensor)
+	* Example : For a 2*2 matrix (2 rank tensor or 2-tensor)
 	*
 	* @code
 	* unsigned int shape[] = { 2, 2 };
-	* TN::Tensor<int> t(1, TN::TensorShape(shape));
+	* TN::Tensor<int> t(2, TN::TensorShape(shape));
 	*
 	* t[0](0) = 1;
 	* t[0](1) = 2;
@@ -116,7 +116,7 @@ namespace TN
 		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank = 0, T* data = NULL);
+		Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank = 1, T* data = NULL);
 		Tensor();
 		~Tensor();
 
@@ -146,7 +146,7 @@ namespace TN
 		* @return Return the desired data.
 		*
 		*/
-		T operator() (unsigned int index) const;
+		T operator() (unsigned int index = 0) const;
 
 		/**
 		* @brief Access to data (read write).
@@ -156,7 +156,7 @@ namespace TN
 		* @return Return the desired data.
 		*
 		*/
-		T& operator() (unsigned int index);
+		T& operator() (unsigned int index = 0);
 
 		/**
 		* @brief Initialize a sub tensor.
@@ -167,7 +167,7 @@ namespace TN
 		* @param data : a tensor allocated data array, it will be deleted at the end, no bound check.
 		*
 		*/
-		void InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 0, T* data = NULL);
+		void InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 1, T* data = NULL);
 
 
 	private:

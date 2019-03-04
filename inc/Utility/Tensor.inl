@@ -34,14 +34,33 @@ namespace TN
 		m_shape = shape.Copy(rank);
 		m_allocationRank = allocationRank;
 
-		if(rank == 0)
+		if (rank == 0)
 		{
 			m_tensors = NULL;
 
 			if (data != NULL)
+			{
 				m_data = data;
+			}
 			else
+			{
+				m_data = new T;
+				m_allocationRank = 0;
+			}
+		}
+		else if(rank == 1)
+		{
+			m_tensors = NULL;
+
+			if (data != NULL)
+			{
+				m_data = data;
+			}
+			else
+			{
 				m_data = new T[m_shape->GetDimension(rank)];
+				m_allocationRank = 1;
+			}
 		}
 		else
 		{
@@ -49,7 +68,7 @@ namespace TN
 			
 			unsigned int dim = 1;
 
-			for (unsigned int j = 0; j < rank; j++)
+			for (unsigned int j = 1; j < rank; j++)
 			{
 				dim *= m_shape->GetDimension(j);
 			}
@@ -58,12 +77,15 @@ namespace TN
 			{
 				m_data = data;
 			}
-			else if (allocationRank == rank)
+			else if (allocationRank >= rank)
 			{
 				m_data = new T[dim * m_shape->GetDimension(rank)];
+				m_allocationRank = m_rank;
 			}
 			else
+			{
 				m_data = NULL;
+			}
 				
 			if (m_data == NULL)
 			{
@@ -92,8 +114,13 @@ namespace TN
 	template<typename T>
 	TN::Tensor<T>::~Tensor()
 	{
-		if (m_data != NULL && m_allocationRank == m_rank)
-			delete[] m_data;
+		if (m_data != NULL)
+		{
+			if (m_allocationRank == 0)
+				delete m_data;
+			else if (m_allocationRank == m_rank)
+				delete[] m_data;
+		}
 
 		if(m_tensors != NULL)
 			delete[] m_tensors;
@@ -112,9 +139,28 @@ namespace TN
 			m_tensors = NULL;
 
 			if (data != NULL)
+			{
 				m_data = data;
+			}
 			else
+			{
+				m_data = new T;
+				m_allocationRank = 0;
+			}
+		}
+		else if (rank == 1)
+		{
+			m_tensors = NULL;
+
+			if (data != NULL)
+			{
+				m_data = data;
+			}
+			else
+			{
 				m_data = new T[m_shape->GetDimension(rank)];
+				m_allocationRank = 1;
+			}
 		}
 		else
 		{
@@ -122,7 +168,7 @@ namespace TN
 
 			unsigned int dim = 1;
 
-			for (unsigned int j = 0; j < rank; j++)
+			for (unsigned int j = 1; j < rank; j++)
 			{
 				dim *= m_shape->GetDimension(j);
 			}
@@ -131,12 +177,15 @@ namespace TN
 			{
 				m_data = data;
 			}
-			else if (allocationRank == rank)
+			else if (allocationRank >= rank)
 			{
 				m_data = new T[dim * m_shape->GetDimension(rank)];
+				m_allocationRank = m_rank;
 			}
 			else
+			{
 				m_data = NULL;
+			}
 
 			if (m_data == NULL)
 			{
@@ -177,7 +226,7 @@ namespace TN
 	T TN::Tensor<T>::operator() (unsigned int index) const
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(m_rank == 0, "Wrong operator while trying to access Tensor");
+		TN_ASSERT(index < m_shape->GetDimension(m_rank), "Wrong operator while trying to access Tensor");
 		TN_ASSERT(m_data != NULL, "Wrong operator while trying to access Tensor");
 #endif
 
@@ -189,7 +238,7 @@ namespace TN
 	T& TN::Tensor<T>::operator() (unsigned int index)
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(m_rank == 0, "Wrong operator while trying to access Tensor");
+		TN_ASSERT(index < m_shape->GetDimension(m_rank), "Wrong operator while trying to access Tensor");
 		TN_ASSERT(m_data != NULL, "Wrong operator while trying to access Tensor");
 #endif
 

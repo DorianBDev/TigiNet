@@ -28,8 +28,26 @@
 
 int main()
 {
+	TN::Tensor<int> s(0, TN::TensorShape(NULL), 2);
+
+	s() = 0;
+
+	TN_LOG("%d", s());
+
+	TN_LOG("-------");
+
+	unsigned int vshape[] = { 2 };
+	TN::Tensor<int> v(1, TN::TensorShape(vshape), 0);
+
+	v(0) = 0;
+	v(1) = 1;
+
+	TN_LOG("%d %d", v(0), v(1));
+
+	TN_LOG("-------");
+
 	unsigned int shape[] = { 2, 2, 2 };
-	TN::Tensor<int> t(2, TN::TensorShape(shape), 2);
+	TN::Tensor<int> t(3, TN::TensorShape(shape), 3);
 
 	t[0][0](0) = 1;
 	t[0][0](1) = 2;
