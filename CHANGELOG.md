@@ -4,9 +4,28 @@
 # **CHANGELOG**
 
 
-## [v0.1.01-nightly] - 2019-02-27 :
+## [v0.1.01-nightly] - 2019-03-05 :
 
+### GENERAL :
+ - New philosophy : tensor based library.
+ - Updated the project website.
+ - Updated the documentation.
+ - Added a wiki on github.
+ - Updated the README.md.
 
+### CORE :
+ - Fixed a bug with the error system.
+
+### MLP : 
+ - Deleted the module (replaced by the NeuralNet module).
+ 
+### UTILITY :
+ - Added a n-tensor system.
+ - Added a tensor shape system.
+ 
+### NEURALNET :
+ - Added a new module : NeuralNet. It will store all neural networks (as a toolkit).
+ 
 
 ## [v0.0.53-release] - 2019-02-26 :
 
