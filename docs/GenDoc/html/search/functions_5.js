@@ -8,5 +8,6 @@ var searchData=
   ['getid',['GetID',['../class_t_n_1_1_thread.html#a0523b48974263413d89a64c257426ea4',1,'TN::Thread']]],
   ['getindex',['GetIndex',['../class_t_n_1_1_string.html#a8a951aab68d812ce93eb2ac88eb1cde3',1,'TN::String']]],
   ['getinstance',['GetInstance',['../class_t_n_1_1_singleton.html#a7ac67ae89c65127a6ebcc608ab82a4e7',1,'TN::Singleton']]],
-  ['getlength',['GetLength',['../class_t_n_1_1_string.html#a0cbb21222a03298080c20369ab3ed749',1,'TN::String']]]
+  ['getlength',['GetLength',['../class_t_n_1_1_string.html#a0cbb21222a03298080c20369ab3ed749',1,'TN::String']]],
+  ['getrank',['GetRank',['../class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280',1,'TN::Tensor']]]
 ];

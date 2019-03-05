@@ -35,6 +35,7 @@ var searchData=
   ['tn_5flog_5ffile',['TN_LOG_FILE',['../_log_8hpp.html#abf2c2db4d2a52d0a80ac1f9f965ae4e0',1,'Log.hpp']]],
   ['tn_5flogger',['TN_LOGGER',['../_log_8hpp.html#ad6e66479ccd2a87a6afb8ccad51b2881',1,'Log.hpp']]],
   ['tn_5fmax_5fconvertible_5fmessage_5fsize',['TN_MAX_CONVERTIBLE_MESSAGE_SIZE',['../_string_8hpp.html#acc3376d8916b89ec37e31725e407f2fa',1,'String.hpp']]],
+  ['tn_5fneuralnet',['TN_NEURALNET',['../_neural_net_2_config_8hpp.html#af546ead4c3f145ccd85cae52d18ee7f9',1,'Config.hpp']]],
   ['tn_5fsafemode_5ftensor',['TN_SAFEMODE_TENSOR',['../_prerequisites_8hpp.html#a675433ba47f4fa1e556bbd0fcd09cea3',1,'Prerequisites.hpp']]],
   ['tn_5fscript',['TN_SCRIPT',['../_prerequisites_8hpp.html#a6dc8d89cfbbbbeebeb1cfe3344a03dc8',1,'Prerequisites.hpp']]],
   ['tn_5fstringify',['TN_STRINGIFY',['../_prerequisites_8hpp.html#a14e1dd2468cf4a4c8a8a0149ad6b9382',1,'Prerequisites.hpp']]],
