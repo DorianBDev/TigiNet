@@ -210,6 +210,13 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	unsigned int TN::Tensor<T>::GetRank() const
+	{
+		return m_rank;
+	}
+
+	/// @private
+	template<typename T>
 	TN::Tensor<T>& TN::Tensor<T>::operator[] (unsigned int index)
 	{
 #if TN_SAFEMODE_TENSOR

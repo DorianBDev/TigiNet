@@ -129,6 +129,14 @@ namespace TN
 		T* GetData();
 
 		/**
+		* @brief Get the rank of this tensor.
+		*
+		* @return Return the rank of this tensor.
+		*
+		*/
+		unsigned int GetRank() const;
+
+		/**
 		* @brief Access to a sub Tensor (with rank - 1).
 		*
 		* @param index : the desired index.
