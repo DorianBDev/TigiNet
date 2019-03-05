@@ -1,7 +1,7 @@
 /**
 *
 *   TIGINET
-*   Copyright (C) 2018  BACHELOT Dorian
+*   Copyright (C) 2018-2019  BACHELOT Dorian
 *
 *   For contact see CONTACT.md file.
 *
@@ -17,7 +17,7 @@
 *
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*
+*	
 *	See LICENSE file for more.
 *
 */
