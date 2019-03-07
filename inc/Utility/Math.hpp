@@ -31,6 +31,17 @@ namespace TN
 {
 
 	/**
+	* @brief Approximation of the derivative of a certain function.
+	*
+	* @param function : the fonction.
+	* @param value : the value.
+	*
+	* @return Return the result.
+	*
+	*/
+	TN_UTILITY double DerivativeApproximation(double(&function)(double), double value);
+
+	/**
 	* @brief The Sigmoide function.
 	*
 	* @param value : the value.

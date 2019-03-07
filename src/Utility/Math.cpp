@@ -25,10 +25,16 @@
 #include <Utility/Math.hpp>
 
 #include <math.h>
+#include <cfloat>
+
+double TN::DerivativeApproximation(double(&function)(double), double value)
+{
+	return (function(value * (1 + DBL_EPSILON)) - function(value)) / (DBL_EPSILON);
+}
 
 double TN::Sigmoide(double value)
 {
-	return (double)1 / ((double)1 + exp((double)-1 * value));
+	return 1 / (1 + exp(-1 * value));
 }
 
 double TN::Tangente(double value)
