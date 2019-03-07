@@ -26,19 +26,43 @@
 #define TN_NEURALNET_LAYER_HPP
 
 #include <NeuralNet/Config.hpp>
+#include <Utility/Tensor.hpp>
+#include <Utility/Math.hpp>
 
 namespace TN
 {
 
 	template<typename T>
-	class TN_NEURALNET Layer
+	class ActivatorConfig
 	{
 	public:
+		ActivatorConfig(double(&activationFunction)(double));
+		ActivatorConfig(double(&activationFunction)(double), double(&activationFunctionDerivative)(double));
+		~ActivatorConfig() = default;
+
+		T ActivationFunction(T value);
+		T ActivationDerivative(T value);
+
+	private:
+		double(*m_activationFunction)(double);
+		double(*m_activationFunctionDerivative)(double);
+	};
+
+	template<typename T>
+	class Layer
+	{
+	public:
+		Layer(ActivatorConfig<T> & config);
 		virtual void Propagate() = 0;
 		virtual void Learn() = 0;
+
+	private:
+		ActivatorConfig* m_activator = NULL;
 		
 	};
 
 }
+
+#include <NeuralNet/Layer.inl>
 
 #endif

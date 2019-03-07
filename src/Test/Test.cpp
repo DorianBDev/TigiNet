@@ -23,11 +23,20 @@
 */
 
 #include <Core/Log.hpp>
-
+#include <NeuralNet/Layer.hpp>
 #include <Utility/Tensor.hpp>
 
 int main()
 {
+	TN::ActivatorConfig<double> config(TN::Sigmoide);
+	double res = config.ActivationFunction(0);
+	TN_LOG("%f", res);
+	res = config.ActivationDerivative(0.5);
+	TN_LOG("%f", res);
+
+	TN_LOG("-------");
+
+
 	TN::Tensor<int> s(0, TN::TensorShape(NULL), 2);
 
 	s() = 0;
