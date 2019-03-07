@@ -57,7 +57,7 @@ namespace TN
 		virtual void Learn() = 0;
 
 	private:
-		ActivatorConfig* m_activator = NULL;
+		ActivatorConfig<T>* m_activator = NULL;
 		
 	};
 
