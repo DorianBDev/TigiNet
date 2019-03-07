@@ -53,12 +53,13 @@ namespace TN
 	{
 	public:
 		Layer(ActivatorConfig<T> & config);
-		virtual void Propagate() = 0;
-		virtual void Learn() = 0;
+		virtual void Activate() = 0;
+		virtual void Update() = 0;
 
 	private:
 		ActivatorConfig<T>* m_activator = NULL;
-		
+		Tensor<T>* m_in = NULL;
+		Tensor<T>* m_out = NULL;
 	};
 
 }
