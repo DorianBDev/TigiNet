@@ -22,6 +22,9 @@
 *
 */
 
+#ifndef TN_UTILITY_TENSOR_INL
+#define TN_UTILITY_TENSOR_INL
+
 #include <Core/Error.hpp>
 
 namespace TN
@@ -252,3 +255,5 @@ namespace TN
 		return m_data[index];
 	}
 }
+
+#endif
