@@ -32,7 +32,7 @@ namespace TN
 	/// @private
 	template<typename T>
 	TN::FCLayer<T>::FCLayer(ActivatorConfig<T> & config, unsigned int neuronsCount)
-		: Layer(config)
+		: Layer<T>(config)
 	{
 		m_neuronsCount = neuronsCount;
 	}
@@ -62,7 +62,7 @@ namespace TN
 	{
 		Layer<T>::Link(in);
 
-		TN_ASSERT(m_in->GetRank() <= 4, "Wrong input tensor rank");
+		TN_ASSERT(this->m_in->GetRank() <= 4, "Wrong input tensor rank");
 		
 		unsigned int D = 0; // Linear size, number of unique input.
 		unsigned int N = 0; // Batch size.
@@ -70,27 +70,27 @@ namespace TN
 		unsigned int* biasShape = new unsigned int[1];
 		unsigned int* outShape;
 
-		switch (m_in->GetRank())
+		switch (this->m_in->GetRank())
 		{
 		case 0: // Scalar
 			D = 1;
 			N = 1;
 			break;
 		case 1: // Vector
-			D = m_in->GetDimension(1);
+			D = this->m_in->GetDimension(1);
 			N = 1;
 			break;
 		case 2: // Matrix
-			D = m_in->GetDimension(1) * m_in->GetDimension(2);
+			D = this->m_in->GetDimension(1) * this->m_in->GetDimension(2);
 			N = 1;
 			break;
 		case 3: // 3-tensor
-			D = m_in->GetDimension(1) * m_in->GetDimension(2) * m_in->GetDimension(3);
+			D = this->m_in->GetDimension(1) * this->m_in->GetDimension(2) * this->m_in->GetDimension(3);
 			N = 1;
 			break;
 		case 4: // 3-tensor with N batch
-			D = m_in->GetDimension(1) * m_in->GetDimension(2) * m_in->GetDimension(3);
-			N = m_in->GetDimension(4);
+			D = this->m_in->GetDimension(1) * this->m_in->GetDimension(2) * this->m_in->GetDimension(3);
+			N = this->m_in->GetDimension(4);
 			break;
 		default:
 			D = 0;
@@ -113,14 +113,14 @@ namespace TN
 		{
 			outShape = new unsigned int[1];
 			outShape[0] = m_neuronsCount;
-			m_out = new Tensor<T>(1, TensorShape(outShape), 1);
+			this->m_out = new Tensor<T>(1, TensorShape(outShape), 1);
 		}
 		else
 		{
 			outShape = new unsigned int[2];
 			outShape[0] = m_neuronsCount;
 			outShape[1] = N;
-			m_out = new Tensor<T>(2, TensorShape(outShape), 2);
+			this->m_out = new Tensor<T>(2, TensorShape(outShape), 2);
 		}
 		delete[] outShape;
 	}
