@@ -25,6 +25,8 @@
 #include <Core/Log.hpp>
 #include <NeuralNet/Layer.hpp>
 #include <Utility/Tensor.hpp>
+#include <Utility/Gradient.hpp>
+#include <NeuralNet/Layer/FullyConnected.hpp>
 
 int main()
 {
@@ -33,6 +35,12 @@ int main()
 	TN_LOG("%f", res);
 	res = config.ActivationDerivative(0.5);
 	TN_LOG("%f", res);
+
+	TN::gradient_t<double> grad;
+	grad.actual = 10;
+
+	TN::ActivatorConfig<int> config2(TN::Sigmoide);
+	TN::FCLayer<int> l(config2, 2);
 
 	TN_LOG("-------");
 
@@ -57,6 +65,8 @@ int main()
 
 	unsigned int shape[] = { 2, 2, 2 };
 	TN::Tensor<int> t(3, TN::TensorShape(shape), 3);
+
+	l.Link(t);
 
 	t[0][0](0) = 1;
 	t[0][0](1) = 2;
