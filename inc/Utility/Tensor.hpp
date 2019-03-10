@@ -137,6 +137,16 @@ namespace TN
 		unsigned int GetRank() const;
 
 		/**
+		* @brief Get the dimension of a rank.
+		*
+		* @param rank : the desired rank.
+		*
+		* @return Return the desired rank dimension.
+		*
+		*/
+		unsigned int GetDimension(unsigned int rank) const;
+
+		/**
 		* @brief Access to a sub Tensor (with rank - 1).
 		*
 		* @param index : the desired index.

@@ -213,6 +213,13 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	unsigned int TN::Tensor<T>::GetDimension(unsigned int rank) const
+	{
+		return m_shape->GetDimension(rank);
+	}
+
+	/// @private
+	template<typename T>
 	unsigned int TN::Tensor<T>::GetRank() const
 	{
 		return m_rank;
