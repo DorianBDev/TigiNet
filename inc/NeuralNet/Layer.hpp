@@ -28,6 +28,7 @@
 #include <NeuralNet/Config.hpp>
 #include <Utility/Tensor.hpp>
 #include <Utility/Math.hpp>
+#include <Utility/Gradient.hpp>
 
 namespace TN
 {
@@ -53,13 +54,17 @@ namespace TN
 	{
 	public:
 		Layer(ActivatorConfig<T> & config);
+		~Layer();
+		void Link(Layer<T> & layer);
+		void Link(Tensor<T> & in);
 		virtual void Activate() = 0;
 		virtual void Update() = 0;
 
-	private:
+	protected:
 		ActivatorConfig<T>* m_activator = NULL;
 		Tensor<T>* m_in = NULL;
 		Tensor<T>* m_out = NULL;
+		Tensor<gradient_t<T>>* m_grad = NULL;
 	};
 
 }

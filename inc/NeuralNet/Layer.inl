@@ -67,6 +67,31 @@ namespace TN
 	{
 		m_activator = &config;
 	}
+
+	/// @private
+	template<typename T>
+	TN::Layer<T>::~Layer()
+	{
+		if (m_out != NULL)
+			delete m_out;
+
+		if (m_grad != NULL)
+			delete m_grad;
+	}
+
+	/// @private
+	template<typename T>
+	void TN::Layer<T>::Link(Layer<T> & layer)
+	{
+		this->m_in = layer.m_out;
+	}
+
+	/// @private
+	template<typename T>
+	void TN::Layer<T>::Link(Tensor<T> & in)
+	{
+		this->m_in = &in;
+	}
 }
 
 #endif
