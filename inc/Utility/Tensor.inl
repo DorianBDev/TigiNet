@@ -31,7 +31,7 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	TN::Tensor<T>::Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank, T* data)
+	Tensor<T>::Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank, T* data)
 	{
 		m_rank = rank;
 		m_shape = shape.Copy(rank);
@@ -105,7 +105,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	TN::Tensor<T>::Tensor()
+	Tensor<T>::Tensor()
 	{
 		m_tensors = NULL;
 		m_allocationRank = 0;
@@ -115,7 +115,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	TN::Tensor<T>::~Tensor()
+	Tensor<T>::~Tensor()
 	{
 		if (m_data != NULL)
 		{
@@ -131,7 +131,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::Tensor<T>::InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank, T* data)
+	void Tensor<T>::InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank, T* data)
 	{
 		m_shape = shape;
 		m_rank = rank;
@@ -206,33 +206,33 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	T* TN::Tensor<T>::GetData()
+	T* Tensor<T>::GetData()
 	{
 		return m_data;
 	}
 
 	/// @private
 	template<typename T>
-	unsigned int TN::Tensor<T>::GetDimension(unsigned int rank) const
+	unsigned int Tensor<T>::GetDimension(unsigned int rank) const
 	{
 		return m_shape->GetDimension(rank);
 	}
 
 	/// @private
 	template<typename T>
-	unsigned int TN::Tensor<T>::GetRank() const
+	unsigned int Tensor<T>::GetRank() const
 	{
 		return m_rank;
 	}
 
 	/// @private
 	template<typename T>
-	TN::Tensor<T>& TN::Tensor<T>::operator[] (unsigned int index)
+	Tensor<T>& Tensor<T>::operator[] (unsigned int index)
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(m_shape->GetDimension(m_rank) > index, "Wrong index while trying to access Tensor");
-		TN_ASSERT(index >= 0, "Wrong index while trying to access Tensor");
-		TN_ASSERT(m_rank > 0, "Wrong operator while trying to access Tensor");
+		TN_ASSERT(m_shape->GetDimension(m_rank) > index, "UTILITY", "Wrong index while trying to access Tensor");
+		TN_ASSERT(index >= 0, "UTILITY", "Wrong index while trying to access Tensor");
+		TN_ASSERT(m_rank > 0, "UTILITY", "Wrong operator while trying to access Tensor");
 #endif
 
 		return m_tensors[index];
@@ -240,11 +240,11 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	T TN::Tensor<T>::operator() (unsigned int index) const
+	T Tensor<T>::operator() (unsigned int index) const
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(index < m_shape->GetDimension(m_rank), "Wrong operator while trying to access Tensor");
-		TN_ASSERT(m_data != NULL, "Wrong operator while trying to access Tensor");
+		TN_ASSERT(index < m_shape->GetDimension(m_rank), "UTILITY", "Wrong operator while trying to access Tensor");
+		TN_ASSERT(m_data != NULL, "UTILITY", "Wrong operator while trying to access Tensor");
 #endif
 
 		return m_data[index];
@@ -252,11 +252,11 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	T& TN::Tensor<T>::operator() (unsigned int index)
+	T& Tensor<T>::operator() (unsigned int index)
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(index < m_shape->GetDimension(m_rank), "Wrong operator while trying to access Tensor");
-		TN_ASSERT(m_data != NULL, "Wrong operator while trying to access Tensor");
+		TN_ASSERT(index < m_shape->GetDimension(m_rank), "UTILITY", "Wrong operator while trying to access Tensor");
+		TN_ASSERT(m_data != NULL, "UTILITY", "Wrong operator while trying to access Tensor");
 #endif
 
 		return m_data[index];

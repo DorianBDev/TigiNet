@@ -49,7 +49,7 @@ unsigned int TN::TensorShape::GetDimension(unsigned int rank) const
 		return 1;
 
 #if TN_SAFEMODE_TENSOR
-	TN_ASSERT(m_shape != NULL, "Trying to access to a non initialized TensorShape");
+	TN_ASSERT(m_shape != NULL, "UTILITY", "Trying to access to a non initialized TensorShape");
 #endif
 
 	return m_shape[rank - 1];
@@ -61,7 +61,7 @@ std::shared_ptr<TN::TensorShape> TN::TensorShape::Copy(unsigned int rank) const
 		return NULL;
 
 #if TN_SAFEMODE_TENSOR
-	TN_ASSERT(m_shape != NULL, "Trying to access to a non initialized TensorShape");
+	TN_ASSERT(m_shape != NULL, "UTILITY", "Trying to access to a non initialized TensorShape");
 #endif
 
 	std::shared_ptr<TensorShape> res = std::make_shared<TensorShape>();
