@@ -17,7 +17,7 @@
 *
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*	
+*
 *	See LICENSE file for more.
 *
 */
@@ -26,152 +26,185 @@
 #define TN_CORE_LOG_HPP
 
 #include <Core/Config.hpp>
-#include <Core/File.hpp>
-#include <Core/String.hpp>
 #include <Core/Singleton.hpp>
 #include <Core/Mutex.hpp>
 
-#include <stdarg.h>
-
-
-/**
-* @brief Get the logger.
-*
-*/
-#define TN_LOGGER TN::Logger()
+#include <iostream>
+#include <fstream>
+#include <string>
 
 /**
 * @brief Write a message in the log.
 *
-* @param msg : the message to write.
+* @param mod : the module name where come the log.
 *
 */
-#define TN_LOG(msg, ...) TN::Log::GetInstance().Write(msg, ## __VA_ARGS__);
-
-/**
-* @brief Write a message in the console.
-*
-* @param msg : the message to write.
-*
-*/
-#define TN_LOG_CONSOLE(msg, ...) TN::Log::GetInstance().PrintConsole("INFO", msg, ## __VA_ARGS__);
-
-/**
-* @brief Write a message in the log file.
-*
-* @param msg : the message to write.
-*
-*/
-#define TN_LOG_FILE(msg, ...) TN::Log::GetInstance().PrintFile("INFO", msg, ## __VA_ARGS__);
+#define TN_LOG(mod) TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(mod, "INFO")
 
 
 namespace TN
 {
 
 	/**
-	* @class Log
-	* @brief Log class.
+	* @brief Get the TigiNet default log header.
+	*
+	* @param mod : the module name.
+	* @param type : the log type.
+	*
+	* @return Return the log header.
+	*
+	*/
+	TN_CORE std::string GetLogHeader(const char* mod, const char* type);
+
+
+	/**
+	* @class Logger
+	* @brief Logger class.
 	*
 	* A simple logger.
 	*
 	*/
-	class TN_CORE Log : public Singleton<Log>
+	class TN_CORE Logger
 	{
-		friend class Singleton<Log>;
 
 	public:
 
 		/**
-		* @brief Print a log, in console and in file.
+		* @brief Logger constructor.
 		*
-		* @param messageType : the type of the message (e.g. INFO or WARNING...).
-		* @param message : the message.
-		*
-		*/
-		void Print(String messageType, String message, ...);
-
-		/**
-		* @brief Print a log, in console and in file.
-		*
-		* @param messageType : the type of the message (e.g. INFO or WARNING...).
-		* @param message : the message.
-		* @param va : list of arguments.
+		* @param stream : the log stream.
 		*
 		*/
-		void Print(String messageType, String message, va_list va);
+		Logger(std::ostream* stream);
+		Logger() = default;
+		~Logger() = default;
 
-		/**
-		* @brief Print in a file.
-		*
-		* @param messageType : the type of the message (e.g. INFO or WARNING...).
-		* @param message : the message.
-		*
-		*/
-		void PrintFile(String messageType, String message, ...);
+		inline Logger& operator<<(std::ostream& (*arg)(std::ostream&))
+		{
+			if (m_open)
+				(*m_stream) << arg;
 
-		/**
-		* @brief Print in a file.
-		*
-		* @param messageType : the type of the message (e.g. INFO or WARNING...).
-		* @param message : the message.
-		* @param va : list of arguments.
-		*
-		*/
-		void PrintFile(String messageType, String message, va_list va);
+			return (*this);
+		}
 
-		/**
-		* @brief Print in the console.
-		*
-		* @param messageType : the type of the message (e.g. INFO or WARNING...).
-		* @param message : the message.
-		*
-		*/
-		void PrintConsole(String messageType, String message, ...);
+		template<class T>
+		Logger& operator<<(const T & arg)
+		{
+			if(m_open)
+				(*m_stream) << arg;
 
-		/**
-		* @brief Print in the console.
-		*
-		* @param messageType : the type of the message (e.g. INFO or WARNING...).
-		* @param message : the message.
-		* @param va : list of arguments.
-		*
-		*/
-		void PrintConsole(String messageType, String message, va_list va);
+			return (*this);
+		}
 
-		/**
-		* @brief Write a message in log.
-		*
-		* @param message : the message.
-		*
-		*/
-		void Write(String message, ...);
+	protected:
 
-
-	private:
-
-		Log();
-		~Log();
-
-		String Form(String messageType, String message, bool endl);
-
-		File * m_pFile = NULL;
-
-		Mutex m_fileMutex;
-		Mutex m_consoleMutex;
-
-		bool m_fileReady = false;
+		std::ostream* m_stream;
+		bool m_open = false;
 	};
 
+
 	/**
-	* @brief Get the logger instance.
+	* @class FileLogger
+	* @brief A file logger class.
 	*
-	* @return Return the logger instance.
+	* Log in a file with std::ofstream.
 	*
 	*/
-	inline Log& Logger()
+	class TN_CORE FileLogger : public Logger
 	{
-		return Log::GetInstance();
-	}
+	public:
+
+		/**
+		* @brief File logger constructor.
+		*
+		* @param path : the path of the file stream.
+		*
+		*/
+		FileLogger(const std::string & path);
+		~FileLogger();
+
+	private:
+		std::fstream* m_file;
+
+	};
+
+
+	/**
+	* @class ConsoleLogger
+	* @brief A console logger class.
+	*
+	* Log in the console with std::cout.
+	*
+	*/
+	class TN_CORE ConsoleLogger : public Logger
+	{
+	public:
+
+		/**
+		* @brief Console logger constructor.
+		*
+		*/
+		ConsoleLogger();
+		~ConsoleLogger();
+
+	};
+
+
+	/**
+	* @class TigiNetLogger
+	* @brief The default TigiNet logger class.
+	*
+	* Log in the console and in a file.
+	*
+	*/
+	class TN_CORE TigiNetLogger : public FileLogger, public ConsoleLogger, public Singleton<TigiNetLogger>
+	{
+		friend class Singleton<TigiNetLogger>;
+
+	public:
+
+		/**
+		* @brief TigiNet logger constructor.
+		*
+		*/
+		TigiNetLogger();
+		~TigiNetLogger();
+
+		inline TigiNetLogger& operator<<(std::ostream& (*arg)(std::ostream&))
+		{
+#if TN_THREAD_SAFE
+			LockGuard lock(&m_mutex);
+#endif
+
+			if (FileLogger::m_open)
+				(*FileLogger::m_stream) << arg;
+
+			if(ConsoleLogger::m_open)
+				(*ConsoleLogger::m_stream) << arg;
+
+			return (*this);
+		}
+
+		template<class T>
+		TigiNetLogger& operator<<(const T & arg)
+		{
+#if TN_THREAD_SAFE
+			LockGuard lock(&m_mutex);
+#endif
+
+			if (FileLogger::m_open)
+				(*FileLogger::m_stream) << arg;
+
+			if (ConsoleLogger::m_open)
+				(*ConsoleLogger::m_stream) << arg;
+
+			return (*this);
+		}
+
+	private:
+		Mutex m_mutex;
+	};
+
 }
 
 #endif

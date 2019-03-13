@@ -17,7 +17,7 @@
 *
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*	
+*
 *	See LICENSE file for more.
 *
 */
@@ -26,51 +26,55 @@
 #define TN_CORE_ERROR_HPP
 
 #include <Core/Config.hpp>
-#include <Core/String.hpp>
+#include <Core/Log.hpp>
 
 /**
-* @brief Use TN_Assert to test an expression and send error if the expression is false.
+* @brief Test an expression and send error if the expression is false.
 *
 * @param test : the expression to test.
+* @param mod : the module name where come the assertion.
 * @param message : the message to send with error.
 *
 */
 #if TN_ENABLE_ASSERT
-#define TN_ASSERT(test, message, ...) if(!(test)) TN::Error::Send(TN::ErrorType_e::ET_ASSERTION_FAILED, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#define TN_ASSERT(test, mod, message) if(!(test)) TN::Error::Send(TN::ErrorType_e::ET_ASSERTION_FAILED, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
 #else
-#define TN_ASSERT(test, message, ...)
+#define TN_ASSERT(test, mod, message)
 #endif
 
 /**
 * @brief Send an error with his message.
 *
+* @param mod : the module name where come the error.
 * @param message : the message to send with error.
 *
 */
-#define TN_ERROR(message, ...) TN::Error::Send(TN::ErrorType_e::ET_ERROR, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#define TN_ERROR(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ERROR, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
 
 /**
 * @brief Send an error with his message and abort.
 *
+* @param mod : the module name where come the abort.
 * @param message : the message to send with error.
 *
 */
 #if TN_ENABLE_ABORT
-#define TN_ABORT(message, ...) TN::Error::Send(TN::ErrorType_e::ET_ABORT, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#define TN_ABORT(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ABORT, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
 #else
-#define TN_ABORT(message, ...) TN::Error::Send(TN::ErrorType_e::ET_ERROR, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#define TN_ABORT(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ERROR, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
 #endif
 
 /**
 * @brief Send a warning with his message.
 *
+* @param mod : the module name where come the warning.
 * @param message : the message to send with warning.
 *
 */
 #if TN_ENABLE_WARNING
-#define TN_WARNING(message, ...) TN::Error::Send(TN::ErrorType_e::ET_WARNING, message, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, ## __VA_ARGS__);
+#define TN_WARNING(mod, message) TN::Error::Send(TN::ErrorType_e::ET_WARNING, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME)  << message
 #else
-#define TN_WARNING(message, ...)
+#define TN_WARNING(mod, message)
 #endif
 
 
@@ -100,13 +104,13 @@ namespace TN
 		* @brief Send an error.
 		*
 		* @param errorType : the error type see ErrorType_e for more.
-		* @param message : the message corresponding with the error.
+		* @param moduleName : the module name where come the error.
 		* @param line : the line of the error (use TN_LINE_NUMBER).
 		* @param file : the file path where the error is (use TN_FILE_PATH).
 		* @param function : the function name where the error is (use TN_FUNCTION_NAME).
 		*
 		*/
-		static void Send(ErrorType_e errorType, String message, unsigned int line, const char* file, const char* function, ...);
+		static TigiNetLogger& Send(ErrorType_e errorType, const char* moduleName, unsigned int line, const char* file, const char* function);
 	};
 }
 

@@ -17,33 +17,15 @@
 *
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*	
+*
 *	See LICENSE file for more.
 *
 */
 
 #include <Core/Error.hpp>
-#include <Core/Log.hpp>
 
-#include <cstdlib>
-#include <stdio.h>
-
-void TN::Error::Send(ErrorType_e errorType, String message, unsigned int line, const char* file, const char* function, ...)
+TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName, unsigned int line, const char* file, const char* function)
 {
-	va_list vaList;
-	char * finalMessage;
-
-	va_start(vaList, function);
-	va_list vaListBis;
-	va_copy(vaListBis, vaList);
-	int size = vsnprintf(NULL, 0, message.ToCString(), vaListBis);
-	va_end(vaListBis);
-
-	finalMessage = new char[size + 1];
-
-	vsnprintf(finalMessage, size + 1, message.ToCString(), vaList);
-	va_end(vaList);
-
 	switch (errorType)
 	{
 	default:
@@ -52,49 +34,48 @@ void TN::Error::Send(ErrorType_e errorType, String message, unsigned int line, c
 
 	case ET_ERROR:
 
-		#if TN_DEBUG
-		TN_LOGGER.Print("ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, finalMessage);
-		#else
-		TN_LOGGER.Print("ERROR", finalMessage);
-		#endif
+#if TN_DEBUG
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ERROR") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+#else
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ERROR");
+#endif
 
 		std::exit(-1);
 		break;
 
 	case ET_ABORT:
 
-		#if TN_DEBUG
-		TN_LOGGER.Print("ABORT", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, finalMessage);
-		#else
-		TN_LOGGER.Print("ABORT", finalMessage);
-		#endif
+#if TN_DEBUG
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ABORT") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+#else
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ABORT");
+#endif
 
 		std::abort();
 		break;
 
 	case ET_ASSERTION_FAILED:
 
-		#if TN_DEBUG
-		TN_LOGGER.Print("ASSERT ERROR", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, finalMessage);
-		#else
-		TN_LOGGER.Print("ASSERT ERROR", finalMessage);
-		#endif
+#if TN_DEBUG
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ASSERT ERROR") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+#else
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ASSERT ERROR");
+#endif
 
 		std::exit(-1);
 		break;
 
 	case ET_WARNING:
-		WARNING:
+	WARNING:
 
-		#if TN_DEBUG
-		TN_LOGGER.Print("WARNING", "(In file '%s' in function '%s' in line '%d') %s", file, function, line, finalMessage);
-		#else
-		TN_LOGGER.Print("WARNING", finalMessage);
-		#endif
+#if TN_DEBUG
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "WARNING") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+#else
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "WARNING");
+#endif
 
 		break;
 	}
 
-	delete[] finalMessage;
-
+	return TigiNetLogger::GetInstance();
 }
