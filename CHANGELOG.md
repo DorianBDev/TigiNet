@@ -15,6 +15,10 @@
 
 ### CORE :
  - Fixed a bug with the error system.
+ - Deleted String class, use std::string now.
+ - Deleted File class, use std::fstream now.
+ - Deleted Thread class, use std::thread.
+ - Changed the log system to a C++ one.
 
 ### MLP : 
  - Deleted the module (replaced by the NeuralNet module).
@@ -22,9 +26,14 @@
 ### UTILITY :
  - Added a n-tensor system.
  - Added a tensor shape system.
+ - Added an activator function struct (normalized).
+ - Added an approximation function of derivative.
+ - Added a gradient struct (old and actual gradient).
  
 ### NEURALNET :
  - Added a new module : NeuralNet. It will store all neural networks (as a toolkit).
+ - Added a fully connect layer class.
+ - Added a pure virtual layer class.
  
 
 ## [v0.0.53-release] - 2019-02-26 :
