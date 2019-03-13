@@ -30,7 +30,7 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	TN::ActivatorConfig<T>::ActivatorConfig(double(&activationFunction)(double))
+	ActivatorConfig<T>::ActivatorConfig(double(&activationFunction)(double))
 	{
 		m_activationFunction = &activationFunction;
 		m_activationFunctionDerivative = NULL;
@@ -38,7 +38,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	TN::ActivatorConfig<T>::ActivatorConfig(double(&activationFunction)(double), double(&activationFunctionDerivative)(double))
+	ActivatorConfig<T>::ActivatorConfig(double(&activationFunction)(double), double(&activationFunctionDerivative)(double))
 	{
 		m_activationFunction = &activationFunction;
 		m_activationFunctionDerivative = &activationFunctionDerivative;
@@ -46,14 +46,14 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	T TN::ActivatorConfig<T>::ActivationFunction(T value)
+	T ActivatorConfig<T>::ActivationFunction(T value)
 	{
 		return static_cast<T>(m_activationFunction(static_cast<double>(value)));
 	}
 
 	/// @private
 	template<typename T>
-	T TN::ActivatorConfig<T>::ActivationDerivative(T value)
+	T ActivatorConfig<T>::ActivationDerivative(T value)
 	{
 		if (m_activationFunctionDerivative == NULL)
 			return static_cast<T>(DerivativeApproximation(*m_activationFunction, static_cast<double>(value)));
@@ -63,14 +63,14 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	TN::Layer<T>::Layer(ActivatorConfig<T> & config)
+	Layer<T>::Layer(ActivatorConfig<T> & config)
 	{
 		m_activator = &config;
 	}
 
 	/// @private
 	template<typename T>
-	TN::Layer<T>::~Layer()
+	Layer<T>::~Layer()
 	{
 		if (m_out != NULL)
 			delete m_out;
@@ -81,14 +81,14 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::Layer<T>::Link(Layer<T> & layer)
+	void Layer<T>::Link(Layer<T> & layer)
 	{
 		this->m_in = layer.m_out;
 	}
 
 	/// @private
 	template<typename T>
-	void TN::Layer<T>::Link(Tensor<T> & in)
+	void Layer<T>::Link(Tensor<T> & in)
 	{
 		this->m_in = &in;
 	}

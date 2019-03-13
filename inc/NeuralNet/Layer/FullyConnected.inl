@@ -31,7 +31,7 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	TN::FCLayer<T>::FCLayer(ActivatorConfig<T> & config, unsigned int neuronsCount)
+	FCLayer<T>::FCLayer(ActivatorConfig<T> & config, unsigned int neuronsCount)
 		: Layer<T>(config)
 	{
 		m_neuronsCount = neuronsCount;
@@ -39,7 +39,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	TN::FCLayer<T>::~FCLayer()
+	FCLayer<T>::~FCLayer()
 	{
 		if (m_weight != NULL)
 			delete m_weight;
@@ -50,7 +50,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::FCLayer<T>::Link(Layer<T> & layer)
+	void FCLayer<T>::Link(Layer<T> & layer)
 	{
 		//Layer<T>::Link(layer);
 		Link(layer.m_in);
@@ -58,11 +58,11 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::FCLayer<T>::Link(Tensor<T> & in)
+	void FCLayer<T>::Link(Tensor<T> & in)
 	{
 		Layer<T>::Link(in);
 
-		TN_ASSERT(this->m_in->GetRank() <= 4, "Wrong input tensor rank");
+		TN_ASSERT(this->m_in->GetRank() <= 4, "NEURALNET", "Wrong input tensor rank");
 		
 		unsigned int D = 0; // Linear size, number of unique input.
 		unsigned int N = 0; // Batch size.
@@ -94,7 +94,7 @@ namespace TN
 			break;
 		default:
 			D = 0;
-			TN_WARNING("Wrong tensor rank");
+			TN_WARNING("NEURALNET", "Wrong tensor rank");
 			return;
 			break;
 		}
@@ -127,14 +127,14 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void TN::FCLayer<T>::Activate()
+	void FCLayer<T>::Activate()
 	{
 		//TODO
 	}
 
 	/// @private
 	template<typename T>
-	void TN::FCLayer<T>::Update()
+	void FCLayer<T>::Update()
 	{
 		//TODO
 	}
