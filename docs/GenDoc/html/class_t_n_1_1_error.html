@@ -105,9 +105,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a23e91a0ee7e3d91523dded71080fad4e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_error.html#a23e91a0ee7e3d91523dded71080fad4e">Send</a> (<a class="el" href="namespace_t_n.html#a1f5c586829796f73b10fe036f9974539">ErrorType_e</a> errorType, <a class="el" href="class_t_n_1_1_string.html">String</a> message, unsigned int line, const char *file, const char *function,...)</td></tr>
-<tr class="memdesc:a23e91a0ee7e3d91523dded71080fad4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an error.  <a href="#a23e91a0ee7e3d91523dded71080fad4e">More...</a><br /></td></tr>
-<tr class="separator:a23e91a0ee7e3d91523dded71080fad4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0328fb6e566349233d2b1d9773cb19d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_t_n_1_1_tigi_net_logger.html">TigiNetLogger</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_error.html#ad0328fb6e566349233d2b1d9773cb19d">Send</a> (<a class="el" href="namespace_t_n.html#a1f5c586829796f73b10fe036f9974539">ErrorType_e</a> errorType, const char *moduleName, unsigned int line, const char *file, const char *function)</td></tr>
+<tr class="memdesc:ad0328fb6e566349233d2b1d9773cb19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send an error.  <a href="#ad0328fb6e566349233d2b1d9773cb19d">More...</a><br /></td></tr>
+<tr class="separator:ad0328fb6e566349233d2b1d9773cb19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>To manage errors easily. </p>
@@ -163,8 +163,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a23e91a0ee7e3d91523dded71080fad4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23e91a0ee7e3d91523dded71080fad4e">&#9670;&nbsp;</a></span>Send()</h2>
+<a id="ad0328fb6e566349233d2b1d9773cb19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0328fb6e566349233d2b1d9773cb19d">&#9670;&nbsp;</a></span>Send()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +173,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void TN::Error::Send </td>
+          <td class="memname"><a class="el" href="class_t_n_1_1_tigi_net_logger.html">TN::TigiNetLogger</a> &amp; TN::Error::Send </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_t_n.html#a1f5c586829796f73b10fe036f9974539">ErrorType_e</a>&#160;</td>
           <td class="paramname"><em>errorType</em>, </td>
@@ -181,8 +181,8 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_string.html">String</a>&#160;</td>
-          <td class="paramname"><em>message</em>, </td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>moduleName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -200,13 +200,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>function</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>...</em>&#160;</td>
+          <td class="paramname"><em>function</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -225,14 +219,14 @@ Static Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">errorType</td><td>: the error type see ErrorType_e for more. </td></tr>
-    <tr><td class="paramname">message</td><td>: the message corresponding with the error. </td></tr>
+    <tr><td class="paramname">moduleName</td><td>: the module name where come the error. </td></tr>
     <tr><td class="paramname">line</td><td>: the line of the error (use TN_LINE_NUMBER). </td></tr>
     <tr><td class="paramname">file</td><td>: the file path where the error is (use TN_FILE_PATH). </td></tr>
     <tr><td class="paramname">function</td><td>: the function name where the error is (use TN_FUNCTION_NAME).</td></tr>
   </table>
   </dd>
 </dl>
-<p>TIGINET Copyright (C) 2018 BACHELOT Dorian</p>
+<p>TIGINET Copyright (C) 2018-2019 BACHELOT Dorian</p>
 <p>For contact see CONTACT.md file.</p>
 <p>This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</p>
 <p>This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</p>
@@ -241,17 +235,18 @@ Static Public Member Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_error_a23e91a0ee7e3d91523dded71080fad4e_cgraph.png" border="0" usemap="#class_t_n_1_1_error_a23e91a0ee7e3d91523dded71080fad4e_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_error_a23e91a0ee7e3d91523dded71080fad4e_cgraph" id="class_t_n_1_1_error_a23e91a0ee7e3d91523dded71080fad4e_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_string.html#a25b3c6577e9bbdfe0690b7b7848a8246" title="Get the cstring equivalent of the string. " alt="" coords="165,5,311,32"/>
+<div class="center"><img src="class_t_n_1_1_error_ad0328fb6e566349233d2b1d9773cb19d_cgraph.png" border="0" usemap="#class_t_n_1_1_error_ad0328fb6e566349233d2b1d9773cb19d_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_error_ad0328fb6e566349233d2b1d9773cb19d_cgraph" id="class_t_n_1_1_error_ad0328fb6e566349233d2b1d9773cb19d_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_singleton.html#abb4a0b65d41059ce52fb1159275e7042" title="Get the instance of a singleton child. " alt="" coords="165,5,356,47"/>
+<area shape="rect" id="node3" href="namespace_t_n.html#aebf841f5e1a2d7849dfe26bab59b14b8" title="Get the TigiNet default log header. " alt="" coords="196,71,325,98"/>
 </map>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/Core/<a class="el" href="_error_8hpp_source.html">Error.hpp</a></li>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/src/Core/<a class="el" href="_error_8cpp.html">Error.cpp</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/Core/<a class="el" href="_error_8hpp_source.html">Error.hpp</a></li>
+<li>D:/DEV/Projects/TigiNet/src/Core/<a class="el" href="_error_8cpp.html">Error.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

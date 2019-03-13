@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['tensor',['Tensor',['../class_t_n_1_1_tensor.html',1,'TN']]],
-  ['tensorshape',['TensorShape',['../class_t_n_1_1_tensor_shape.html',1,'TN']]],
-  ['thread',['Thread',['../class_t_n_1_1_thread.html',1,'TN']]]
+  ['singleton',['Singleton',['../class_t_n_1_1_singleton.html',1,'TN']]],
+  ['singleton_3c_20tiginetlogger_20_3e',['Singleton&lt; TigiNetLogger &gt;',['../class_t_n_1_1_singleton.html',1,'TN']]]
 ];

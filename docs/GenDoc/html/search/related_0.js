@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['singleton_3c_20log_20_3e',['Singleton&lt; Log &gt;',['../class_t_n_1_1_log.html#af6e4918ac2a30e72405c24484e5b08fa',1,'TN::Log']]]
+  ['singleton_3c_20tiginetlogger_20_3e',['Singleton&lt; TigiNetLogger &gt;',['../class_t_n_1_1_tigi_net_logger.html#ac936a26cd2139ac052fb2a141f5b2787',1,'TN::TigiNetLogger']]]
 ];

@@ -1,3 +1,7 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$class_t_n_1_1_tensor.html#a533bd74bcf1fbf74c6734e82000abff5" title="Get the datas of this tensor. " alt="" coords="104,5,245,32"/>
+<area shape="rect" id="node2" href="$namespace_t_n.html#a9eb252949c1d1bfe5dc520190942fa40" title="The Sigmoide function. " alt="" coords="124,5,224,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_activator_config.html#afe20023413ed30f725abbd3379acd117" title="TN::ActivatorConfig\l::ActivationFunction" alt="" coords="106,57,242,98"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_activator_config.html#a89f9c31cbc3827c83d3a944f1a54c015" title="TN::ActivatorConfig\l::ActivationDerivative" alt="" coords="104,122,244,163"/>
+<area shape="rect" id="node6" href="$class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339" title="TN::FCLayer::Link" alt="" coords="111,188,237,215"/>
+<area shape="rect" id="node5" href="$namespace_t_n.html#ad127742e791509257e2950c8f8d44340" title="Approximation of the derivative of a certain function. " alt="" coords="292,129,475,156"/>
 </map>

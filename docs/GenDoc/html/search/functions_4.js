@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['file',['File',['../class_t_n_1_1_file.html#a4f7a62ca52779fe7696d726634e3ff2b',1,'TN::File']]],
-  ['flush',['Flush',['../class_t_n_1_1_file.html#af1049bdfb94cba005b2413a2b2340361',1,'TN::File']]],
+  ['fclayer',['FCLayer',['../class_t_n_1_1_f_c_layer.html#a2878424933014e23f307ec4fef5f7128',1,'TN::FCLayer']]],
+  ['filelogger',['FileLogger',['../class_t_n_1_1_file_logger.html#a86222f6db670db2a7704a8e825943d3a',1,'TN::FileLogger']]],
   ['functor',['Functor',['../class_t_n_1_1_functor.html#a487c6660c480f920ca6e3c21bbb08cf5',1,'TN::Functor']]]
 ];

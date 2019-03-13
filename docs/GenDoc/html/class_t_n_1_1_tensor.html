@@ -110,9 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c169d718e1057c9661c874933665280"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280">GetRank</a> () const</td></tr>
 <tr class="memdesc:a7c169d718e1057c9661c874933665280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the rank of this tensor.  <a href="#a7c169d718e1057c9661c874933665280">More...</a><br /></td></tr>
 <tr class="separator:a7c169d718e1057c9661c874933665280"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a548c546e5799e0c14b2c449a0abbcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a0a548c546e5799e0c14b2c449a0abbcb">operator[]</a> (unsigned int index)</td></tr>
-<tr class="memdesc:a0a548c546e5799e0c14b2c449a0abbcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to a sub <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> (with rank - 1).  <a href="#a0a548c546e5799e0c14b2c449a0abbcb">More...</a><br /></td></tr>
-<tr class="separator:a0a548c546e5799e0c14b2c449a0abbcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad50abcf48ba8b039d3c7d7b4f5241a"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a">GetDimension</a> (unsigned int rank) const</td></tr>
+<tr class="memdesc:a2ad50abcf48ba8b039d3c7d7b4f5241a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dimension of a rank.  <a href="#a2ad50abcf48ba8b039d3c7d7b4f5241a">More...</a><br /></td></tr>
+<tr class="separator:a2ad50abcf48ba8b039d3c7d7b4f5241a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d4da4fbe600014fc651681951f29036"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036">operator[]</a> (unsigned int index)</td></tr>
+<tr class="memdesc:a0d4da4fbe600014fc651681951f29036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to a sub <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> (with rank - 1).  <a href="#a0d4da4fbe600014fc651681951f29036">More...</a><br /></td></tr>
+<tr class="separator:a0d4da4fbe600014fc651681951f29036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33bdfeabb3156b9549fe9b7735d695a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#ae33bdfeabb3156b9549fe9b7735d695a">operator()</a> (unsigned int index=0) const</td></tr>
 <tr class="memdesc:ae33bdfeabb3156b9549fe9b7735d695a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to data (read only).  <a href="#ae33bdfeabb3156b9549fe9b7735d695a">More...</a><br /></td></tr>
 <tr class="separator:ae33bdfeabb3156b9549fe9b7735d695a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,7 +141,7 @@ class TN::Tensor&lt; T &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> </td>
@@ -182,14 +185,6 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph" id="class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e" title="Copy a TensorShape. " alt="" coords="185,5,345,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -199,7 +194,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> </td>
@@ -254,6 +249,35 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="a2ad50abcf48ba8b039d3c7d7b4f5241a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad50abcf48ba8b039d3c7d7b4f5241a">&#9670;&nbsp;</a></span>GetDimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::GetDimension </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>rank</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the dimension of a rank. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rank</td><td>: the desired rank.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return the desired rank dimension. </dd></dl>
+
+</div>
+</div>
 <a id="a7c169d718e1057c9661c874933665280"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c169d718e1057c9661c874933665280">&#9670;&nbsp;</a></span>GetRank()</h2>
 
@@ -282,7 +306,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::InitializeSub </td>
@@ -387,8 +411,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a0a548c546e5799e0c14b2c449a0abbcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a548c546e5799e0c14b2c449a0abbcb">&#9670;&nbsp;</a></span>operator[]()</h2>
+<a id="a0d4da4fbe600014fc651681951f29036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d4da4fbe600014fc651681951f29036">&#9670;&nbsp;</a></span>operator[]()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -396,7 +420,7 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt; &amp; <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::operator[] </td>
+          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp; <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -417,8 +441,8 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/Utility/<a class="el" href="_tensor_8hpp_source.html">Tensor.hpp</a></li>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/Utility/<a class="el" href="_tensor_8inl.html">Tensor.inl</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/Utility/<a class="el" href="_tensor_8hpp_source.html">Tensor.hpp</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/Utility/<a class="el" href="_tensor_8inl.html">Tensor.inl</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
