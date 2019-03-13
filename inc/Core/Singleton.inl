@@ -17,41 +17,20 @@
 *
 *   You should have received a copy of the GNU General Public License
 *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-*	
+*
 *	See LICENSE file for more.
 *
 */
 
-#ifndef TN_CORE_SINGLETON_HPP
-#define TN_CORE_SINGLETON_HPP
-
-#include <Core/Config.hpp>
-
 namespace TN
 {
 
-	/**
-	* @class Singleton
-	* @brief A very simple singleton virtual class.
-	*
-	* A Singleton force his childs to have only one instance.
-	*
-	*/
+	/// @private
 	template<typename T>
-	class Singleton
+	T& Singleton<T>::GetInstance()
 	{
-	public:
-
-		/**
-		* @brief Get the instance of a singleton child.
-		*
-		*/
-		static T& GetInstance();
-
-	};
+		static T instance;
+		return instance;
+	}
 
 }
-
-#include <Core/Singleton.inl>
-
-#endif
