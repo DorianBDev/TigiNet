@@ -26,6 +26,9 @@
 #define TN_UTILITY_MATH_HPP
 
 #include <Utility/Config.hpp>
+#include <Utility/Tensor.hpp>
+
+#include <random>
 
 namespace TN
 {
@@ -71,6 +74,31 @@ namespace TN
 	*/
 	TN_UTILITY double Heaviside(double value);
 
+	/**
+	* @brief Matrix product function.
+	*
+	* @param tensor1 : the first tensor.
+	* @param tensor2 : the second tensor.
+	*
+	* @return Return the result in a new tensor (dynamic allocation).
+	*
+	*/
+	template<typename T>
+	TN::Tensor<T>* MatrixProduct(const TN::Tensor<T> & tensor1, const TN::Tensor<T> & tensor2);
+
+	/**
+	* @brief Get a random number.
+	*
+	* @param a : the first boundary.
+	* @param b : the second boundary.
+	*
+	* @return Return the random result between [a,b].
+	*
+	*/
+	template<typename T>
+	T Random(T a, T b);
 }
+
+#include <Utility/Math.inl>
 
 #endif
