@@ -26,6 +26,8 @@
 #define TN_UTILITY_TENSOR_HPP
 
 #include <Utility/Config.hpp>
+#include <Core/Error.hpp>
+
 #include <memory>
 
 namespace TN
@@ -35,7 +37,7 @@ namespace TN
 	* @class TensorShape
 	* @brief Define a shape to a tensor with this class.
 	*
-	* A class that handle dimensions for use with a tensor 
+	* A class that handle dimensions for use with a tensor.
 	*
 	* @see Tensor
 	*
@@ -157,6 +159,16 @@ namespace TN
 		Tensor& operator[] (unsigned int index);
 
 		/**
+		* @brief Access to a sub Tensor (with rank - 1).
+		*
+		* @param index : the desired index.
+		*
+		* @return Return the desired sub tensor.
+		*
+		*/
+		Tensor operator[] (unsigned int index) const;
+
+		/**
 		* @brief Access to data (read only).
 		*
 		* @param index : the desired index.
@@ -187,6 +199,12 @@ namespace TN
 		*/
 		void InitializeSub(unsigned rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 1, T* data = NULL);
 
+		/**
+		* @brief Print the tensor datas.
+		*
+		*/
+		void Print() const;
+
 
 	private:
 		std::shared_ptr<TensorShape> m_shape;
@@ -196,6 +214,15 @@ namespace TN
 		T* m_data = NULL;
 
 	};
+
+	/**
+	* @brief Print tensor datas.
+	*
+	* @param tensor : the tensor.
+	*
+	*/
+	template<typename T>
+	void PrintTensor(const Tensor<T> & tensor);
 
 }
 

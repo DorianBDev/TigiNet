@@ -25,8 +25,6 @@
 #ifndef TN_UTILITY_TENSOR_INL
 #define TN_UTILITY_TENSOR_INL
 
-#include <Core/Error.hpp>
-
 namespace TN
 {
 	/// @private
@@ -240,6 +238,19 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	Tensor<T> Tensor<T>::operator[] (unsigned int index) const
+	{
+#if TN_SAFEMODE_TENSOR
+		TN_ASSERT(m_shape->GetDimension(m_rank) > index, "UTILITY", "Wrong index while trying to access Tensor");
+		TN_ASSERT(index >= 0, "UTILITY", "Wrong index while trying to access Tensor");
+		TN_ASSERT(m_rank > 0, "UTILITY", "Wrong operator while trying to access Tensor");
+#endif
+
+		return m_tensors[index];
+	}
+
+	/// @private
+	template<typename T>
 	T Tensor<T>::operator() (unsigned int index) const
 	{
 #if TN_SAFEMODE_TENSOR
@@ -260,6 +271,82 @@ namespace TN
 #endif
 
 		return m_data[index];
+	}
+
+	/// @private
+	template<typename T>
+	void Tensor<T>::Print() const
+	{
+		TN_LOG("UTILITY") << "Tensor datas : ";
+		if (GetRank() == 0)
+		{
+			TN_LOG("UTILITY") << m_data[0];
+		}
+		else if (GetRank() == 1)
+		{
+			TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader("UTILITY", "INFO");
+			for (unsigned int i = 0; i < GetDimension(1); i++)
+			{
+				TN::TigiNetLogger::GetInstance() << m_data[i] << " ";
+			}
+		}
+		else if (GetRank() == 2)
+		{
+			for (unsigned int i = 0; i < GetDimension(2); i++)
+			{
+				TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader("UTILITY", "INFO");
+				for (unsigned int j = 0; j < GetDimension(1); j++)
+				{
+					TN::TigiNetLogger::GetInstance() << m_tensors[i](j) << " ";
+				}
+			}
+		}
+		else
+		{
+			for (unsigned int i = 0; i < GetDimension(GetRank()); i++)
+			{
+				TN_LOG("UTILITY") << "(" << i << ") :";
+				PrintTensor<T>(m_tensors[i]);
+			}
+		}
+	}
+
+	/// @private
+	template<typename T>
+	void PrintTensor(const Tensor<T> & tensor)
+	{
+		TN_LOG("UTILITY");
+		if (tensor.GetRank() == 0)
+		{
+			TN_LOG("UTILITY") << tensor();
+		}
+		else if (tensor.GetRank() == 1)
+		{
+			TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader("UTILITY", "INFO");
+			for (unsigned int i = 0; i < tensor.GetDimension(1); i++)
+			{
+				TN::TigiNetLogger::GetInstance() << tensor(i) << " ";
+			}
+		}
+		else if (tensor.GetRank() == 2)
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(2); i++)
+			{
+				TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader("UTILITY", "INFO");
+				for (unsigned int j = 0; j < tensor.GetDimension(1); j++)
+				{
+					TN::TigiNetLogger::GetInstance() << tensor[i](j) << " ";
+				}
+			}
+		}
+		else
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(tensor.GetRank()); i++)
+			{
+				TN_LOG("UTILITY") << "(" << i << ") :";
+				PrintTensor(tensor[i]);
+			}
+		}
 	}
 }
 
