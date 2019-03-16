@@ -46,14 +46,14 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	T ActivatorConfig<T>::ActivationFunction(T value)
+	T ActivatorConfig<T>::ActivationFunction(T value) const
 	{
 		return static_cast<T>(m_activationFunction(static_cast<double>(value)));
 	}
 
 	/// @private
 	template<typename T>
-	T ActivatorConfig<T>::ActivationDerivative(T value)
+	T ActivatorConfig<T>::ActivationDerivative(T value) const
 	{
 		if (m_activationFunctionDerivative == NULL)
 			return static_cast<T>(DerivativeApproximation(*m_activationFunction, static_cast<double>(value)));
@@ -63,9 +63,10 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	Layer<T>::Layer(ActivatorConfig<T> & config)
+	Layer<T>::Layer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer)
+		: m_activator(activator), m_initializer(initializer)
 	{
-		m_activator = &config;
+
 	}
 
 	/// @private
