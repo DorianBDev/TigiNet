@@ -53,7 +53,7 @@ TN::FileLogger::~FileLogger()
 	if (this->m_open)
 	{
 		(*this) << std::endl << GetLogHeader("CORE", "INFO") << "----------";
-		(*this) << std::endl << GetLogHeader("CORE", "INFO") << "END FILE LOGGING";
+		(*this) << std::endl << GetLogHeader("CORE", "INFO") << "END FILE LOGGING" << std::endl;
 		m_file->close();
 	}
 
@@ -70,7 +70,7 @@ TN::ConsoleLogger::ConsoleLogger()
 TN::ConsoleLogger::~ConsoleLogger()
 {
 	(*this) << std::endl << GetLogHeader("CORE", "INFO") << "----------";
-	(*this) << std::endl << GetLogHeader("CORE", "INFO") << "END CONSOLE LOGGING";
+	(*this) << std::endl << GetLogHeader("CORE", "INFO") << "END CONSOLE LOGGING" << std::endl;
 }
 
 TN::TigiNetLogger::TigiNetLogger()
@@ -96,9 +96,9 @@ std::string TN::GetLogHeader(const char* mod, const char* type)
 	
 	res = buf;
 	res += " - [";
-	res += mod;
-	res += "] [";
 	res += type;
+	res += "] [";
+	res += mod;
 	res += "] : ";
 
 	return res;
