@@ -29,15 +29,59 @@
 
 namespace TN
 {
+
+	/**
+	* @class FCLayer
+	* @brief Fully connected layer.
+	*
+	* Create a fully connected layer.
+	*
+	* @see Layer
+	*
+	*/
 	template<typename T>
 	class FCLayer : protected Layer<T>
 	{
 	public:
-		FCLayer(ActivatorConfig<T> & config, unsigned int neuronsCount);
+
+		/**
+		* @brief Create a Fully connected layer.
+		*
+		* @param neuronsCount : the number of neurons for this layer.
+		*
+		* @see ActivatorConfig
+		* @see Initializer
+		*
+		*/
+		FCLayer(const ActivatorConfig<T> & config, const Initializer<T> & initializer, unsigned int neuronsCount);
 		~FCLayer();
+
+		/**
+		* @brief Link a layer to this layer.
+		*
+		* @param layer : the layer to link with.
+		*
+		*/
 		void Link(Layer<T> & layer);
+
+		/**
+		* @brief Link an input tensor to this layer.
+		*
+		* @param in : the input tensor to link with.
+		*
+		*/
 		void Link(Tensor<T> & in);
+
+		/**
+		* @brief Forward propagation.
+		*
+		*/
 		void Activate();
+
+		/**
+		* @brief Backward propagation.
+		*
+		*/
 		void Update();
 
 	private:

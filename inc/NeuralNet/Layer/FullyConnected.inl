@@ -31,8 +31,8 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	FCLayer<T>::FCLayer(ActivatorConfig<T> & config, unsigned int neuronsCount)
-		: Layer<T>(config)
+	FCLayer<T>::FCLayer(const ActivatorConfig<T> & config, const Initializer<T> & initializer, unsigned int neuronsCount)
+		: Layer<T>(config, initializer)
 	{
 		m_neuronsCount = neuronsCount;
 	}
@@ -99,8 +99,8 @@ namespace TN
 			break;
 		}
 		weightShape = new unsigned int[2];
-		weightShape[0] = D;
-		weightShape[1] = m_neuronsCount;
+		weightShape[0] = m_neuronsCount;
+		weightShape[1] = D;
 		
 		m_weight = new Tensor<T>(2, TensorShape(weightShape), 2); //TODO: gradient tensor.
 		delete[] weightShape;
@@ -123,6 +123,14 @@ namespace TN
 			this->m_out = new Tensor<T>(2, TensorShape(outShape), 2);
 		}
 		delete[] outShape;
+
+		this->m_initializer.Initialize(*m_weight);
+		this->m_initializer.Initialize(*m_bias);
+		this->m_initializer.Initialize(*(this->m_out));
+
+		this->m_weight->Print();
+		this->m_bias->Print();
+		this->m_out->Print();
 	}
 
 	/// @private
