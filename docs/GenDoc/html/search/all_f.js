@@ -30,6 +30,7 @@ var searchData=
   ['tn_5flog',['TN_LOG',['../_log_8hpp.html#ab94756e3fc9cfbe5f48ad91e97a740af',1,'Log.hpp']]],
   ['tn_5fneuralnet',['TN_NEURALNET',['../_neural_net_2_config_8hpp.html#af546ead4c3f145ccd85cae52d18ee7f9',1,'Config.hpp']]],
   ['tn_5fneuralnet_5ffullyconnected_5finl',['TN_NEURALNET_FULLYCONNECTED_INL',['../_fully_connected_8inl.html#ab1d073b4f454c56d1e5b9b89af428bf2',1,'FullyConnected.inl']]],
+  ['tn_5fneuralnet_5finitializer_5finl',['TN_NEURALNET_INITIALIZER_INL',['../_initializer_8inl.html#a21850f58be591512163b6ba6003e2d85',1,'Initializer.inl']]],
   ['tn_5fneuralnet_5flayer_5finl',['TN_NEURALNET_LAYER_INL',['../_layer_8inl.html#a334e5eb9227432f7e55a5a8b1c6fb227',1,'Layer.inl']]],
   ['tn_5fsafemode_5ftensor',['TN_SAFEMODE_TENSOR',['../_prerequisites_8hpp.html#a675433ba47f4fa1e556bbd0fcd09cea3',1,'Prerequisites.hpp']]],
   ['tn_5fscript',['TN_SCRIPT',['../_prerequisites_8hpp.html#a6dc8d89cfbbbbeebeb1cfe3344a03dc8',1,'Prerequisites.hpp']]],
@@ -37,6 +38,7 @@ var searchData=
   ['tn_5fthread_5fsafe',['TN_THREAD_SAFE',['../_prerequisites_8hpp.html#af12a60dc09c97a5e822d6e0cacd6e92e',1,'Prerequisites.hpp']]],
   ['tn_5fuse_5fopen_5fcl',['TN_USE_OPEN_CL',['../_prerequisites_8hpp.html#acda149184c5b9eb76b5c6f7cbef4de42',1,'Prerequisites.hpp']]],
   ['tn_5futility',['TN_UTILITY',['../_utility_2_config_8hpp.html#acf9fa22a959dca3dc1a9b6318ea12b2e',1,'Config.hpp']]],
+  ['tn_5futility_5fmath_5finl',['TN_UTILITY_MATH_INL',['../_math_8inl.html#a7cdc206815ba78431c5cf4a92208c1a9',1,'Math.inl']]],
   ['tn_5futility_5ftensor_5finl',['TN_UTILITY_TENSOR_INL',['../_tensor_8inl.html#add00fc034378386242ac0d3addaeee4a',1,'Tensor.inl']]],
   ['tn_5fwarning',['TN_WARNING',['../_error_8hpp.html#a627e454d92978564c1c0a7336882340d',1,'Error.hpp']]],
   ['trylock',['TryLock',['../class_t_n_1_1_mutex.html#a42c9c38aab432e29447a939e84ddf65c',1,'TN::Mutex']]]

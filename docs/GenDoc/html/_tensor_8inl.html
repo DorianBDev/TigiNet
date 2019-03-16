@@ -84,37 +84,26 @@ $(document).ready(function(){initNavTree('_tensor_8inl.html','');});
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Tensor.inl File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="_error_8hpp_source.html">Core/Error.hpp</a>&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for Tensor.inl:</div>
-<div class="dyncontent">
-<div class="center"><img src="_tensor_8inl__incl.png" border="0" usemap="#_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8inl" alt=""/></div>
-<map name="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8inl" id="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8inl">
-<area shape="rect" id="node2" href="_error_8hpp.html" title="Core/Error.hpp" alt="" coords="117,95,223,121"/>
-<area shape="rect" id="node3" href="_core_2_config_8hpp.html" title="Core/Config.hpp" alt="" coords="63,319,178,345"/>
-<area shape="rect" id="node8" href="_log_8hpp.html" title="Core/Log.hpp" alt="" coords="267,169,366,196"/>
-<area shape="rect" id="node4" href="_prerequisites_8hpp.html" title="Prerequisites.hpp" alt="" coords="59,393,182,420"/>
-<area shape="rect" id="node9" href="_singleton_8hpp.html" title="Core/Singleton.hpp" alt="" coords="251,244,383,271"/>
-<area shape="rect" id="node11" href="_mutex_8hpp.html" title="Core/Mutex.hpp" alt="" coords="111,244,226,271"/>
-<area shape="rect" id="node10" href="_singleton_8inl.html" title="Core/Singleton.inl" alt="" coords="255,319,379,345"/>
-</map>
-</div>
-</div><div class="textblock"><div class="dynheader">
+<div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_tensor_8inl__dep__incl.png" border="0" usemap="#_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8inldep" alt=""/></div>
 <map name="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8inldep" id="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8inldep">
-<area shape="rect" id="node2" href="_tensor_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Tensor.hpp" alt="" coords="463,95,625,136"/>
-<area shape="rect" id="node3" href="_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="280,184,445,225"/>
-<area shape="rect" id="node5" href="_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="220,363,383,404"/>
-<area shape="rect" id="node7" href="_tensor_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Tensor.cpp" alt="" coords="581,184,744,225"/>
-<area shape="rect" id="node4" href="_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="5,273,264,315"/>
-<area shape="rect" id="node6" href="_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="339,273,506,315"/>
+<area shape="rect" id="node2" href="_tensor_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Tensor.hpp" alt="" coords="418,95,581,136"/>
+<area shape="rect" id="node3" href="_initializer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Initializer.hpp" alt="" coords="407,273,591,315"/>
+<area shape="rect" id="node4" href="_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="211,363,377,404"/>
+<area shape="rect" id="node6" href="_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="446,541,609,583"/>
+<area shape="rect" id="node8" href="_math_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Math.hpp" alt="" coords="221,184,383,225"/>
+<area shape="rect" id="node10" href="_tensor_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Tensor.cpp" alt="" coords="666,184,829,225"/>
+<area shape="rect" id="node5" href="_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="39,452,298,493"/>
+<area shape="rect" id="node7" href="_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="323,452,489,493"/>
+<area shape="rect" id="node9" href="_math_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Math.cpp" alt="" coords="221,273,383,315"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -128,6 +117,13 @@ Namespaces</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:add00fc034378386242ac0d3addaeee4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_tensor_8inl.html#add00fc034378386242ac0d3addaeee4a">TN_UTILITY_TENSOR_INL</a></td></tr>
 <tr class="separator:add00fc034378386242ac0d3addaeee4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa1f6ba4b77986fd3c22d995010111d50"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa1f6ba4b77986fd3c22d995010111d50"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_t_n.html#aa1f6ba4b77986fd3c22d995010111d50">TN::PrintTensor</a> (const Tensor&lt; T &gt; &amp;tensor)</td></tr>
+<tr class="memdesc:aa1f6ba4b77986fd3c22d995010111d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print tensor datas.  <a href="namespace_t_n.html#aa1f6ba4b77986fd3c22d995010111d50">More...</a><br /></td></tr>
+<tr class="separator:aa1f6ba4b77986fd3c22d995010111d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="add00fc034378386242ac0d3addaeee4a"></a>

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['send',['Send',['../class_t_n_1_1_error.html#ad0328fb6e566349233d2b1d9773cb19d',1,'TN::Error']]],
-  ['sigmoide',['Sigmoide',['../namespace_t_n.html#a9eb252949c1d1bfe5dc520190942fa40',1,'TN']]],
-  ['start',['Start',['../class_t_n_1_1_clock.html#a4913474baa9d875131628f6a555b106d',1,'TN::Clock']]],
-  ['stop',['Stop',['../class_t_n_1_1_clock.html#a3f709b7f9fe1c742f4156e6354053899',1,'TN::Clock']]]
+  ['random',['Random',['../namespace_t_n.html#a0ea7e3ee9fd100fba804b25012292579',1,'TN']]],
+  ['run',['Run',['../class_t_n_1_1_a_functor.html#a91a286369cac4af40ae3f214cf3bc8b3',1,'TN::AFunctor::Run()'],['../class_t_n_1_1_functor.html#a0fb2454192d3f0e02aa1cfeb6495eaf2',1,'TN::Functor::Run()']]]
 ];

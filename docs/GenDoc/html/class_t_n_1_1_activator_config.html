@@ -90,22 +90,36 @@ $(document).ready(function(){initNavTree('class_t_n_1_1_activator_config.html','
 </div><!--header-->
 <div class="contents">
 
+<p>Define an activator function and possibly his derivative.  
+ <a href="class_t_n_1_1_activator_config.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_layer_8hpp_source.html">Layer.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad574b24c9204c19e8958b973ca3e6aba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#ad574b24c9204c19e8958b973ca3e6aba">ActivatorConfig</a> (double(&amp;activationFunction)(double))</td></tr>
+<tr class="memdesc:ad574b24c9204c19e8958b973ca3e6aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an activator config.  <a href="#ad574b24c9204c19e8958b973ca3e6aba">More...</a><br /></td></tr>
 <tr class="separator:ad574b24c9204c19e8958b973ca3e6aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcd153a1387a4d603f756be1c3c7d977"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#afcd153a1387a4d603f756be1c3c7d977">ActivatorConfig</a> (double(&amp;activationFunction)(double), double(&amp;activationFunctionDerivative)(double))</td></tr>
+<tr class="memdesc:afcd153a1387a4d603f756be1c3c7d977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an activator config.  <a href="#afcd153a1387a4d603f756be1c3c7d977">More...</a><br /></td></tr>
 <tr class="separator:afcd153a1387a4d603f756be1c3c7d977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a693ffedfe4bd7c758ae19fd042c3644c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#a693ffedfe4bd7c758ae19fd042c3644c">~ActivatorConfig</a> ()=default</td></tr>
 <tr class="separator:a693ffedfe4bd7c758ae19fd042c3644c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe20023413ed30f725abbd3379acd117"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#afe20023413ed30f725abbd3379acd117">ActivationFunction</a> (T value)</td></tr>
-<tr class="separator:afe20023413ed30f725abbd3379acd117"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89f9c31cbc3827c83d3a944f1a54c015"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#a89f9c31cbc3827c83d3a944f1a54c015">ActivationDerivative</a> (T value)</td></tr>
-<tr class="separator:a89f9c31cbc3827c83d3a944f1a54c015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0471caa7aead3b6cf76259d4ca97659b"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#a0471caa7aead3b6cf76259d4ca97659b">ActivationFunction</a> (T value) const</td></tr>
+<tr class="memdesc:a0471caa7aead3b6cf76259d4ca97659b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the activator function.  <a href="#a0471caa7aead3b6cf76259d4ca97659b">More...</a><br /></td></tr>
+<tr class="separator:a0471caa7aead3b6cf76259d4ca97659b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26ca8ac561fac8125799f6415c55051b"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_activator_config.html#a26ca8ac561fac8125799f6415c55051b">ActivationDerivative</a> (T value) const</td></tr>
+<tr class="memdesc:a26ca8ac561fac8125799f6415c55051b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use the activator derivative function.  <a href="#a26ca8ac561fac8125799f6415c55051b">More...</a><br /></td></tr>
+<tr class="separator:a26ca8ac561fac8125799f6415c55051b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class TN::ActivatorConfig&lt; T &gt;</h3>
+
+<p>Define an activator function and possibly his derivative. </p>
+<p>A class that handle an activator function for use with a layer. If no derivative is passed, it will use approximation.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad574b24c9204c19e8958b973ca3e6aba"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad574b24c9204c19e8958b973ca3e6aba">&#9670;&nbsp;</a></span>ActivatorConfig() <span class="overload">[1/2]</span></h2>
 
@@ -123,6 +137,14 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create an activator config. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">activationFunction</td><td>: the activator function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -154,6 +176,15 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Create an activator config. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">activationFunction</td><td>: the activator function. </td></tr>
+    <tr><td class="paramname">activationFunctionDerivative</td><td>: the activator derivative function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a693ffedfe4bd7c758ae19fd042c3644c"></a>
@@ -184,8 +215,8 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a89f9c31cbc3827c83d3a944f1a54c015"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89f9c31cbc3827c83d3a944f1a54c015">&#9670;&nbsp;</a></span>ActivationDerivative()</h2>
+<a id="a26ca8ac561fac8125799f6415c55051b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26ca8ac561fac8125799f6415c55051b">&#9670;&nbsp;</a></span>ActivationDerivative()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,23 +228,32 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Use the activator derivative function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>: the value to use with the function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return the result of f'(value). </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_activator_config_a89f9c31cbc3827c83d3a944f1a54c015_cgraph.png" border="0" usemap="#class_t_n_1_1_activator_config_a89f9c31cbc3827c83d3a944f1a54c015_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_activator_config_a89f9c31cbc3827c83d3a944f1a54c015_cgraph" id="class_t_n_1_1_activator_config_a89f9c31cbc3827c83d3a944f1a54c015_cgraph">
+<div class="center"><img src="class_t_n_1_1_activator_config_a26ca8ac561fac8125799f6415c55051b_cgraph.png" border="0" usemap="#class_t_n_1_1_activator_config_a26ca8ac561fac8125799f6415c55051b_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_activator_config_a26ca8ac561fac8125799f6415c55051b_cgraph" id="class_t_n_1_1_activator_config_a26ca8ac561fac8125799f6415c55051b_cgraph">
 <area shape="rect" id="node2" href="namespace_t_n.html#ad127742e791509257e2950c8f8d44340" title="Approximation of the derivative of a certain function. " alt="" coords="193,13,376,39"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="afe20023413ed30f725abbd3379acd117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe20023413ed30f725abbd3379acd117">&#9670;&nbsp;</a></span>ActivationFunction()</h2>
+<a id="a0471caa7aead3b6cf76259d4ca97659b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0471caa7aead3b6cf76259d4ca97659b">&#9670;&nbsp;</a></span>ActivationFunction()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,10 +265,19 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Use the activator function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>: the value to use with the function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return the result of f(value). </dd></dl>
 
 </div>
 </div>

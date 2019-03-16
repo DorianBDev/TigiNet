@@ -9,6 +9,7 @@ var namespace_t_n =
     [ "FileLogger", "class_t_n_1_1_file_logger.html", "class_t_n_1_1_file_logger" ],
     [ "Functor", "class_t_n_1_1_functor.html", "class_t_n_1_1_functor" ],
     [ "gradient_t", "struct_t_n_1_1gradient__t.html", "struct_t_n_1_1gradient__t" ],
+    [ "Initializer", "class_t_n_1_1_initializer.html", "class_t_n_1_1_initializer" ],
     [ "Layer", "class_t_n_1_1_layer.html", "class_t_n_1_1_layer" ],
     [ "LockGuard", "class_t_n_1_1_lock_guard.html", "class_t_n_1_1_lock_guard" ],
     [ "Logger", "class_t_n_1_1_logger.html", "class_t_n_1_1_logger" ],
@@ -16,5 +17,7 @@ var namespace_t_n =
     [ "Singleton", "class_t_n_1_1_singleton.html", "class_t_n_1_1_singleton" ],
     [ "Tensor", "class_t_n_1_1_tensor.html", "class_t_n_1_1_tensor" ],
     [ "TensorShape", "class_t_n_1_1_tensor_shape.html", "class_t_n_1_1_tensor_shape" ],
-    [ "TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", "class_t_n_1_1_tigi_net_logger" ]
+    [ "TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", "class_t_n_1_1_tigi_net_logger" ],
+    [ "UniformInitializer", "class_t_n_1_1_uniform_initializer.html", "class_t_n_1_1_uniform_initializer" ],
+    [ "ZeroInitializer", "class_t_n_1_1_zero_initializer.html", "class_t_n_1_1_zero_initializer" ]
 ];

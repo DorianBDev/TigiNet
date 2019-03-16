@@ -9,5 +9,7 @@ var class_t_n_1_1_tensor =
     [ "InitializeSub", "class_t_n_1_1_tensor.html#ac26564f2389950f62184a1660c9c5037", null ],
     [ "operator()", "class_t_n_1_1_tensor.html#ae33bdfeabb3156b9549fe9b7735d695a", null ],
     [ "operator()", "class_t_n_1_1_tensor.html#a0421212ee7b8c98579e39249a8b5592d", null ],
-    [ "operator[]", "class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036", null ]
+    [ "operator[]", "class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036", null ],
+    [ "operator[]", "class_t_n_1_1_tensor.html#a008bb7e7a8a032ae4ad4748e85b12403", null ],
+    [ "Print", "class_t_n_1_1_tensor.html#aa7482eec63ce1ca5b7e6e05bfaa027d8", null ]
 ];

@@ -84,12 +84,14 @@ $(document).ready(function(){initNavTree('_tensor_8hpp.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Tensor.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="_utility_2_config_8hpp_source.html">Utility/Config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_error_8hpp_source.html">Core/Error.hpp</a>&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;<a class="el" href="_tensor_8inl.html">Utility/Tensor.inl</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -97,15 +99,15 @@ Include dependency graph for Tensor.hpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="_tensor_8hpp__incl.png" border="0" usemap="#_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8hpp" alt=""/></div>
 <map name="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8hpp" id="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8hpp">
-<area shape="rect" id="node2" href="_utility_2_config_8hpp.html" title="Utility/Config.hpp" alt="" coords="10,169,130,196"/>
-<area shape="rect" id="node8" href="_tensor_8inl.html" title="Utility/Tensor.inl" alt="" coords="201,95,315,121"/>
-<area shape="rect" id="node3" href="_prerequisites_8hpp.html" title="Prerequisites.hpp" alt="" coords="59,468,182,495"/>
-<area shape="rect" id="node9" href="_error_8hpp.html" title="Core/Error.hpp" alt="" coords="205,169,311,196"/>
-<area shape="rect" id="node10" href="_core_2_config_8hpp.html" title="Core/Config.hpp" alt="" coords="114,393,229,420"/>
-<area shape="rect" id="node11" href="_log_8hpp.html" title="Core/Log.hpp" alt="" coords="365,244,463,271"/>
-<area shape="rect" id="node12" href="_singleton_8hpp.html" title="Core/Singleton.hpp" alt="" coords="348,319,480,345"/>
-<area shape="rect" id="node14" href="_mutex_8hpp.html" title="Core/Mutex.hpp" alt="" coords="209,319,323,345"/>
-<area shape="rect" id="node13" href="_singleton_8inl.html" title="Core/Singleton.inl" alt="" coords="352,393,476,420"/>
+<area shape="rect" id="node2" href="_utility_2_config_8hpp.html" title="Utility/Config.hpp" alt="" coords="5,169,125,196"/>
+<area shape="rect" id="node7" href="_error_8hpp.html" title="Core/Error.hpp" alt="" coords="109,95,216,121"/>
+<area shape="rect" id="node17" href="_tensor_8inl.html" title="Utility/Tensor.inl" alt="" coords="333,95,448,121"/>
+<area shape="rect" id="node3" href="_prerequisites_8hpp.html" title="Prerequisites.hpp" alt="" coords="89,393,212,420"/>
+<area shape="rect" id="node8" href="_core_2_config_8hpp.html" title="Core/Config.hpp" alt="" coords="156,319,271,345"/>
+<area shape="rect" id="node9" href="_log_8hpp.html" title="Core/Log.hpp" alt="" coords="407,169,505,196"/>
+<area shape="rect" id="node10" href="_singleton_8hpp.html" title="Core/Singleton.hpp" alt="" coords="390,244,522,271"/>
+<area shape="rect" id="node12" href="_mutex_8hpp.html" title="Core/Mutex.hpp" alt="" coords="251,244,365,271"/>
+<area shape="rect" id="node11" href="_singleton_8inl.html" title="Core/Singleton.inl" alt="" coords="394,319,518,345"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -113,11 +115,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="_tensor_8hpp__dep__incl.png" border="0" usemap="#_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8hppdep" alt=""/></div>
 <map name="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8hppdep" id="_d_1_2_d_e_v_2_projects_2_tigi_net_2inc_2_utility_2_tensor_8hppdep">
-<area shape="rect" id="node2" href="_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="280,95,445,136"/>
-<area shape="rect" id="node4" href="_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="220,273,383,315"/>
-<area shape="rect" id="node6" href="_tensor_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Tensor.cpp" alt="" coords="581,95,744,136"/>
-<area shape="rect" id="node3" href="_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="5,184,264,225"/>
-<area shape="rect" id="node5" href="_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="339,184,506,225"/>
+<area shape="rect" id="node2" href="_initializer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Initializer.hpp" alt="" coords="407,184,591,225"/>
+<area shape="rect" id="node3" href="_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="211,273,377,315"/>
+<area shape="rect" id="node5" href="_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="446,452,609,493"/>
+<area shape="rect" id="node7" href="_math_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/Utility/Math.hpp" alt="" coords="221,95,383,136"/>
+<area shape="rect" id="node9" href="_tensor_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Tensor.cpp" alt="" coords="666,95,829,136"/>
+<area shape="rect" id="node4" href="_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="39,363,298,404"/>
+<area shape="rect" id="node6" href="_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="323,363,489,404"/>
+<area shape="rect" id="node8" href="_math_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Math.cpp" alt="" coords="221,184,383,225"/>
 </map>
 </div>
 </div>
@@ -137,6 +142,13 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespace_t_n"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_t_n.html">TN</a></td></tr>
 <tr class="memdesc:namespace_t_n"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aa1f6ba4b77986fd3c22d995010111d50"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:aa1f6ba4b77986fd3c22d995010111d50"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_t_n.html#aa1f6ba4b77986fd3c22d995010111d50">TN::PrintTensor</a> (const Tensor&lt; T &gt; &amp;tensor)</td></tr>
+<tr class="memdesc:aa1f6ba4b77986fd3c22d995010111d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print tensor datas.  <a href="namespace_t_n.html#aa1f6ba4b77986fd3c22d995010111d50">More...</a><br /></td></tr>
+<tr class="separator:aa1f6ba4b77986fd3c22d995010111d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

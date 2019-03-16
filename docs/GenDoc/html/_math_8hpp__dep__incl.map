@@ -1,7 +1,8 @@
 <map id="D:/DEV/Projects/TigiNet/inc/Utility/Math.hpp" name="D:/DEV/Projects/TigiNet/inc/Utility/Math.hpp">
-<area shape="rect" id="node2" href="$_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="219,95,384,136"/>
-<area shape="rect" id="node6" href="$_math_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Math.cpp" alt="" coords="408,95,571,136"/>
-<area shape="rect" id="node3" href="$_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="5,184,264,225"/>
-<area shape="rect" id="node4" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="136,273,299,315"/>
-<area shape="rect" id="node5" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="339,184,506,225"/>
+<area shape="rect" id="node2" href="$_initializer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Initializer.hpp" alt="" coords="373,95,557,136"/>
+<area shape="rect" id="node3" href="$_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="253,184,419,225"/>
+<area shape="rect" id="node5" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="341,363,504,404"/>
+<area shape="rect" id="node7" href="$_math_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Utility/Math.cpp" alt="" coords="632,95,795,136"/>
+<area shape="rect" id="node4" href="$_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="5,273,264,315"/>
+<area shape="rect" id="node6" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="339,273,506,315"/>
 </map>

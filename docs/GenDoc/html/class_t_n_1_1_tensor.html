@@ -116,6 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d4da4fbe600014fc651681951f29036"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036">operator[]</a> (unsigned int index)</td></tr>
 <tr class="memdesc:a0d4da4fbe600014fc651681951f29036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to a sub <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> (with rank - 1).  <a href="#a0d4da4fbe600014fc651681951f29036">More...</a><br /></td></tr>
 <tr class="separator:a0d4da4fbe600014fc651681951f29036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a008bb7e7a8a032ae4ad4748e85b12403"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a008bb7e7a8a032ae4ad4748e85b12403">operator[]</a> (unsigned int index) const</td></tr>
+<tr class="memdesc:a008bb7e7a8a032ae4ad4748e85b12403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to a sub <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> (with rank - 1).  <a href="#a008bb7e7a8a032ae4ad4748e85b12403">More...</a><br /></td></tr>
+<tr class="separator:a008bb7e7a8a032ae4ad4748e85b12403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae33bdfeabb3156b9549fe9b7735d695a"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#ae33bdfeabb3156b9549fe9b7735d695a">operator()</a> (unsigned int index=0) const</td></tr>
 <tr class="memdesc:ae33bdfeabb3156b9549fe9b7735d695a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to data (read only).  <a href="#ae33bdfeabb3156b9549fe9b7735d695a">More...</a><br /></td></tr>
 <tr class="separator:ae33bdfeabb3156b9549fe9b7735d695a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,6 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac26564f2389950f62184a1660c9c5037"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#ac26564f2389950f62184a1660c9c5037">InitializeSub</a> (unsigned rank, std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt; shape, unsigned int allocationRank=1, T *data=NULL)</td></tr>
 <tr class="memdesc:ac26564f2389950f62184a1660c9c5037"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a sub tensor.  <a href="#ac26564f2389950f62184a1660c9c5037">More...</a><br /></td></tr>
 <tr class="separator:ac26564f2389950f62184a1660c9c5037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7482eec63ce1ca5b7e6e05bfaa027d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#aa7482eec63ce1ca5b7e6e05bfaa027d8">Print</a> () const</td></tr>
+<tr class="memdesc:aa7482eec63ce1ca5b7e6e05bfaa027d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the tensor datas.  <a href="#aa7482eec63ce1ca5b7e6e05bfaa027d8">More...</a><br /></td></tr>
+<tr class="separator:aa7482eec63ce1ca5b7e6e05bfaa027d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -412,7 +418,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="a0d4da4fbe600014fc651681951f29036"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d4da4fbe600014fc651681951f29036">&#9670;&nbsp;</a></span>operator[]()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d4da4fbe600014fc651681951f29036">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,6 +443,56 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return the desired sub tensor. </dd></dl>
+
+</div>
+</div>
+<a id="a008bb7e7a8a032ae4ad4748e85b12403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a008bb7e7a8a032ae4ad4748e85b12403">&#9670;&nbsp;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access to a sub <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> (with rank - 1). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>: the desired index.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return the desired sub tensor. </dd></dl>
+
+</div>
+</div>
+<a id="aa7482eec63ce1ca5b7e6e05bfaa027d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7482eec63ce1ca5b7e6e05bfaa027d8">&#9670;&nbsp;</a></span>Print()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::Print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print the tensor datas. </p>
 
 </div>
 </div>

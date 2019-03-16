@@ -90,13 +90,16 @@ $(document).ready(function(){initNavTree('class_t_n_1_1_f_c_layer.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Fully connected layer.  
+ <a href="class_t_n_1_1_f_c_layer.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_fully_connected_8hpp_source.html">FullyConnected.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TN::FCLayer&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_n_1_1_f_c_layer__inherit__graph.png" border="0" usemap="#_t_n_1_1_f_c_layer_3_01_t_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="_t_n_1_1_f_c_layer_3_01_t_01_4_inherit__map" id="_t_n_1_1_f_c_layer_3_01_t_01_4_inherit__map">
-<area shape="rect" id="node2" href="class_t_n_1_1_layer.html" title="TN::Layer\&lt; T \&gt;" alt="" coords="14,5,123,32"/>
+<area shape="rect" id="node2" href="class_t_n_1_1_layer.html" title="Neural network virtual class. " alt="" coords="14,5,123,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -104,40 +107,50 @@ Collaboration diagram for TN::FCLayer&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_n_1_1_f_c_layer__coll__graph.png" border="0" usemap="#_t_n_1_1_f_c_layer_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="_t_n_1_1_f_c_layer_3_01_t_01_4_coll__map" id="_t_n_1_1_f_c_layer_3_01_t_01_4_coll__map">
-<area shape="rect" id="node2" href="class_t_n_1_1_layer.html" title="TN::Layer\&lt; T \&gt;" alt="" coords="34,109,143,136"/>
+<area shape="rect" id="node2" href="class_t_n_1_1_layer.html" title="Neural network virtual class. " alt="" coords="34,109,143,136"/>
 <area shape="rect" id="node3" href="class_t_n_1_1_tensor.html" title="TN::Tensor\&lt; TN::gradient\l_t\&lt; T \&gt; \&gt;" alt="" coords="5,5,172,47"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2878424933014e23f307ec4fef5f7128"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#a2878424933014e23f307ec4fef5f7128">FCLayer</a> (<a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;config, unsigned int neuronsCount)</td></tr>
-<tr class="separator:a2878424933014e23f307ec4fef5f7128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0631f72b497f893052eb047ed9ecc0de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#a0631f72b497f893052eb047ed9ecc0de">FCLayer</a> (const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;config, const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer, unsigned int neuronsCount)</td></tr>
+<tr class="memdesc:a0631f72b497f893052eb047ed9ecc0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a Fully connected layer.  <a href="#a0631f72b497f893052eb047ed9ecc0de">More...</a><br /></td></tr>
+<tr class="separator:a0631f72b497f893052eb047ed9ecc0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aeab4d29bffdb7d2b8c756715975ebc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#a6aeab4d29bffdb7d2b8c756715975ebc">~FCLayer</a> ()</td></tr>
 <tr class="separator:a6aeab4d29bffdb7d2b8c756715975ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a474ae2a70656b81c38a8e3cbe10d8339"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339">Link</a> (<a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt; T &gt; &amp;layer)</td></tr>
+<tr class="memdesc:a474ae2a70656b81c38a8e3cbe10d8339"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link a layer to this layer.  <a href="#a474ae2a70656b81c38a8e3cbe10d8339">More...</a><br /></td></tr>
 <tr class="separator:a474ae2a70656b81c38a8e3cbe10d8339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a658f47aeef290f8332d1081053be8891"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#a658f47aeef290f8332d1081053be8891">Link</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;in)</td></tr>
+<tr class="memdesc:a658f47aeef290f8332d1081053be8891"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link an input tensor to this layer.  <a href="#a658f47aeef290f8332d1081053be8891">More...</a><br /></td></tr>
 <tr class="separator:a658f47aeef290f8332d1081053be8891"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f21369817434c0824693f9d9fdc5500"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">Activate</a> ()</td></tr>
+<tr class="memdesc:a8f21369817434c0824693f9d9fdc5500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Forward propagation.  <a href="#a8f21369817434c0824693f9d9fdc5500">More...</a><br /></td></tr>
 <tr class="separator:a8f21369817434c0824693f9d9fdc5500"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad23d6fcf6df9b5453ad439a3db55180c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c">Update</a> ()</td></tr>
+<tr class="memdesc:ad23d6fcf6df9b5453ad439a3db55180c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation.  <a href="#ad23d6fcf6df9b5453ad439a3db55180c">More...</a><br /></td></tr>
 <tr class="separator:ad23d6fcf6df9b5453ad439a3db55180c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_t_n_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_t_n_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_t_n_1_1_layer.html">TN::Layer&lt; T &gt;</a></td></tr>
-<tr class="memitem:a4d55e287c217dcc23dc93d1837f62a05 inherit pro_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a4d55e287c217dcc23dc93d1837f62a05">Layer</a> (<a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;config)</td></tr>
-<tr class="separator:a4d55e287c217dcc23dc93d1837f62a05 inherit pro_methods_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acacec14e3c46c0a78db37103e767e0b4 inherit pro_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#acacec14e3c46c0a78db37103e767e0b4">Layer</a> (const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;activator, const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer)</td></tr>
+<tr class="memdesc:acacec14e3c46c0a78db37103e767e0b4 inherit pro_methods_class_t_n_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a>.  <a href="class_t_n_1_1_layer.html#acacec14e3c46c0a78db37103e767e0b4">More...</a><br /></td></tr>
+<tr class="separator:acacec14e3c46c0a78db37103e767e0b4 inherit pro_methods_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac273045511d30f871374f4ec81acc92 inherit pro_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aac273045511d30f871374f4ec81acc92">~Layer</a> ()</td></tr>
 <tr class="separator:aac273045511d30f871374f4ec81acc92 inherit pro_methods_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd17ced002d3475e1c75d424153d1d6a inherit pro_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a">Link</a> (<a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt; T &gt; &amp;layer)</td></tr>
+<tr class="memdesc:acd17ced002d3475e1c75d424153d1d6a inherit pro_methods_class_t_n_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link a layer to this layer.  <a href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a">More...</a><br /></td></tr>
 <tr class="separator:acd17ced002d3475e1c75d424153d1d6a inherit pro_methods_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f4a26884827016ccd0329b20cf4c269 inherit pro_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269">Link</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;in)</td></tr>
+<tr class="memdesc:a4f4a26884827016ccd0329b20cf4c269 inherit pro_methods_class_t_n_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Link an input tensor to this layer.  <a href="class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269">More...</a><br /></td></tr>
 <tr class="separator:a4f4a26884827016ccd0329b20cf4c269 inherit pro_methods_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_t_n_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_t_n_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_t_n_1_1_layer.html">TN::Layer&lt; T &gt;</a></td></tr>
-<tr class="memitem:a5baba2971c2a1b216181d8d885a7efb2 inherit pro_attribs_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a5baba2971c2a1b216181d8d885a7efb2">m_activator</a> = NULL</td></tr>
-<tr class="separator:a5baba2971c2a1b216181d8d885a7efb2 inherit pro_attribs_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada27f2707afb36d961ffd4c459245ac7 inherit pro_attribs_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ada27f2707afb36d961ffd4c459245ac7">m_activator</a> = NULL</td></tr>
+<tr class="separator:ada27f2707afb36d961ffd4c459245ac7 inherit pro_attribs_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b6e5727ad35aa228356b5436661a78 inherit pro_attribs_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ab3b6e5727ad35aa228356b5436661a78">m_initializer</a></td></tr>
+<tr class="separator:ab3b6e5727ad35aa228356b5436661a78 inherit pro_attribs_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addbd479b146193909d21366014a35c1d inherit pro_attribs_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#addbd479b146193909d21366014a35c1d">m_in</a> = NULL</td></tr>
 <tr class="separator:addbd479b146193909d21366014a35c1d inherit pro_attribs_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb05f8e02c075215bef6f8a9c9b94d8 inherit pro_attribs_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a0fb05f8e02c075215bef6f8a9c9b94d8">m_out</a> = NULL</td></tr>
@@ -145,9 +158,16 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a722e6c3272320690f88bdf9ae5865c34 inherit pro_attribs_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; <a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt; T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a722e6c3272320690f88bdf9ae5865c34">m_grad</a> = NULL</td></tr>
 <tr class="separator:a722e6c3272320690f88bdf9ae5865c34 inherit pro_attribs_class_t_n_1_1_layer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2878424933014e23f307ec4fef5f7128"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2878424933014e23f307ec4fef5f7128">&#9670;&nbsp;</a></span>FCLayer()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br />
+class TN::FCLayer&lt; T &gt;</h3>
+
+<p>Fully connected layer. </p>
+<p>Create a fully connected layer.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a> </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0631f72b497f893052eb047ed9ecc0de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0631f72b497f893052eb047ed9ecc0de">&#9670;&nbsp;</a></span>FCLayer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -157,8 +177,14 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_f_c_layer.html">TN::FCLayer</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_f_c_layer.html">FCLayer</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>initializer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -173,6 +199,17 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create a Fully connected layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">neuronsCount</td><td>: the number of neurons for this layer.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_activator_config.html" title="Define an activator function and possibly his derivative. ">ActivatorConfig</a> </dd>
+<dd>
+<a class="el" href="class_t_n_1_1_initializer.html" title="Create a virtual initializer for tensors. ">Initializer</a> </dd></dl>
 
 </div>
 </div>
@@ -221,6 +258,8 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>Forward propagation. </p>
+
 <p>Implements <a class="el" href="class_t_n_1_1_layer.html#af99458a1a0c3b8e4b564f983cd5fe2e0">TN::Layer&lt; T &gt;</a>.</p>
 
 </div>
@@ -243,6 +282,14 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
+<p>Link a layer to this layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">layer</td><td>: the layer to link with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a658f47aeef290f8332d1081053be8891"></a>
@@ -262,12 +309,20 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Link an input tensor to this layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td>: the input tensor to link with. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_n_1_1_f_c_layer_a658f47aeef290f8332d1081053be8891_cgraph.png" border="0" usemap="#class_t_n_1_1_f_c_layer_a658f47aeef290f8332d1081053be8891_cgraph" alt=""/></div>
 <map name="class_t_n_1_1_f_c_layer_a658f47aeef290f8332d1081053be8891_cgraph" id="class_t_n_1_1_f_c_layer_a658f47aeef290f8332d1081053be8891_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a" title="TN::Layer::Link" alt="" coords="180,5,291,32"/>
+<area shape="rect" id="node2" href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a" title="Link a layer to this layer. " alt="" coords="180,5,291,32"/>
 </map>
 </div>
 
@@ -297,6 +352,8 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Backward propagation. </p>
 
 <p>Implements <a class="el" href="class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e">TN::Layer&lt; T &gt;</a>.</p>
 

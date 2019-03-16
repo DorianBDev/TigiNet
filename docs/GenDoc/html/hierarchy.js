@@ -7,6 +7,10 @@ var hierarchy =
     [ "TN::Clock", "class_t_n_1_1_clock.html", null ],
     [ "TN::Error", "class_t_n_1_1_error.html", null ],
     [ "TN::gradient_t< T >", "struct_t_n_1_1gradient__t.html", null ],
+    [ "TN::Initializer< T >", "class_t_n_1_1_initializer.html", [
+      [ "TN::UniformInitializer< T >", "class_t_n_1_1_uniform_initializer.html", null ],
+      [ "TN::ZeroInitializer< T >", "class_t_n_1_1_zero_initializer.html", null ]
+    ] ],
     [ "TN::Layer< T >", "class_t_n_1_1_layer.html", [
       [ "TN::FCLayer< T >", "class_t_n_1_1_f_c_layer.html", null ]
     ] ],
