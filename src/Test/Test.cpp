@@ -27,7 +27,9 @@
 #include <NeuralNet/Layer.hpp>
 #include <Utility/Tensor.hpp>
 #include <Utility/Gradient.hpp>
+#include <Utility/Math.hpp>
 #include <NeuralNet/Layer/FullyConnected.hpp>
+#include <NeuralNet/Initializer.hpp>
 
 int main()
 {
@@ -40,8 +42,7 @@ int main()
 	TN::gradient_t<double> grad;
 	grad.actual = 10;
 
-	TN::ActivatorConfig<int> config2(TN::Sigmoide);
-	TN::FCLayer<int> l(config2, 2);
+	TN::FCLayer<double> l(TN::ActivatorConfig<double>(TN::Sigmoide), TN::UniformInitializer<double>(), 2);
 
 	TN_LOG("TEST") << "-------";
 
@@ -65,7 +66,7 @@ int main()
 	TN_LOG("TEST") << "-------";
 
 	unsigned int shape[] = { 2, 2, 2 };
-	TN::Tensor<int> t(3, TN::TensorShape(shape), 3);
+	TN::Tensor<double> t(3, TN::TensorShape(shape), 3);
 
 	l.Link(t);
 
@@ -78,6 +79,8 @@ int main()
 	t[1][1](0) = 7;
 	t[1][1](1) = 8;
 
+	t.Print();
+
 	TN_LOG("TEST") << "0 : " << t[0][0](0) << " " << t[0][0](1);
 	TN_LOG("TEST") << "0 : " << t[0][1](0) << " " << t[0][1](1);
 	TN_LOG("TEST") << "1 : " << t[1][0](0) << " " << t[1][0](1);
@@ -85,7 +88,7 @@ int main()
 
 	TN_LOG("TEST") << "-------";
 
-	int* data = t.GetData();
+	double* data = t.GetData();
 	TN_LOG("TEST") << "0 : " << data[0] << " " << data[1];
 	TN_LOG("TEST") << "0 : " << data[2] << " " << data[3];
 	TN_LOG("TEST") << "1 : " << data[4] << " " << data[5];
@@ -96,6 +99,45 @@ int main()
 	data = t[1].GetData();
 	TN_LOG("TEST") << "1 : " << data[0] << " " << data[1];
 	TN_LOG("TEST") << "1 : " << data[2] << " " << data[3];
+
+	TN_LOG("TEST") << "-------";
+
+	TN::ZeroInitializer<double> z;
+
+	z.Initialize(t);
+	t.Print();
+
+	TN::UniformInitializer<double> y;
+	y.Initialize(t);
+	t.Print();
+
+	TN_LOG("TEST") << "-------";
+
+	unsigned int shape2[] = { 2, 2 };
+
+	TN::Tensor<int> t1(2, TN::TensorShape(shape2), 2);
+	t1[0](0) = 1;
+	t1[0](1) = 2;
+	t1[1](0) = 3;
+	t1[1](1) = 4;
+	t1.Print();
+
+	TN_LOG("TEST") << "-------";
+
+	TN::Tensor<int> t2(2, TN::TensorShape(shape2), 2);
+	t2[0](0) = 1;
+	t2[0](1) = 2;
+	t2[1](0) = 3;
+	t2[1](1) = 4;
+	t2.Print();
+
+	TN_LOG("TEST") << "-------";
+
+	TN::Tensor<int> * t3 = MatrixProduct(t1, t2);
+
+	t3->Print();
+
+	delete t3;
 
 	TN_LOG("TEST") << "-------";
 
