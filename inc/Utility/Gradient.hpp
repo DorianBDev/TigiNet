@@ -29,6 +29,14 @@
 
 namespace TN
 {
+
+	/**
+	* @struct gradient_t
+	* @brief Gradient type.
+	*
+	* This is the base type for gradient, hold actual and old gradients.
+	*
+	*/
 	template <typename T>
 	struct gradient_t
 	{
