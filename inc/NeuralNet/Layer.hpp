@@ -143,12 +143,21 @@ namespace TN
 		*/
 		virtual void Update() = 0;
 
+		/**
+		* @brief Get the output tensor of the layer.
+		*
+		* @return Return the output tensor of the layer.
+		*
+		*/
+		Tensor<T>& GetOutput();
+
 	protected:
-		const ActivatorConfig<T>& m_activator = NULL;
+		const ActivatorConfig<T>& m_activator;
 		const Initializer<T>& m_initializer;
 		Tensor<T>* m_in = NULL;
 		Tensor<T>* m_out = NULL;
 		Tensor<gradient_t<T>>* m_grad = NULL;
+		Layer<T>* m_nextLayer = NULL;
 	};
 
 }

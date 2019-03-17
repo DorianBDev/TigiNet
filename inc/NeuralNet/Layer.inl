@@ -85,6 +85,7 @@ namespace TN
 	void Layer<T>::Link(Layer<T> & layer)
 	{
 		this->m_in = layer.m_out;
+		layer.m_nextLayer = this;
 	}
 
 	/// @private
@@ -92,6 +93,13 @@ namespace TN
 	void Layer<T>::Link(Tensor<T> & in)
 	{
 		this->m_in = &in;
+	}
+
+	/// @private
+	template<typename T>
+	Tensor<T>& Layer<T>::GetOutput()
+	{
+		return (*m_out);
 	}
 }
 
