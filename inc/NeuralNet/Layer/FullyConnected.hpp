@@ -40,7 +40,7 @@ namespace TN
 	*
 	*/
 	template<typename T>
-	class FCLayer : protected Layer<T>
+	class FCLayer : public Layer<T>
 	{
 	public:
 

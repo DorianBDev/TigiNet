@@ -137,7 +137,108 @@ namespace TN
 	template<typename T>
 	void FCLayer<T>::Activate()
 	{
-		//TODO
+		T sum = 0;
+		unsigned int dim1 = 0, dim2 = 0, dim3 = 0, dim4 = 0; // Optimization
+
+		switch (this->m_in->GetRank())
+		{
+		case 0: // Scalar
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				(*this->m_out)(i) = this->m_activator.ActivationFunction((*this->m_in)() * (*this->m_weight)[0](i) + (*this->m_bias)(i));
+			}
+
+			break;
+		case 1: // Vector
+
+			dim1 = this->m_in->GetDimension(1);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				sum = 0;
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					sum += (*this->m_in)(j) * (*this->m_weight)[j](i);
+				}
+				(*this->m_out)(i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
+			}
+
+			break;
+		case 2: // Matrix
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				sum = 0;
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					for (unsigned int k = 0; k < dim2; k++)
+					{
+						sum += (*this->m_in)[k](j) * (*this->m_weight)[j + k * dim2](i);
+					}
+				}
+				(*this->m_out)(i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
+			}
+
+			break;
+		case 3: // 3-tensor
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+			dim3 = this->m_in->GetDimension(3);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				sum = 0;
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					for (unsigned int k = 0; k < dim2; k++)
+					{
+						for (unsigned int l = 0; l < dim3; l++)
+						{
+							sum += (*this->m_in)[l][k](j) * (*this->m_weight)[j + k * dim2 + l * dim3](i);
+						}
+					}
+				}
+				(*this->m_out)(i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
+			}
+
+			break;
+		case 4: // 3-tensor with N batch
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+			dim3 = this->m_in->GetDimension(3);
+			dim4 = this->m_in->GetDimension(4);
+
+			for (unsigned int b = 0; b < dim4; b++)
+			{
+				for (unsigned int i = 0; i < m_neuronsCount; i++)
+				{
+					sum = 0;
+					for (unsigned int j = 0; j < dim1; j++)
+					{
+						for (unsigned int k = 0; k < dim2; k++)
+						{
+							for (unsigned int l = 0; l < dim3; l++)
+							{
+								sum += (*this->m_in)[b][l][k](j) * (*this->m_weight)[j + k * dim2 + l * dim3](i);
+							}
+						}
+					}
+					(*this->m_out)[b](i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
+				}
+			}
+
+			break;
+		default:
+			TN_WARNING("NEURALNET", "Wrong tensor rank");
+			return;
+			break;
+		}
 	}
 
 	/// @private
