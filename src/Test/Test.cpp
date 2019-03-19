@@ -30,6 +30,8 @@
 #include <Utility/Math.hpp>
 #include <NeuralNet/Layer/FullyConnected.hpp>
 #include <NeuralNet/Initializer.hpp>
+#include <NeuralNet/Cost.hpp>
+#include <NeuralNet/Optimizer.hpp>
 
 int main()
 {

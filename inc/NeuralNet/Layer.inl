@@ -25,7 +25,6 @@
 #ifndef TN_NEURALNET_LAYER_INL
 #define TN_NEURALNET_LAYER_INL
 
-
 namespace TN
 {
 	/// @private
