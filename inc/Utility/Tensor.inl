@@ -218,6 +218,13 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	std::shared_ptr<TensorShape> Tensor<T>::GetShape()
+	{
+		return m_shape;
+	}
+
+	/// @private
+	template<typename T>
 	unsigned int Tensor<T>::GetRank() const
 	{
 		return m_rank;

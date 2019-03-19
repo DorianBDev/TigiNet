@@ -149,6 +149,14 @@ namespace TN
 		unsigned int GetDimension(unsigned int rank) const;
 
 		/**
+		* @brief Get the shape of the tensor.
+		*
+		* @return Return the shape of the tensor.
+		*
+		*/
+		std::shared_ptr<TensorShape> GetShape();
+
+		/**
 		* @brief Access to a sub Tensor (with rank - 1).
 		*
 		* @param index : the desired index.
