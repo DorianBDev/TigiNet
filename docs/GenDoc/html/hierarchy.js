@@ -5,6 +5,9 @@ var hierarchy =
       [ "TN::Functor< F, Args >", "class_t_n_1_1_functor.html", null ]
     ] ],
     [ "TN::Clock", "class_t_n_1_1_clock.html", null ],
+    [ "TN::CostFunction< T >", "class_t_n_1_1_cost_function.html", [
+      [ "TN::MeanSquaredError< T >", "class_t_n_1_1_mean_squared_error.html", null ]
+    ] ],
     [ "TN::Error", "class_t_n_1_1_error.html", null ],
     [ "TN::gradient_t< T >", "struct_t_n_1_1gradient__t.html", null ],
     [ "TN::Initializer< T >", "class_t_n_1_1_initializer.html", [
@@ -24,6 +27,9 @@ var hierarchy =
       ] ]
     ] ],
     [ "TN::Mutex", "class_t_n_1_1_mutex.html", null ],
+    [ "TN::Optimizer< T >", "class_t_n_1_1_optimizer.html", [
+      [ "TN::StochasticGradientDescent< T >", "class_t_n_1_1_stochastic_gradient_descent.html", null ]
+    ] ],
     [ "TN::Singleton< T >", "class_t_n_1_1_singleton.html", null ],
     [ "TN::Singleton< TigiNetLogger >", "class_t_n_1_1_singleton.html", [
       [ "TN::TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", null ]

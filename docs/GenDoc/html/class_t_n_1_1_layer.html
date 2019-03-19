@@ -131,10 +131,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7cffde756cb60d026db2eec6f17413e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e">Update</a> ()=0</td></tr>
 <tr class="memdesc:aa7cffde756cb60d026db2eec6f17413e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation.  <a href="#aa7cffde756cb60d026db2eec6f17413e">More...</a><br /></td></tr>
 <tr class="separator:aa7cffde756cb60d026db2eec6f17413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f">GetOutput</a> ()</td></tr>
+<tr class="memdesc:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the output tensor of the layer.  <a href="#a650ff30568cb3bc6dbe5d0fb5282fa2f">More...</a><br /></td></tr>
+<tr class="separator:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ada27f2707afb36d961ffd4c459245ac7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ada27f2707afb36d961ffd4c459245ac7">m_activator</a> = NULL</td></tr>
+<tr class="memitem:ada27f2707afb36d961ffd4c459245ac7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ada27f2707afb36d961ffd4c459245ac7">m_activator</a></td></tr>
 <tr class="separator:ada27f2707afb36d961ffd4c459245ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3b6e5727ad35aa228356b5436661a78"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ab3b6e5727ad35aa228356b5436661a78">m_initializer</a></td></tr>
 <tr class="separator:ab3b6e5727ad35aa228356b5436661a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,6 +147,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0fb05f8e02c075215bef6f8a9c9b94d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a722e6c3272320690f88bdf9ae5865c34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; <a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt; T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a722e6c3272320690f88bdf9ae5865c34">m_grad</a> = NULL</td></tr>
 <tr class="separator:a722e6c3272320690f88bdf9ae5865c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcc728b32fdaf07ace7e4115f5dff67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a1fcc728b32fdaf07ace7e4115f5dff67">m_nextLayer</a> = NULL</td></tr>
+<tr class="separator:a1fcc728b32fdaf07ace7e4115f5dff67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -242,6 +247,28 @@ template&lt;typename T&gt; </div>
 <p>Forward propagation. </p>
 
 <p>Implemented in <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a650ff30568cb3bc6dbe5d0fb5282fa2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a650ff30568cb3bc6dbe5d0fb5282fa2f">&#9670;&nbsp;</a></span>GetOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::GetOutput </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the output tensor of the layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the output tensor of the layer. </dd></dl>
 
 </div>
 </div>
@@ -345,7 +372,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt;T&gt;&amp; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_activator = NULL</td>
+          <td class="memname">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt;T&gt;&amp; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_activator</td>
         </tr>
       </table>
   </td>
@@ -418,6 +445,30 @@ template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt;T&gt;&amp; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_initializer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fcc728b32fdaf07ace7e4115f5dff67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcc728b32fdaf07ace7e4115f5dff67">&#9670;&nbsp;</a></span>m_nextLayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt;T&gt;* <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_nextLayer = NULL</td>
         </tr>
       </table>
   </td>

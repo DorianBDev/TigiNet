@@ -5,6 +5,7 @@ var searchData=
   ['m_5fin',['m_in',['../class_t_n_1_1_layer.html#addbd479b146193909d21366014a35c1d',1,'TN::Layer']]],
   ['m_5finitializer',['m_initializer',['../class_t_n_1_1_layer.html#ab3b6e5727ad35aa228356b5436661a78',1,'TN::Layer']]],
   ['m_5fmutex',['M_MUTEX',['../_mutex_8cpp.html#a3d442fbbf6ebeddb348da03c9c09255d',1,'Mutex.cpp']]],
+  ['m_5fnextlayer',['m_nextLayer',['../class_t_n_1_1_layer.html#a1fcc728b32fdaf07ace7e4115f5dff67',1,'TN::Layer']]],
   ['m_5fopen',['m_open',['../class_t_n_1_1_logger.html#a14835f63cf3493d956bde823f2d4e699',1,'TN::Logger']]],
   ['m_5fout',['m_out',['../class_t_n_1_1_layer.html#a0fb05f8e02c075215bef6f8a9c9b94d8',1,'TN::Layer']]],
   ['m_5fstdmutex',['M_STDMUTEX',['../_mutex_8cpp.html#a6f9a534b00f0d100e0ef6a627df29c01',1,'Mutex.cpp']]],
@@ -14,6 +15,7 @@ var searchData=
   ['math_2ehpp',['Math.hpp',['../_math_8hpp.html',1,'']]],
   ['math_2einl',['Math.inl',['../_math_8inl.html',1,'']]],
   ['matrixproduct',['MatrixProduct',['../namespace_t_n.html#a836230b32141c07a059357c281f836a3',1,'TN']]],
+  ['meansquarederror',['MeanSquaredError',['../class_t_n_1_1_mean_squared_error.html',1,'TN']]],
   ['mutex',['Mutex',['../class_t_n_1_1_mutex.html',1,'TN::Mutex'],['../class_t_n_1_1_mutex.html#ada2c8c83844696326b8006fd0d2c8c7b',1,'TN::Mutex::Mutex()']]],
   ['mutex_2ecpp',['Mutex.cpp',['../_mutex_8cpp.html',1,'']]],
   ['mutex_2ehpp',['Mutex.hpp',['../_mutex_8hpp.html',1,'']]]

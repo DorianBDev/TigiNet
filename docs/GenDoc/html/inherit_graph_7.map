@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_t_n_1_1_lock_guard.html" title="To make a function thread safe and manage exception. " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node1" href="$class_t_n_1_1_layer.html" title="Neural network virtual class. " alt="" coords="5,5,115,32"/>
+<area shape="rect" id="node2" href="$class_t_n_1_1_f_c_layer.html" title="Fully connected layer. " alt="" coords="163,5,289,32"/>
 </map>

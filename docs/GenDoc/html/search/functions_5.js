@@ -6,6 +6,8 @@ var searchData=
   ['getelapsedtime',['GetElapsedTime',['../class_t_n_1_1_clock.html#a0de34e7c58a5b32bcf0ea022577aaa81',1,'TN::Clock']]],
   ['getinstance',['GetInstance',['../class_t_n_1_1_singleton.html#abb4a0b65d41059ce52fb1159275e7042',1,'TN::Singleton']]],
   ['getlogheader',['GetLogHeader',['../namespace_t_n.html#aebf841f5e1a2d7849dfe26bab59b14b8',1,'TN']]],
+  ['getoutput',['GetOutput',['../class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f',1,'TN::Layer']]],
   ['getrank',['GetRank',['../class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280',1,'TN::Tensor']]],
+  ['getshape',['GetShape',['../class_t_n_1_1_tensor.html#a358d470014fc488bff7480c5700921cb',1,'TN::Tensor']]],
   ['gradient_5ft',['gradient_t',['../struct_t_n_1_1gradient__t.html#a24f7968704244e2a308bd875df29e548',1,'TN::gradient_t']]]
 ];
