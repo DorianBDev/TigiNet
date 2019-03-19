@@ -29,11 +29,17 @@
  - Added an activator function struct (normalized).
  - Added an approximation function of derivative.
  - Added a gradient struct (old and actual gradient).
+ - Added support for the Sigmoid activation function.
  
 ### NEURALNET :
  - Added a new module : NeuralNet. It will store all neural networks (as a toolkit).
  - Added a fully connect layer class.
  - Added a pure virtual layer class.
+ - Added a pure virtual optimizer class (for gradient).
+ - Added a pure virtual cost class (for cost function).
+ - Added support to the Fully Connect Layer.
+ - Added support to the Mean Squared Error cost function.
+ - Added support to the Stochastic Gradient Descent method.
  
 
 ## [v0.0.53-release] - 2019-02-26 :
