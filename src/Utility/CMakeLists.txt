@@ -1,13 +1,34 @@
-##############################################
-#
-#	By Dorian'B (Dorian Bachelot).
-#
-##############################################
-
-
+##############################################################################
+####																			
+####   TIGINET																	
+####   Copyright (C) 2018-2019  BACHELOT Dorian									
+####																			
+####   For contact see CONTACT.md file.											
+####																			
+####   This program is free software: you can redistribute it and/or modify		
+####   it under the terms of the GNU General Public License as published by		
+####   the Free Software Foundation, either version 3 of the License, or		
+####   (at your option) any later version.										
+####																			
+####   This program is distributed in the hope that it will be useful,			
+####   but WITHOUT ANY WARRANTY; without even the implied warranty of			
+####   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the			
+####   GNU General Public License for more details.								
+####																			
+####   You should have received a copy of the GNU General Public License		
+####   along with this program.  If not, see <https://www.gnu.org/licenses/>.	
+####																			
+####	See LICENSE file for more.												
+####																			
+##############################################################################
 
 
 ############################################################################
+############################################################################
+###########################   CONFIG   #####################################
+############################################################################
+############################################################################
+
 
 ################################################
 # Target type
@@ -16,26 +37,28 @@ set(TARGET_TYPE "LIB:SHARED" CACHE STRING "Type of the target : EXE for executab
 
 
 ################################################
-# if dependencies
-
 # Dependencies list
 # DOC : List of others dependencies name (CARE : YOU NEED TO HAVE A ';' BETWEEN EACH DEPENDENCY)
 set(TARGET_DEPENDENCIES "Core" CACHE STRING "List of others dependencies name." FORCE)
 
-################################################
-# if dependencies
 
+################################################
 # Optional
 # DOC : Add a macro definition for this target when his type is a shared library.
 set(TARGET_MACRO_DEF "TN_UTILITY_EXPORT" CACHE STRING "Add a macro definition for this target when his type is a shared library." FORCE)
 
-############################################################################
 
 ################################################
 # Target prefix
 # DOC : the prefix in the output name.
 set(TARGET_PREFIX "TN" CACHE STRING "the prefix in the output name." FORCE)
 
+
+############################################################################
+############################################################################
+############################################################################
+############################################################################
+############################################################################
 
 
 # Main project folder name
@@ -62,9 +85,6 @@ file(GLOB_RECURSE  HEADER_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" LIST_DIRE
 file(GLOB SHARE_HEADERS_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" LIST_DIRECTORIES false 
 	"../../inc/*"
 )
-
-# combine all files list
-set(ALL_FILES ${SRC_FILES} ${HEADER_FILES} ${SHARE_HEADERS_FILES})
 
 # include directory
 include_directories("../../inc/")
@@ -108,39 +128,14 @@ endif()
 
 ############################################################################
 
-############################################################################				# Exe or lib
-# create the project type (exe or lib)
-if("${TARGET_TYPE}" MATCHES "EXE")
-	add_executable(${PROJECT_FOLDER_NAME} ${ALL_FILES})
-elseif("${TARGET_TYPE}" MATCHES "LIB:SHARED")
-	add_library(${PROJECT_FOLDER_NAME} SHARED ${ALL_FILES})
-	add_definitions("-D${TARGET_MACRO_DEF}")
-elseif("${TARGET_TYPE}" MATCHES "LIB:STATIC")
-	add_library(${PROJECT_FOLDER_NAME} STATIC ${ALL_FILES})
-elseif("${TARGET_TYPE}" MATCHES "LIB:MODULE")
-	add_library(${PROJECT_FOLDER_NAME} MODULE ${ALL_FILES})
-else()
-	message("[ERROR] - Wrong target type for ${PROJECT_FOLDER_NAME} target...")
-endif()
-#or
-# add_library(${PROJECT_FOLDER_NAME} <SHARED|STATIC|MODULE|UNKNOWN> ${ALL_FILES})
-############################################################################
-
-############################################################################				# Dependencies
-
-if(NOT "${TARGET_DEPENDENCIES}" MATCHES "NONE")
-	TARGET_LINK_LIBRARIES(${PROJECT_FOLDER_NAME} LINK_PUBLIC "${TARGET_DEPENDENCIES}")
-endif()
-
-############################################################################
-
 ############################################################################
 # macro to keep folders tree
 macro(GroupSources _LIST)
 	foreach(SOURCE ${_LIST})
-		string(REPLACE "../../inc/${PROJECT_FOLDER_NAME}/" "" SOURCE "${SOURCE}")
-		get_filename_component(SOURCE_PATH "${SOURCE}" PATH)
-		string(REPLACE "/" "\\" GROUP_NAME "${SOURCE_PATH}")
+		get_filename_component(GROUP_NAME "${SOURCE}" PATH)
+		string(REPLACE "../../inc/${PROJECT_FOLDER_NAME}/" "" GROUP_NAME "${GROUP_NAME}")
+		string(REPLACE "../../inc/${PROJECT_FOLDER_NAME}" "" GROUP_NAME "${GROUP_NAME}")
+		string(REPLACE "/" "\\" GROUP_NAME "${GROUP_NAME}")
 		
 		# Group into "Source Files" and "Header Files"
 		if("${SOURCE}" MATCHES "CMakeLists.txt")
@@ -165,6 +160,32 @@ GroupSources("${SRC_FILES}")
 
 # group headers
 GroupSources("${HEADER_FILES}")
+
+############################################################################				# Exe or lib
+# create the project type (exe or lib)
+if("${TARGET_TYPE}" MATCHES "EXE")
+	add_executable(${PROJECT_FOLDER_NAME} ${SRC_FILES} ${HEADER_FILES} ${SHARE_HEADERS_FILES})
+elseif("${TARGET_TYPE}" MATCHES "LIB:SHARED")
+	add_library(${PROJECT_FOLDER_NAME} SHARED ${SRC_FILES} ${HEADER_FILES} ${SHARE_HEADERS_FILES})
+	add_definitions("-D${TARGET_MACRO_DEF}")
+elseif("${TARGET_TYPE}" MATCHES "LIB:STATIC")
+	add_library(${PROJECT_FOLDER_NAME} STATIC ${SRC_FILES} ${HEADER_FILES} ${SHARE_HEADERS_FILES})
+elseif("${TARGET_TYPE}" MATCHES "LIB:MODULE")
+	add_library(${PROJECT_FOLDER_NAME} MODULE ${SRC_FILES} ${HEADER_FILES} ${SHARE_HEADERS_FILES})
+else()
+	message("[ERROR] - Wrong target type for ${PROJECT_FOLDER_NAME} target...")
+endif()
+#or
+# add_library(${PROJECT_FOLDER_NAME} <SHARED|STATIC|MODULE|UNKNOWN> ${ALL_FILES})
+############################################################################
+
+############################################################################				# Dependencies
+
+if(NOT "${TARGET_DEPENDENCIES}" MATCHES "NONE")
+	TARGET_LINK_LIBRARIES(${PROJECT_FOLDER_NAME} LINK_PUBLIC "${TARGET_DEPENDENCIES}")
+endif()
+
+############################################################################
 
 # installation specifications
 install (TARGETS ${PROJECT_FOLDER_NAME} DESTINATION ../../out/bin)
