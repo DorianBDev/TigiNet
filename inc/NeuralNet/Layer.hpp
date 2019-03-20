@@ -144,6 +144,14 @@ namespace TN
 		virtual void Update() = 0;
 
 		/**
+		* @brief Backward propagation with the expected results (only if the layer is the output one).
+		*
+		* @param result : expected results.
+		*
+		*/
+		virtual void Update(Tensor<T>& result) = 0;
+
+		/**
 		* @brief Get the output tensor of the layer.
 		*
 		* @return Return the output tensor of the layer.
