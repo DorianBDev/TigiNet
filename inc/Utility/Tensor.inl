@@ -284,6 +284,7 @@ namespace TN
 	template<typename T>
 	void Tensor<T>::Print() const
 	{
+		TN_LOG("UTILITY") << "-------------";
 		TN_LOG("UTILITY") << "Tensor datas : ";
 		if (GetRank() == 0)
 		{
@@ -316,6 +317,8 @@ namespace TN
 				PrintTensor<T>(m_tensors[i]);
 			}
 		}
+
+		TN_LOG("UTILITY") << "-------------";
 	}
 
 	/// @private
