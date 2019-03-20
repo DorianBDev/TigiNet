@@ -252,7 +252,7 @@ namespace TN
 	template<typename T>
 	void FCLayer<T>::Update(Tensor<T>& result)
 	{
-		if (m_nextLayer == NULL) // If not an output layer.
+		if (this->m_nextLayer == NULL) // If not an output layer.
 		{
 			Update();
 			return;
