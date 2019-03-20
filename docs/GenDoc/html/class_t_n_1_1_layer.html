@@ -131,6 +131,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7cffde756cb60d026db2eec6f17413e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e">Update</a> ()=0</td></tr>
 <tr class="memdesc:aa7cffde756cb60d026db2eec6f17413e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation.  <a href="#aa7cffde756cb60d026db2eec6f17413e">More...</a><br /></td></tr>
 <tr class="separator:aa7cffde756cb60d026db2eec6f17413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bae94abc81b28f53bd44caebf83c0e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a8bae94abc81b28f53bd44caebf83c0e9">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result)=0</td></tr>
+<tr class="memdesc:a8bae94abc81b28f53bd44caebf83c0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation with the expected results (only if the layer is the output one).  <a href="#a8bae94abc81b28f53bd44caebf83c0e9">More...</a><br /></td></tr>
+<tr class="separator:a8bae94abc81b28f53bd44caebf83c0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f">GetOutput</a> ()</td></tr>
 <tr class="memdesc:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the output tensor of the layer.  <a href="#a650ff30568cb3bc6dbe5d0fb5282fa2f">More...</a><br /></td></tr>
 <tr class="separator:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -329,7 +332,7 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <a id="aa7cffde756cb60d026db2eec6f17413e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7cffde756cb60d026db2eec6f17413e">&#9670;&nbsp;</a></span>Update()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7cffde756cb60d026db2eec6f17413e">&#9670;&nbsp;</a></span>Update() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,6 +359,44 @@ template&lt;typename T&gt; </div>
 <p>Backward propagation. </p>
 
 <p>Implemented in <a class="el" href="class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c">TN::FCLayer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a8bae94abc81b28f53bd44caebf83c0e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bae94abc81b28f53bd44caebf83c0e9">&#9670;&nbsp;</a></span>Update() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::Update </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>result</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Backward propagation with the expected results (only if the layer is the output one). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">result</td><td>: expected results. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_t_n_1_1_f_c_layer.html#aeeb35ca1fe696958422f50d273a6e1a5">TN::FCLayer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -505,8 +546,8 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8hpp_source.html">Layer.hpp</a></li>
-<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8inl.html">Layer.inl</a></li>
+<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8hpp_source.html">Layer.hpp</a></li>
+<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8inl.html">Layer.inl</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -7,6 +7,7 @@ var class_t_n_1_1_layer =
     [ "Link", "class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a", null ],
     [ "Link", "class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269", null ],
     [ "Update", "class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e", null ],
+    [ "Update", "class_t_n_1_1_layer.html#a8bae94abc81b28f53bd44caebf83c0e9", null ],
     [ "m_activator", "class_t_n_1_1_layer.html#ada27f2707afb36d961ffd4c459245ac7", null ],
     [ "m_grad", "class_t_n_1_1_layer.html#a722e6c3272320690f88bdf9ae5865c34", null ],
     [ "m_in", "class_t_n_1_1_layer.html#addbd479b146193909d21366014a35c1d", null ],

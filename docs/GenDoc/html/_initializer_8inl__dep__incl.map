@@ -1,7 +1,7 @@
-<map id="D:/DEV/Projects/TigiNet/inc/NeuralNet/Initializer.inl" name="D:/DEV/Projects/TigiNet/inc/NeuralNet/Initializer.inl">
-<area shape="rect" id="node2" href="$_initializer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Initializer.hpp" alt="" coords="391,95,575,136"/>
-<area shape="rect" id="node3" href="$_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="279,184,444,225"/>
-<area shape="rect" id="node5" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="220,363,383,404"/>
-<area shape="rect" id="node4" href="$_fully_connected_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FullyConnected.hpp" alt="" coords="5,273,264,315"/>
-<area shape="rect" id="node6" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="339,273,506,315"/>
+<map id="C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/Initializer.inl" name="C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/Initializer.inl">
+<area shape="rect" id="node2" href="$_initializer_8hpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/inc/NeuralNet\l/Initializer.hpp" alt="" coords="351,109,551,165"/>
+<area shape="rect" id="node3" href="$_layer_8hpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/inc/NeuralNet\l/Layer.hpp" alt="" coords="212,213,412,269"/>
+<area shape="rect" id="node5" href="$_test_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/Test\l/Test.cpp" alt="" coords="154,421,331,477"/>
+<area shape="rect" id="node4" href="$_fully_connected_8hpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/inc/NeuralNet\l/Layer/FullyConnected.hpp" alt="" coords="5,317,205,373"/>
+<area shape="rect" id="node6" href="$_layer_8cpp.html" title="C:/Users/Doria/Documents\l/Projects/TigiNet/src/NeuralNet\l/Layer.cpp" alt="" coords="281,317,482,373"/>
 </map>
