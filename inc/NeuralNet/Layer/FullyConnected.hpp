@@ -47,13 +47,15 @@ namespace TN
 		/**
 		* @brief Create a Fully connected layer.
 		*
+		* @param activator : the activator config.
+		* @param initializer : the inializer.
 		* @param neuronsCount : the number of neurons for this layer.
 		*
 		* @see ActivatorConfig
 		* @see Initializer
 		*
 		*/
-		FCLayer(const ActivatorConfig<T> & config, const Initializer<T> & initializer, unsigned int neuronsCount);
+		FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, unsigned int neuronsCount);
 		~FCLayer();
 
 		/**
@@ -83,6 +85,14 @@ namespace TN
 		*
 		*/
 		void Update();
+
+		/**
+		* @brief Backward propagation with the expected results (only if the layer is the output one).
+		*
+		* @param result : expected results.
+		*
+		*/
+		void Update(Tensor<T>& result);
 
 	private:
 		Tensor<T>* m_weight = NULL;

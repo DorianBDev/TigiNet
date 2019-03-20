@@ -31,8 +31,8 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	FCLayer<T>::FCLayer(const ActivatorConfig<T> & config, const Initializer<T> & initializer, unsigned int neuronsCount)
-		: Layer<T>(config, initializer)
+	FCLayer<T>::FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, unsigned int neuronsCount)
+		: Layer<T>(activator, initializer)
 	{
 		m_neuronsCount = neuronsCount;
 	}
@@ -245,6 +245,19 @@ namespace TN
 	template<typename T>
 	void FCLayer<T>::Update()
 	{
+		//TODO
+	}
+
+	/// @private
+	template<typename T>
+	void FCLayer<T>::Update(Tensor<T>& result)
+	{
+		if (m_nextLayer == NULL) // If not an output layer.
+		{
+			Update();
+			return;
+		}
+
 		//TODO
 	}
 
