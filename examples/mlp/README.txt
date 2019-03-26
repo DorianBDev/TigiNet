@@ -1,1 +1,0 @@
-This is a MultiLayer Perceptron that will learn both OR and XOR, will learn from a file and save this two state.
