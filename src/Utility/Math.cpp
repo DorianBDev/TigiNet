@@ -37,6 +37,11 @@ double TN::Sigmoide(double value)
 	return 1 / (1 + exp(-1 * value));
 }
 
+double TN::SigmoideDerivative(double value)
+{
+	return Sigmoide(value) * (1 - Sigmoide(value));
+}
+
 double TN::Tangente(double value)
 {
 	return 1.7159 * tanh((2 / 3) * value);

@@ -55,6 +55,16 @@ namespace TN
 	TN_UTILITY double Sigmoide(double value);
 
 	/**
+	* @brief The Sigmoide derivative function.
+	*
+	* @param value : the value.
+	*
+	* @return Return the result.
+	*
+	*/
+	TN_UTILITY double SigmoideDerivative(double value);
+
+	/**
 	* @brief The Tangente function.
 	*
 	* @param value : the value.
@@ -89,14 +99,14 @@ namespace TN
 	/**
 	* @brief Get a random number.
 	*
-	* @param a : the first boundary.
-	* @param b : the second boundary.
+	* @param min : the first minimum boundary.
+	* @param max : the second maximum boundary.
 	*
 	* @return Return the random result between [a,b].
 	*
 	*/
-	template<typename T>
-	T Random(T a, T b);
+	template<typename T, typename G = std::mt19937>
+	T Random(T min, T max);
 }
 
 #include <Utility/Math.inl>

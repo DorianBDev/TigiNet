@@ -59,10 +59,22 @@ namespace TN
 		return product;
 	}
 
-	template<typename T>
-	T Random(T a, T b)
+	/// @private
+	template<typename T, typename G>
+	T Random(T min, T max)
 	{
-		return static_cast<T>(rand() / static_cast<T>(RAND_MAX)) * (b - a) + a;
+		thread_local static G gen(std::random_device{}());
+
+		using dist_type = typename std::conditional
+			<
+			std::is_integral<T>::value
+			, std::uniform_int_distribution<T>
+			, std::uniform_real_distribution<T>
+			>::type;
+
+		thread_local static dist_type dist;
+
+		return dist(gen, typename dist_type::param_type{ min, max });
 	}
 }
 
