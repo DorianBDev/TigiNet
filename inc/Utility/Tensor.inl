@@ -103,6 +103,80 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	Tensor<T>::Tensor(unsigned int rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank, T* data)
+	{
+		m_rank = rank;
+		m_shape = shape;
+		m_allocationRank = allocationRank;
+
+		if (rank == 0)
+		{
+			m_tensors = NULL;
+
+			if (data != NULL)
+			{
+				m_data = data;
+			}
+			else
+			{
+				m_data = new T;
+				m_allocationRank = 0;
+			}
+		}
+		else if (rank == 1)
+		{
+			m_tensors = NULL;
+
+			if (data != NULL)
+			{
+				m_data = data;
+			}
+			else
+			{
+				m_data = new T[m_shape->GetDimension(rank)];
+				m_allocationRank = 1;
+			}
+		}
+		else
+		{
+			m_tensors = new Tensor[m_shape->GetDimension(rank)];
+
+			unsigned int dim = 1;
+
+			for (unsigned int j = 1; j < rank; j++)
+			{
+				dim *= m_shape->GetDimension(j);
+			}
+
+			if (data != NULL)
+			{
+				m_data = data;
+			}
+			else if (allocationRank >= rank)
+			{
+				m_data = new T[dim * m_shape->GetDimension(rank)];
+				m_allocationRank = m_rank;
+			}
+			else
+			{
+				m_data = NULL;
+			}
+
+			if (m_data == NULL)
+			{
+				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
+					m_tensors[i].InitializeSub(rank - 1, m_shape, allocationRank, NULL);
+			}
+			else
+			{
+				for (unsigned int i = 0; i < m_shape->GetDimension(rank); i++)
+					m_tensors[i].InitializeSub(rank - 1, m_shape, allocationRank, &m_data[dim * i]);
+			}
+		}
+	}
+
+	/// @private
+	template<typename T>
 	Tensor<T>::Tensor()
 	{
 		m_tensors = NULL;
@@ -261,7 +335,7 @@ namespace TN
 	T Tensor<T>::operator() (unsigned int index) const
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(index < m_shape->GetDimension(m_rank), "UTILITY", "Wrong operator while trying to access Tensor");
+		TN_ASSERT(index < m_shape->GetDimension(m_rank), "UTILITY", "Wrong index while trying to access Tensor");
 		TN_ASSERT(m_data != NULL, "UTILITY", "Wrong operator while trying to access Tensor");
 #endif
 
@@ -273,7 +347,7 @@ namespace TN
 	T& Tensor<T>::operator() (unsigned int index)
 	{
 #if TN_SAFEMODE_TENSOR
-		TN_ASSERT(index < m_shape->GetDimension(m_rank), "UTILITY", "Wrong operator while trying to access Tensor");
+		TN_ASSERT(index < m_shape->GetDimension(m_rank), "UTILITY", "Wrong index while trying to access Tensor");
 		TN_ASSERT(m_data != NULL, "UTILITY", "Wrong operator while trying to access Tensor");
 #endif
 

@@ -119,6 +119,17 @@ namespace TN
 		*
 		*/
 		Tensor(unsigned int rank, const TensorShape & shape, unsigned int allocationRank = 1, T* data = NULL);
+
+		/**
+		* @brief Create a tensor.
+		*
+		* @param rank : the rank of the tensor.
+		* @param shape : the shape of the tensor.
+		* @param allocationRank : the rank where the datas will be allocated (useful for contiguous datas).
+		* @param data : an user allocated data array, it will be deleted at the end, no bound check.
+		*
+		*/
+		Tensor(unsigned int rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 1, T* data = NULL);
 		Tensor();
 		~Tensor();
 
