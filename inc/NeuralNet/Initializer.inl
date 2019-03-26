@@ -54,6 +54,13 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	std::shared_ptr<Initializer<T>> ZeroInitializer<T>::Copy() const
+	{
+		return std::make_shared<ZeroInitializer<T>>();
+	}
+
+	/// @private
+	template<typename T>
 	void UniformInitializer<T>::Initialize(Tensor<T>& tensor) const
 	{
 		double dim = 0;
@@ -63,7 +70,7 @@ namespace TN
 		{
 			dim = 1;
 			a = std::sqrt(3) / std::sqrt(dim);
-			tensor() = static_cast<T>(Random<double>(-a, a));
+			tensor() = Random<T>(-a, a);
 		}
 		else if (tensor.GetRank() == 1)
 		{
@@ -71,7 +78,7 @@ namespace TN
 			a = std::sqrt(3) / std::sqrt(dim);
 			for (unsigned int i = 0; i < tensor.GetDimension(1); i++)
 			{
-				tensor(i) = static_cast<T>(Random<double>(-a, a));
+				tensor(i) = Random<T>(-a, a);
 			}
 		}
 		else if (tensor.GetRank() == 2)
@@ -82,7 +89,7 @@ namespace TN
 			{
 				for (unsigned int j = 0; j < tensor.GetDimension(1); j++)
 				{
-					tensor[i](j) = static_cast<T>(Random<double>(-a, a));
+					tensor[i](j) = Random<T>(-a, a);
 				}
 			}
 		}
@@ -96,7 +103,7 @@ namespace TN
 				{
 					for (unsigned int k = 0; k < tensor.GetDimension(1); k++)
 					{
-						tensor[i][j](k) = static_cast<T>(Random<double>(-a, a));
+						tensor[i][j](k) = Random<T>(-a, a);
 					}
 				}
 			}
@@ -108,6 +115,52 @@ namespace TN
 				Initialize(tensor[i]);
 			}
 		}
+	}
+
+	/// @private
+	template<typename T>
+	std::shared_ptr<Initializer<T>> UniformInitializer<T>::Copy() const
+	{
+		return std::make_shared<UniformInitializer<T>>();
+	}
+
+	/// @private
+	template<typename T>
+	RandomInitializer<T>::RandomInitializer(double min, double max)
+	{
+		m_min = min;
+		m_max = max;
+	}
+
+	/// @private
+	template<typename T>
+	void RandomInitializer<T>::Initialize(Tensor<T>& tensor) const
+	{
+		if (tensor.GetRank() == 0)
+		{
+			tensor() = Random<T>(m_min, m_max);
+		}
+		else if (tensor.GetRank() == 1)
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(1); i++)
+			{
+				tensor(i) = Random<T>(m_min, m_max);
+			}
+		}
+		else
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(tensor.GetRank()); i++)
+			{
+				Initialize(tensor[i]);
+			}
+		}
+	}
+
+	/// @private
+	template<typename T>
+	std::shared_ptr<Initializer<T>> RandomInitializer<T>::Copy() const
+	{
+		return std::make_shared<RandomInitializer<T>>(m_min, m_max);
 	}
 }
 

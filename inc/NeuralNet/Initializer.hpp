@@ -54,6 +54,14 @@ namespace TN
 		*/
 		virtual void Initialize(Tensor<T>& tensor) const = 0;
 
+		/**
+		* @brief Copy an initializer.
+		*
+		* @return Return a shared pointer of the new initializer copy.
+		*
+		*/
+		virtual std::shared_ptr<Initializer<T>> Copy() const = 0;
+
 	};
 
 	/**
@@ -77,6 +85,14 @@ namespace TN
 		*
 		*/
 		void Initialize(Tensor<T>& tensor) const;
+
+		/**
+		* @brief Copy an initializer.
+		*
+		* @return Return a shared pointer of the new initializer copy.
+		*
+		*/
+		std::shared_ptr<Initializer<T>> Copy() const;
 	};
 
 	/**
@@ -100,6 +116,57 @@ namespace TN
 		*
 		*/
 		void Initialize(Tensor<T>& tensor) const;
+
+		/**
+		* @brief Copy an initializer.
+		*
+		* @return Return a shared pointer of the new initializer copy.
+		*
+		*/
+		std::shared_ptr<Initializer<T>> Copy() const;
+	};
+
+	/**
+	* @class RandomInitializer
+	* @brief Create an random initializer for tensors.
+	*
+	* Initialize a tensor datas with random value.
+	*
+	* @see Initializer
+	*
+	*/
+	template<typename T>
+	class RandomInitializer : public Initializer<T>
+	{
+	public:
+
+		/**
+		* @brief Initialize a tensor with random value between [min;max].
+		*
+		* @param min : the first minimum boundary.
+		* @param max : the second maximum boundary.
+		*
+		*/
+		RandomInitializer(double min, double max);
+
+		/**
+		* @brief Initialize a tensor.
+		*
+		* @param tensor : the tensor to initialize.
+		*
+		*/
+		void Initialize(Tensor<T>& tensor) const;
+
+		/**
+		* @brief Copy an initializer.
+		*
+		* @return Return a shared pointer of the new initializer copy.
+		*
+		*/
+		std::shared_ptr<Initializer<T>> Copy() const;
+
+	private:
+		double m_min, m_max;
 	};
 }
 
