@@ -37,7 +37,7 @@
 *
 */
 #if TN_ENABLE_ASSERT
-#define TN_ASSERT(test, mod, message) if(!(test)) TN::Error::Send(TN::ErrorType_e::ET_ASSERTION_FAILED, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
+#define TN_ASSERT(test, mod, message) if(!(test)) TN::Error::Send(TN::ErrorType_e::ET_ASSERTION_FAILED, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, message)
 #else
 #define TN_ASSERT(test, mod, message)
 #endif
@@ -49,7 +49,7 @@
 * @param message : the message to send with error.
 *
 */
-#define TN_ERROR(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ERROR, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
+#define TN_ERROR(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ERROR, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, message) 
 
 /**
 * @brief Send an error with his message and abort.
@@ -59,9 +59,9 @@
 *
 */
 #if TN_ENABLE_ABORT
-#define TN_ABORT(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ABORT, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
+#define TN_ABORT(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ABORT, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, message) 
 #else
-#define TN_ABORT(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ERROR, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME) << message
+#define TN_ABORT(mod, message) TN::Error::Send(TN::ErrorType_e::ET_ERROR, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, message) 
 #endif
 
 /**
@@ -72,7 +72,7 @@
 *
 */
 #if TN_ENABLE_WARNING
-#define TN_WARNING(mod, message) TN::Error::Send(TN::ErrorType_e::ET_WARNING, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME)  << message
+#define TN_WARNING(mod, message) TN::Error::Send(TN::ErrorType_e::ET_WARNING, mod, TN_LINE_NUMBER, TN_FILE_PATH, TN_FUNCTION_NAME, message) 
 #else
 #define TN_WARNING(mod, message)
 #endif
@@ -110,7 +110,7 @@ namespace TN
 		* @param function : the function name where the error is (use TN_FUNCTION_NAME).
 		*
 		*/
-		static TigiNetLogger& Send(ErrorType_e errorType, const char* moduleName, unsigned int line, const char* file, const char* function);
+		static TigiNetLogger& Send(ErrorType_e errorType, const char* moduleName, unsigned int line, const char* file, const char* function, const char* message = "");
 	};
 }
 

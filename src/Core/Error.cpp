@@ -24,7 +24,7 @@
 
 #include <Core/Error.hpp>
 
-TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName, unsigned int line, const char* file, const char* function)
+TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName, unsigned int line, const char* file, const char* function, const char* message)
 {
 	switch (errorType)
 	{
@@ -35,9 +35,9 @@ TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName
 	case ET_ERROR:
 
 #if TN_DEBUG
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ERROR") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ERROR") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') " << message;
 #else
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ERROR");
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ERROR") << message;
 #endif
 
 		std::exit(-1);
@@ -46,9 +46,9 @@ TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName
 	case ET_ABORT:
 
 #if TN_DEBUG
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ABORT") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ABORT") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') " << message;
 #else
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ABORT");
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ABORT") << message;
 #endif
 
 		std::abort();
@@ -57,9 +57,9 @@ TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName
 	case ET_ASSERTION_FAILED:
 
 #if TN_DEBUG
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ASSERT ERROR") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ASSERT ERROR") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') " << message;
 #else
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ASSERT ERROR");
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "ASSERT ERROR") << message;
 #endif
 
 		std::exit(-1);
@@ -69,9 +69,9 @@ TN::TigiNetLogger& TN::Error::Send(ErrorType_e errorType, const char* moduleName
 	WARNING:
 
 #if TN_DEBUG
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "WARNING") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') ";
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "WARNING") << "(In file '" << file << "' in function '" << function << "' in line '" << line << "') " << message;
 #else
-		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "WARNING");
+		TN::TigiNetLogger::GetInstance() << std::endl << TN::GetLogHeader(moduleName, "WARNING") << message;
 #endif
 
 		break;
