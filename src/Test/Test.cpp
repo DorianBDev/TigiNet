@@ -35,30 +35,89 @@
 
 int main()
 {
+	TN::FCLayer<double> l(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 4);
+	TN::FCLayer<double> l2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 4);
+	TN::FCLayer<double> l3(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 1);
 
-	TN::FCLayer<double> l(TN::ActivatorConfig<double>(TN::Sigmoide), TN::UniformInitializer<double>(), 3);
+	unsigned int shape[] = { 2, 4 };
+	TN::Tensor<double> batch(2, TN::TensorShape(shape));
 
-	unsigned int shape[] = { 2, 2, 2 };
-	TN::Tensor<double> t(3, TN::TensorShape(shape), 3);
+	unsigned int shape2[] = { 2 };
+	TN::Tensor<double> in(1, TN::TensorShape(shape2));
+	
+	unsigned int shape3[] = { 1, 4 };
+	TN::Tensor<double> batchOut(2, TN::TensorShape(shape3));
 
-	l.Link(t);
+	batch[0](0) = 0;
+	batch[0](1) = 0;
+	batchOut[0](0) = 0;
+	
+	batch[1](0) = 1;
+	batch[1](1) = 0;
+	batchOut[1](0) = 0;
 
-	t[0][0](0) = 1;
-	t[0][0](1) = 2;
-	t[0][1](0) = 3;
-	t[0][1](1) = 4;
-	t[1][0](0) = 5;
-	t[1][0](1) = 6;
-	t[1][1](0) = 7;
-	t[1][1](1) = 8;
+	batch[2](0) = 0;
+	batch[2](1) = 1;
+	batchOut[2](0) = 0;
 
-	t.Print();
+	batch[3](0) = 1;
+	batch[3](1) = 1;
+	batchOut[3](0) = 1;
 
+	in(0) = batch[0](0);
+	in(1) = batch[0](1);
+	l.Link(in);
+	l2.Link(l);
+	l3.Link(l2);
+	
+	unsigned int index = 0;
+	for (unsigned int i = 0; i < 100000; i++)
+	{
+		index = TN::Random<unsigned int>(0, 3);
+		in(0) = batch[index](0);
+		in(1) = batch[index](1);
+
+		l.Activate();
+
+		if(i % 10000 == 1)
+			TN_LOG("TEST") << l3.GetError();
+
+		l3.Update(batchOut[index], TN::MeanSquaredError<double>());
+	}
+
+	in(0) = batch[0](0);
+	in(1) = batch[0](1);
+	in.Print();
 	l.Activate();
+	l3.Activate();
+	l3.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
 
-	l.GetOutput().Print();
+	in(0) = batch[1](0);
+	in(1) = batch[1](1);
+	in.Print();
+	l.Activate();
+	l3.Activate();
+	l3.GetOutput().Print();
+
+	TN_LOG("TEST") << "-------";
+
+	in(0) = batch[2](0);
+	in(1) = batch[2](1);
+	in.Print();
+	l.Activate();
+	l3.Activate();
+	l3.GetOutput().Print();
+
+	TN_LOG("TEST") << "-------";
+
+	in(0) = batch[3](0);
+	in(1) = batch[3](1);
+	in.Print();
+	l.Activate();
+	l3.Activate();
+	l3.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
 
