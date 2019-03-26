@@ -12,6 +12,7 @@ var searchData=
   ['_7elockguard',['~LockGuard',['../class_t_n_1_1_lock_guard.html#a81bcca57b1995bd4c65e8a5f9a885de2',1,'TN::LockGuard']]],
   ['_7elogger',['~Logger',['../class_t_n_1_1_logger.html#ace7c9a723d19e00b4a7b70a1fd3189d5',1,'TN::Logger']]],
   ['_7emutex',['~Mutex',['../class_t_n_1_1_mutex.html#aa11641ed8959196c08848d79dec636eb',1,'TN::Mutex']]],
+  ['_7estochasticgradientdescent',['~StochasticGradientDescent',['../class_t_n_1_1_stochastic_gradient_descent.html#a113e71d9929b0d45e3f3f72c3986c9ac',1,'TN::StochasticGradientDescent']]],
   ['_7etensor',['~Tensor',['../class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d',1,'TN::Tensor']]],
   ['_7etensorshape',['~TensorShape',['../class_t_n_1_1_tensor_shape.html#aee4f28e7581e1f9911bb3c5c3e556d07',1,'TN::TensorShape']]],
   ['_7etiginetlogger',['~TigiNetLogger',['../class_t_n_1_1_tigi_net_logger.html#a13a13dea6c95cb247c15b24f63edc79d',1,'TN::TigiNetLogger']]]

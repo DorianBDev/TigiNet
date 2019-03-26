@@ -99,7 +99,7 @@ Inheritance diagram for TN::StochasticGradientDescent&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_n_1_1_stochastic_gradient_descent__inherit__graph.png" border="0" usemap="#_t_n_1_1_stochastic_gradient_descent_3_01_t_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="_t_n_1_1_stochastic_gradient_descent_3_01_t_01_4_inherit__map" id="_t_n_1_1_stochastic_gradient_descent_3_01_t_01_4_inherit__map">
-<area shape="rect" id="node2" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variables with corresponding gradients. " alt="" coords="57,5,190,32"/>
+<area shape="rect" id="node2" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variable with corresponding gradient. " alt="" coords="57,5,190,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -107,22 +107,37 @@ Collaboration diagram for TN::StochasticGradientDescent&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_n_1_1_stochastic_gradient_descent__coll__graph.png" border="0" usemap="#_t_n_1_1_stochastic_gradient_descent_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="_t_n_1_1_stochastic_gradient_descent_3_01_t_01_4_coll__map" id="_t_n_1_1_stochastic_gradient_descent_3_01_t_01_4_coll__map">
-<area shape="rect" id="node2" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variables with corresponding gradients. " alt="" coords="57,5,190,32"/>
+<area shape="rect" id="node2" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variable with corresponding gradient. " alt="" coords="57,5,190,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac46fc393e5c147eccc3d7522bb2a0f76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#ac46fc393e5c147eccc3d7522bb2a0f76">StochasticGradientDescent</a> (double learningRate=0.001)</td></tr>
-<tr class="memdesc:ac46fc393e5c147eccc3d7522bb2a0f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new SGD object.  <a href="#ac46fc393e5c147eccc3d7522bb2a0f76">More...</a><br /></td></tr>
-<tr class="separator:ac46fc393e5c147eccc3d7522bb2a0f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd43039e06088f72d936b43fe4aa40d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#afd43039e06088f72d936b43fe4aa40d2">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;variableTensor, <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;gradientTensor)</td></tr>
-<tr class="memdesc:afd43039e06088f72d936b43fe4aa40d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a tensor of variables with his tensor of corresponding gradients.  <a href="#afd43039e06088f72d936b43fe4aa40d2">More...</a><br /></td></tr>
-<tr class="separator:afd43039e06088f72d936b43fe4aa40d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_class_t_n_1_1_optimizer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_t_n_1_1_optimizer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer&lt; T &gt;</a></td></tr>
-<tr class="memitem:a4c7523a6fc352d883f9b8c62176073b3 inherit pub_methods_class_t_n_1_1_optimizer"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#a4c7523a6fc352d883f9b8c62176073b3">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;variableTensor, <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; <a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt; T &gt;&gt; &amp;gradientTensor)=0</td></tr>
-<tr class="memdesc:a4c7523a6fc352d883f9b8c62176073b3 inherit pub_methods_class_t_n_1_1_optimizer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a tensor of variables with his tensor of corresponding gradients.  <a href="class_t_n_1_1_optimizer.html#a4c7523a6fc352d883f9b8c62176073b3">More...</a><br /></td></tr>
-<tr class="separator:a4c7523a6fc352d883f9b8c62176073b3 inherit pub_methods_class_t_n_1_1_optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a492841356da437c02f05b0389408a53a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a492841356da437c02f05b0389408a53a">StochasticGradientDescent</a> (double learningRate=0.001, double momentum=0.9)</td></tr>
+<tr class="memdesc:a492841356da437c02f05b0389408a53a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new SGD object.  <a href="#a492841356da437c02f05b0389408a53a">More...</a><br /></td></tr>
+<tr class="separator:a492841356da437c02f05b0389408a53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a113e71d9929b0d45e3f3f72c3986c9ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a113e71d9929b0d45e3f3f72c3986c9ac">~StochasticGradientDescent</a> ()</td></tr>
+<tr class="separator:a113e71d9929b0d45e3f3f72c3986c9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac27692d21388442dc692d69fddcf31fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#ac27692d21388442dc692d69fddcf31fe">Setup</a> (unsigned int variableCount)</td></tr>
+<tr class="memdesc:ac27692d21388442dc692d69fddcf31fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the optimizer with the number of variables per iteration.  <a href="#ac27692d21388442dc692d69fddcf31fe">More...</a><br /></td></tr>
+<tr class="separator:ac27692d21388442dc692d69fddcf31fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7c9c8ad21033c3c483bde2ecefa77f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a8f7c9c8ad21033c3c483bde2ecefa77f">Update</a> (T &amp;variable, T gradient, T entry)</td></tr>
+<tr class="memdesc:a8f7c9c8ad21033c3c483bde2ecefa77f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a variable with his corresponding gradient and entry.  <a href="#a8f7c9c8ad21033c3c483bde2ecefa77f">More...</a><br /></td></tr>
+<tr class="separator:a8f7c9c8ad21033c3c483bde2ecefa77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5321ff1af68a64b55a5cc9d6bb48cb3c"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a5321ff1af68a64b55a5cc9d6bb48cb3c">Copy</a> () const</td></tr>
+<tr class="memdesc:a5321ff1af68a64b55a5cc9d6bb48cb3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy an optimizer.  <a href="#a5321ff1af68a64b55a5cc9d6bb48cb3c">More...</a><br /></td></tr>
+<tr class="separator:a5321ff1af68a64b55a5cc9d6bb48cb3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_t_n_1_1_optimizer"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_t_n_1_1_optimizer')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer&lt; T &gt;</a></td></tr>
+<tr class="memitem:afebd8e9c6cb9e202885e6f62fe6d154d inherit pro_methods_class_t_n_1_1_optimizer"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#afebd8e9c6cb9e202885e6f62fe6d154d">UpdateCounter</a> ()</td></tr>
+<tr class="separator:afebd8e9c6cb9e202885e6f62fe6d154d inherit pro_methods_class_t_n_1_1_optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_t_n_1_1_optimizer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_t_n_1_1_optimizer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer&lt; T &gt;</a></td></tr>
+<tr class="memitem:acb9ffb64454428d04594f1181abae64b inherit pro_attribs_class_t_n_1_1_optimizer"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#acb9ffb64454428d04594f1181abae64b">m_variableCount</a> = 0</td></tr>
+<tr class="separator:acb9ffb64454428d04594f1181abae64b inherit pro_attribs_class_t_n_1_1_optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98fe08f804179051da1ad03811e012f5 inherit pro_attribs_class_t_n_1_1_optimizer"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#a98fe08f804179051da1ad03811e012f5">m_counter</a> = 0</td></tr>
+<tr class="separator:a98fe08f804179051da1ad03811e012f5 inherit pro_attribs_class_t_n_1_1_optimizer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -130,10 +145,10 @@ class TN::StochasticGradientDescent&lt; T &gt;</h3>
 
 <p>Use the Stochastic Gradient Descent method. </p>
 <p>Use the SGD method to update a tensor of variables with his tensor of corresponding gradients.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variables with corresponding gradients. ">Optimizer</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variable with corresponding gradient. ">Optimizer</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac46fc393e5c147eccc3d7522bb2a0f76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac46fc393e5c147eccc3d7522bb2a0f76">&#9670;&nbsp;</a></span>StochasticGradientDescent()</h2>
+<a id="a492841356da437c02f05b0389408a53a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a492841356da437c02f05b0389408a53a">&#9670;&nbsp;</a></span>StochasticGradientDescent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,8 +159,18 @@ template&lt;typename T &gt; </div>
           <td class="memname"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">TN::StochasticGradientDescent</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">StochasticGradientDescent</a> </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>learningRate</em> = <code>0.001</code></td><td>)</td>
+          <td class="paramname"><em>learningRate</em> = <code>0.001</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>momentum</em> = <code>0.9</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -160,9 +185,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="afd43039e06088f72d936b43fe4aa40d2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd43039e06088f72d936b43fe4aa40d2">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="a113e71d9929b0d45e3f3f72c3986c9ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113e71d9929b0d45e3f3f72c3986c9ac">&#9670;&nbsp;</a></span>~StochasticGradientDescent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,16 +194,123 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">TN::StochasticGradientDescent</a>&lt; T &gt;::~<a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">StochasticGradientDescent</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5321ff1af68a64b55a5cc9d6bb48cb3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5321ff1af68a64b55a5cc9d6bb48cb3c">&#9670;&nbsp;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &gt; <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">TN::StochasticGradientDescent</a>&lt; T &gt;::Copy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy an optimizer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return a shared pointer of the new optimizer copy. </dd></dl>
+
+<p>Implements <a class="el" href="class_t_n_1_1_optimizer.html#affa1b6f52056895335ebe391150eeb01">TN::Optimizer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ac27692d21388442dc692d69fddcf31fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac27692d21388442dc692d69fddcf31fe">&#9670;&nbsp;</a></span>Setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">TN::StochasticGradientDescent</a>&lt; T &gt;::Setup </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>variableCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the optimizer with the number of variables per iteration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variableCount</td><td>: the number of variables that the optimizer will treat per iteration. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_t_n_1_1_optimizer.html#a7ad22130960772733e29ec1f66711c1d">TN::Optimizer&lt; T &gt;</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_n_1_1_stochastic_gradient_descent_ac27692d21388442dc692d69fddcf31fe_cgraph.png" border="0" usemap="#class_t_n_1_1_stochastic_gradient_descent_ac27692d21388442dc692d69fddcf31fe_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_stochastic_gradient_descent_ac27692d21388442dc692d69fddcf31fe_cgraph" id="class_t_n_1_1_stochastic_gradient_descent_ac27692d21388442dc692d69fddcf31fe_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_optimizer.html#a7ad22130960772733e29ec1f66711c1d" title="Setup the optimizer with the number of variables per iteration. " alt="" coords="259,13,403,39"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8f7c9c8ad21033c3c483bde2ecefa77f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7c9c8ad21033c3c483bde2ecefa77f">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
           <td class="memname">void <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html">TN::StochasticGradientDescent</a>&lt; T &gt;::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>variableTensor</em>, </td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>gradientTensor</em>&#160;</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>gradient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -187,32 +318,38 @@ template&lt;typename T &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Update a tensor of variables with his tensor of corresponding gradients. </p>
-<p>The tensor of variables and the tensor of gradients needs to get the same rank.</p>
+<p>Update a variable with his corresponding gradient and entry. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">variableTensor</td><td>: the tensor of variables. </td></tr>
-    <tr><td class="paramname">gradientTensor</td><td>: the tensor of corresponding gradients. </td></tr>
+    <tr><td class="paramname">variable</td><td>: the variable. </td></tr>
+    <tr><td class="paramname">gradient</td><td>: the corresponding gradient. </td></tr>
+    <tr><td class="paramname">entry</td><td>: the corresponding entry. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implements <a class="el" href="class_t_n_1_1_optimizer.html#a00060df0164ab7d52baf9e13bb83cf8e">TN::Optimizer&lt; T &gt;</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_stochastic_gradient_descent_afd43039e06088f72d936b43fe4aa40d2_cgraph.png" border="0" usemap="#class_t_n_1_1_stochastic_gradient_descent_afd43039e06088f72d936b43fe4aa40d2_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_stochastic_gradient_descent_afd43039e06088f72d936b43fe4aa40d2_cgraph" id="class_t_n_1_1_stochastic_gradient_descent_afd43039e06088f72d936b43fe4aa40d2_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="262,5,406,32"/>
-<area shape="rect" id="node3" href="class_t_n_1_1_tensor.html#a358d470014fc488bff7480c5700921cb" title="Get the shape of the tensor. " alt="" coords="259,56,409,83"/>
+<div class="center"><img src="class_t_n_1_1_stochastic_gradient_descent_a8f7c9c8ad21033c3c483bde2ecefa77f_cgraph.png" border="0" usemap="#class_t_n_1_1_stochastic_gradient_descent_a8f7c9c8ad21033c3c483bde2ecefa77f_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_stochastic_gradient_descent_a8f7c9c8ad21033c3c483bde2ecefa77f_cgraph" id="class_t_n_1_1_stochastic_gradient_descent_a8f7c9c8ad21033c3c483bde2ecefa77f_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_optimizer.html#afebd8e9c6cb9e202885e6f62fe6d154d" title="TN::Optimizer::UpdateCounter" alt="" coords="259,13,455,39"/>
 </map>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8hpp_source.html">Optimizer.hpp</a></li>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8inl.html">Optimizer.inl</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8hpp_source.html">Optimizer.hpp</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8inl.html">Optimizer.inl</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

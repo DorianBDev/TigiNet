@@ -105,15 +105,15 @@ Inheritance diagram for TN::CostFunction&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7d04c73bae219104459e6f6ecb8d17b7"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_cost_function.html#a7d04c73bae219104459e6f6ecb8d17b7">Calculate</a> (const T &amp;prediction, const T &amp;result) const =0</td></tr>
-<tr class="memdesc:a7d04c73bae219104459e6f6ecb8d17b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate error.  <a href="#a7d04c73bae219104459e6f6ecb8d17b7">More...</a><br /></td></tr>
-<tr class="separator:a7d04c73bae219104459e6f6ecb8d17b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74c6499300052a0bc63bbe2da71aec61"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_cost_function.html#a74c6499300052a0bc63bbe2da71aec61">Calculate</a> (const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;prediction, const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result) const =0</td></tr>
-<tr class="memdesc:a74c6499300052a0bc63bbe2da71aec61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate error from tensors.  <a href="#a74c6499300052a0bc63bbe2da71aec61">More...</a><br /></td></tr>
-<tr class="separator:a74c6499300052a0bc63bbe2da71aec61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad25d4bc7dec72c8875aecb9061bb9d89"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_cost_function.html#ad25d4bc7dec72c8875aecb9061bb9d89">Derivative</a> (const T &amp;prediction, const T &amp;result)=0</td></tr>
-<tr class="memdesc:ad25d4bc7dec72c8875aecb9061bb9d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measures the importance of a prediction in the error.  <a href="#ad25d4bc7dec72c8875aecb9061bb9d89">More...</a><br /></td></tr>
-<tr class="separator:ad25d4bc7dec72c8875aecb9061bb9d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52105072c0691830256183b109075a18"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_cost_function.html#a52105072c0691830256183b109075a18">Activation</a> (const T &amp;prediction, const T &amp;result) const =0</td></tr>
+<tr class="memdesc:a52105072c0691830256183b109075a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate error.  <a href="#a52105072c0691830256183b109075a18">More...</a><br /></td></tr>
+<tr class="separator:a52105072c0691830256183b109075a18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7ed3478d25e76c54378a6af1cbd210"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_cost_function.html#abe7ed3478d25e76c54378a6af1cbd210">Activation</a> (const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;prediction, const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result) const =0</td></tr>
+<tr class="memdesc:abe7ed3478d25e76c54378a6af1cbd210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate error from tensors.  <a href="#abe7ed3478d25e76c54378a6af1cbd210">More...</a><br /></td></tr>
+<tr class="separator:abe7ed3478d25e76c54378a6af1cbd210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a451124e807c01617bb7ecb2eddd599db"><td class="memItemLeft" align="right" valign="top">virtual T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_cost_function.html#a451124e807c01617bb7ecb2eddd599db">Derivation</a> (const T &amp;prediction, const T &amp;result) const =0</td></tr>
+<tr class="memdesc:a451124e807c01617bb7ecb2eddd599db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measures the importance of a prediction in the error.  <a href="#a451124e807c01617bb7ecb2eddd599db">More...</a><br /></td></tr>
+<tr class="separator:a451124e807c01617bb7ecb2eddd599db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -122,19 +122,19 @@ class TN::CostFunction&lt; T &gt;</h3>
 <p>This virtual class hold a cost function and its derivative. </p>
 <p>A pure virtual class that handle a cost function and its derivative. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7d04c73bae219104459e6f6ecb8d17b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d04c73bae219104459e6f6ecb8d17b7">&#9670;&nbsp;</a></span>Calculate() <span class="overload">[1/2]</span></h2>
+<a id="a52105072c0691830256183b109075a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52105072c0691830256183b109075a18">&#9670;&nbsp;</a></span>Activation() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual T <a class="el" href="class_t_n_1_1_cost_function.html">TN::CostFunction</a>&lt; T &gt;::Calculate </td>
+          <td class="memname">virtual T <a class="el" href="class_t_n_1_1_cost_function.html">TN::CostFunction</a>&lt; T &gt;::Activation </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>prediction</em>, </td>
@@ -168,23 +168,23 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return the error. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_t_n_1_1_mean_squared_error.html#a18c6cbc13009cc6449c79c7624774256">TN::MeanSquaredError&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="class_t_n_1_1_mean_squared_error.html#a48363e0c169f4adf00e49bc8889d3e36">TN::MeanSquaredError&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a74c6499300052a0bc63bbe2da71aec61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74c6499300052a0bc63bbe2da71aec61">&#9670;&nbsp;</a></span>Calculate() <span class="overload">[2/2]</span></h2>
+<a id="abe7ed3478d25e76c54378a6af1cbd210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe7ed3478d25e76c54378a6af1cbd210">&#9670;&nbsp;</a></span>Activation() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual T <a class="el" href="class_t_n_1_1_cost_function.html">TN::CostFunction</a>&lt; T &gt;::Calculate </td>
+          <td class="memname">virtual T <a class="el" href="class_t_n_1_1_cost_function.html">TN::CostFunction</a>&lt; T &gt;::Activation </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>prediction</em>, </td>
@@ -218,23 +218,23 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return the error. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_t_n_1_1_mean_squared_error.html#a72d36c2bab2c501d5277d7811b2a5b70">TN::MeanSquaredError&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="class_t_n_1_1_mean_squared_error.html#a7e353747e27b42e8aa7076c96771d6c9">TN::MeanSquaredError&lt; T &gt;</a>.</p>
 
 </div>
 </div>
-<a id="ad25d4bc7dec72c8875aecb9061bb9d89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad25d4bc7dec72c8875aecb9061bb9d89">&#9670;&nbsp;</a></span>Derivative()</h2>
+<a id="a451124e807c01617bb7ecb2eddd599db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a451124e807c01617bb7ecb2eddd599db">&#9670;&nbsp;</a></span>Derivation()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual T <a class="el" href="class_t_n_1_1_cost_function.html">TN::CostFunction</a>&lt; T &gt;::Derivative </td>
+          <td class="memname">virtual T <a class="el" href="class_t_n_1_1_cost_function.html">TN::CostFunction</a>&lt; T &gt;::Derivation </td>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>prediction</em>, </td>
@@ -248,7 +248,7 @@ template&lt;typename T &gt; </div>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
@@ -268,10 +268,12 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return the measurement. </dd></dl>
 
+<p>Implemented in <a class="el" href="class_t_n_1_1_mean_squared_error.html#aab54c9c6480fa112c0c8e1acc420ee0f">TN::MeanSquaredError&lt; T &gt;</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_cost_8hpp_source.html">Cost.hpp</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_cost_8hpp_source.html">Cost.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

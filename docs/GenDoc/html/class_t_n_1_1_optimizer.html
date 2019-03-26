@@ -84,13 +84,15 @@ $(document).ready(function(){initNavTree('class_t_n_1_1_optimizer.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_t_n_1_1_optimizer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TN::Optimizer&lt; T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Virtual class to update variables with corresponding gradients.  
+<p>Virtual class to update variable with corresponding gradient.  
  <a href="class_t_n_1_1_optimizer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_optimizer_8hpp_source.html">Optimizer.hpp</a>&gt;</code></p>
@@ -105,19 +107,69 @@ Inheritance diagram for TN::Optimizer&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c7523a6fc352d883f9b8c62176073b3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#a4c7523a6fc352d883f9b8c62176073b3">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;variableTensor, <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; <a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt; T &gt;&gt; &amp;gradientTensor)=0</td></tr>
-<tr class="memdesc:a4c7523a6fc352d883f9b8c62176073b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a tensor of variables with his tensor of corresponding gradients.  <a href="#a4c7523a6fc352d883f9b8c62176073b3">More...</a><br /></td></tr>
-<tr class="separator:a4c7523a6fc352d883f9b8c62176073b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ad22130960772733e29ec1f66711c1d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#a7ad22130960772733e29ec1f66711c1d">Setup</a> (unsigned int variableCount)</td></tr>
+<tr class="memdesc:a7ad22130960772733e29ec1f66711c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the optimizer with the number of variables per iteration.  <a href="#a7ad22130960772733e29ec1f66711c1d">More...</a><br /></td></tr>
+<tr class="separator:a7ad22130960772733e29ec1f66711c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00060df0164ab7d52baf9e13bb83cf8e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#a00060df0164ab7d52baf9e13bb83cf8e">Update</a> (T &amp;variable, T gradient, T entry)=0</td></tr>
+<tr class="memdesc:a00060df0164ab7d52baf9e13bb83cf8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a variable with his corresponding gradient and entry.  <a href="#a00060df0164ab7d52baf9e13bb83cf8e">More...</a><br /></td></tr>
+<tr class="separator:a00060df0164ab7d52baf9e13bb83cf8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affa1b6f52056895335ebe391150eeb01"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#affa1b6f52056895335ebe391150eeb01">Copy</a> () const =0</td></tr>
+<tr class="memdesc:affa1b6f52056895335ebe391150eeb01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy an optimizer.  <a href="#affa1b6f52056895335ebe391150eeb01">More...</a><br /></td></tr>
+<tr class="separator:affa1b6f52056895335ebe391150eeb01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:afebd8e9c6cb9e202885e6f62fe6d154d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#afebd8e9c6cb9e202885e6f62fe6d154d">UpdateCounter</a> ()</td></tr>
+<tr class="separator:afebd8e9c6cb9e202885e6f62fe6d154d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:acb9ffb64454428d04594f1181abae64b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#acb9ffb64454428d04594f1181abae64b">m_variableCount</a> = 0</td></tr>
+<tr class="separator:acb9ffb64454428d04594f1181abae64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98fe08f804179051da1ad03811e012f5"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_optimizer.html#a98fe08f804179051da1ad03811e012f5">m_counter</a> = 0</td></tr>
+<tr class="separator:a98fe08f804179051da1ad03811e012f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
 class TN::Optimizer&lt; T &gt;</h3>
 
-<p>Virtual class to update variables with corresponding gradients. </p>
-<p>A pure virtual class to update variables (tensor) with corresponding gradients (tensor). </p>
+<p>Virtual class to update variable with corresponding gradient. </p>
+<p>A pure virtual class to update a variable with corresponding gradient. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4c7523a6fc352d883f9b8c62176073b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c7523a6fc352d883f9b8c62176073b3">&#9670;&nbsp;</a></span>Update()</h2>
+<a id="affa1b6f52056895335ebe391150eeb01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affa1b6f52056895335ebe391150eeb01">&#9670;&nbsp;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer</a>&lt; T &gt;::Copy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy an optimizer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return a shared pointer of the new optimizer copy. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a5321ff1af68a64b55a5cc9d6bb48cb3c">TN::StochasticGradientDescent&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a7ad22130960772733e29ec1f66711c1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ad22130960772733e29ec1f66711c1d">&#9670;&nbsp;</a></span>Setup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -128,16 +180,60 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer</a>&lt; T &gt;::Setup </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>variableCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Setup the optimizer with the number of variables per iteration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">variableCount</td><td>: the number of variables that the optimizer will treat per iteration. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#ac27692d21388442dc692d69fddcf31fe">TN::StochasticGradientDescent&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a00060df0164ab7d52baf9e13bb83cf8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00060df0164ab7d52baf9e13bb83cf8e">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
           <td class="memname">virtual void <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer</a>&lt; T &gt;::Update </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>variableTensor</em>, </td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>variable</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; <a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt; T &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>gradientTensor</em>&#160;</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>gradient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>entry</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -152,20 +248,99 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Update a tensor of variables with his tensor of corresponding gradients. </p>
-<p>The tensor of variables and the tensor of gradients needs to get the same rank.</p>
+<p>Update a variable with his corresponding gradient and entry. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">variableTensor</td><td>: the tensor of variables. </td></tr>
-    <tr><td class="paramname">gradientTensor</td><td>: the tensor of corresponding gradients. </td></tr>
+    <tr><td class="paramname">variable</td><td>: the variable. </td></tr>
+    <tr><td class="paramname">gradient</td><td>: the corresponding gradient. </td></tr>
+    <tr><td class="paramname">entry</td><td>: the corresponding entry. </td></tr>
   </table>
   </dd>
 </dl>
 
+<p>Implemented in <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a8f7c9c8ad21033c3c483bde2ecefa77f">TN::StochasticGradientDescent&lt; T &gt;</a>.</p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8hpp_source.html">Optimizer.hpp</a></li>
+<a id="afebd8e9c6cb9e202885e6f62fe6d154d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afebd8e9c6cb9e202885e6f62fe6d154d">&#9670;&nbsp;</a></span>UpdateCounter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer</a>&lt; T &gt;::UpdateCounter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a98fe08f804179051da1ad03811e012f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98fe08f804179051da1ad03811e012f5">&#9670;&nbsp;</a></span>m_counter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer</a>&lt; T &gt;::m_counter = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb9ffb64454428d04594f1181abae64b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9ffb64454428d04594f1181abae64b">&#9670;&nbsp;</a></span>m_variableCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_t_n_1_1_optimizer.html">TN::Optimizer</a>&lt; T &gt;::m_variableCount = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8hpp_source.html">Optimizer.hpp</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_optimizer_8inl.html">Optimizer.inl</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

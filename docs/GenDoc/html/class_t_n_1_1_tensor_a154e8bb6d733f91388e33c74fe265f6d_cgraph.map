@@ -1,3 +1,4 @@
 <map id="TN::Tensor::Tensor" name="TN::Tensor::Tensor">
-<area shape="rect" id="node2" href="$class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e" title="Copy a TensorShape. " alt="" coords="185,5,345,32"/>
+<area shape="rect" id="node2" href="$class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e" title="Copy a TensorShape. " alt="" coords="193,5,353,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="185,56,360,83"/>
 </map>

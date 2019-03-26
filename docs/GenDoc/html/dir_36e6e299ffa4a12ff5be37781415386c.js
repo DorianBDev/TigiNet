@@ -10,7 +10,8 @@ var dir_36e6e299ffa4a12ff5be37781415386c =
     [ "Initializer.hpp", "_initializer_8hpp.html", [
       [ "Initializer", "class_t_n_1_1_initializer.html", "class_t_n_1_1_initializer" ],
       [ "ZeroInitializer", "class_t_n_1_1_zero_initializer.html", "class_t_n_1_1_zero_initializer" ],
-      [ "UniformInitializer", "class_t_n_1_1_uniform_initializer.html", "class_t_n_1_1_uniform_initializer" ]
+      [ "UniformInitializer", "class_t_n_1_1_uniform_initializer.html", "class_t_n_1_1_uniform_initializer" ],
+      [ "RandomInitializer", "class_t_n_1_1_random_initializer.html", "class_t_n_1_1_random_initializer" ]
     ] ],
     [ "Initializer.inl", "_initializer_8inl.html", "_initializer_8inl" ],
     [ "Layer.hpp", "_layer_8hpp.html", [

@@ -11,6 +11,7 @@ var hierarchy =
     [ "TN::Error", "class_t_n_1_1_error.html", null ],
     [ "TN::gradient_t< T >", "struct_t_n_1_1gradient__t.html", null ],
     [ "TN::Initializer< T >", "class_t_n_1_1_initializer.html", [
+      [ "TN::RandomInitializer< T >", "class_t_n_1_1_random_initializer.html", null ],
       [ "TN::UniformInitializer< T >", "class_t_n_1_1_uniform_initializer.html", null ],
       [ "TN::ZeroInitializer< T >", "class_t_n_1_1_zero_initializer.html", null ]
     ] ],
@@ -35,6 +36,5 @@ var hierarchy =
       [ "TN::TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", null ]
     ] ],
     [ "TN::Tensor< T >", "class_t_n_1_1_tensor.html", null ],
-    [ "TN::Tensor< TN::gradient_t< T > >", "class_t_n_1_1_tensor.html", null ],
     [ "TN::TensorShape", "class_t_n_1_1_tensor_shape.html", null ]
 ];

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['singleton',['Singleton',['../class_t_n_1_1_singleton.html',1,'TN']]],
-  ['singleton_3c_20tiginetlogger_20_3e',['Singleton&lt; TigiNetLogger &gt;',['../class_t_n_1_1_singleton.html',1,'TN']]],
-  ['stochasticgradientdescent',['StochasticGradientDescent',['../class_t_n_1_1_stochastic_gradient_descent.html',1,'TN']]]
+  ['randominitializer',['RandomInitializer',['../class_t_n_1_1_random_initializer.html',1,'TN']]]
 ];

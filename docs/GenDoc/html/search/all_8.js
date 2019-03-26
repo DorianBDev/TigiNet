@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['initialize',['Initialize',['../class_t_n_1_1_initializer.html#a2d8b689c7faeba0ce0adc84f0178fa17',1,'TN::Initializer::Initialize()'],['../class_t_n_1_1_zero_initializer.html#a867fa44e0f1b17203533428986e3f689',1,'TN::ZeroInitializer::Initialize()'],['../class_t_n_1_1_uniform_initializer.html#ad28d8e22de300173c693bf80f143a067',1,'TN::UniformInitializer::Initialize()']]],
+  ['initialize',['Initialize',['../class_t_n_1_1_initializer.html#a2d8b689c7faeba0ce0adc84f0178fa17',1,'TN::Initializer::Initialize()'],['../class_t_n_1_1_zero_initializer.html#a867fa44e0f1b17203533428986e3f689',1,'TN::ZeroInitializer::Initialize()'],['../class_t_n_1_1_uniform_initializer.html#ad28d8e22de300173c693bf80f143a067',1,'TN::UniformInitializer::Initialize()'],['../class_t_n_1_1_random_initializer.html#a0899e4f0044e8bf28b7fbeddc96e9b53',1,'TN::RandomInitializer::Initialize()']]],
   ['initializer',['Initializer',['../class_t_n_1_1_initializer.html',1,'TN']]],
   ['initializer_2ehpp',['Initializer.hpp',['../_initializer_8hpp.html',1,'']]],
   ['initializer_2einl',['Initializer.inl',['../_initializer_8inl.html',1,'']]],

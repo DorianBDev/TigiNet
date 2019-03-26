@@ -17,6 +17,7 @@ var namespace_t_n =
     [ "MeanSquaredError", "class_t_n_1_1_mean_squared_error.html", "class_t_n_1_1_mean_squared_error" ],
     [ "Mutex", "class_t_n_1_1_mutex.html", "class_t_n_1_1_mutex" ],
     [ "Optimizer", "class_t_n_1_1_optimizer.html", "class_t_n_1_1_optimizer" ],
+    [ "RandomInitializer", "class_t_n_1_1_random_initializer.html", "class_t_n_1_1_random_initializer" ],
     [ "Singleton", "class_t_n_1_1_singleton.html", "class_t_n_1_1_singleton" ],
     [ "StochasticGradientDescent", "class_t_n_1_1_stochastic_gradient_descent.html", "class_t_n_1_1_stochastic_gradient_descent" ],
     [ "Tensor", "class_t_n_1_1_tensor.html", "class_t_n_1_1_tensor" ],

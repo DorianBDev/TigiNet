@@ -36,7 +36,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_clock_8cpp.html",
-"dir_9761b53e3d9349800c0cb59b71c8cd3d.html"
+"class_t_n_1_1_tensor.html#ac26564f2389950f62184a1660c9c5037"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

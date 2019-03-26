@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['derivative',['Derivative',['../class_t_n_1_1_cost_function.html#ad25d4bc7dec72c8875aecb9061bb9d89',1,'TN::CostFunction::Derivative()'],['../class_t_n_1_1_mean_squared_error.html#afa6bf98a4c6acf67181afc7ea5ecfe26',1,'TN::MeanSquaredError::Derivative()']]],
+  ['derivation',['Derivation',['../class_t_n_1_1_cost_function.html#a451124e807c01617bb7ecb2eddd599db',1,'TN::CostFunction::Derivation()'],['../class_t_n_1_1_mean_squared_error.html#aab54c9c6480fa112c0c8e1acc420ee0f',1,'TN::MeanSquaredError::Derivation()'],['../class_t_n_1_1_activator_config.html#ad50444f86100a88e204673fee87e0351',1,'TN::ActivatorConfig::Derivation()']]],
   ['derivativeapproximation',['DerivativeApproximation',['../namespace_t_n.html#ad127742e791509257e2950c8f8d44340',1,'TN']]]
 ];

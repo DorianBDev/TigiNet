@@ -1,6 +1,7 @@
 var class_t_n_1_1_tensor =
 [
     [ "Tensor", "class_t_n_1_1_tensor.html#a154e8bb6d733f91388e33c74fe265f6d", null ],
+    [ "Tensor", "class_t_n_1_1_tensor.html#a9e6e6a3e1c925f4c869467e02e0d5b27", null ],
     [ "Tensor", "class_t_n_1_1_tensor.html#a694e83fca06a5a0fd082dbf662b9bc28", null ],
     [ "~Tensor", "class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d", null ],
     [ "GetData", "class_t_n_1_1_tensor.html#a533bd74bcf1fbf74c6734e82000abff5", null ],

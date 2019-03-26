@@ -1,4 +1,5 @@
 <map id="TN::Initializer&lt; T &gt;" name="TN::Initializer&lt; T &gt;">
-<area shape="rect" id="node2" href="$class_t_n_1_1_uniform_initializer.html" title="Create an uniform initializer for tensors. " alt="" coords="5,80,177,107"/>
-<area shape="rect" id="node3" href="$class_t_n_1_1_zero_initializer.html" title="Create a zero initializer for tensors. " alt="" coords="201,80,355,107"/>
+<area shape="rect" id="node2" href="$class_t_n_1_1_random_initializer.html" title="Create an random initializer for tensors. " alt="" coords="5,80,181,107"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_uniform_initializer.html" title="Create an uniform initializer for tensors. " alt="" coords="206,80,378,107"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_zero_initializer.html" title="Create a zero initializer for tensors. " alt="" coords="402,80,555,107"/>
 </map>

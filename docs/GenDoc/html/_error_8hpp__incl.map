@@ -1,8 +1,8 @@
-<map id="C:/Users/Doria/Documents/Projects/TigiNet/inc/Core/Error.hpp" name="C:/Users/Doria/Documents/Projects/TigiNet/inc/Core/Error.hpp">
-<area shape="rect" id="node2" href="$_core_2_config_8hpp.html" title="Core/Config.hpp" alt="" coords="63,259,178,285"/>
-<area shape="rect" id="node7" href="$_log_8hpp.html" title="Core/Log.hpp" alt="" coords="267,109,366,136"/>
-<area shape="rect" id="node3" href="$_prerequisites_8hpp.html" title="Prerequisites.hpp" alt="" coords="59,333,182,360"/>
-<area shape="rect" id="node8" href="$_singleton_8hpp.html" title="Core/Singleton.hpp" alt="" coords="251,184,383,211"/>
-<area shape="rect" id="node10" href="$_mutex_8hpp.html" title="Core/Mutex.hpp" alt="" coords="111,184,226,211"/>
-<area shape="rect" id="node9" href="$_singleton_8inl.html" title="Core/Singleton.inl" alt="" coords="255,259,379,285"/>
+<map id="D:/DEV/Projects/TigiNet/inc/Core/Error.hpp" name="D:/DEV/Projects/TigiNet/inc/Core/Error.hpp">
+<area shape="rect" id="node2" href="$_core_2_config_8hpp.html" title="Core/Config.hpp" alt="" coords="63,244,178,271"/>
+<area shape="rect" id="node7" href="$_log_8hpp.html" title="Core/Log.hpp" alt="" coords="267,95,366,121"/>
+<area shape="rect" id="node3" href="$_prerequisites_8hpp.html" title="Prerequisites.hpp" alt="" coords="59,319,182,345"/>
+<area shape="rect" id="node8" href="$_singleton_8hpp.html" title="Core/Singleton.hpp" alt="" coords="251,169,383,196"/>
+<area shape="rect" id="node10" href="$_mutex_8hpp.html" title="Core/Mutex.hpp" alt="" coords="111,169,226,196"/>
+<area shape="rect" id="node9" href="$_singleton_8inl.html" title="Core/Singleton.inl" alt="" coords="255,244,379,271"/>
 </map>

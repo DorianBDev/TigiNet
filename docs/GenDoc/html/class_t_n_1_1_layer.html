@@ -103,20 +103,12 @@ Inheritance diagram for TN::Layer&lt; T &gt;:</div>
 <area shape="rect" id="node2" href="class_t_n_1_1_f_c_layer.html" title="Fully connected layer. " alt="" coords="5,80,132,107"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<div class="dynheader">
-Collaboration diagram for TN::Layer&lt; T &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_layer__coll__graph.png" border="0" usemap="#_t_n_1_1_layer_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="_t_n_1_1_layer_3_01_t_01_4_coll__map" id="_t_n_1_1_layer_3_01_t_01_4_coll__map">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor.html" title="TN::Tensor\&lt; TN::gradient\l_t\&lt; T \&gt; \&gt;" alt="" coords="5,5,172,47"/>
-</map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acacec14e3c46c0a78db37103e767e0b4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#acacec14e3c46c0a78db37103e767e0b4">Layer</a> (const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;activator, const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer)</td></tr>
-<tr class="memdesc:acacec14e3c46c0a78db37103e767e0b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a>.  <a href="#acacec14e3c46c0a78db37103e767e0b4">More...</a><br /></td></tr>
-<tr class="separator:acacec14e3c46c0a78db37103e767e0b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aaee6ccbe657c0fc416fa4395c0eec6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6">Layer</a> (const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;activator, const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer, const <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &amp;optimizer)</td></tr>
+<tr class="memdesc:a9aaee6ccbe657c0fc416fa4395c0eec6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a>.  <a href="#a9aaee6ccbe657c0fc416fa4395c0eec6">More...</a><br /></td></tr>
+<tr class="separator:a9aaee6ccbe657c0fc416fa4395c0eec6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac273045511d30f871374f4ec81acc92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aac273045511d30f871374f4ec81acc92">~Layer</a> ()</td></tr>
 <tr class="separator:aac273045511d30f871374f4ec81acc92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd17ced002d3475e1c75d424153d1d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a">Link</a> (<a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt; T &gt; &amp;layer)</td></tr>
@@ -131,27 +123,44 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7cffde756cb60d026db2eec6f17413e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e">Update</a> ()=0</td></tr>
 <tr class="memdesc:aa7cffde756cb60d026db2eec6f17413e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation.  <a href="#aa7cffde756cb60d026db2eec6f17413e">More...</a><br /></td></tr>
 <tr class="separator:aa7cffde756cb60d026db2eec6f17413e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bae94abc81b28f53bd44caebf83c0e9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a8bae94abc81b28f53bd44caebf83c0e9">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result)=0</td></tr>
-<tr class="memdesc:a8bae94abc81b28f53bd44caebf83c0e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation with the expected results (only if the layer is the output one).  <a href="#a8bae94abc81b28f53bd44caebf83c0e9">More...</a><br /></td></tr>
-<tr class="separator:a8bae94abc81b28f53bd44caebf83c0e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae671357f02bc77a448b43aaa3476cf5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aae671357f02bc77a448b43aaa3476cf5">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result, const <a class="el" href="class_t_n_1_1_cost_function.html">CostFunction</a>&lt; T &gt; &amp;costFunction)=0</td></tr>
+<tr class="memdesc:aae671357f02bc77a448b43aaa3476cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation with the expected results (only if the layer is the output one).  <a href="#aae671357f02bc77a448b43aaa3476cf5">More...</a><br /></td></tr>
+<tr class="separator:aae671357f02bc77a448b43aaa3476cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f">GetOutput</a> ()</td></tr>
 <tr class="memdesc:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the output tensor of the layer.  <a href="#a650ff30568cb3bc6dbe5d0fb5282fa2f">More...</a><br /></td></tr>
 <tr class="separator:a650ff30568cb3bc6dbe5d0fb5282fa2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b808a608f722ceeac36ec17f2f308c9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a1b808a608f722ceeac36ec17f2f308c9">GetError</a> () const</td></tr>
+<tr class="memdesc:a1b808a608f722ceeac36ec17f2f308c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the error of the layer.  <a href="#a1b808a608f722ceeac36ec17f2f308c9">More...</a><br /></td></tr>
+<tr class="separator:a1b808a608f722ceeac36ec17f2f308c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5e3c4a474f9dbd45272ab82c1feba8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#abf5e3c4a474f9dbd45272ab82c1feba8">GetError</a> (const <a class="el" href="class_t_n_1_1_cost_function.html">CostFunction</a>&lt; T &gt; &amp;costFunction, const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;prediction, const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result)</td></tr>
+<tr class="memdesc:abf5e3c4a474f9dbd45272ab82c1feba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the error of the layer.  <a href="#abf5e3c4a474f9dbd45272ab82c1feba8">More...</a><br /></td></tr>
+<tr class="separator:abf5e3c4a474f9dbd45272ab82c1feba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0a43ce8ac7239c8c5eb69c9f273aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a6c0a43ce8ac7239c8c5eb69c9f273aab">GetInputGradient</a> ()</td></tr>
+<tr class="memdesc:a6c0a43ce8ac7239c8c5eb69c9f273aab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the input gradient of the layer.  <a href="#a6c0a43ce8ac7239c8c5eb69c9f273aab">More...</a><br /></td></tr>
+<tr class="separator:a6c0a43ce8ac7239c8c5eb69c9f273aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ada27f2707afb36d961ffd4c459245ac7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ada27f2707afb36d961ffd4c459245ac7">m_activator</a></td></tr>
-<tr class="separator:ada27f2707afb36d961ffd4c459245ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3b6e5727ad35aa228356b5436661a78"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ab3b6e5727ad35aa228356b5436661a78">m_initializer</a></td></tr>
-<tr class="separator:ab3b6e5727ad35aa228356b5436661a78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21690c7ba19f81fcd2fe52eee6200fac"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a21690c7ba19f81fcd2fe52eee6200fac">m_activator</a></td></tr>
+<tr class="separator:a21690c7ba19f81fcd2fe52eee6200fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a448fdc4e62e7800ccb5a70e9b31f1ec5"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a448fdc4e62e7800ccb5a70e9b31f1ec5">m_initializer</a></td></tr>
+<tr class="separator:a448fdc4e62e7800ccb5a70e9b31f1ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac850f0454f08a54504107e3fa3f47e43"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ac850f0454f08a54504107e3fa3f47e43">m_optimizer</a></td></tr>
+<tr class="separator:ac850f0454f08a54504107e3fa3f47e43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a879a2b051e0c697bb9593464f6190ede"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_zero_initializer.html">ZeroInitializer</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a879a2b051e0c697bb9593464f6190ede">m_zeroInitializer</a></td></tr>
+<tr class="separator:a879a2b051e0c697bb9593464f6190ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addbd479b146193909d21366014a35c1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#addbd479b146193909d21366014a35c1d">m_in</a> = NULL</td></tr>
 <tr class="separator:addbd479b146193909d21366014a35c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fb05f8e02c075215bef6f8a9c9b94d8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a0fb05f8e02c075215bef6f8a9c9b94d8">m_out</a> = NULL</td></tr>
 <tr class="separator:a0fb05f8e02c075215bef6f8a9c9b94d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a722e6c3272320690f88bdf9ae5865c34"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; <a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt; T &gt; &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a722e6c3272320690f88bdf9ae5865c34">m_grad</a> = NULL</td></tr>
-<tr class="separator:a722e6c3272320690f88bdf9ae5865c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8fce6cee54fddeadb00f43c86e810a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ad8fce6cee54fddeadb00f43c86e810a0">m_gradIn</a> = NULL</td></tr>
+<tr class="separator:ad8fce6cee54fddeadb00f43c86e810a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fcc728b32fdaf07ace7e4115f5dff67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a1fcc728b32fdaf07ace7e4115f5dff67">m_nextLayer</a> = NULL</td></tr>
 <tr class="separator:a1fcc728b32fdaf07ace7e4115f5dff67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117ab67432b26c0b6b64cfa9dad922ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt; T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a117ab67432b26c0b6b64cfa9dad922ac">m_previousLayer</a> = NULL</td></tr>
+<tr class="separator:a117ab67432b26c0b6b64cfa9dad922ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac286721dcef1eee0d24b94d9a20f9667"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ac286721dcef1eee0d24b94d9a20f9667">m_error</a> = 0</td></tr>
+<tr class="separator:ac286721dcef1eee0d24b94d9a20f9667"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -160,8 +169,8 @@ class TN::Layer&lt; T &gt;</h3>
 <p>Neural network virtual class. </p>
 <p>This is the base class to create a new <a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a> type. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="acacec14e3c46c0a78db37103e767e0b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acacec14e3c46c0a78db37103e767e0b4">&#9670;&nbsp;</a></span>Layer()</h2>
+<a id="a9aaee6ccbe657c0fc416fa4395c0eec6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aaee6ccbe657c0fc416fa4395c0eec6">&#9670;&nbsp;</a></span>Layer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,7 +187,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>initializer</em>&#160;</td>
+          <td class="paramname"><em>initializer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>optimizer</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -192,13 +207,26 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">activator</td><td>: the activator config. </td></tr>
-    <tr><td class="paramname">initializer</td><td>: the inializer.</td></tr>
+    <tr><td class="paramname">initializer</td><td>: the inializer. </td></tr>
+    <tr><td class="paramname">optimizer</td><td>: the optimizer.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_activator_config.html" title="Define an activator function and possibly his derivative. ">ActivatorConfig</a> </dd>
 <dd>
-<a class="el" href="class_t_n_1_1_initializer.html" title="Create a virtual initializer for tensors. ">Initializer</a> </dd></dl>
+<a class="el" href="class_t_n_1_1_initializer.html" title="Create a virtual initializer for tensors. ">Initializer</a> </dd>
+<dd>
+<a class="el" href="class_t_n_1_1_optimizer.html" title="Virtual class to update variable with corresponding gradient. ">Optimizer</a> </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_n_1_1_layer_a9aaee6ccbe657c0fc416fa4395c0eec6_cgraph.png" border="0" usemap="#class_t_n_1_1_layer_a9aaee6ccbe657c0fc416fa4395c0eec6_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_layer_a9aaee6ccbe657c0fc416fa4395c0eec6_cgraph" id="class_t_n_1_1_layer_a9aaee6ccbe657c0fc416fa4395c0eec6_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_activator_config.html#a1e00982926afa997d5597322319ffe92" title="Copy an activator config. " alt="" coords="176,5,308,47"/>
+<area shape="rect" id="node3" href="class_t_n_1_1_initializer.html#a250f9786c69b967d7d26d3d6e59d7f41" title="Copy an initializer. " alt="" coords="175,71,309,98"/>
+<area shape="rect" id="node4" href="class_t_n_1_1_optimizer.html#affa1b6f52056895335ebe391150eeb01" title="Copy an optimizer. " alt="" coords="172,122,312,149"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -250,6 +278,105 @@ template&lt;typename T&gt; </div>
 <p>Forward propagation. </p>
 
 <p>Implemented in <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a1b808a608f722ceeac36ec17f2f308c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b808a608f722ceeac36ec17f2f308c9">&#9670;&nbsp;</a></span>GetError() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::GetError </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the error of the layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the error. </dd></dl>
+
+</div>
+</div>
+<a id="abf5e3c4a474f9dbd45272ab82c1feba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5e3c4a474f9dbd45272ab82c1feba8">&#9670;&nbsp;</a></span>GetError() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::GetError </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_cost_function.html">CostFunction</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>costFunction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>prediction</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the error of the layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">costFunction</td><td>: the cost function. </td></tr>
+    <tr><td class="paramname">prediction</td><td>: your prediction. </td></tr>
+    <tr><td class="paramname">result</td><td>: your expected result.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return the error. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_n_1_1_layer_abf5e3c4a474f9dbd45272ab82c1feba8_cgraph.png" border="0" usemap="#class_t_n_1_1_layer_abf5e3c4a474f9dbd45272ab82c1feba8_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_layer_abf5e3c4a474f9dbd45272ab82c1feba8_cgraph" id="class_t_n_1_1_layer_abf5e3c4a474f9dbd45272ab82c1feba8_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_cost_function.html#a52105072c0691830256183b109075a18" title="Calculate error. " alt="" coords="188,5,375,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6c0a43ce8ac7239c8c5eb69c9f273aab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0a43ce8ac7239c8c5eb69c9f273aab">&#9670;&nbsp;</a></span>GetInputGradient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; * <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::GetInputGradient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the input gradient of the layer. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the input gradient tensor. </dd></dl>
 
 </div>
 </div>
@@ -362,8 +489,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a8bae94abc81b28f53bd44caebf83c0e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8bae94abc81b28f53bd44caebf83c0e9">&#9670;&nbsp;</a></span>Update() <span class="overload">[2/2]</span></h2>
+<a id="aae671357f02bc77a448b43aaa3476cf5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae671357f02bc77a448b43aaa3476cf5">&#9670;&nbsp;</a></span>Update() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -377,8 +504,18 @@ template&lt;typename T&gt; </div>
           <td class="memname">virtual void <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::Update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>result</em></td><td>)</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_cost_function.html">CostFunction</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>costFunction</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -392,17 +529,19 @@ template&lt;typename T&gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">result</td><td>: expected results. </td></tr>
+    <tr><td class="paramname">costFunction</td><td>: the cost function.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_cost_function.html" title="This virtual class hold a cost function and its derivative. ">CostFunction</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="class_t_n_1_1_f_c_layer.html#aeeb35ca1fe696958422f50d273a6e1a5">TN::FCLayer&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="class_t_n_1_1_f_c_layer.html#a29e0a356ffdc3a9f2196aecc5ee8416d">TN::FCLayer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ada27f2707afb36d961ffd4c459245ac7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada27f2707afb36d961ffd4c459245ac7">&#9670;&nbsp;</a></span>m_activator</h2>
+<a id="a21690c7ba19f81fcd2fe52eee6200fac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21690c7ba19f81fcd2fe52eee6200fac">&#9670;&nbsp;</a></span>m_activator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -413,7 +552,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt;T&gt;&amp; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_activator</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_activator</td>
         </tr>
       </table>
   </td>
@@ -425,8 +564,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="a722e6c3272320690f88bdf9ae5865c34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a722e6c3272320690f88bdf9ae5865c34">&#9670;&nbsp;</a></span>m_grad</h2>
+<a id="ac286721dcef1eee0d24b94d9a20f9667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac286721dcef1eee0d24b94d9a20f9667">&#9670;&nbsp;</a></span>m_error</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +576,31 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt;<a class="el" href="struct_t_n_1_1gradient__t.html">gradient_t</a>&lt;T&gt; &gt;* <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_grad = NULL</td>
+          <td class="memname">double <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_error = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8fce6cee54fddeadb00f43c86e810a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8fce6cee54fddeadb00f43c86e810a0">&#9670;&nbsp;</a></span>m_gradIn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt;T&gt;* <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_gradIn = NULL</td>
         </tr>
       </table>
   </td>
@@ -473,8 +636,8 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
-<a id="ab3b6e5727ad35aa228356b5436661a78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3b6e5727ad35aa228356b5436661a78">&#9670;&nbsp;</a></span>m_initializer</h2>
+<a id="a448fdc4e62e7800ccb5a70e9b31f1ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a448fdc4e62e7800ccb5a70e9b31f1ec5">&#9670;&nbsp;</a></span>m_initializer</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -485,7 +648,7 @@ template&lt;typename T&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt;T&gt;&amp; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_initializer</td>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_initializer</td>
         </tr>
       </table>
   </td>
@@ -521,6 +684,30 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="ac850f0454f08a54504107e3fa3f47e43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac850f0454f08a54504107e3fa3f47e43">&#9670;&nbsp;</a></span>m_optimizer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_optimizer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a0fb05f8e02c075215bef6f8a9c9b94d8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0fb05f8e02c075215bef6f8a9c9b94d8">&#9670;&nbsp;</a></span>m_out</h2>
 
@@ -545,9 +732,57 @@ template&lt;typename T&gt; </div>
 
 </div>
 </div>
+<a id="a117ab67432b26c0b6b64cfa9dad922ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a117ab67432b26c0b6b64cfa9dad922ac">&#9670;&nbsp;</a></span>m_previousLayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_layer.html">Layer</a>&lt;T&gt;* <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_previousLayer = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a879a2b051e0c697bb9593464f6190ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a879a2b051e0c697bb9593464f6190ede">&#9670;&nbsp;</a></span>m_zeroInitializer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_zero_initializer.html">ZeroInitializer</a>&lt;T&gt; <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::m_zeroInitializer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8hpp_source.html">Layer.hpp</a></li>
-<li>C:/Users/Doria/Documents/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8inl.html">Layer.inl</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8hpp_source.html">Layer.hpp</a></li>
+<li>D:/DEV/Projects/TigiNet/inc/NeuralNet/<a class="el" href="_layer_8inl.html">Layer.inl</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

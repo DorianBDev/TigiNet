@@ -1,0 +1,5 @@
+<map id="TN::Layer::Layer" name="TN::Layer::Layer">
+<area shape="rect" id="node2" href="$class_t_n_1_1_activator_config.html#a1e00982926afa997d5597322319ffe92" title="Copy an activator config. " alt="" coords="176,5,308,47"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_initializer.html#a250f9786c69b967d7d26d3d6e59d7f41" title="Copy an initializer. " alt="" coords="175,71,309,98"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_optimizer.html#affa1b6f52056895335ebe391150eeb01" title="Copy an optimizer. " alt="" coords="172,122,312,149"/>
+</map>
