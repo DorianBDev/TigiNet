@@ -45,14 +45,14 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	T ActivatorConfig<T>::ActivationFunction(T value) const
+	T ActivatorConfig<T>::Activation(T value) const
 	{
 		return static_cast<T>(m_activationFunction(static_cast<double>(value)));
 	}
 
 	/// @private
 	template<typename T>
-	T ActivatorConfig<T>::ActivationDerivative(T value) const
+	T ActivatorConfig<T>::Derivation(T value) const
 	{
 		if (m_activationFunctionDerivative == NULL)
 			return static_cast<T>(DerivativeApproximation(*m_activationFunction, static_cast<double>(value)));
@@ -62,10 +62,18 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	Layer<T>::Layer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer)
-		: m_activator(activator), m_initializer(initializer)
+	std::shared_ptr<ActivatorConfig<T>> ActivatorConfig<T>::Copy() const
 	{
+		return std::make_shared<ActivatorConfig<T>>(*m_activationFunction, *m_activationFunctionDerivative);
+	}
 
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, const Optimizer<T> & optimizer)
+	{
+		m_activator = activator.Copy();
+		m_initializer = initializer.Copy();
+		m_optimizer = optimizer.Copy();
 	}
 
 	/// @private
@@ -75,8 +83,8 @@ namespace TN
 		if (m_out != NULL)
 			delete m_out;
 
-		if (m_grad != NULL)
-			delete m_grad;
+		if (m_gradIn != NULL)
+			delete m_gradIn;
 	}
 
 	/// @private
@@ -85,6 +93,7 @@ namespace TN
 	{
 		this->m_in = layer.m_out;
 		layer.m_nextLayer = this;
+		this->m_previousLayer = &layer;
 	}
 
 	/// @private
@@ -99,6 +108,28 @@ namespace TN
 	Tensor<T>& Layer<T>::GetOutput()
 	{
 		return (*m_out);
+	}
+
+	/// @private
+	template<typename T>
+	double Layer<T>::GetError() const
+	{
+		return m_error;
+	}
+
+	/// @private
+	template<typename T>
+	double Layer<T>::GetError(const CostFunction<T>& costFunction, const Tensor<T>& prediction, const Tensor<T>& result)
+	{
+		m_error = costFunction.Activation(prediction, result);
+		return m_error;
+	}
+
+	/// @private
+	template<typename T>
+	Tensor<T>* Layer<T>::GetInputGradient()
+	{
+		return m_gradIn;
 	}
 }
 

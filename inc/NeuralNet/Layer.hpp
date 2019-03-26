@@ -27,6 +27,8 @@
 
 #include <NeuralNet/Config.hpp>
 #include <NeuralNet/Initializer.hpp>
+#include <NeuralNet/Optimizer.hpp>
+#include <NeuralNet/Cost.hpp>
 #include <Utility/Tensor.hpp>
 #include <Utility/Math.hpp>
 #include <Utility/Gradient.hpp>
@@ -73,7 +75,7 @@ namespace TN
 		* @return Return the result of f(value).
 		*
 		*/
-		T ActivationFunction(T value) const;
+		T Activation(T value) const;
 
 		/**
 		* @brief Use the activator derivative function.
@@ -83,7 +85,15 @@ namespace TN
 		* @return Return the result of f'(value).
 		*
 		*/
-		T ActivationDerivative(T value) const;
+		T Derivation(T value) const;
+
+		/**
+		* @brief Copy an activator config.
+		*
+		* @return Return a shared pointer of the new activator config copy.
+		*
+		*/
+		std::shared_ptr<ActivatorConfig<T>> Copy() const;
 
 	private:
 		double(*m_activationFunction)(double);
@@ -107,12 +117,14 @@ namespace TN
 		*
 		* @param activator : the activator config.
 		* @param initializer : the inializer.
+		* @param optimizer : the optimizer.
 		*
 		* @see ActivatorConfig
 		* @see Initializer
+		* @see Optimizer
 		*
 		*/
-		Layer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer);
+		Layer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, const Optimizer<T> & optimizer);
 		~Layer();
 
 		/**
@@ -147,9 +159,12 @@ namespace TN
 		* @brief Backward propagation with the expected results (only if the layer is the output one).
 		*
 		* @param result : expected results.
+		* @param costFunction : the cost function.
+		*
+		* @see CostFunction
 		*
 		*/
-		virtual void Update(Tensor<T>& result) = 0;
+		virtual void Update(Tensor<T>& result, const CostFunction<T>& costFunction) = 0;
 
 		/**
 		* @brief Get the output tensor of the layer.
@@ -159,13 +174,45 @@ namespace TN
 		*/
 		Tensor<T>& GetOutput();
 
+		/**
+		* @brief Get the error of the layer.
+		*
+		* @return Return the error.
+		*
+		*/
+		double GetError() const;
+
+		/**
+		* @brief Get the error of the layer.
+		*
+		* @param costFunction : the cost function.
+		* @param prediction : your prediction.
+		* @param result : your expected result.
+		*
+		* @return Return the error.
+		*
+		*/
+		double GetError(const CostFunction<T>& costFunction, const Tensor<T>& prediction, const Tensor<T>& result);
+
+		/**
+		* @brief Get the input gradient of the layer.
+		*
+		* @return Return the input gradient tensor.
+		*
+		*/
+		Tensor<T>* GetInputGradient();
+
 	protected:
-		const ActivatorConfig<T>& m_activator;
-		const Initializer<T>& m_initializer;
-		Tensor<T>* m_in = NULL;
-		Tensor<T>* m_out = NULL;
-		Tensor<gradient_t<T>>* m_grad = NULL;
+		std::shared_ptr<ActivatorConfig<T>> m_activator;
+		std::shared_ptr<Initializer<T>> m_initializer;
+		std::shared_ptr<Optimizer<T>> m_optimizer;
+		ZeroInitializer<T> m_zeroInitializer;
+		Tensor<T>* m_in = NULL; // Input tensor
+		Tensor<T>* m_out = NULL; // Output tensor
+		Tensor<T>* m_gradIn = NULL; // Input gradients
 		Layer<T>* m_nextLayer = NULL;
+		Layer<T>* m_previousLayer = NULL;
+		double m_error = 0;
 	};
 
 }
