@@ -29,39 +29,39 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	T MeanSquaredError<T>::Calculate(const T& prediction, const T& result) const
+	T MeanSquaredError<T>::Activation(const T& prediction, const T& result) const
 	{
 		return static_cast<T>(static_cast<double>(1) / static_cast<double>(2) * (prediction - result) * (prediction - result));
 	}
 
 	/// @private
 	template<typename T>
-	T MeanSquaredError<T>::Calculate(const Tensor<T>& prediction, const Tensor<T>& result) const
+	T MeanSquaredError<T>::Activation(const Tensor<T>& prediction, const Tensor<T>& result) const
 	{
 		TN_ASSERT(prediction.GetRank() == result.GetRank(), "NEURALNET", "Wrong tensors rank");
 
 		if(prediction.GetRank() == 0)
-			return Calculate(prediction(), result());
+			return Activation(prediction(), result());
 
 		T res = 0;
 
 		if (prediction.GetRank() == 1)
 		{
 			for (unsigned int i = 0; i < prediction.GetDimension(1); i++)
-				res += Calculate(prediction(i), result(i));
+				res += Activation(prediction(i), result(i));
 
 			return res;
 		}
 
 		for (unsigned int i = 0; i < prediction.GetDimension(prediction.GetRank()); i++)
-			res += Calculate(prediction[i], result[i]);
+			res += Activation(prediction[i], result[i]);
 
 		return res;
 	}
 
 	/// @private
 	template<typename T>
-	T MeanSquaredError<T>::Derivative(const T& prediction, const T& result) const
+	T MeanSquaredError<T>::Derivation(const T& prediction, const T& result) const
 	{
 		return prediction - result;
 	}

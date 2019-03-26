@@ -50,7 +50,7 @@ namespace TN
 		* @return Return the error.
 		*
 		*/
-		virtual T Calculate(const T& prediction, const T& result) const = 0;
+		virtual T Activation(const T& prediction, const T& result) const = 0;
 
 		/**
 		* @brief Calculate error from tensors.
@@ -61,7 +61,7 @@ namespace TN
 		* @return Return the error.
 		*
 		*/
-		virtual T Calculate(const Tensor<T>& prediction, const Tensor<T>& result) const = 0;
+		virtual T Activation(const Tensor<T>& prediction, const Tensor<T>& result) const = 0;
 
 		/**
 		* @brief Measures the importance of a prediction in the error.
@@ -72,7 +72,7 @@ namespace TN
 		* @return Return the measurement.
 		*
 		*/
-		virtual T Derivative(const T& prediction, const T& result) = 0;
+		virtual T Derivation(const T& prediction, const T& result) const = 0;
 	};
 
 	/**
@@ -96,7 +96,7 @@ namespace TN
 		* @return Return the error.
 		*
 		*/
-		T Calculate(const T& prediction, const T& result) const;
+		T Activation(const T& prediction, const T& result) const;
 
 		/**
 		* @brief Calculate error from tensors.
@@ -107,7 +107,7 @@ namespace TN
 		* @return Return the error.
 		*
 		*/
-		T Calculate(const Tensor<T>& prediction, const Tensor<T>& result) const;
+		T Activation(const Tensor<T>& prediction, const Tensor<T>& result) const;
 
 		/**
 		* @brief Measures the importance of a prediction in the error.
@@ -118,7 +118,7 @@ namespace TN
 		* @return Return the measurement.
 		*
 		*/
-		T Derivative(const T& prediction, const T& result) const;
+		T Derivation(const T& prediction, const T& result) const;
 	};
 }
 
