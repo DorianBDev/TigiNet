@@ -55,7 +55,7 @@ namespace TN
 		* @see Initializer
 		*
 		*/
-		FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, unsigned int neuronsCount);
+		FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer , const Optimizer<T> & optimizer, unsigned int neuronsCount);
 		~FCLayer();
 
 		/**
@@ -90,14 +90,18 @@ namespace TN
 		* @brief Backward propagation with the expected results (only if the layer is the output one).
 		*
 		* @param result : expected results.
+		* @param costFunction : the cost function.
+		*
+		* @see CostFunction
 		*
 		*/
-		void Update(Tensor<T>& result);
+		void Update(Tensor<T>& result, const CostFunction<T>& costFunction);
 
 	private:
-		Tensor<T>* m_weight = NULL;
-		Tensor<T>* m_bias = NULL;
 		unsigned int m_neuronsCount;
+		Tensor<T>* m_weight = NULL; // First parameter
+		Tensor<T>* m_bias = NULL; // Second parameter (last)
+		Tensor<T>* m_grad = NULL; // Always a vector
 
 	};
 }

@@ -31,8 +31,8 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	FCLayer<T>::FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, unsigned int neuronsCount)
-		: Layer<T>(activator, initializer)
+	FCLayer<T>::FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, const Optimizer<T> & optimizer, unsigned int neuronsCount)
+		: Layer<T>(activator, initializer, optimizer)
 	{
 		m_neuronsCount = neuronsCount;
 	}
@@ -46,14 +46,17 @@ namespace TN
 
 		if (m_bias != NULL)
 			delete m_bias;
+
+		if (m_grad != NULL)
+			delete m_grad;
 	}
 
 	/// @private
 	template<typename T>
 	void FCLayer<T>::Link(Layer<T> & layer)
 	{
-		//Layer<T>::Link(layer);
-		Link(layer.m_in);
+		Layer<T>::Link(layer);
+		Link(*this->m_in);
 	}
 
 	/// @private
@@ -62,10 +65,9 @@ namespace TN
 	{
 		Layer<T>::Link(in);
 
-		TN_ASSERT(this->m_in->GetRank() <= 4, "NEURALNET", "Wrong input tensor rank");
+		TN_ASSERT(this->m_in->GetRank() <= 3, "NEURALNET", "Wrong input tensor rank");
 		
 		unsigned int D = 0; // Linear size, number of unique input.
-		unsigned int N = 0; // Batch size.
 		unsigned int* weightShape;
 		unsigned int* biasShape = new unsigned int[1];
 		unsigned int* outShape;
@@ -74,27 +76,19 @@ namespace TN
 		{
 		case 0: // Scalar
 			D = 1;
-			N = 1;
 			break;
 		case 1: // Vector
 			D = this->m_in->GetDimension(1);
-			N = 1;
 			break;
 		case 2: // Matrix
 			D = this->m_in->GetDimension(1) * this->m_in->GetDimension(2);
-			N = 1;
 			break;
 		case 3: // 3-tensor
 			D = this->m_in->GetDimension(1) * this->m_in->GetDimension(2) * this->m_in->GetDimension(3);
-			N = 1;
-			break;
-		case 4: // 3-tensor with N batch
-			D = this->m_in->GetDimension(1) * this->m_in->GetDimension(2) * this->m_in->GetDimension(3);
-			N = this->m_in->GetDimension(4);
 			break;
 		default:
 			D = 0;
-			TN_WARNING("NEURALNET", "Wrong tensor rank");
+			TN_WARNING("NEURALNET", "Wrong tensor rank for fully connected layer.");
 			return;
 			break;
 		}
@@ -102,35 +96,26 @@ namespace TN
 		weightShape[0] = m_neuronsCount;
 		weightShape[1] = D;
 		
-		m_weight = new Tensor<T>(2, TensorShape(weightShape), 2); //TODO: gradient tensor.
+		this->m_weight = new Tensor<T>(2, TensorShape(weightShape), 2);
 		delete[] weightShape;
 
 		biasShape[0] = m_neuronsCount;
-		m_bias = new Tensor<T>(1, TensorShape(biasShape), 1);
+		this->m_bias = new Tensor<T>(1, TensorShape(biasShape), 1);
 		delete[] biasShape;
 
-		if (N == 1)
-		{
-			outShape = new unsigned int[1];
-			outShape[0] = m_neuronsCount;
-			this->m_out = new Tensor<T>(1, TensorShape(outShape), 1);
-		}
-		else
-		{
-			outShape = new unsigned int[2];
-			outShape[0] = m_neuronsCount;
-			outShape[1] = N;
-			this->m_out = new Tensor<T>(2, TensorShape(outShape), 2);
-		}
+		outShape = new unsigned int[1];
+		outShape[0] = m_neuronsCount;
+		this->m_out = new Tensor<T>(1, TensorShape(outShape), 1);
+		this->m_grad = new Tensor<T>(1, TensorShape(outShape), 1);
 		delete[] outShape;
 
-		this->m_initializer.Initialize(*m_weight);
-		this->m_initializer.Initialize(*m_bias);
-		this->m_initializer.Initialize(*(this->m_out));
+		// The input gradient get the same shape as the input tensor
+		this->m_gradIn = new Tensor<T>(this->m_in->GetRank(), this->m_in->GetShape(), this->m_in->GetRank());
 
-		this->m_weight->Print();
-		this->m_bias->Print();
-		this->m_out->Print();
+		this->m_initializer->Initialize(*(this->m_weight));
+		this->m_initializer->Initialize(*(this->m_bias));
+
+		this->m_optimizer->Setup(m_neuronsCount * D + m_neuronsCount);
 	}
 
 	/// @private
@@ -138,7 +123,7 @@ namespace TN
 	void FCLayer<T>::Activate()
 	{
 		T sum = 0;
-		unsigned int dim1 = 0, dim2 = 0, dim3 = 0, dim4 = 0; // Optimization
+		unsigned int dim1 = 0, dim2 = 0, dim3 = 0; // Optimization
 
 		switch (this->m_in->GetRank())
 		{
@@ -146,7 +131,7 @@ namespace TN
 
 			for (unsigned int i = 0; i < m_neuronsCount; i++)
 			{
-				(*this->m_out)(i) = this->m_activator.ActivationFunction((*this->m_in)() * (*this->m_weight)[0](i) + (*this->m_bias)(i));
+				(*this->m_out)(i) = this->m_activator->Activation((*this->m_in)() * (*this->m_weight)[0](i) + (*this->m_bias)(i));
 			}
 
 			break;
@@ -161,7 +146,7 @@ namespace TN
 				{
 					sum += (*this->m_in)(j) * (*this->m_weight)[j](i);
 				}
-				(*this->m_out)(i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
+				(*this->m_out)(i) = this->m_activator->Activation(sum + (*this->m_bias)(i));
 			}
 
 			break;
@@ -180,7 +165,7 @@ namespace TN
 						sum += (*this->m_in)[k](j) * (*this->m_weight)[j + k * dim2](i);
 					}
 				}
-				(*this->m_out)(i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
+				(*this->m_out)(i) = this->m_activator->Activation(sum + (*this->m_bias)(i));
 			}
 
 			break;
@@ -203,62 +188,212 @@ namespace TN
 						}
 					}
 				}
-				(*this->m_out)(i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
-			}
-
-			break;
-		case 4: // 3-tensor with N batch
-
-			dim1 = this->m_in->GetDimension(1);
-			dim2 = this->m_in->GetDimension(2);
-			dim3 = this->m_in->GetDimension(3);
-			dim4 = this->m_in->GetDimension(4);
-
-			for (unsigned int b = 0; b < dim4; b++)
-			{
-				for (unsigned int i = 0; i < m_neuronsCount; i++)
-				{
-					sum = 0;
-					for (unsigned int j = 0; j < dim1; j++)
-					{
-						for (unsigned int k = 0; k < dim2; k++)
-						{
-							for (unsigned int l = 0; l < dim3; l++)
-							{
-								sum += (*this->m_in)[b][l][k](j) * (*this->m_weight)[j + k * dim2 + l * dim3](i);
-							}
-						}
-					}
-					(*this->m_out)[b](i) = this->m_activator.ActivationFunction(sum + (*this->m_bias)(i));
-				}
+				(*this->m_out)(i) = this->m_activator->Activation(sum + (*this->m_bias)(i));
 			}
 
 			break;
 		default:
-			TN_WARNING("NEURALNET", "Wrong tensor rank");
+			TN_WARNING("NEURALNET", "Wrong tensor rank for fully connected layer.");
 			return;
 			break;
 		}
+
+		if(this->m_nextLayer != NULL)
+			this->m_nextLayer->Activate();
 	}
 
 	/// @private
 	template<typename T>
 	void FCLayer<T>::Update()
 	{
-		//TODO
+		Tensor<T>* gradIn = this->m_nextLayer->GetInputGradient();
+
+		for (unsigned int i = 0; i < m_neuronsCount; i++)
+		{
+			(*this->m_grad)(i) = (*gradIn)(i) * this->m_activator->Derivation((*this->m_out)(i));
+		}
+
+		this->m_zeroInitializer.Initialize(*this->m_gradIn);
+
+		unsigned int dim1, dim2, dim3;
+		switch (this->m_in->GetRank())
+		{
+		case 0: // Scalar
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				this->m_optimizer->Update((*m_weight)[0](i), (*this->m_grad)(i), (*this->m_in)());
+				this->m_optimizer->Update((*m_bias)(i), (*this->m_grad)(i), 1);
+				(*this->m_gradIn)() += (*this->m_grad)(i) * (*m_weight)[0](i);
+			}
+
+			break;
+		case 1: // Vector
+
+			dim1 = this->m_in->GetDimension(1);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					this->m_optimizer->Update((*m_weight)[j](i), (*this->m_grad)(i), (*this->m_in)(j));
+					(*this->m_gradIn)(j) += (*this->m_grad)(i) * (*m_weight)[j](i);
+				}
+				this->m_optimizer->Update((*m_bias)(i), (*this->m_grad)(i), 1);
+			}
+
+			break;
+		case 2: // Matrix
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					for (unsigned int k = 0; k < dim2; k++)
+					{
+						this->m_optimizer->Update((*m_weight)[j + k * dim2](i), (*this->m_grad)(i), (*this->m_in)[k](j));
+						(*this->m_gradIn)[k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2](i);
+					}
+				}
+				this->m_optimizer->Update((*this->m_bias)(i), (*this->m_grad)(i), 1);
+			}
+
+			break;
+		case 3: // 3-tensor
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+			dim3 = this->m_in->GetDimension(3);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					for (unsigned int k = 0; k < dim2; k++)
+					{
+						for (unsigned int l = 0; l < dim3; l++)
+						{
+							this->m_optimizer->Update((*m_weight)[j + k * dim2 + l * dim3](i), (*this->m_grad)(i), (*this->m_in)[l][k](j));
+							(*this->m_gradIn)[l][k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2 + l * dim3](i);
+						}
+					}
+				}
+				this->m_optimizer->Update((*this->m_bias)(i), (*this->m_grad)(i), 1);
+			}
+
+			break;
+		default:
+			TN_WARNING("NEURALNET", "Wrong tensor rank for fully connected layer.");
+			return;
+			break;
+		}
+
+		if (this->m_previousLayer != NULL)
+			this->m_previousLayer->Update();
 	}
 
 	/// @private
 	template<typename T>
-	void FCLayer<T>::Update(Tensor<T>& result)
+	void FCLayer<T>::Update(Tensor<T>& result, const CostFunction<T>& costFunction)
 	{
-		if (this->m_nextLayer == NULL) // If not an output layer.
+		if (this->m_nextLayer != NULL) // If not an output layer.
 		{
 			Update();
 			return;
 		}
 
-		//TODO
+		TN_ASSERT(result.GetRank() == this->m_out->GetRank(), "NEURALNET", "Wrong rank for the result tensor");
+
+		this->m_error = costFunction.Activation((*this->m_out), result);
+
+		for (unsigned int i = 0; i < m_neuronsCount; i++)
+		{
+			(*this->m_grad)(i) = this->m_activator->Derivation((*this->m_out)(i)) * costFunction.Derivation((*this->m_out)(i), result(i));
+		}
+
+		this->m_zeroInitializer.Initialize(*this->m_gradIn);
+
+		unsigned int dim1, dim2, dim3;
+		switch (this->m_in->GetRank())
+		{
+		case 0: // Scalar
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				this->m_optimizer->Update((*m_weight)[0](i), (*this->m_grad)(i), (*this->m_in)());
+				this->m_optimizer->Update((*m_bias)(i), (*this->m_grad)(i), 1);
+				(*this->m_gradIn)() += (*this->m_grad)(i) * (*m_weight)[0](i);
+			}
+
+			break;
+		case 1: // Vector
+
+			dim1 = this->m_in->GetDimension(1);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					this->m_optimizer->Update((*m_weight)[j](i), (*this->m_grad)(i), (*this->m_in)(j));
+					(*this->m_gradIn)(j) += (*this->m_grad)(i) * (*m_weight)[j](i);
+				}
+				this->m_optimizer->Update((*m_bias)(i), (*this->m_grad)(i), 1);
+			}
+
+			break;
+		case 2: // Matrix
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					for (unsigned int k = 0; k < dim2; k++)
+					{
+						this->m_optimizer->Update((*m_weight)[j + k * dim2](i), (*this->m_grad)(i), (*this->m_in)[k](j));
+						(*this->m_gradIn)[k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2](i);
+					}
+				}
+				this->m_optimizer->Update((*this->m_bias)(i), (*this->m_grad)(i), 1);
+			}
+
+			break;
+		case 3: // 3-tensor
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+			dim3 = this->m_in->GetDimension(3);
+
+			for (unsigned int i = 0; i < m_neuronsCount; i++)
+			{
+				for (unsigned int j = 0; j < dim1; j++)
+				{
+					for (unsigned int k = 0; k < dim2; k++)
+					{
+						for (unsigned int l = 0; l < dim3; l++)
+						{
+							this->m_optimizer->Update((*m_weight)[j + k * dim2 + l * dim3](i), (*this->m_grad)(i), (*this->m_in)[l][k](j));
+							(*this->m_gradIn)[l][k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2 + l * dim3](i);
+						}
+					}
+				}
+				this->m_optimizer->Update((*this->m_bias)(i), (*this->m_grad)(i), 1);
+			}
+
+			break;
+		default:
+			TN_WARNING("NEURALNET", "Wrong tensor rank for fully connected layer.");
+			return;
+			break;
+		}
+
+		if (this->m_previousLayer != NULL)
+			this->m_previousLayer->Update();
 	}
 
 }
