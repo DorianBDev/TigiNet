@@ -29,22 +29,67 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	StochasticGradientDescent<T>::StochasticGradientDescent(double learningRate)
-		: m_learningRate(learningRate)
+	void Optimizer<T>::Setup(unsigned int variableCount)
+	{
+		m_variableCount = variableCount;
+	}
+
+	/// @private
+	template<typename T>
+	void Optimizer<T>::UpdateCounter()
+	{
+		if (m_counter + 1 >= m_variableCount)
+			m_counter = 0;
+		else
+			m_counter++;
+	}
+
+	/// @private
+	template<typename T>
+	StochasticGradientDescent<T>::StochasticGradientDescent(double learningRate, double momentum)
+		: m_learningRate(learningRate), m_momentum(momentum)
 	{
 
 	}
 
 	/// @private
 	template<typename T>
-	void StochasticGradientDescent<T>::Update(Tensor<T>& variableTensor, Tensor<T>& gradientTensor)
+	StochasticGradientDescent<T>::~StochasticGradientDescent()
 	{
-		if (m_oldGradientTensor == NULL)
-		{
-			m_oldGradientTensor = new Tensor<T>(variableTensor.GetRank(), variableTensor.GetShape());
-		}
+		if(m_oldDelta != NULL)
+			delete m_oldDelta;
+	}
 
-		//TODO
+	/// @private
+	template<typename T>
+	void StochasticGradientDescent<T>::Setup(unsigned int variableCount)
+	{
+		Optimizer<T>::Setup(variableCount);
+
+		unsigned int* shape = new unsigned int[1];
+		shape[0] = variableCount;
+		m_oldDelta = new Tensor<T>(1, TensorShape(shape), 1);
+		delete[] shape;
+
+		for (unsigned int i = 0; i < variableCount; i++)
+			(*m_oldDelta)(i) = 0;
+	}
+
+	/// @private
+	template<typename T>
+	void StochasticGradientDescent<T>::Update(T& variable, T gradient, T entry)
+	{
+		variable = variable - m_learningRate * gradient * entry - m_momentum * (*m_oldDelta)(this->m_counter);
+		(*m_oldDelta)(this->m_counter) = m_learningRate * gradient * entry + m_momentum * (*m_oldDelta)(this->m_counter);
+
+		Optimizer<T>::UpdateCounter();
+	}
+
+	/// @private
+	template<typename T>
+	std::shared_ptr<Optimizer<T>> StochasticGradientDescent<T>::Copy() const
+	{
+		return std::make_shared<StochasticGradientDescent<T>>(m_learningRate);
 	}
 }
 
