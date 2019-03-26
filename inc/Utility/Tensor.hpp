@@ -53,6 +53,14 @@ namespace TN
 		*
 		*/
 		TensorShape(unsigned int shape[]);
+
+		/**
+		* @brief Create a tensor shape with initializer list.
+		*
+		* @param shape : the inizialier list of dimension, one dimension per rank and start with the tiniest.
+		*
+		*/
+		TensorShape(std::initializer_list<unsigned int> shape);
 		TensorShape();
 		~TensorShape();
 

@@ -39,14 +39,9 @@ int main()
 	TN::FCLayer<double> l2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 4);
 	TN::FCLayer<double> l3(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 1);
 
-	unsigned int shape[] = { 2, 4 };
-	TN::Tensor<double> batch(2, TN::TensorShape(shape));
-
-	unsigned int shape2[] = { 2 };
-	TN::Tensor<double> in(1, TN::TensorShape(shape2));
-	
-	unsigned int shape3[] = { 1, 4 };
-	TN::Tensor<double> batchOut(2, TN::TensorShape(shape3));
+	TN::Tensor<double> batch(2, TN::TensorShape({ 2, 4 }));
+	TN::Tensor<double> in(1, TN::TensorShape({ 2 }));
+	TN::Tensor<double> batchOut(2, TN::TensorShape({ 1, 4 }));
 
 	batch[0](0) = 0;
 	batch[0](1) = 0;

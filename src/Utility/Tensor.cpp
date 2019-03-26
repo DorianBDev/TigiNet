@@ -37,6 +37,18 @@ TN::TensorShape::TensorShape()
 	m_copy = false;
 }
 
+TN::TensorShape::TensorShape(std::initializer_list<unsigned int> shape)
+{
+	m_shape = new unsigned int[shape.size()];
+	unsigned int i = 0;
+	for (auto e : shape)
+	{
+		m_shape[i] = e;
+		i++;
+	}
+	m_copy = true;
+}
+
 TN::TensorShape::~TensorShape()
 {
 	if (m_copy == true && m_shape != NULL)
