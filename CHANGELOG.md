@@ -40,6 +40,9 @@
  - Added support to the Fully Connect Layer.
  - Added support to the Mean Squared Error cost function.
  - Added support to the Stochastic Gradient Descent method.
+ - Added a Random Initializer.
+ - Added an Uniform Initializer.
+ - Added a Zero Initializer.
  
 
 ## [v0.0.53-release] - 2019-02-26 :
