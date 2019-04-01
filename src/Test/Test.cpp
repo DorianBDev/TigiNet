@@ -28,7 +28,8 @@
 #include <Utility/Tensor.hpp>
 #include <Utility/Gradient.hpp>
 #include <Utility/Math.hpp>
-#include <NeuralNet/Layer/FullyConnected.hpp>
+#include <NeuralNet/Layer/FCLayer.hpp>
+#include <NeuralNet/Layer/ConvLayer.hpp>
 #include <NeuralNet/Initializer.hpp>
 #include <NeuralNet/Cost.hpp>
 #include <NeuralNet/Optimizer.hpp>
@@ -84,7 +85,6 @@ int main()
 	in(1) = batch[0](1);
 	in.Print();
 	l.Activate();
-	l3.Activate();
 	l3.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
@@ -93,7 +93,6 @@ int main()
 	in(1) = batch[1](1);
 	in.Print();
 	l.Activate();
-	l3.Activate();
 	l3.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
@@ -102,7 +101,6 @@ int main()
 	in(1) = batch[2](1);
 	in.Print();
 	l.Activate();
-	l3.Activate();
 	l3.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
@@ -111,10 +109,16 @@ int main()
 	in(1) = batch[3](1);
 	in.Print();
 	l.Activate();
-	l3.Activate();
 	l3.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
+
+	batchOut.Print();
+
+	TN_LOG("TEST") << "-------";
+
+	std::shared_ptr<TN::Tensor<double>> temp = batchOut.Copy();
+	temp->Print();
 
 	TN_LOG("TEST") << "END";
 
