@@ -119,6 +119,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a358d470014fc488bff7480c5700921cb"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor_shape.html">TensorShape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a358d470014fc488bff7480c5700921cb">GetShape</a> ()</td></tr>
 <tr class="memdesc:a358d470014fc488bff7480c5700921cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shape of the tensor.  <a href="#a358d470014fc488bff7480c5700921cb">More...</a><br /></td></tr>
 <tr class="separator:a358d470014fc488bff7480c5700921cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018af7d6f29786d4c3df440ded9fcfbb"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a018af7d6f29786d4c3df440ded9fcfbb">GetAllocationRank</a> ()</td></tr>
+<tr class="memdesc:a018af7d6f29786d4c3df440ded9fcfbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the allocation rank of this tensor.  <a href="#a018af7d6f29786d4c3df440ded9fcfbb">More...</a><br /></td></tr>
+<tr class="separator:a018af7d6f29786d4c3df440ded9fcfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d4da4fbe600014fc651681951f29036"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036">operator[]</a> (unsigned int index)</td></tr>
 <tr class="memdesc:a0d4da4fbe600014fc651681951f29036"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access to a sub <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> (with rank - 1).  <a href="#a0d4da4fbe600014fc651681951f29036">More...</a><br /></td></tr>
 <tr class="separator:a0d4da4fbe600014fc651681951f29036"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,6 +140,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa7482eec63ce1ca5b7e6e05bfaa027d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#aa7482eec63ce1ca5b7e6e05bfaa027d8">Print</a> () const</td></tr>
 <tr class="memdesc:aa7482eec63ce1ca5b7e6e05bfaa027d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the tensor datas.  <a href="#aa7482eec63ce1ca5b7e6e05bfaa027d8">More...</a><br /></td></tr>
 <tr class="separator:aa7482eec63ce1ca5b7e6e05bfaa027d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b6388c851764543142da8017f571800"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor.html#a2b6388c851764543142da8017f571800">Copy</a> () const</td></tr>
+<tr class="memdesc:a2b6388c851764543142da8017f571800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a tensor.  <a href="#a2b6388c851764543142da8017f571800">More...</a><br /></td></tr>
+<tr class="separator:a2b6388c851764543142da8017f571800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -309,6 +315,60 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2b6388c851764543142da8017f571800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b6388c851764543142da8017f571800">&#9670;&nbsp;</a></span>Copy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt; <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::Copy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy a tensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return a shared_ptr to the new tensor. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph" id="class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph">
+<area shape="rect" id="node2" href="namespace_t_n.html#a46deeb214fd7bdc8188d2f7b59f03d43" title="Copy all subtensors. " alt="" coords="176,31,321,57"/>
+<area shape="rect" id="node3" href="class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="385,5,529,32"/>
+<area shape="rect" id="node4" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="369,56,544,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a018af7d6f29786d4c3df440ded9fcfbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018af7d6f29786d4c3df440ded9fcfbb">&#9670;&nbsp;</a></span>GetAllocationRank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::GetAllocationRank </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the allocation rank of this tensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the allocation rank of the tensor. </dd></dl>
+
+</div>
+</div>
 <a id="a533bd74bcf1fbf74c6734e82000abff5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a533bd74bcf1fbf74c6734e82000abff5">&#9670;&nbsp;</a></span>GetData()</h2>
 

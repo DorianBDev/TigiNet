@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['layer',['Layer',['../class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6',1,'TN::Layer']]],
-  ['link',['Link',['../class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339',1,'TN::FCLayer::Link(Layer&lt; T &gt; &amp;layer)'],['../class_t_n_1_1_f_c_layer.html#a658f47aeef290f8332d1081053be8891',1,'TN::FCLayer::Link(Tensor&lt; T &gt; &amp;in)'],['../class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a',1,'TN::Layer::Link(Layer&lt; T &gt; &amp;layer)'],['../class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269',1,'TN::Layer::Link(Tensor&lt; T &gt; &amp;in)']]],
-  ['lock',['Lock',['../class_t_n_1_1_mutex.html#a9c5de53140a24420014cc29c3456012e',1,'TN::Mutex']]],
-  ['lockguard',['LockGuard',['../class_t_n_1_1_lock_guard.html#a9b41848a53b48a8d35eb1b6653ff31a8',1,'TN::LockGuard']]],
-  ['logger',['Logger',['../class_t_n_1_1_logger.html#a6cb13aa633ac36b413c0c80e47e222b1',1,'TN::Logger::Logger(std::ostream *stream)'],['../class_t_n_1_1_logger.html#a2938cf7cde5b87bae431b2f444581716',1,'TN::Logger::Logger()=default']]]
+  ['kernel',['Kernel',['../class_t_n_1_1_kernel.html#a8e73938b90f919f4a71a0e5168cca62e',1,'TN::Kernel']]],
+  ['kernel2d',['Kernel2D',['../class_t_n_1_1_kernel2_d.html#aadd5a1b54d3590568c0d106c17486b70',1,'TN::Kernel2D']]],
+  ['kernel3d',['Kernel3D',['../class_t_n_1_1_kernel3_d.html#a6ca7ddf59ef92cb60bb0f11969727dfa',1,'TN::Kernel3D']]],
+  ['kernelholder',['KernelHolder',['../class_t_n_1_1_kernel_holder.html#a0b1e58861f21e75b0471abe5519b0e2a',1,'TN::KernelHolder']]]
 ];

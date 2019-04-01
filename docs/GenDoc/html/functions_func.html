@@ -86,16 +86,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a id="index_a"></a>- a -</h3><ul>
 <li>Activate()
-: <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_conv_layer.html#a1ce9351a71b22490c0160cad562d0890">TN::ConvLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_layer.html#af99458a1a0c3b8e4b564f983cd5fe2e0">TN::Layer&lt; T &gt;</a>
 </li>
 <li>Activation()
 : <a class="el" href="class_t_n_1_1_activator_config.html#a3a80c144c4db37d18bd456a321cf66fe">TN::ActivatorConfig&lt; T &gt;</a>
-, <a class="el" href="class_t_n_1_1_cost_function.html#abe7ed3478d25e76c54378a6af1cbd210">TN::CostFunction&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_cost_function.html#a52105072c0691830256183b109075a18">TN::CostFunction&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_mean_squared_error.html#a7e353747e27b42e8aa7076c96771d6c9">TN::MeanSquaredError&lt; T &gt;</a>
 </li>
 <li>ActivatorConfig()
 : <a class="el" href="class_t_n_1_1_activator_config.html#ad574b24c9204c19e8958b973ca3e6aba">TN::ActivatorConfig&lt; T &gt;</a>
+</li>
+<li>Add()
+: <a class="el" href="class_t_n_1_1_kernel_holder.html#a78815a8a35dfd91d689e4620fc8201cd">TN::KernelHolder&lt; T &gt;</a>
 </li>
 </ul>
 
@@ -107,12 +111,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>ConsoleLogger()
 : <a class="el" href="class_t_n_1_1_console_logger.html#a213c19cea7afeba5c513c0a4bc091582">TN::ConsoleLogger</a>
 </li>
+<li>ConvLayer()
+: <a class="el" href="class_t_n_1_1_conv_layer.html#ae1d3e403f8dda68f521976c1cd352cb6">TN::ConvLayer&lt; T &gt;</a>
+</li>
 <li>Copy()
 : <a class="el" href="class_t_n_1_1_activator_config.html#a1e00982926afa997d5597322319ffe92">TN::ActivatorConfig&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_initializer.html#a250f9786c69b967d7d26d3d6e59d7f41">TN::Initializer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel.html#a03c4c2cd05ff3f32cc9b45704d91ea3d">TN::Kernel&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel_holder.html#a6a1194b4dc918ef3f18e553ba08cd0a8">TN::KernelHolder&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_optimizer.html#affa1b6f52056895335ebe391150eeb01">TN::Optimizer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_random_initializer.html#a8c5587d817d7c09ff32eb8a1b40a7ac3">TN::RandomInitializer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a5321ff1af68a64b55a5cc9d6bb48cb3c">TN::StochasticGradientDescent&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_tensor.html#a2b6388c851764543142da8017f571800">TN::Tensor&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e">TN::TensorShape</a>
 , <a class="el" href="class_t_n_1_1_uniform_initializer.html#ae5009ef4cc7f63bd5baae1449a6654d8">TN::UniformInitializer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_zero_initializer.html#ac55d597a706d34f7c9a56a4bcc3fd194">TN::ZeroInitializer&lt; T &gt;</a>
@@ -150,6 +160,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>Get()
+: <a class="el" href="class_t_n_1_1_kernel_holder.html#a03d4ddf2fd7259407858941bc6050ede">TN::KernelHolder&lt; T &gt;</a>
+</li>
+<li>GetAllocationRank()
+: <a class="el" href="class_t_n_1_1_tensor.html#a018af7d6f29786d4c3df440ded9fcfbb">TN::Tensor&lt; T &gt;</a>
+</li>
 <li>GetData()
 : <a class="el" href="class_t_n_1_1_tensor.html#a533bd74bcf1fbf74c6734e82000abff5">TN::Tensor&lt; T &gt;</a>
 </li>
@@ -161,13 +177,16 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_t_n_1_1_clock.html#a0de34e7c58a5b32bcf0ea022577aaa81">TN::Clock</a>
 </li>
 <li>GetError()
-: <a class="el" href="class_t_n_1_1_layer.html#a1b808a608f722ceeac36ec17f2f308c9">TN::Layer&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_layer.html#abf5e3c4a474f9dbd45272ab82c1feba8">TN::Layer&lt; T &gt;</a>
 </li>
 <li>GetInputGradient()
 : <a class="el" href="class_t_n_1_1_layer.html#a6c0a43ce8ac7239c8c5eb69c9f273aab">TN::Layer&lt; T &gt;</a>
 </li>
 <li>GetInstance()
 : <a class="el" href="class_t_n_1_1_singleton.html#abb4a0b65d41059ce52fb1159275e7042">TN::Singleton&lt; T &gt;</a>
+</li>
+<li>GetKernel()
+: <a class="el" href="class_t_n_1_1_kernel.html#aabfc8e1a46b6fab074906a56fce75756">TN::Kernel&lt; T &gt;</a>
 </li>
 <li>GetOutput()
 : <a class="el" href="class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f">TN::Layer&lt; T &gt;</a>
@@ -200,13 +219,30 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
+<h3><a id="index_k"></a>- k -</h3><ul>
+<li>Kernel()
+: <a class="el" href="class_t_n_1_1_kernel.html#a8e73938b90f919f4a71a0e5168cca62e">TN::Kernel&lt; T &gt;</a>
+</li>
+<li>Kernel2D()
+: <a class="el" href="class_t_n_1_1_kernel2_d.html#aadd5a1b54d3590568c0d106c17486b70">TN::Kernel2D&lt; T &gt;</a>
+</li>
+<li>Kernel3D()
+: <a class="el" href="class_t_n_1_1_kernel3_d.html#a6ca7ddf59ef92cb60bb0f11969727dfa">TN::Kernel3D&lt; T &gt;</a>
+</li>
+<li>KernelHolder()
+: <a class="el" href="class_t_n_1_1_kernel_holder.html#a0b1e58861f21e75b0471abe5519b0e2a">TN::KernelHolder&lt; T &gt;</a>
+</li>
+</ul>
+
+
 <h3><a id="index_l"></a>- l -</h3><ul>
 <li>Layer()
 : <a class="el" href="class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6">TN::Layer&lt; T &gt;</a>
 </li>
 <li>Link()
-: <a class="el" href="class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339">TN::FCLayer&lt; T &gt;</a>
-, <a class="el" href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a">TN::Layer&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_conv_layer.html#a4f299daff271be495c35174827b58f67">TN::ConvLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339">TN::FCLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269">TN::Layer&lt; T &gt;</a>
 </li>
 <li>Lock()
 : <a class="el" href="class_t_n_1_1_mutex.html#a9c5de53140a24420014cc29c3456012e">TN::Mutex</a>
@@ -232,8 +268,11 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_t_n_1_1_tensor.html#ae33bdfeabb3156b9549fe9b7735d695a">TN::Tensor&lt; T &gt;</a>
 </li>
 <li>operator&lt;&lt;()
-: <a class="el" href="class_t_n_1_1_logger.html#a25eea1eeb73b7861b369a5b9f2fb4f29">TN::Logger</a>
+: <a class="el" href="class_t_n_1_1_logger.html#ae1bd91938bb8260f589092a54da73ead">TN::Logger</a>
 , <a class="el" href="class_t_n_1_1_tigi_net_logger.html#a6d0f2b72429264b39735ba4b64f55cbf">TN::TigiNetLogger</a>
+</li>
+<li>operator=()
+: <a class="el" href="class_t_n_1_1_kernel.html#a1bc8af8c14fc60b976465c86bc124acd">TN::Kernel&lt; T &gt;</a>
 </li>
 <li>operator[]()
 : <a class="el" href="class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036">TN::Tensor&lt; T &gt;</a>
@@ -264,14 +303,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_t_n_1_1_error.html#a287a1dba229cf9ec9ff5f2ba865bb48d">TN::Error</a>
 </li>
 <li>Setup()
-: <a class="el" href="class_t_n_1_1_optimizer.html#a7ad22130960772733e29ec1f66711c1d">TN::Optimizer&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_kernel2_d.html#aad0482b7f00344876a2140b2418fc5d7">TN::Kernel2D&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel3_d.html#ac3e32dd8574ed0165f2f33d0ccb0d17b">TN::Kernel3D&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel.html#ae07990b8f35ad4728b8998e2317f91c2">TN::Kernel&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel_holder.html#a4b158a8bd040ca98614073e9112e3788">TN::KernelHolder&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_optimizer.html#a7ad22130960772733e29ec1f66711c1d">TN::Optimizer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#ac27692d21388442dc692d69fddcf31fe">TN::StochasticGradientDescent&lt; T &gt;</a>
 </li>
 <li>Start()
 : <a class="el" href="class_t_n_1_1_clock.html#a4913474baa9d875131628f6a555b106d">TN::Clock</a>
 </li>
 <li>StochasticGradientDescent()
-: <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a492841356da437c02f05b0389408a53a">TN::StochasticGradientDescent&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a7a9c4f77d0ffe0c70da1e8e415e292e6">TN::StochasticGradientDescent&lt; T &gt;</a>
 </li>
 <li>Stop()
 : <a class="el" href="class_t_n_1_1_clock.html#a3f709b7f9fe1c742f4156e6354053899">TN::Clock</a>
@@ -300,8 +343,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_t_n_1_1_mutex.html#aa75583263ccee844fe8044280fad4a06">TN::Mutex</a>
 </li>
 <li>Update()
-: <a class="el" href="class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c">TN::FCLayer&lt; T &gt;</a>
-, <a class="el" href="class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e">TN::Layer&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_conv_layer.html#a8ad2d988d59399ea5c536d61ac6614ae">TN::ConvLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c">TN::FCLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_layer.html#aae671357f02bc77a448b43aaa3476cf5">TN::Layer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_optimizer.html#a00060df0164ab7d52baf9e13bb83cf8e">TN::Optimizer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a8f7c9c8ad21033c3c483bde2ecefa77f">TN::StochasticGradientDescent&lt; T &gt;</a>
 </li>
@@ -324,6 +368,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>~ConsoleLogger()
 : <a class="el" href="class_t_n_1_1_console_logger.html#a76839c2acf46d7f74e95be8e6d88c022">TN::ConsoleLogger</a>
 </li>
+<li>~ConvLayer()
+: <a class="el" href="class_t_n_1_1_conv_layer.html#a0815f144c542beae6c3f0353bf473a47">TN::ConvLayer&lt; T &gt;</a>
+</li>
 <li>~Error()
 : <a class="el" href="class_t_n_1_1_error.html#ab477d2c531bde11d119b57d99754e034">TN::Error</a>
 </li>
@@ -335,6 +382,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>~Functor()
 : <a class="el" href="class_t_n_1_1_functor.html#a84d5f95457894362157dbedb07146dca">TN::Functor&lt; F, Args &gt;</a>
+</li>
+<li>~Kernel()
+: <a class="el" href="class_t_n_1_1_kernel.html#ac6a43b71283d77329bb9b7050c98515b">TN::Kernel&lt; T &gt;</a>
+</li>
+<li>~Kernel2D()
+: <a class="el" href="class_t_n_1_1_kernel2_d.html#a9a0b8bae2e7cde52f14663ce63623bbc">TN::Kernel2D&lt; T &gt;</a>
+</li>
+<li>~Kernel3D()
+: <a class="el" href="class_t_n_1_1_kernel3_d.html#aa2cbe0f7440cbb1d4a00f4b493ac470f">TN::Kernel3D&lt; T &gt;</a>
+</li>
+<li>~KernelHolder()
+: <a class="el" href="class_t_n_1_1_kernel_holder.html#af7cff0f8031ac6550cf06548369db7fc">TN::KernelHolder&lt; T &gt;</a>
 </li>
 <li>~Layer()
 : <a class="el" href="class_t_n_1_1_layer.html#aac273045511d30f871374f4ec81acc92">TN::Layer&lt; T &gt;</a>

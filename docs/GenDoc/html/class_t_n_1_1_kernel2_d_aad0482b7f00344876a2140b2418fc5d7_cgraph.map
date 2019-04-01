@@ -1,0 +1,5 @@
+<map id="TN::Kernel2D::Setup" name="TN::Kernel2D::Setup">
+<area shape="rect" id="node2" href="$namespace_t_n.html#a46deeb214fd7bdc8188d2f7b59f03d43" title="Copy all subtensors. " alt="" coords="195,31,340,57"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="403,5,547,32"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="388,56,563,83"/>
+</map>

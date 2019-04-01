@@ -6,6 +6,8 @@ var searchData=
   ['m_5fgradin',['m_gradIn',['../class_t_n_1_1_layer.html#ad8fce6cee54fddeadb00f43c86e810a0',1,'TN::Layer']]],
   ['m_5fin',['m_in',['../class_t_n_1_1_layer.html#addbd479b146193909d21366014a35c1d',1,'TN::Layer']]],
   ['m_5finitializer',['m_initializer',['../class_t_n_1_1_layer.html#a448fdc4e62e7800ccb5a70e9b31f1ec5',1,'TN::Layer']]],
+  ['m_5fkernel',['m_kernel',['../class_t_n_1_1_kernel.html#aa59d535e53595e82054827f5f582488b',1,'TN::Kernel']]],
+  ['m_5fkernels',['m_kernels',['../class_t_n_1_1_kernel_holder.html#ac4c076a2549d5f1cb49f9fb79e132791',1,'TN::KernelHolder']]],
   ['m_5fnextlayer',['m_nextLayer',['../class_t_n_1_1_layer.html#a1fcc728b32fdaf07ace7e4115f5dff67',1,'TN::Layer']]],
   ['m_5fopen',['m_open',['../class_t_n_1_1_logger.html#a14835f63cf3493d956bde823f2d4e699',1,'TN::Logger']]],
   ['m_5foptimizer',['m_optimizer',['../class_t_n_1_1_layer.html#ac850f0454f08a54504107e3fa3f47e43',1,'TN::Layer']]],

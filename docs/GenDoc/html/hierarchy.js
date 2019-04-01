@@ -15,7 +15,13 @@ var hierarchy =
       [ "TN::UniformInitializer< T >", "class_t_n_1_1_uniform_initializer.html", null ],
       [ "TN::ZeroInitializer< T >", "class_t_n_1_1_zero_initializer.html", null ]
     ] ],
+    [ "TN::Kernel< T >", "class_t_n_1_1_kernel.html", [
+      [ "TN::Kernel2D< T >", "class_t_n_1_1_kernel2_d.html", null ],
+      [ "TN::Kernel3D< T >", "class_t_n_1_1_kernel3_d.html", null ]
+    ] ],
+    [ "TN::KernelHolder< T >", "class_t_n_1_1_kernel_holder.html", null ],
     [ "TN::Layer< T >", "class_t_n_1_1_layer.html", [
+      [ "TN::ConvLayer< T >", "class_t_n_1_1_conv_layer.html", null ],
       [ "TN::FCLayer< T >", "class_t_n_1_1_f_c_layer.html", null ]
     ] ],
     [ "TN::LockGuard", "class_t_n_1_1_lock_guard.html", null ],

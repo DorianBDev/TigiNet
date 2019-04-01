@@ -4,6 +4,8 @@ var class_t_n_1_1_tensor =
     [ "Tensor", "class_t_n_1_1_tensor.html#a9e6e6a3e1c925f4c869467e02e0d5b27", null ],
     [ "Tensor", "class_t_n_1_1_tensor.html#a694e83fca06a5a0fd082dbf662b9bc28", null ],
     [ "~Tensor", "class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d", null ],
+    [ "Copy", "class_t_n_1_1_tensor.html#a2b6388c851764543142da8017f571800", null ],
+    [ "GetAllocationRank", "class_t_n_1_1_tensor.html#a018af7d6f29786d4c3df440ded9fcfbb", null ],
     [ "GetData", "class_t_n_1_1_tensor.html#a533bd74bcf1fbf74c6734e82000abff5", null ],
     [ "GetDimension", "class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a", null ],
     [ "GetRank", "class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280", null ],

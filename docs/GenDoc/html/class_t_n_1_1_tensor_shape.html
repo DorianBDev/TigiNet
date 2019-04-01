@@ -100,6 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0c1c4ff99158296641c399821f812c8a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#a0c1c4ff99158296641c399821f812c8a">TensorShape</a> (unsigned int shape[])</td></tr>
 <tr class="memdesc:a0c1c4ff99158296641c399821f812c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tensor shape.  <a href="#a0c1c4ff99158296641c399821f812c8a">More...</a><br /></td></tr>
 <tr class="separator:a0c1c4ff99158296641c399821f812c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadfb9f9afb1398003bcda83cd6aee978"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#aadfb9f9afb1398003bcda83cd6aee978">TensorShape</a> (std::initializer_list&lt; unsigned int &gt; shape)</td></tr>
+<tr class="memdesc:aadfb9f9afb1398003bcda83cd6aee978"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a tensor shape with initializer list.  <a href="#aadfb9f9afb1398003bcda83cd6aee978">More...</a><br /></td></tr>
+<tr class="separator:aadfb9f9afb1398003bcda83cd6aee978"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18c493901ddfe717917243cf9ea4bd7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#a18c493901ddfe717917243cf9ea4bd7f">TensorShape</a> ()</td></tr>
 <tr class="separator:a18c493901ddfe717917243cf9ea4bd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee4f28e7581e1f9911bb3c5c3e556d07"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_tensor_shape.html#aee4f28e7581e1f9911bb3c5c3e556d07">~TensorShape</a> ()</td></tr>
@@ -117,7 +120,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0c1c4ff99158296641c399821f812c8a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c1c4ff99158296641c399821f812c8a">&#9670;&nbsp;</a></span>TensorShape() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c1c4ff99158296641c399821f812c8a">&#9670;&nbsp;</a></span>TensorShape() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,8 +151,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aadfb9f9afb1398003bcda83cd6aee978"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadfb9f9afb1398003bcda83cd6aee978">&#9670;&nbsp;</a></span>TensorShape() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TN::TensorShape::TensorShape </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; unsigned int &gt;&#160;</td>
+          <td class="paramname"><em>shape</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a tensor shape with initializer list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">shape</td><td>: the inizialier list of dimension, one dimension per rank and start with the tiniest. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a18c493901ddfe717917243cf9ea4bd7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18c493901ddfe717917243cf9ea4bd7f">&#9670;&nbsp;</a></span>TensorShape() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a18c493901ddfe717917243cf9ea4bd7f">&#9670;&nbsp;</a></span>TensorShape() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
