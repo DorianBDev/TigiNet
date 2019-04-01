@@ -97,9 +97,9 @@ std::string TN::GetLogHeader(const char* mod, const char* type)
 	res = buf;
 	res += " - [";
 	res += type;
-	res += "] [";
+	res += "] : [";
 	res += mod;
-	res += "] : ";
+	res += "] ";
 
 	return res;
 }
