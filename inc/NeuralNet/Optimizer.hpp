@@ -97,7 +97,7 @@ namespace TN
 		* @param learningRate : the learning rate to use with the SGD method.
 		*
 		*/
-		StochasticGradientDescent(double learningRate = 0.001, double momentum = 0.9);
+		StochasticGradientDescent(double learningRate = 0.0001, double momentum = 0.9);
 		~StochasticGradientDescent();
 
 		/**
