@@ -176,6 +176,14 @@ namespace TN
 		std::shared_ptr<TensorShape> GetShape();
 
 		/**
+		* @brief Get the allocation rank of this tensor.
+		*
+		* @return Return the allocation rank of the tensor.
+		*
+		*/
+		unsigned int GetAllocationRank();
+
+		/**
 		* @brief Access to a sub Tensor (with rank - 1).
 		*
 		* @param index : the desired index.
@@ -232,6 +240,14 @@ namespace TN
 		*/
 		void Print() const;
 
+		/**
+		* @brief Copy a tensor.
+		*
+		* @return Return a shared_ptr to the new tensor.
+		*
+		*/
+		std::shared_ptr<Tensor<T>> Copy() const;
+
 
 	private:
 		std::shared_ptr<TensorShape> m_shape;
@@ -249,7 +265,17 @@ namespace TN
 	*
 	*/
 	template<typename T>
-	void PrintTensor(const Tensor<T> & tensor);
+	void PrintTensor(const Tensor<T>& tensor);
+
+	/**
+	* @brief Copy all subtensors.
+	*
+	* @param tensor : the tensor to copy.
+	* @param copy : the copy.
+	*
+	*/
+	template<typename T>
+	void CopySubTensors(const Tensor<T>& tensor, Tensor<T>& copy);
 
 }
 

@@ -80,7 +80,7 @@ namespace TN
 			}
 			else if (allocationRank >= rank)
 			{
-				m_data = new T[dim * m_shape->GetDimension(rank)];
+				m_data = new T[dim * (m_shape->GetDimension(rank))];
 				m_allocationRank = m_rank;
 			}
 			else
@@ -154,7 +154,7 @@ namespace TN
 			}
 			else if (allocationRank >= rank)
 			{
-				m_data = new T[dim * m_shape->GetDimension(rank)];
+				m_data = new T[dim * (m_shape->GetDimension(rank))];
 				m_allocationRank = m_rank;
 			}
 			else
@@ -254,7 +254,7 @@ namespace TN
 			}
 			else if (allocationRank >= rank)
 			{
-				m_data = new T[dim * m_shape->GetDimension(rank)];
+				m_data = new T[dim * (m_shape->GetDimension(rank))];
 				m_allocationRank = m_rank;
 			}
 			else
@@ -295,6 +295,13 @@ namespace TN
 	std::shared_ptr<TensorShape> Tensor<T>::GetShape()
 	{
 		return m_shape;
+	}
+
+	/// @private
+	template<typename T>
+	unsigned int Tensor<T>::GetAllocationRank()
+	{
+		return m_allocationRank;
 	}
 
 	/// @private
@@ -430,6 +437,51 @@ namespace TN
 				TN_LOG("UTILITY") << "(" << i << ") :";
 				PrintTensor(tensor[i]);
 			}
+		}
+	}
+
+	/// @private
+	template<typename T>
+	std::shared_ptr<Tensor<T>> Tensor<T>::Copy() const
+	{
+		std::shared_ptr<Tensor<T>> res = std::make_shared<Tensor<T>>(m_rank, m_shape, m_allocationRank);
+
+		if (m_rank == 0)
+		{
+			(*res)() = m_data[0];
+		}
+		else if (m_rank == 1)
+		{
+			for (unsigned int i = 0; i < GetDimension(1); i++)
+				(*res)(i) = m_data[i];
+		}
+		else
+		{
+			for (unsigned int i = 0; i < GetDimension(m_rank); i++)
+				CopySubTensors(m_tensors[i], (*res)[i]);
+		}
+
+		return res;
+	}
+
+	/// @private
+	template<typename T>
+	void CopySubTensors(const Tensor<T>& tensor, Tensor<T>& copy)
+	{
+		unsigned int rank = tensor.GetRank();
+		if (rank == 0)
+		{
+			copy() = tensor();
+		}
+		else if (rank == 1)
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(1); i++)
+				copy(i) = tensor(i);
+		}
+		else
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(rank); i++)
+				CopySubTensors(tensor[i], copy[i]);
 		}
 	}
 }
