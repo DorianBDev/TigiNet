@@ -22,8 +22,8 @@
 *
 */
 
-#ifndef TN_NEURALNET_FULLYCONNECTED_HPP
-#define TN_NEURALNET_FULLYCONNECTED_HPP
+#ifndef TN_NEURALNET_FCLAYER_HPP
+#define TN_NEURALNET_FCLAYER_HPP
 
 #include <NeuralNet/Layer.hpp>
 
@@ -106,6 +106,6 @@ namespace TN
 	};
 }
 
-#include <NeuralNet/Layer/FullyConnected.inl>
+#include <NeuralNet/Layer/FCLayer.inl>
 
 #endif
