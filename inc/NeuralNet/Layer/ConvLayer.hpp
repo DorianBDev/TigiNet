@@ -44,8 +44,8 @@ namespace TN
 	class Kernel
 	{
 	public:
-		Kernel(Kernel const& ref);
-		~Kernel();
+		Kernel() = default;
+		~Kernel() = default;
 
 		/**
 		* @brief Setup the kernel to make it fit to a specific depth. 0 if 2D.
@@ -72,16 +72,32 @@ namespace TN
 		std::shared_ptr<Tensor<T>> GetKernel() const;
 
 		/**
+		* @brief Get the kernel gradient tensor.
+		*
+		* @return Return the kernel gradient tensor.
+		*
+		*/
+		std::shared_ptr<Tensor<T>>& GetKernelGradient();
+
+		/**
+		* @brief Get the kernel gradient tensor.
+		*
+		* @return Return the kernel gradient tensor.
+		*
+		*/
+		std::shared_ptr<Tensor<T>> GetKernelGradient() const;
+
+		/**
 		* @brief Copy a kernel.
 		*
 		* @return Return the new shared_ptr kernel.
 		*
 		*/
-		std::shared_ptr<Kernel<T>> Copy();
-		Kernel<T>& operator=(const Kernel<T>& ref);
+		virtual std::shared_ptr<Kernel<T>> Copy() const = 0;
 
 	protected:
 		std::shared_ptr<Tensor<T>> m_kernel = NULL;
+		std::shared_ptr<Tensor<T>> m_kernelGradient = NULL;
 
 	};
 
@@ -108,7 +124,7 @@ namespace TN
 		*
 		*/
 		Kernel2D(const Tensor<T>& kernel);
-		~Kernel2D();
+		Kernel2D() = default;
 
 		/**
 		* @brief Setup the kernel to make it fit to a specific depth. 0 if 2D.
@@ -117,6 +133,14 @@ namespace TN
 		*
 		*/
 		void Setup(unsigned int depth);
+
+		/**
+		* @brief Copy a kernel.
+		*
+		* @return Return the new shared_ptr kernel.
+		*
+		*/
+		std::shared_ptr<Kernel<T>> Copy() const;
 		
 	};
 
@@ -144,7 +168,7 @@ namespace TN
 		*
 		*/
 		Kernel3D(const Tensor<T>& kernel);
-		~Kernel3D();
+		Kernel3D() = default;
 
 		/**
 		* @brief Setup the kernel to make it fit to a specific depth. 0 if 2D.
@@ -153,6 +177,14 @@ namespace TN
 		*
 		*/
 		void Setup(unsigned int depth);
+
+		/**
+		* @brief Copy a kernel.
+		*
+		* @return Return the new shared_ptr kernel.
+		*
+		*/
+		std::shared_ptr<Kernel<T>> Copy() const;
 
 	};
 
@@ -209,7 +241,33 @@ namespace TN
 		* @return Return a shared_ptr to the new kernel holder.
 		*
 		*/
-		std::shared_ptr<KernelHolder<T>> Copy();
+		std::shared_ptr<KernelHolder<T>> Copy() const;
+
+		/**
+		* @brief Get the number of kernel/filter in the kernel holder.
+		*
+		* @return Return the number of kernel in the kernel holder.
+		*
+		*/
+		unsigned int GetSize();
+
+		/**
+		* @brief Get the dimension of all kernels for a specific ranK;
+		*
+		* @param rank : the rank.
+		*
+		* @return Return dimension of all kernels for a specific rank.
+		*
+		* @See Tensor
+		*
+		*/
+		unsigned int GetKernelsDimension(unsigned int rank);
+
+		/**
+		* @brief Re-initialize all kernels gradients.
+		*
+		*/
+		void ResetGradient(const Initializer<T>& initializer);
 
 	protected:
 		std::vector<std::shared_ptr<Kernel<T>>> m_kernels;
@@ -290,11 +348,19 @@ namespace TN
 		*/
 		void Update(Tensor<T>& result, const CostFunction<T>& costFunction);
 
+		/**
+		* @brief Get the kernel holder.
+		*
+		* @return Return the kernel holder.
+		*
+		*/
+		KernelHolder<T> GetKernelHolder();
+
 	private:
 		Tensor<T>* m_bias = NULL;
-		Tensor<T>* m_grad = NULL;
 		std::shared_ptr<KernelHolder<T>> m_kernels = NULL;
-		
+		unsigned int m_stride;
+		unsigned int m_zeroPadding;
 	};
 }
 
