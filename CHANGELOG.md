@@ -43,6 +43,7 @@
  - Added a Random Initializer.
  - Added an Uniform Initializer.
  - Added a Zero Initializer.
+ - Added a convolutional layer class (3D and 2D).
  
 
 ## [v0.0.53-release] - 2019-02-26 :
