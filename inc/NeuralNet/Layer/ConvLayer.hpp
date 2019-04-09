@@ -44,8 +44,6 @@ namespace TN
 	class Kernel
 	{
 	public:
-		Kernel() = default;
-		~Kernel() = default;
 
 		/**
 		* @brief Setup the kernel to make it fit to a specific depth. 0 if 2D.
