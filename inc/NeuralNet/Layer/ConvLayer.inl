@@ -27,6 +27,12 @@
 
 namespace TN
 {
+	/// @private
+	template<typename T>
+	Kernel<T>::Kernel()
+	{
+		
+	}
 
 	/// @private
 	template<typename T>

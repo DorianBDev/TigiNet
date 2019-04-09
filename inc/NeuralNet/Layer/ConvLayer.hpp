@@ -46,6 +46,12 @@ namespace TN
 	public:
 
 		/**
+		* @brief Default constructor.
+		*
+		*/
+		Kernel();
+
+		/**
 		* @brief Setup the kernel to make it fit to a specific depth. 0 if 2D.
 		*
 		* @param depth : the desired depth.
