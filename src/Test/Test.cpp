@@ -36,89 +36,151 @@
 
 int main()
 {
-	TN::FCLayer<double> l(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 4);
-	TN::FCLayer<double> l2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 4);
-	TN::FCLayer<double> l3(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 1);
+	TN::KernelHolder<double> k;
+	TN::Tensor<double> f1(2, TN::TensorShape({ 3, 3 }));
+	f1[0](0) = 1;
+	f1[0](1) = 1;
+	f1[0](2) = 1;
+	f1[1](0) = 1;
+	f1[1](1) = 1;
+	f1[1](2) = 1;
+	f1[2](0) = 1;
+	f1[2](1) = 1;
+	f1[2](2) = 1;
 
-	TN::Tensor<double> batch(2, TN::TensorShape({ 2, 4 }));
-	TN::Tensor<double> in(1, TN::TensorShape({ 2 }));
-	TN::Tensor<double> batchOut(2, TN::TensorShape({ 1, 4 }));
+	TN::Tensor<double> f2(2, TN::TensorShape({ 3, 3 }));
+	f2[0](0) = 1;
+	f2[0](1) = 1;
+	f2[0](2) = 1;
+	f2[1](0) = 1;
+	f2[1](1) = 1;
+	f2[1](2) = 1;
+	f2[2](0) = 1;
+	f2[2](1) = 1;
+	f2[2](2) = 1;
 
-	batch[0](0) = 0;
-	batch[0](1) = 0;
-	batchOut[0](0) = 0;
-	
-	batch[1](0) = 1;
-	batch[1](1) = 0;
-	batchOut[1](0) = 0;
+	k.Add(TN::Kernel2D<double>(f1));
+	k.Add(TN::Kernel2D<double>(f2));
 
-	batch[2](0) = 0;
-	batch[2](1) = 1;
-	batchOut[2](0) = 0;
+	TN::ConvLayer<double> c(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
+	//TN::FCLayer<double> co1(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 10);
+	TN::FCLayer<double> co2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 2);
 
-	batch[3](0) = 1;
-	batch[3](1) = 1;
-	batchOut[3](0) = 1;
+	TN::Tensor<double> im1(2, TN::TensorShape({ 3, 3 }));
+	TN::Tensor<double> cout(2, TN::TensorShape({ 2, 2 }));
+	TN::ZeroInitializer<double> init;
+	init.Initialize(im1);
 
-	in(0) = batch[0](0);
-	in(1) = batch[0](1);
-	l.Link(in);
-	l2.Link(l);
-	l3.Link(l2);
-	
+	// 1
+	cout[0](0) = 1;
+	cout[0](1) = 0;
+
+	// 2
+	cout[1](0) = 0;
+	cout[1](1) = 1;
+
+	c.Link(im1);
+	//co1.Link(c);
+	co2.Link(c);
+
 	unsigned int index = 0;
-	for (unsigned int i = 0; i < 100000; i++)
+	for (unsigned int i = 0; i < 10000; i++)
 	{
-		index = TN::Random<unsigned int>(0, 3);
-		in(0) = batch[index](0);
-		in(1) = batch[index](1);
+		index = TN::Random<unsigned int>(1, 2);
 
-		l.Activate();
+		if (index % 2)
+		{
+			// 1
+			im1[0](0) = 1;
+			im1[0](1) = 0;
+			im1[0](2) = 0;
 
-		if(i % 10000 == 1)
-			TN_LOG("TEST") << l3.GetError();
+			im1[1](0) = 0;
+			im1[1](1) = 1;
+			im1[1](2) = 0;
 
-		l3.Update(batchOut[index], TN::MeanSquaredError<double>());
+			im1[2](0) = 0;
+			im1[2](1) = 0;
+			im1[2](2) = 1;
+		}
+		else
+		{
+			// 2
+			im1[0](0) = 0;
+			im1[0](1) = 0;
+			im1[0](2) = 1;
+
+			im1[1](0) = 0;
+			im1[1](1) = 1;
+			im1[1](2) = 0;
+
+			im1[2](0) = 1;
+			im1[2](1) = 0;
+			im1[2](2) = 0;
+		}
+
+		c.Activate();
+
+		co2.Update(cout[index % 2], TN::MeanSquaredError<double>());
+
+		if (i % 1000 == 0)
+		{
+			TN_LOG("TEST") << co2.GetError();
+		}
 	}
+	TN_LOG("TEST") << "-------------";
 
-	in(0) = batch[0](0);
-	in(1) = batch[0](1);
-	in.Print();
-	l.Activate();
-	l3.GetOutput().Print();
+	c.GetKernelHolder().Get(0)->GetKernel()->Print();
+	c.GetKernelHolder().Get(1)->GetKernel()->Print();
 
-	TN_LOG("TEST") << "-------";
+	TN_LOG("TEST") << "-------------";
 
-	in(0) = batch[1](0);
-	in(1) = batch[1](1);
-	in.Print();
-	l.Activate();
-	l3.GetOutput().Print();
+	// 1
+	im1[0](0) = 1;
+	im1[0](1) = 0;
+	im1[0](2) = 0;
 
-	TN_LOG("TEST") << "-------";
+	im1[1](0) = 0;
+	im1[1](1) = 1;
+	im1[1](2) = 0;
 
-	in(0) = batch[2](0);
-	in(1) = batch[2](1);
-	in.Print();
-	l.Activate();
-	l3.GetOutput().Print();
+	im1[2](0) = 0;
+	im1[2](1) = 0;
+	im1[2](2) = 1;
 
-	TN_LOG("TEST") << "-------";
-
-	in(0) = batch[3](0);
-	in(1) = batch[3](1);
-	in.Print();
-	l.Activate();
-	l3.GetOutput().Print();
+	im1.Print();
+	c.Activate();
+	co2.GetOutput().Print();
 
 	TN_LOG("TEST") << "-------";
 
-	batchOut.Print();
+	// 2
+	im1[0](0) = 0;
+	im1[0](1) = 0;
+	im1[0](2) = 1;
 
+	im1[1](0) = 0;
+	im1[1](1) = 1;
+	im1[1](2) = 0;
+
+	im1[2](0) = 1;
+	im1[2](1) = 0;
+	im1[2](2) = 0;
+
+	im1.Print();
+	c.Activate();
+	co2.GetOutput().Print();
+
+
+	/*im1.Print();
 	TN_LOG("TEST") << "-------";
+	c.Activate();
+	c.GetOutput().Print();
+	co1.Update(cout, TN::MeanSquaredError<double>());
+	TN_LOG("TEST") << "-------";
+	*/
 
-	std::shared_ptr<TN::Tensor<double>> temp = batchOut.Copy();
-	temp->Print();
+	
 
 	TN_LOG("TEST") << "END";
 
