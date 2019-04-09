@@ -7,6 +7,7 @@ var searchData=
   ['m_5fin',['m_in',['../class_t_n_1_1_layer.html#addbd479b146193909d21366014a35c1d',1,'TN::Layer']]],
   ['m_5finitializer',['m_initializer',['../class_t_n_1_1_layer.html#a448fdc4e62e7800ccb5a70e9b31f1ec5',1,'TN::Layer']]],
   ['m_5fkernel',['m_kernel',['../class_t_n_1_1_kernel.html#aa59d535e53595e82054827f5f582488b',1,'TN::Kernel']]],
+  ['m_5fkernelgradient',['m_kernelGradient',['../class_t_n_1_1_kernel.html#adbdfa7b7b1dc96974c293fa70c35b094',1,'TN::Kernel']]],
   ['m_5fkernels',['m_kernels',['../class_t_n_1_1_kernel_holder.html#ac4c076a2549d5f1cb49f9fb79e132791',1,'TN::KernelHolder']]],
   ['m_5fmutex',['M_MUTEX',['../_mutex_8cpp.html#a3d442fbbf6ebeddb348da03c9c09255d',1,'Mutex.cpp']]],
   ['m_5fnextlayer',['m_nextLayer',['../class_t_n_1_1_layer.html#a1fcc728b32fdaf07ace7e4115f5dff67',1,'TN::Layer']]],

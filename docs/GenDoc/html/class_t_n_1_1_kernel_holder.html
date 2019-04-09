@@ -112,9 +112,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b158a8bd040ca98614073e9112e3788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a4b158a8bd040ca98614073e9112e3788">Setup</a> (unsigned int depth)</td></tr>
 <tr class="memdesc:a4b158a8bd040ca98614073e9112e3788"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup all kernels to make them fit to a specific depth. 0 if 2D.  <a href="#a4b158a8bd040ca98614073e9112e3788">More...</a><br /></td></tr>
 <tr class="separator:a4b158a8bd040ca98614073e9112e3788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a1194b4dc918ef3f18e553ba08cd0a8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel_holder.html">KernelHolder</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a6a1194b4dc918ef3f18e553ba08cd0a8">Copy</a> ()</td></tr>
-<tr class="memdesc:a6a1194b4dc918ef3f18e553ba08cd0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a kernel holder.  <a href="#a6a1194b4dc918ef3f18e553ba08cd0a8">More...</a><br /></td></tr>
-<tr class="separator:a6a1194b4dc918ef3f18e553ba08cd0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e75e7c6eeba96bac1685717f549a3e2"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel_holder.html">KernelHolder</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a9e75e7c6eeba96bac1685717f549a3e2">Copy</a> () const</td></tr>
+<tr class="memdesc:a9e75e7c6eeba96bac1685717f549a3e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a kernel holder.  <a href="#a9e75e7c6eeba96bac1685717f549a3e2">More...</a><br /></td></tr>
+<tr class="separator:a9e75e7c6eeba96bac1685717f549a3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebde7359a1a98fddbc4741235e01d6a4"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#aebde7359a1a98fddbc4741235e01d6a4">GetSize</a> ()</td></tr>
+<tr class="memdesc:aebde7359a1a98fddbc4741235e01d6a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of kernel/filter in the kernel holder.  <a href="#aebde7359a1a98fddbc4741235e01d6a4">More...</a><br /></td></tr>
+<tr class="separator:aebde7359a1a98fddbc4741235e01d6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75338481fccf8a02b10064193be6c9cc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a75338481fccf8a02b10064193be6c9cc">GetKernelsDimension</a> (unsigned int rank)</td></tr>
+<tr class="memdesc:a75338481fccf8a02b10064193be6c9cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the dimension of all kernels for a specific ranK;.  <a href="#a75338481fccf8a02b10064193be6c9cc">More...</a><br /></td></tr>
+<tr class="separator:a75338481fccf8a02b10064193be6c9cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a118670f3e5f26c00b0a78aa0c9612e12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a118670f3e5f26c00b0a78aa0c9612e12">ResetGradient</a> (const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer)</td></tr>
+<tr class="memdesc:a118670f3e5f26c00b0a78aa0c9612e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-initialize all kernels gradients.  <a href="#a118670f3e5f26c00b0a78aa0c9612e12">More...</a><br /></td></tr>
+<tr class="separator:a118670f3e5f26c00b0a78aa0c9612e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -207,14 +216,14 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_t_n_1_1_kernel_holder_a78815a8a35dfd91d689e4620fc8201cd_cgraph.png" border="0" usemap="#class_t_n_1_1_kernel_holder_a78815a8a35dfd91d689e4620fc8201cd_cgraph" alt=""/></div>
 <map name="class_t_n_1_1_kernel_holder_a78815a8a35dfd91d689e4620fc8201cd_cgraph" id="class_t_n_1_1_kernel_holder_a78815a8a35dfd91d689e4620fc8201cd_cgraph">
 <area shape="rect" id="node2" href="class_t_n_1_1_kernel.html#aabfc8e1a46b6fab074906a56fce75756" title="Get the kernel tensor. " alt="" coords="204,5,353,32"/>
-<area shape="rect" id="node3" href="class_t_n_1_1_kernel.html#a03c4c2cd05ff3f32cc9b45704d91ea3d" title="Copy a kernel. " alt="" coords="218,56,339,83"/>
+<area shape="rect" id="node3" href="class_t_n_1_1_kernel.html#a482f58135af6a1bb3022cb9db7ca2069" title="Copy a kernel. " alt="" coords="218,56,339,83"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a6a1194b4dc918ef3f18e553ba08cd0a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a1194b4dc918ef3f18e553ba08cd0a8">&#9670;&nbsp;</a></span>Copy()</h2>
+<a id="a9e75e7c6eeba96bac1685717f549a3e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e75e7c6eeba96bac1685717f549a3e2">&#9670;&nbsp;</a></span>Copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -225,7 +234,7 @@ template&lt;typename T &gt; </div>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel_holder.html">KernelHolder</a>&lt; T &gt; &gt; <a class="el" href="class_t_n_1_1_kernel_holder.html">TN::KernelHolder</a>&lt; T &gt;::Copy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -261,6 +270,88 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return a shared_ptr to the selected kernel. </dd></dl>
+
+</div>
+</div>
+<a id="a75338481fccf8a02b10064193be6c9cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75338481fccf8a02b10064193be6c9cc">&#9670;&nbsp;</a></span>GetKernelsDimension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_t_n_1_1_kernel_holder.html">TN::KernelHolder</a>&lt; T &gt;::GetKernelsDimension </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>rank</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the dimension of all kernels for a specific ranK;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rank</td><td>: the rank.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Return dimension of all kernels for a specific rank.</dd></dl>
+<p><a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> </p>
+
+</div>
+</div>
+<a id="aebde7359a1a98fddbc4741235e01d6a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebde7359a1a98fddbc4741235e01d6a4">&#9670;&nbsp;</a></span>GetSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int <a class="el" href="class_t_n_1_1_kernel_holder.html">TN::KernelHolder</a>&lt; T &gt;::GetSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of kernel/filter in the kernel holder. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the number of kernel in the kernel holder. </dd></dl>
+
+</div>
+</div>
+<a id="a118670f3e5f26c00b0a78aa0c9612e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118670f3e5f26c00b0a78aa0c9612e12">&#9670;&nbsp;</a></span>ResetGradient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_kernel_holder.html">TN::KernelHolder</a>&lt; T &gt;::ResetGradient </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>initializer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Re-initialize all kernels gradients. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_t_n_1_1_kernel_holder_a118670f3e5f26c00b0a78aa0c9612e12_cgraph.png" border="0" usemap="#class_t_n_1_1_kernel_holder_a118670f3e5f26c00b0a78aa0c9612e12_cgraph" alt=""/></div>
+<map name="class_t_n_1_1_kernel_holder_a118670f3e5f26c00b0a78aa0c9612e12_cgraph" id="class_t_n_1_1_kernel_holder_a118670f3e5f26c00b0a78aa0c9612e12_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_initializer.html#a2d8b689c7faeba0ce0adc84f0178fa17" title="Initialize a tensor. " alt="" coords="264,5,416,32"/>
+</map>
+</div>
 
 </div>
 </div>

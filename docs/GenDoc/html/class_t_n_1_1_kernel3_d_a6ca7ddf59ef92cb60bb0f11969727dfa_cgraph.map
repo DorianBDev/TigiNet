@@ -1,6 +1,6 @@
 <map id="TN::Kernel3D::Kernel3D" name="TN::Kernel3D::Kernel3D">
 <area shape="rect" id="node2" href="$class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="593,5,737,32"/>
 <area shape="rect" id="node3" href="$class_t_n_1_1_tensor.html#a2b6388c851764543142da8017f571800" title="Copy a tensor. " alt="" coords="213,56,336,83"/>
-<area shape="rect" id="node4" href="$namespace_t_n.html#a46deeb214fd7bdc8188d2f7b59f03d43" title="Copy all subtensors. " alt="" coords="384,56,529,83"/>
+<area shape="rect" id="node4" href="$namespace_t_n.html#aecd3448e895746550f08d83e61b688f3" title="Copy all subtensors. " alt="" coords="384,56,529,83"/>
 <area shape="rect" id="node5" href="$class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="577,56,752,83"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="TN::Tensor::Copy" name="TN::Tensor::Copy">
-<area shape="rect" id="node2" href="$namespace_t_n.html#a46deeb214fd7bdc8188d2f7b59f03d43" title="Copy all subtensors. " alt="" coords="176,31,321,57"/>
+<area shape="rect" id="node2" href="$namespace_t_n.html#aecd3448e895746550f08d83e61b688f3" title="Copy all subtensors. " alt="" coords="176,31,321,57"/>
 <area shape="rect" id="node3" href="$class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="385,5,529,32"/>
 <area shape="rect" id="node4" href="$class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="369,56,544,83"/>
 </map>

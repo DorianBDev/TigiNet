@@ -133,6 +133,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a41c758540b88e51b541fc70b7bcb42dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_conv_layer.html#a41c758540b88e51b541fc70b7bcb42dc">Update</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;result, const <a class="el" href="class_t_n_1_1_cost_function.html">CostFunction</a>&lt; T &gt; &amp;costFunction)</td></tr>
 <tr class="memdesc:a41c758540b88e51b541fc70b7bcb42dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation with the expected results (only if the layer is the output one).  <a href="#a41c758540b88e51b541fc70b7bcb42dc">More...</a><br /></td></tr>
 <tr class="separator:a41c758540b88e51b541fc70b7bcb42dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93b52f0a2a2809e7728650abb4b1c61b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_kernel_holder.html">KernelHolder</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_conv_layer.html#a93b52f0a2a2809e7728650abb4b1c61b">GetKernelHolder</a> ()</td></tr>
+<tr class="memdesc:a93b52f0a2a2809e7728650abb4b1c61b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the kernel holder.  <a href="#a93b52f0a2a2809e7728650abb4b1c61b">More...</a><br /></td></tr>
+<tr class="separator:a93b52f0a2a2809e7728650abb4b1c61b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_t_n_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_t_n_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_t_n_1_1_layer.html">TN::Layer&lt; T &gt;</a></td></tr>
 <tr class="memitem:a9aaee6ccbe657c0fc416fa4395c0eec6 inherit pub_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6">Layer</a> (const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;activator, const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer, const <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &amp;optimizer)</td></tr>
 <tr class="memdesc:a9aaee6ccbe657c0fc416fa4395c0eec6 inherit pub_methods_class_t_n_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a>.  <a href="class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6">More...</a><br /></td></tr>
@@ -268,7 +271,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_t_n_1_1_conv_layer_ae1d3e403f8dda68f521976c1cd352cb6_cgraph.png" border="0" usemap="#class_t_n_1_1_conv_layer_ae1d3e403f8dda68f521976c1cd352cb6_cgraph" alt=""/></div>
 <map name="class_t_n_1_1_conv_layer_ae1d3e403f8dda68f521976c1cd352cb6_cgraph" id="class_t_n_1_1_conv_layer_ae1d3e403f8dda68f521976c1cd352cb6_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_kernel_holder.html#a6a1194b4dc918ef3f18e553ba08cd0a8" title="Copy a kernel holder. " alt="" coords="228,5,387,32"/>
+<area shape="rect" id="node2" href="class_t_n_1_1_kernel_holder.html#a9e75e7c6eeba96bac1685717f549a3e2" title="Copy a kernel holder. " alt="" coords="228,5,387,32"/>
 </map>
 </div>
 
@@ -322,6 +325,28 @@ template&lt;typename T &gt; </div>
 <p>Forward propagation. </p>
 
 <p>Implements <a class="el" href="class_t_n_1_1_layer.html#af99458a1a0c3b8e4b564f983cd5fe2e0">TN::Layer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a93b52f0a2a2809e7728650abb4b1c61b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93b52f0a2a2809e7728650abb4b1c61b">&#9670;&nbsp;</a></span>GetKernelHolder()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_t_n_1_1_kernel_holder.html">KernelHolder</a>&lt; T &gt; <a class="el" href="class_t_n_1_1_conv_layer.html">TN::ConvLayer</a>&lt; T &gt;::GetKernelHolder </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the kernel holder. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the kernel holder. </dd></dl>
 
 </div>
 </div>

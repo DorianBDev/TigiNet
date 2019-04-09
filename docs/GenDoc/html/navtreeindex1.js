@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"class_t_n_1_1_logger.html#a14835f63cf3493d956bde823f2d4e699":[1,0,0,18,5],
+"class_t_n_1_1_logger.html#a25eea1eeb73b7861b369a5b9f2fb4f29":[1,0,0,18,3],
+"class_t_n_1_1_logger.html#a2938cf7cde5b87bae431b2f444581716":[1,0,0,18,1],
+"class_t_n_1_1_logger.html#a6cb13aa633ac36b413c0c80e47e222b1":[1,0,0,18,0],
+"class_t_n_1_1_logger.html#ac70e5ee5e4c702f60fef2b6998ef8e14":[1,0,0,18,6],
+"class_t_n_1_1_logger.html#ace7c9a723d19e00b4a7b70a1fd3189d5":[1,0,0,18,2],
+"class_t_n_1_1_logger.html#ae1bd91938bb8260f589092a54da73ead":[1,0,0,18,4],
+"class_t_n_1_1_mean_squared_error.html":[1,0,0,19],
 "class_t_n_1_1_mean_squared_error.html#a48363e0c169f4adf00e49bc8889d3e36":[1,0,0,19,0],
 "class_t_n_1_1_mean_squared_error.html#a7e353747e27b42e8aa7076c96771d6c9":[1,0,0,19,1],
 "class_t_n_1_1_mean_squared_error.html#aab54c9c6480fa112c0c8e1acc420ee0f":[1,0,0,19,2],

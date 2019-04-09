@@ -107,10 +107,10 @@ Inheritance diagram for TN::Kernel&lt; T &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e73938b90f919f4a71a0e5168cca62e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a8e73938b90f919f4a71a0e5168cca62e">Kernel</a> (<a class="el" href="class_t_n_1_1_kernel.html">Kernel</a> const &amp;ref)</td></tr>
-<tr class="separator:a8e73938b90f919f4a71a0e5168cca62e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a43b71283d77329bb9b7050c98515b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#ac6a43b71283d77329bb9b7050c98515b">~Kernel</a> ()</td></tr>
-<tr class="separator:ac6a43b71283d77329bb9b7050c98515b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23d6b4a6fffcc7f03f2ada30b106c132"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a23d6b4a6fffcc7f03f2ada30b106c132">Kernel</a> ()=default</td></tr>
+<tr class="separator:a23d6b4a6fffcc7f03f2ada30b106c132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e450a6bcb7bb444aaf7b52c442706f5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a6e450a6bcb7bb444aaf7b52c442706f5">~Kernel</a> ()=default</td></tr>
+<tr class="separator:a6e450a6bcb7bb444aaf7b52c442706f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae07990b8f35ad4728b8998e2317f91c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#ae07990b8f35ad4728b8998e2317f91c2">Setup</a> (unsigned int depth)=0</td></tr>
 <tr class="memdesc:ae07990b8f35ad4728b8998e2317f91c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup the kernel to make it fit to a specific depth. 0 if 2D.  <a href="#ae07990b8f35ad4728b8998e2317f91c2">More...</a><br /></td></tr>
 <tr class="separator:ae07990b8f35ad4728b8998e2317f91c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,16 +120,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad28d423d320b0db15893455fafc68ed7"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#ad28d423d320b0db15893455fafc68ed7">GetKernel</a> () const</td></tr>
 <tr class="memdesc:ad28d423d320b0db15893455fafc68ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the kernel tensor.  <a href="#ad28d423d320b0db15893455fafc68ed7">More...</a><br /></td></tr>
 <tr class="separator:ad28d423d320b0db15893455fafc68ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03c4c2cd05ff3f32cc9b45704d91ea3d"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a03c4c2cd05ff3f32cc9b45704d91ea3d">Copy</a> ()</td></tr>
-<tr class="memdesc:a03c4c2cd05ff3f32cc9b45704d91ea3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a kernel.  <a href="#a03c4c2cd05ff3f32cc9b45704d91ea3d">More...</a><br /></td></tr>
-<tr class="separator:a03c4c2cd05ff3f32cc9b45704d91ea3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bc8af8c14fc60b976465c86bc124acd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a1bc8af8c14fc60b976465c86bc124acd">operator=</a> (const <a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &amp;ref)</td></tr>
-<tr class="separator:a1bc8af8c14fc60b976465c86bc124acd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34df200e127d9a5735c38d8b1274315b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a34df200e127d9a5735c38d8b1274315b">GetKernelGradient</a> ()</td></tr>
+<tr class="memdesc:a34df200e127d9a5735c38d8b1274315b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the kernel gradient tensor.  <a href="#a34df200e127d9a5735c38d8b1274315b">More...</a><br /></td></tr>
+<tr class="separator:a34df200e127d9a5735c38d8b1274315b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af140fce178e6f0cf0781faff1111645f"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#af140fce178e6f0cf0781faff1111645f">GetKernelGradient</a> () const</td></tr>
+<tr class="memdesc:af140fce178e6f0cf0781faff1111645f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the kernel gradient tensor.  <a href="#af140fce178e6f0cf0781faff1111645f">More...</a><br /></td></tr>
+<tr class="separator:af140fce178e6f0cf0781faff1111645f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a482f58135af6a1bb3022cb9db7ca2069"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a482f58135af6a1bb3022cb9db7ca2069">Copy</a> () const =0</td></tr>
+<tr class="memdesc:a482f58135af6a1bb3022cb9db7ca2069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a kernel.  <a href="#a482f58135af6a1bb3022cb9db7ca2069">More...</a><br /></td></tr>
+<tr class="separator:a482f58135af6a1bb3022cb9db7ca2069"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aa59d535e53595e82054827f5f582488b"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#aa59d535e53595e82054827f5f582488b">m_kernel</a> = NULL</td></tr>
 <tr class="separator:aa59d535e53595e82054827f5f582488b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdfa7b7b1dc96974c293fa70c35b094"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#adbdfa7b7b1dc96974c293fa70c35b094">m_kernelGradient</a> = NULL</td></tr>
+<tr class="separator:adbdfa7b7b1dc96974c293fa70c35b094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename T&gt;<br />
@@ -139,41 +145,43 @@ class TN::Kernel&lt; T &gt;</h3>
 <p>A kernel can be setup with a specific depth, this will make it fit to. Need to be at least a 2-tensor (matrix).</p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_conv_layer.html" title="Convolutional layer. ">ConvLayer</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8e73938b90f919f4a71a0e5168cca62e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e73938b90f919f4a71a0e5168cca62e">&#9670;&nbsp;</a></span>Kernel()</h2>
+<a id="a23d6b4a6fffcc7f03f2ada30b106c132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23d6b4a6fffcc7f03f2ada30b106c132">&#9670;&nbsp;</a></span>Kernel()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_kernel.html">Kernel</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; const &amp;&#160;</td>
-          <td class="paramname"><em>ref</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_kernel_a8e73938b90f919f4a71a0e5168cca62e_cgraph.png" border="0" usemap="#class_t_n_1_1_kernel_a8e73938b90f919f4a71a0e5168cca62e_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_kernel_a8e73938b90f919f4a71a0e5168cca62e_cgraph" id="class_t_n_1_1_kernel_a8e73938b90f919f4a71a0e5168cca62e_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_kernel.html#aabfc8e1a46b6fab074906a56fce75756" title="Get the kernel tensor. " alt="" coords="181,5,331,32"/>
-</map>
-</div>
 
 </div>
 </div>
-<a id="ac6a43b71283d77329bb9b7050c98515b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6a43b71283d77329bb9b7050c98515b">&#9670;&nbsp;</a></span>~Kernel()</h2>
+<a id="a6e450a6bcb7bb444aaf7b52c442706f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e450a6bcb7bb444aaf7b52c442706f5">&#9670;&nbsp;</a></span>~Kernel()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::~<a class="el" href="class_t_n_1_1_kernel.html">Kernel</a> </td>
@@ -182,30 +190,45 @@ template&lt;typename T &gt; </div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a03c4c2cd05ff3f32cc9b45704d91ea3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03c4c2cd05ff3f32cc9b45704d91ea3d">&#9670;&nbsp;</a></span>Copy()</h2>
+<a id="a482f58135af6a1bb3022cb9db7ca2069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a482f58135af6a1bb3022cb9db7ca2069">&#9670;&nbsp;</a></span>Copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &gt; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::Copy </td>
+          <td class="memname">virtual std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::Copy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Copy a kernel. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return the new shared_ptr kernel. </dd></dl>
+
+<p>Implemented in <a class="el" href="class_t_n_1_1_kernel3_d.html#a958c65c56147d881be3b494e657b6b02">TN::Kernel3D&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_kernel2_d.html#ac55312a7895e8436ecfb121aa52983bb">TN::Kernel2D&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -253,8 +276,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a1bc8af8c14fc60b976465c86bc124acd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1bc8af8c14fc60b976465c86bc124acd">&#9670;&nbsp;</a></span>operator=()</h2>
+<a id="a34df200e127d9a5735c38d8b1274315b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34df200e127d9a5735c38d8b1274315b">&#9670;&nbsp;</a></span>GetKernelGradient() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,22 +285,38 @@ template&lt;typename T &gt; </div>
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &amp; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::operator= </td>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt; &amp; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::GetKernelGradient </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>ref</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_kernel_a1bc8af8c14fc60b976465c86bc124acd_cgraph.png" border="0" usemap="#class_t_n_1_1_kernel_a1bc8af8c14fc60b976465c86bc124acd_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_kernel_a1bc8af8c14fc60b976465c86bc124acd_cgraph" id="class_t_n_1_1_kernel_a1bc8af8c14fc60b976465c86bc124acd_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_kernel.html#aabfc8e1a46b6fab074906a56fce75756" title="Get the kernel tensor. " alt="" coords="200,5,349,32"/>
-</map>
+
+<p>Get the kernel gradient tensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the kernel gradient tensor. </dd></dl>
+
 </div>
+</div>
+<a id="af140fce178e6f0cf0781faff1111645f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af140fce178e6f0cf0781faff1111645f">&#9670;&nbsp;</a></span>GetKernelGradient() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &gt; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::GetKernelGradient </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the kernel gradient tensor. </p>
+<dl class="section return"><dt>Returns</dt><dd>Return the kernel gradient tensor. </dd></dl>
 
 </div>
 </div>
@@ -333,6 +372,30 @@ template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::m_kernel = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbdfa7b7b1dc96974c293fa70c35b094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdfa7b7b1dc96974c293fa70c35b094">&#9670;&nbsp;</a></span>m_kernelGradient</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt;T&gt; &gt; <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::m_kernelGradient = NULL</td>
         </tr>
       </table>
   </td>
