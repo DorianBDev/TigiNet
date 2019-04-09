@@ -404,7 +404,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void PrintTensor(const Tensor<T> & tensor)
+	void PrintTensor(Tensor<T> & tensor)
 	{
 		TN_LOG("UTILITY");
 		if (tensor.GetRank() == 0)
@@ -466,7 +466,7 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	void CopySubTensors(const Tensor<T>& tensor, Tensor<T>& copy)
+	void CopySubTensors(Tensor<T>& tensor, Tensor<T>& copy)
 	{
 		unsigned int rank = tensor.GetRank();
 		if (rank == 0)

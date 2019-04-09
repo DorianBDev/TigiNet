@@ -265,7 +265,7 @@ namespace TN
 	*
 	*/
 	template<typename T>
-	void PrintTensor(const Tensor<T>& tensor);
+	void PrintTensor(Tensor<T>& tensor);
 
 	/**
 	* @brief Copy all subtensors.
@@ -275,7 +275,7 @@ namespace TN
 	*
 	*/
 	template<typename T>
-	void CopySubTensors(const Tensor<T>& tensor, Tensor<T>& copy);
+	void CopySubTensors(Tensor<T>& tensor, Tensor<T>& copy);
 
 }
 
