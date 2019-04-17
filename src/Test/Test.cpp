@@ -33,9 +33,17 @@
 #include <NeuralNet/Initializer.hpp>
 #include <NeuralNet/Cost.hpp>
 #include <NeuralNet/Optimizer.hpp>
+#include "NeuralNet/Layer/PoolingLayer.hpp"
 
 int main()
 {
+	TN::PoolingLayer<double> p(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), TN::PoolingMethod::PM_MAX, TN::PoolingKernel(5, 5), 5, 0);
+	TN::Tensor<double> none(2, TN::TensorShape({ 3, 3 }));
+	
+	p.Link(none);
+	p.Activate();
+
+
 	TN::KernelHolder<double> k;
 	TN::Tensor<double> f1(2, TN::TensorShape({ 3, 3 }));
 	f1[0](0) = 1;
