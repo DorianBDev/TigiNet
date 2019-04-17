@@ -339,7 +339,7 @@ namespace TN
 		// The input gradient get the same shape as the input tensor
 		this->m_gradIn = new Tensor<T>(this->m_in->GetRank(), this->m_in->GetShape(), this->m_in->GetRank());
 
-		this->m_optimizer->Setup(m_kernels->GetSize() * m_kernels->GetKernelsDimension(1) * m_kernels->GetKernelsDimension(2) * depth + m_kernels->GetSize());
+		this->m_optimizer->Setup(m_kernels->GetSize() * m_kernels->GetKernelsDimension(1) * m_kernels->GetKernelsDimension(2) + m_kernels->GetSize());
 	}
 
 	/// @private
