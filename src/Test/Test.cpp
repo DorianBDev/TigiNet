@@ -39,25 +39,25 @@ int main()
 	TN::KernelHolder<double> k;
 	TN::Tensor<double> f1(2, TN::TensorShape({ 3, 3 }));
 	f1[0](0) = 1;
-	f1[0](1) = 1;
-	f1[0](2) = 1;
-	f1[1](0) = 1;
+	f1[0](1) = 0;
+	f1[0](2) = 0;
+	f1[1](0) = 0;
 	f1[1](1) = 1;
-	f1[1](2) = 1;
-	f1[2](0) = 1;
-	f1[2](1) = 1;
+	f1[1](2) = 0;
+	f1[2](0) = 0;
+	f1[2](1) = 0;
 	f1[2](2) = 1;
 
 	TN::Tensor<double> f2(2, TN::TensorShape({ 3, 3 }));
-	f2[0](0) = 1;
-	f2[0](1) = 1;
+	f2[0](0) = 0;
+	f2[0](1) = 0;
 	f2[0](2) = 1;
-	f2[1](0) = 1;
+	f2[1](0) = 0;
 	f2[1](1) = 1;
-	f2[1](2) = 1;
+	f2[1](2) = 0;
 	f2[2](0) = 1;
-	f2[2](1) = 1;
-	f2[2](2) = 1;
+	f2[2](1) = 0;
+	f2[2](2) = 0;
 
 	k.Add(TN::Kernel2D<double>(f1));
 	k.Add(TN::Kernel2D<double>(f2));
@@ -88,7 +88,7 @@ int main()
 	{
 		index = TN::Random<unsigned int>(1, 2);
 
-		if (index % 2)
+		if (index % 2 == 0)
 		{
 			// 1
 			im1[0](0) = 1;
