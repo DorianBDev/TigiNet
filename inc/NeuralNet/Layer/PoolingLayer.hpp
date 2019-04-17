@@ -53,6 +53,12 @@ namespace TN
 			m_x = x;
 			m_y = y;
 		}
+
+		PoolingKernel_s(const PoolingKernel_s& poolingKernel)
+		{
+			m_x = poolingKernel.m_x;
+			m_y = poolingKernel.m_y;
+		}
 	}PoolingKernel;
 
 	/**
@@ -78,6 +84,7 @@ namespace TN
 		* @param method : the pooling method.
 		* @param kernel : the kernel of the pooling layer.
 		* @param stride : controls the number of steps that you move the filter over the input image.
+		* @param zeroPadding : refers to padding the input volume with zeros around the border. In the 7x7input image example, if we use a stride of 1 and a zero padding of 1, then the output volume is also equal to 7x7.
 		*
 		* @see ActivatorConfig
 		* @see Initializer
@@ -85,7 +92,7 @@ namespace TN
 		* @see PoolingMethod
 		*
 		*/
-		PoolingLayer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer, const PoolingMethod method, const PoolingKernel kernel, unsigned int stride = 1);
+		PoolingLayer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer, const PoolingMethod method, const PoolingKernel kernel, unsigned int stride = 1, unsigned int zeroPadding = 0);
 		~PoolingLayer();
 
 		/**
@@ -130,6 +137,7 @@ namespace TN
 	private:
 		PoolingMethod m_method;
 		unsigned int m_stride;
+		unsigned int m_zeroPadding;
 		PoolingKernel m_kernel;
 
 	};
