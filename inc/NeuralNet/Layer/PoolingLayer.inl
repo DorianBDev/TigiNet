@@ -32,8 +32,8 @@ namespace TN
 {
 	/// @private
 	template<typename T>
-	PoolingLayer<T>::PoolingLayer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer, const PoolingMethod method, const PoolingKernel kernel, unsigned int stride, unsigned int zeroPadding)
-		: Layer<T>(activator, initializer, optimizer), m_kernel(kernel)
+	PoolingLayer<T>::PoolingLayer(const PoolingMethod method, const PoolingKernel kernel, unsigned int stride, unsigned int zeroPadding)
+		: Layer<T>(), m_kernel(kernel)
 	{
 		TN_ASSERT(stride >= 1, "NEURALNET", "Wronde stride value");
 
@@ -304,13 +304,6 @@ namespace TN
 
 		if (this->m_previousLayer != NULL)
 			this->m_previousLayer->Update();
-	}
-
-	/// @private
-	template<typename T>
-	void PoolingLayer<T>::Update(Tensor<T>& result, const CostFunction<T>& costFunction)
-	{
-
 	}
 
 }

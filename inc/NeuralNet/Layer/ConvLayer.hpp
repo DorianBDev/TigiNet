@@ -296,21 +296,19 @@ namespace TN
 		/**
 		* @brief Create a new convolutional layer.
 		*
-		* @param activator : the activator config.
 		* @param initializer : the inializer.
 		* @param optimizer : the optimizer.
 		* @param kernels : the kernel holder.
 		* @param stride : controls the number of steps that you move the filter over the input image.
 		* @param zeroPadding : refers to padding the input volume with zeros around the border. In the 7x7input image example, if we use a stride of 1 and a zero padding of 1, then the output volume is also equal to 7x7.
 		*
-		* @see ActivatorConfig
 		* @see Initializer
 		* @see Optimizer
 		* @see Kernel
 		* @see KernelHolder
 		*
 		*/
-		ConvLayer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer, const KernelHolder<T>& kernels, unsigned int stride = 1, unsigned int zeroPadding = 0);
+		ConvLayer(const Initializer<T>& initializer, const Optimizer<T>& optimizer, const KernelHolder<T>& kernels, unsigned int stride = 1, unsigned int zeroPadding = 0);
 		~ConvLayer();
 
 		/**
@@ -340,17 +338,6 @@ namespace TN
 		*
 		*/
 		void Update();
-
-		/**
-		* @brief Backward propagation with the expected results (only if the layer is the output one).
-		*
-		* @param result : expected results.
-		* @param costFunction : the cost function.
-		*
-		* @see CostFunction
-		*
-		*/
-		void Update(Tensor<T>& result, const CostFunction<T>& costFunction);
 
 		/**
 		* @brief Get the kernel holder.

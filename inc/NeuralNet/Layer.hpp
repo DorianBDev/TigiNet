@@ -124,7 +124,74 @@ namespace TN
 		* @see Optimizer
 		*
 		*/
-		Layer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer, const Optimizer<T> & optimizer);
+		Layer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer);
+
+		/**
+		* @brief Create a new Layer.
+		*
+		* @param activator : the activator config.
+		*
+		* @see ActivatorConfig
+		*
+		*/
+		Layer(const ActivatorConfig<T>& activator);
+
+		/**
+		* @brief Create a new Layer.
+		*
+		* @param initializer : the inializer.
+		*
+		* @see Initializer
+		*
+		*/
+		Layer(const Initializer<T>& initializer);
+
+		/**
+		* @brief Create a new Layer.
+		*
+		* @param optimizer : the optimizer.
+		*
+		* @see Optimizer
+		*
+		*/
+		Layer(const Optimizer<T>& optimizer);
+
+		/**
+		* @brief Create a new Layer.
+		*
+		* @param activator : the activator config.
+		* @param initializer : the inializer.
+		*
+		* @see ActivatorConfig
+		* @see Initializer
+		*
+		*/
+		Layer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer);
+
+		/**
+		* @brief Create a new Layer.
+		*
+		* @param activator : the activator config.
+		* @param optimizer : the optimizer.
+		*
+		* @see ActivatorConfig
+		* @see Optimizer
+		*
+		*/
+		Layer(const ActivatorConfig<T>& activator, const Optimizer<T>& optimizer);
+
+		/**
+		* @brief Create a new Layer.
+		*
+		* @param initializer : the inializer.
+		* @param optimizer : the optimizer.
+		*
+		* @see Initializer
+		* @see Optimizer
+		*
+		*/
+		Layer(const Initializer<T>& initializer, const Optimizer<T>& optimizer);
+		Layer();
 		~Layer();
 
 		/**
@@ -154,17 +221,6 @@ namespace TN
 		*
 		*/
 		virtual void Update() = 0;
-
-		/**
-		* @brief Backward propagation with the expected results (only if the layer is the output one).
-		*
-		* @param result : expected results.
-		* @param costFunction : the cost function.
-		*
-		* @see CostFunction
-		*
-		*/
-		virtual void Update(Tensor<T>& result, const CostFunction<T>& costFunction) = 0;
 
 		/**
 		* @brief Get the output tensor of the layer.
@@ -203,9 +259,9 @@ namespace TN
 		Tensor<T>* GetInputGradient();
 
 	protected:
-		std::shared_ptr<ActivatorConfig<T>> m_activator;
-		std::shared_ptr<Initializer<T>> m_initializer;
-		std::shared_ptr<Optimizer<T>> m_optimizer;
+		std::shared_ptr<ActivatorConfig<T>> m_activator = NULL;
+		std::shared_ptr<Initializer<T>> m_initializer = NULL;
+		std::shared_ptr<Optimizer<T>> m_optimizer = NULL;
 		ZeroInitializer<T> m_zeroInitializer;
 		Tensor<T>* m_in = NULL; // Input tensor
 		Tensor<T>* m_out = NULL; // Output tensor

@@ -49,10 +49,12 @@ namespace TN
 		*
 		* @param activator : the activator config.
 		* @param initializer : the inializer.
+		* @param optimizer : the optimizer.
 		* @param neuronsCount : the number of neurons for this layer.
 		*
 		* @see ActivatorConfig
 		* @see Initializer
+		* @see Optimizer
 		*
 		*/
 		FCLayer(const ActivatorConfig<T> & activator, const Initializer<T> & initializer , const Optimizer<T> & optimizer, unsigned int neuronsCount);

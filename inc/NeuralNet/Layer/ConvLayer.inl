@@ -270,8 +270,8 @@ namespace TN
 
 	/// @private
 	template<typename T>
-	ConvLayer<T>::ConvLayer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer, const KernelHolder<T>& kernels, unsigned int stride , unsigned int zeroPadding)
-		: Layer<T>(activator, initializer, optimizer)
+	ConvLayer<T>::ConvLayer(const Initializer<T>& initializer, const Optimizer<T>& optimizer, const KernelHolder<T>& kernels, unsigned int stride , unsigned int zeroPadding)
+		: Layer<T>(initializer, optimizer)
 	{
 		m_kernels = kernels.Copy();
 
@@ -534,13 +534,6 @@ namespace TN
 
 		if (this->m_previousLayer != NULL)
 			this->m_previousLayer->Update();
-	}
-
-	/// @private
-	template<typename T>
-	void ConvLayer<T>::Update(Tensor<T>& result, const CostFunction<T>& costFunction)
-	{
-		//TODO: Make the update function.
 	}
 
 	/// @private

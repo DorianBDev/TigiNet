@@ -1,3 +1,4 @@
+#include "Layer.hpp"
 /**
 *
 *   TIGINET
@@ -74,6 +75,57 @@ namespace TN
 		m_activator = activator.Copy();
 		m_initializer = initializer.Copy();
 		m_optimizer = optimizer.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const ActivatorConfig<T>& activator)
+	{
+		m_activator = activator.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const Initializer<T>& initializer)
+	{
+		m_initializer = initializer.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const Optimizer<T>& optimizer)
+	{
+		m_optimizer = optimizer.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer)
+	{
+		m_activator = activator.Copy();
+		m_initializer = initializer.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const ActivatorConfig<T>& activator, const Optimizer<T>& optimizer)
+	{
+		m_activator = activator.Copy();
+		m_optimizer = optimizer.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer(const Initializer<T>& initializer, const Optimizer<T>& optimizer)
+	{
+		m_initializer = initializer.Copy();
+		m_optimizer = optimizer.Copy();
+	}
+
+	/// @private
+	template<typename T>
+	Layer<T>::Layer()
+	{
 	}
 
 	/// @private

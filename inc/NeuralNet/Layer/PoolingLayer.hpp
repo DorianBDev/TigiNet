@@ -78,21 +78,15 @@ namespace TN
 		/**
 		* @brief Create a new convolutional layer.
 		*
-		* @param activator : the activator config.
-		* @param initializer : the inializer.
-		* @param optimizer : the optimizer.
 		* @param method : the pooling method.
 		* @param kernel : the kernel of the pooling layer.
 		* @param stride : controls the number of steps that you move the filter over the input image.
 		* @param zeroPadding : refers to padding the input volume with zeros around the border. In the 7x7input image example, if we use a stride of 1 and a zero padding of 1, then the output volume is also equal to 7x7.
 		*
-		* @see ActivatorConfig
-		* @see Initializer
-		* @see Optimizer
 		* @see PoolingMethod
 		*
 		*/
-		PoolingLayer(const ActivatorConfig<T>& activator, const Initializer<T>& initializer, const Optimizer<T>& optimizer, const PoolingMethod method, const PoolingKernel kernel, unsigned int stride = 1, unsigned int zeroPadding = 0);
+		PoolingLayer(const PoolingMethod method, const PoolingKernel kernel, unsigned int stride = 1, unsigned int zeroPadding = 0);
 		~PoolingLayer();
 
 		/**
@@ -122,17 +116,6 @@ namespace TN
 		*
 		*/
 		void Update();
-
-		/**
-		* @brief Backward propagation with the expected results (only if the layer is the output one).
-		*
-		* @param result : expected results.
-		* @param costFunction : the cost function.
-		*
-		* @see CostFunction
-		*
-		*/
-		void Update(Tensor<T>& result, const CostFunction<T>& costFunction);
 
 	private:
 		PoolingMethod m_method;
