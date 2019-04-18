@@ -195,13 +195,115 @@ namespace TN
 			TN_WARNING("NEURALNET", "Wrong input size");
 			break;
 		}
+
+		if (this->m_nextLayer != NULL)
+			this->m_nextLayer->Activate();
 	}
 
 	/// @private
 	template<typename T>
 	void PoolingLayer<T>::Update()
 	{
-		//TODO
+		Tensor<T>* gradIn = this->m_nextLayer->GetInputGradient();
+		unsigned int dim1 = 0, dim2 = 0, dim3 = 0;
+		unsigned int dim1_out = 0, dim2_out = 0;
+		this->m_zeroInitializer.Initialize(*this->m_gradIn);
+
+		switch (this->m_in->GetRank())
+		{
+		case 2:
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+
+			dim1_out = this->m_out->GetDimension(1);
+			dim2_out = this->m_out->GetDimension(2);
+
+			switch (m_method)
+			{
+			case PoolingMethod::PM_MAX:
+
+				for (unsigned int x = 0; x < dim1_out; x++) // filter.fz == in.fz
+				{
+					for (unsigned int y = 0; y < dim2_out; y++) // out.x
+					{
+						for (unsigned int fx = 0; fx < m_kernel.m_x; fx++) // filters.x
+						{
+							for (unsigned int fy = 0; fy < m_kernel.m_y; fy++) // filters.y
+							{
+								if (((x * m_stride + fx) < m_zeroPadding || (y * m_stride + fy) < m_zeroPadding) || ((x * m_stride + fx) >= dim1 + m_zeroPadding || (y * m_stride + fy) >= dim2 + m_zeroPadding))
+									continue;
+								else
+								{
+									if ((*this->m_out)[y](x) == (*this->m_in)[y * m_stride + fy - m_zeroPadding](x * m_stride + fx - m_zeroPadding))
+										(*this->m_gradIn)[y * m_stride + fy - m_zeroPadding](x * m_stride + fx - m_zeroPadding) += (*gradIn)[y](x);
+								}
+							}
+						}
+					}
+				}
+
+				break;
+			case PoolingMethod::PM_AVERAGE:
+				TN_WARNING("NEURALNET", "Average pooling method isn't supported for the moment"); //TODO
+				break;
+			default:
+				break;
+			}
+
+			break;
+		case 3:
+
+			dim1 = this->m_in->GetDimension(1);
+			dim2 = this->m_in->GetDimension(2);
+			dim3 = this->m_in->GetDimension(3);
+
+			dim1_out = this->m_out->GetDimension(1);
+			dim2_out = this->m_out->GetDimension(2);
+
+			switch (m_method)
+			{
+			case PoolingMethod::PM_MAX:
+								
+				for (unsigned int x = 0; x < dim1_out; x++) // filter.fz == in.fz
+				{
+					for (unsigned int y = 0; y < dim2_out; y++) // out.x
+					{
+						for (unsigned int z = 0; z < dim3; z++) // out.y
+						{
+							for (unsigned int fx = 0; fx < m_kernel.m_x; fx++) // filters.x
+							{
+								for (unsigned int fy = 0; fy < m_kernel.m_y; fy++) // filters.y
+								{
+									if (((x * m_stride + fx) < m_zeroPadding || (y * m_stride + fy) < m_zeroPadding) || ((x * m_stride + fx) >= dim1 + m_zeroPadding || (y * m_stride + fy) >= dim2 + m_zeroPadding))
+										continue;
+									else
+									{
+										if ((*this->m_out)[z][y](x) == (*this->m_in)[z][y * m_stride + fy - m_zeroPadding](x * m_stride + fx - m_zeroPadding))
+											(*this->m_gradIn)[z][y * m_stride + fy - m_zeroPadding](x * m_stride + fx - m_zeroPadding) += (*gradIn)[z][y](x);
+									}
+								}
+							}
+						}
+					}
+				}	
+
+				break;
+			case PoolingMethod::PM_AVERAGE:
+				TN_WARNING("NEURALNET", "Average pooling method isn't supported for the moment"); //TODO
+				break;
+			default:
+				break;
+			}
+
+			break;
+		default:
+			TN_WARNING("NEURALNET", "Wrong input size");
+			break;
+		}
+
+		if (this->m_previousLayer != NULL)
+			this->m_previousLayer->Update();
 	}
 
 	/// @private
