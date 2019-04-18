@@ -162,7 +162,7 @@ namespace TN
 				{
 					for (unsigned int k = 0; k < dim2; k++)
 					{
-						sum += (*this->m_in)[k](j) * (*this->m_weight)[j + k * dim2](i);
+						sum += (*this->m_in)[k](j) * (*this->m_weight)[j + k * dim1](i);
 					}
 				}
 				(*this->m_out)(i) = this->m_activator->Activation(sum + (*this->m_bias)(i));
@@ -184,7 +184,7 @@ namespace TN
 					{
 						for (unsigned int l = 0; l < dim3; l++)
 						{
-							sum += (*this->m_in)[l][k](j) * (*this->m_weight)[j + k * dim2 + l * dim3](i);
+							sum += (*this->m_in)[l][k](j) * (*this->m_weight)[j + k * dim1 + l * dim1 * dim2](i);
 						}
 					}
 				}
@@ -254,8 +254,8 @@ namespace TN
 				{
 					for (unsigned int k = 0; k < dim2; k++)
 					{
-						this->m_optimizer->Update((*m_weight)[j + k * dim2](i), (*this->m_grad)(i), (*this->m_in)[k](j));
-						(*this->m_gradIn)[k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2](i);
+						this->m_optimizer->Update((*m_weight)[j + k * dim1](i), (*this->m_grad)(i), (*this->m_in)[k](j));
+						(*this->m_gradIn)[k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim1](i);
 					}
 				}
 				this->m_optimizer->Update((*this->m_bias)(i), (*this->m_grad)(i), 1);
@@ -276,8 +276,8 @@ namespace TN
 					{
 						for (unsigned int l = 0; l < dim3; l++)
 						{
-							this->m_optimizer->Update((*m_weight)[j + k * dim2 + l * dim3](i), (*this->m_grad)(i), (*this->m_in)[l][k](j));
-							(*this->m_gradIn)[l][k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2 + l * dim3](i);
+							this->m_optimizer->Update((*m_weight)[j + k * dim1 + l * dim1 * dim2](i), (*this->m_grad)(i), (*this->m_in)[l][k](j));
+							(*this->m_gradIn)[l][k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim1 + l * dim1 * dim2](i);
 						}
 					}
 				}
@@ -355,8 +355,8 @@ namespace TN
 				{
 					for (unsigned int k = 0; k < dim2; k++)
 					{
-						this->m_optimizer->Update((*m_weight)[j + k * dim2](i), (*this->m_grad)(i), (*this->m_in)[k](j));
-						(*this->m_gradIn)[k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2](i);
+						this->m_optimizer->Update((*m_weight)[j + k * dim1](i), (*this->m_grad)(i), (*this->m_in)[k](j));
+						(*this->m_gradIn)[k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim1](i);
 					}
 				}
 				this->m_optimizer->Update((*this->m_bias)(i), (*this->m_grad)(i), 1);
@@ -377,8 +377,8 @@ namespace TN
 					{
 						for (unsigned int l = 0; l < dim3; l++)
 						{
-							this->m_optimizer->Update((*m_weight)[j + k * dim2 + l * dim3](i), (*this->m_grad)(i), (*this->m_in)[l][k](j));
-							(*this->m_gradIn)[l][k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim2 + l * dim3](i);
+							this->m_optimizer->Update((*m_weight)[j + k * dim1 + l * dim1 * dim2](i), (*this->m_grad)(i), (*this->m_in)[l][k](j));
+							(*this->m_gradIn)[l][k](j) += (*this->m_grad)(i) * (*m_weight)[j + k * dim1 + l * dim1 * dim2](i);
 						}
 					}
 				}
