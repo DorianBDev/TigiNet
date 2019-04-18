@@ -63,8 +63,8 @@ int main()
 	k.Add(TN::Kernel2D<double>(f1));
 	k.Add(TN::Kernel2D<double>(f2));
 
-	TN::ConvLayer<double> c(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
-	TN::PoolingLayer<double> p(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), TN::PoolingMethod::PM_MAX, TN::PoolingKernel(3, 3), 3, 0);
+	TN::ConvLayer<double> c(TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
+	TN::PoolingLayer<double> p(TN::PoolingMethod::PM_MAX, TN::PoolingKernel(3, 3), 3, 0);
 	TN::FCLayer<double> co2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 2);
 
 	TN::Tensor<double> im1(2, TN::TensorShape({ 3, 3 }));
