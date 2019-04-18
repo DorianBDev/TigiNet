@@ -33,155 +33,83 @@
 #include <NeuralNet/Initializer.hpp>
 #include <NeuralNet/Cost.hpp>
 #include <NeuralNet/Optimizer.hpp>
-#include "NeuralNet/Layer/PoolingLayer.hpp"
+#include <NeuralNet/Layer/PoolingLayer.hpp>
+#include <Utility/MNIST.hpp>
 
 int main()
 {
+	TN::MNIST<double> mnist("img.mnist", "label.mnist", 200);
+
 	TN::KernelHolder<double> k;
-	TN::Tensor<double> f1(2, TN::TensorShape({ 3, 3 }));
-	f1[0](0) = 1;
-	f1[0](1) = 0;
-	f1[0](2) = 0;
-	f1[1](0) = 0;
-	f1[1](1) = 1;
-	f1[1](2) = 0;
-	f1[2](0) = 0;
-	f1[2](1) = 0;
-	f1[2](2) = 1;
+	TN::Tensor<double> t(2, TN::TensorShape({ 3, 3 }));
+	TN::RandomInitializer<double> rand(-10, 10);
+	rand.Initialize(t);
+	k.Add(TN::Kernel2D<double>(t));
+	rand.Initialize(t);
+	k.Add(TN::Kernel2D<double>(t));
+	rand.Initialize(t);
+	k.Add(TN::Kernel2D<double>(t));
+	rand.Initialize(t);
+	k.Add(TN::Kernel2D<double>(t));
 
-	TN::Tensor<double> f2(2, TN::TensorShape({ 3, 3 }));
-	f2[0](0) = 0;
-	f2[0](1) = 0;
-	f2[0](2) = 1;
-	f2[1](0) = 0;
-	f2[1](1) = 1;
-	f2[1](2) = 0;
-	f2[2](0) = 1;
-	f2[2](1) = 0;
-	f2[2](2) = 0;
+	TN::ConvLayer<double> c1(TN::UniformInitializer<double>(), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
+	TN::PoolingLayer<double> p1(TN::PoolingMethod::PM_MAX, TN::PoolingKernel(2, 2), 2, 0);
+	TN::ConvLayer<double> c2(TN::UniformInitializer<double>(), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
+	TN::PoolingLayer<double> p2(TN::PoolingMethod::PM_MAX, TN::PoolingKernel(2, 2), 2, 1);
+	TN::FCLayer<double> f2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::UniformInitializer<double>(), TN::StochasticGradientDescent<double>(0.0001, 0.9), 10);
 
-	k.Add(TN::Kernel2D<double>(f1));
-	k.Add(TN::Kernel2D<double>(f2));
+	c1.Link(mnist.GetImage()[0]);
+	p1.Link(c1);
+	c2.Link(p1);
+	p2.Link(c2);
+	f2.Link(p2);
 
-	TN::ConvLayer<double> c(TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
-	TN::PoolingLayer<double> p(TN::PoolingMethod::PM_MAX, TN::PoolingKernel(3, 3), 3, 0);
-	TN::FCLayer<double> co2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 2);
-
-	TN::Tensor<double> im1(2, TN::TensorShape({ 3, 3 }));
-	TN::Tensor<double> cout(2, TN::TensorShape({ 2, 2 }));
-	TN::ZeroInitializer<double> init;
-	init.Initialize(im1);
-
-	// 1
-	cout[0](0) = 1;
-	cout[0](1) = 0;
-
-	// 2
-	cout[1](0) = 0;
-	cout[1](1) = 1;
-
-	c.Link(im1);
-	p.Link(c);
-	co2.Link(p);
+	TN::Tensor<double> res(1, TN::TensorShape({ 10 }), 1);
+	TN::ZeroInitializer<double> zero;
+	zero.Initialize(res);
 
 	unsigned int index = 0;
+	int labelRes = 0;
+	unsigned int max = mnist.GetImage().GetDimension(3) - 1;
 	for (unsigned int i = 0; i < 10000; i++)
 	{
-		index = TN::Random<unsigned int>(1, 2);
+		index = TN::Random<unsigned int>(0, max);
+		labelRes = mnist.GetLabel()(index);
+		
+		c1.ResetInput(mnist.GetImage()[index]);
+		c1.Activate();
 
-		if (index % 2 == 0)
-		{
-			// 1
-			im1[0](0) = 1;
-			im1[0](1) = 0;
-			im1[0](2) = 0;
-
-			im1[1](0) = 0;
-			im1[1](1) = 1;
-			im1[1](2) = 0;
-
-			im1[2](0) = 0;
-			im1[2](1) = 0;
-			im1[2](2) = 1;
-		}
-		else
-		{
-			// 2
-			im1[0](0) = 0;
-			im1[0](1) = 0;
-			im1[0](2) = 1;
-
-			im1[1](0) = 0;
-			im1[1](1) = 1;
-			im1[1](2) = 0;
-
-			im1[2](0) = 1;
-			im1[2](1) = 0;
-			im1[2](2) = 0;
-		}
-
-		c.Activate();
-
-		co2.Update(cout[index % 2], TN::MeanSquaredError<double>());
+		res(labelRes) = 1;
+		f2.Update(res, TN::MeanSquaredError<double>());
+		res(labelRes) = 0;
 
 		if (i % 1000 == 0)
 		{
-			TN_LOG("TEST") << co2.GetError();
+			TN_LOG("TEST") << f2.GetError();
 		}
 	}
-	TN_LOG("TEST") << "-------------";
 
-	c.GetKernelHolder().Get(0)->GetKernel()->Print();
-	c.GetKernelHolder().Get(1)->GetKernel()->Print();
+	TN_LOG("TEST") << "-------- 0 --------";
+	index = TN::Random<unsigned int>(0, max);
+	c1.ResetInput(mnist.GetImage()[index]);
+	c1.Activate();
+	f2.GetOutput().Print();
+	TN_LOG("TEST") << mnist.GetLabel()(index);
 
-	TN_LOG("TEST") << "-------------";
+	TN_LOG("TEST") << "-------- 1 --------";
+	index = TN::Random<unsigned int>(0, max);
+	c1.ResetInput(mnist.GetImage()[index]);
+	c1.Activate();
+	f2.GetOutput().Print();
+	TN_LOG("TEST") << mnist.GetLabel()(index);
 
-	// 1
-	im1[0](0) = 1;
-	im1[0](1) = 0;
-	im1[0](2) = 0;
+	TN_LOG("TEST") << "-------- 2 --------";
+	index = TN::Random<unsigned int>(0, max);
+	c1.ResetInput(mnist.GetImage()[index]);
+	c1.Activate();
+	f2.GetOutput().Print();
+	TN_LOG("TEST") << mnist.GetLabel()(index);
 
-	im1[1](0) = 0;
-	im1[1](1) = 1;
-	im1[1](2) = 0;
-
-	im1[2](0) = 0;
-	im1[2](1) = 0;
-	im1[2](2) = 1;
-
-	im1.Print();
-	c.Activate();
-	co2.GetOutput().Print();
-
-	TN_LOG("TEST") << "-------";
-
-	// 2
-	im1[0](0) = 0;
-	im1[0](1) = 0;
-	im1[0](2) = 1;
-
-	im1[1](0) = 0;
-	im1[1](1) = 1;
-	im1[1](2) = 0;
-
-	im1[2](0) = 1;
-	im1[2](1) = 0;
-	im1[2](2) = 0;
-
-	im1.Print();
-	c.Activate();
-	co2.GetOutput().Print();
-
-
-	/*im1.Print();
-	TN_LOG("TEST") << "-------";
-	c.Activate();
-	c.GetOutput().Print();
-	co1.Update(cout, TN::MeanSquaredError<double>());
-	TN_LOG("TEST") << "-------";
-	*/
-
-	
 
 	TN_LOG("TEST") << "END";
 
