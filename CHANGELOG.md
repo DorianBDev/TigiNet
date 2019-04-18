@@ -44,6 +44,7 @@
  - Added an Uniform Initializer.
  - Added a Zero Initializer.
  - Added a convolutional layer class (3D and 2D).
+ - Added a pooling layer class.
  
 
 ## [v0.0.53-release] - 2019-02-26 :
