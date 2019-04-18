@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['send',['Send',['../class_t_n_1_1_error.html#a287a1dba229cf9ec9ff5f2ba865bb48d',1,'TN::Error']]],
-  ['setup',['Setup',['../class_t_n_1_1_kernel.html#ae07990b8f35ad4728b8998e2317f91c2',1,'TN::Kernel::Setup()'],['../class_t_n_1_1_kernel2_d.html#aad0482b7f00344876a2140b2418fc5d7',1,'TN::Kernel2D::Setup()'],['../class_t_n_1_1_kernel3_d.html#ac3e32dd8574ed0165f2f33d0ccb0d17b',1,'TN::Kernel3D::Setup()'],['../class_t_n_1_1_kernel_holder.html#a4b158a8bd040ca98614073e9112e3788',1,'TN::KernelHolder::Setup()'],['../class_t_n_1_1_optimizer.html#a7ad22130960772733e29ec1f66711c1d',1,'TN::Optimizer::Setup()'],['../class_t_n_1_1_stochastic_gradient_descent.html#ac27692d21388442dc692d69fddcf31fe',1,'TN::StochasticGradientDescent::Setup()']]],
-  ['sigmoide',['Sigmoide',['../namespace_t_n.html#a9eb252949c1d1bfe5dc520190942fa40',1,'TN']]],
-  ['sigmoidederivative',['SigmoideDerivative',['../namespace_t_n.html#a9b5c6be76bef97bd6837bdcd2d0b556f',1,'TN']]],
-  ['start',['Start',['../class_t_n_1_1_clock.html#a4913474baa9d875131628f6a555b106d',1,'TN::Clock']]],
-  ['stochasticgradientdescent',['StochasticGradientDescent',['../class_t_n_1_1_stochastic_gradient_descent.html#a7a9c4f77d0ffe0c70da1e8e415e292e6',1,'TN::StochasticGradientDescent']]],
-  ['stop',['Stop',['../class_t_n_1_1_clock.html#a3f709b7f9fe1c742f4156e6354053899',1,'TN::Clock']]]
+  ['random',['Random',['../namespace_t_n.html#a7e2db14a1f46a266febb47a01d5e1d98',1,'TN']]],
+  ['randominitializer',['RandomInitializer',['../class_t_n_1_1_random_initializer.html#a084433182f29396cfd5e3bf001981be7',1,'TN::RandomInitializer']]],
+  ['resetgradient',['ResetGradient',['../class_t_n_1_1_kernel_holder.html#a118670f3e5f26c00b0a78aa0c9612e12',1,'TN::KernelHolder']]],
+  ['resetinput',['ResetInput',['../class_t_n_1_1_layer.html#ac88366fd1345fa09d2ce2bdc86b73f80',1,'TN::Layer']]],
+  ['run',['Run',['../class_t_n_1_1_a_functor.html#a91a286369cac4af40ae3f214cf3bc8b3',1,'TN::AFunctor::Run()'],['../class_t_n_1_1_functor.html#a0fb2454192d3f0e02aa1cfeb6495eaf2',1,'TN::Functor::Run()']]]
 ];

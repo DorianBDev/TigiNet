@@ -1,6 +1,13 @@
 var class_t_n_1_1_layer =
 [
     [ "Layer", "class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#a6aef0a422d4ac10b5b155fb5e3ec82bc", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#af44ac1cfc709bf7e96a3f34cacbf9660", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#aeb78028025078e0675294de5a6451c1e", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#acacec14e3c46c0a78db37103e767e0b4", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#a1c3d7c0d0d8f84c8019fc21c07c4f8c3", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#abc299f8ffd45efe09c4117cfe682e73a", null ],
+    [ "Layer", "class_t_n_1_1_layer.html#a1d3aab421f8c8f41934aea97d85f9c95", null ],
     [ "~Layer", "class_t_n_1_1_layer.html#aac273045511d30f871374f4ec81acc92", null ],
     [ "Activate", "class_t_n_1_1_layer.html#af99458a1a0c3b8e4b564f983cd5fe2e0", null ],
     [ "GetError", "class_t_n_1_1_layer.html#a1b808a608f722ceeac36ec17f2f308c9", null ],
@@ -9,8 +16,8 @@ var class_t_n_1_1_layer =
     [ "GetOutput", "class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f", null ],
     [ "Link", "class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a", null ],
     [ "Link", "class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269", null ],
+    [ "ResetInput", "class_t_n_1_1_layer.html#ac88366fd1345fa09d2ce2bdc86b73f80", null ],
     [ "Update", "class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e", null ],
-    [ "Update", "class_t_n_1_1_layer.html#aae671357f02bc77a448b43aaa3476cf5", null ],
     [ "m_activator", "class_t_n_1_1_layer.html#a21690c7ba19f81fcd2fe52eee6200fac", null ],
     [ "m_error", "class_t_n_1_1_layer.html#ac286721dcef1eee0d24b94d9a20f9667", null ],
     [ "m_gradIn", "class_t_n_1_1_layer.html#ad8fce6cee54fddeadb00f43c86e810a0", null ],

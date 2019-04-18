@@ -31,6 +31,7 @@ var searchData=
   ['tn_5fuse_5fopen_5fcl',['TN_USE_OPEN_CL',['../_prerequisites_8hpp.html#acda149184c5b9eb76b5c6f7cbef4de42',1,'Prerequisites.hpp']]],
   ['tn_5futility',['TN_UTILITY',['../_utility_2_config_8hpp.html#acf9fa22a959dca3dc1a9b6318ea12b2e',1,'Config.hpp']]],
   ['tn_5futility_5fmath_5finl',['TN_UTILITY_MATH_INL',['../_math_8inl.html#a7cdc206815ba78431c5cf4a92208c1a9',1,'Math.inl']]],
+  ['tn_5futility_5fmnist_5finl',['TN_UTILITY_MNIST_INL',['../_m_n_i_s_t_8inl.html#af4a785b8a52fe4407bd4aa5d3e426959',1,'MNIST.inl']]],
   ['tn_5futility_5ftensor_5finl',['TN_UTILITY_TENSOR_INL',['../_tensor_8inl.html#add00fc034378386242ac0d3addaeee4a',1,'Tensor.inl']]],
   ['tn_5fwarning',['TN_WARNING',['../_error_8hpp.html#a627e454d92978564c1c0a7336882340d',1,'Error.hpp']]]
 ];

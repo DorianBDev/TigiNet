@@ -151,7 +151,7 @@ class TN::Tensor&lt; T &gt;</h3>
 <p>A n-tensor class. </p>
 <p>A class that provide an entire toolkit for Tensors.</p>
 <p>Use : () to access data and [] to access sub-tensor.</p>
-<p>Example : For a 2*2 matrix (2 rank tensor or 2-tensor)</p>
+<p>Example : For a 2*2 matrix (2 rank tensor or 2-tensor) with [row](col) usage</p>
 <div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> shape[] = { 2, 2 };</div><div class="line"><a class="code" href="class_t_n_1_1_tensor.html">TN::Tensor&lt;int&gt;</a> t(2, <a class="code" href="class_t_n_1_1_tensor_shape.html">TN::TensorShape</a>(shape));</div><div class="line"></div><div class="line">t[0](0) = 1;</div><div class="line">t[0](1) = 2;</div><div class="line">t[1](0) = 3;</div><div class="line">t[1](1) = 4;</div></div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a154e8bb6d733f91388e33c74fe265f6d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a154e8bb6d733f91388e33c74fe265f6d">&#9670;&nbsp;</a></span>Tensor() <span class="overload">[1/3]</span></h2>
@@ -159,7 +159,7 @@ class TN::Tensor&lt; T &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> </td>
@@ -203,15 +203,6 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph" id="class_t_n_1_1_tensor_a154e8bb6d733f91388e33c74fe265f6d_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor_shape.html#a7510d9c753e4b7bdf4d6c59b73805a0e" title="Copy a TensorShape. " alt="" coords="193,5,353,32"/>
-<area shape="rect" id="node3" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="185,56,360,83"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -221,7 +212,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> </td>
@@ -265,14 +256,6 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_a9e6e6a3e1c925f4c869467e02e0d5b27_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a9e6e6a3e1c925f4c869467e02e0d5b27_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_a9e6e6a3e1c925f4c869467e02e0d5b27_cgraph" id="class_t_n_1_1_tensor_a9e6e6a3e1c925f4c869467e02e0d5b27_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="185,5,360,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -282,7 +265,7 @@ Here is the call graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a> </td>
@@ -334,16 +317,6 @@ template&lt;typename T &gt; </div>
 
 <p>Copy a tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return a shared_ptr to the new tensor. </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph" id="class_t_n_1_1_tensor_a2b6388c851764543142da8017f571800_cgraph">
-<area shape="rect" id="node2" href="namespace_t_n.html#aecd3448e895746550f08d83e61b688f3" title="Copy all subtensors. " alt="" coords="176,31,321,57"/>
-<area shape="rect" id="node3" href="class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="385,5,529,32"/>
-<area shape="rect" id="node4" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="369,56,544,83"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -470,7 +443,7 @@ template&lt;typename T &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename T&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="class_t_n_1_1_tensor.html">TN::Tensor</a>&lt; T &gt;::InitializeSub </td>
@@ -514,14 +487,6 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_ac26564f2389950f62184a1660c9c5037_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_ac26564f2389950f62184a1660c9c5037_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_ac26564f2389950f62184a1660c9c5037_cgraph" id="class_t_n_1_1_tensor_ac26564f2389950f62184a1660c9c5037_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="216,5,391,32"/>
-</map>
-</div>
 
 </div>
 </div>
@@ -659,15 +624,6 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Print the tensor datas. </p>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_t_n_1_1_tensor_aa7482eec63ce1ca5b7e6e05bfaa027d8_cgraph.png" border="0" usemap="#class_t_n_1_1_tensor_aa7482eec63ce1ca5b7e6e05bfaa027d8_cgraph" alt=""/></div>
-<map name="class_t_n_1_1_tensor_aa7482eec63ce1ca5b7e6e05bfaa027d8_cgraph" id="class_t_n_1_1_tensor_aa7482eec63ce1ca5b7e6e05bfaa027d8_cgraph">
-<area shape="rect" id="node2" href="class_t_n_1_1_singleton.html#abb4a0b65d41059ce52fb1159275e7042" title="Get the instance of a singleton child. " alt="" coords="173,5,364,47"/>
-<area shape="rect" id="node3" href="namespace_t_n.html#aebf841f5e1a2d7849dfe26bab59b14b8" title="Get the TigiNet default log header. " alt="" coords="204,71,333,98"/>
-</map>
-</div>
 
 </div>
 </div>

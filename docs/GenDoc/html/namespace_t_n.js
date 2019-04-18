@@ -20,6 +20,7 @@ var namespace_t_n =
     [ "LockGuard", "class_t_n_1_1_lock_guard.html", "class_t_n_1_1_lock_guard" ],
     [ "Logger", "class_t_n_1_1_logger.html", "class_t_n_1_1_logger" ],
     [ "MeanSquaredError", "class_t_n_1_1_mean_squared_error.html", "class_t_n_1_1_mean_squared_error" ],
+    [ "MNIST", "class_t_n_1_1_m_n_i_s_t.html", "class_t_n_1_1_m_n_i_s_t" ],
     [ "Mutex", "class_t_n_1_1_mutex.html", "class_t_n_1_1_mutex" ],
     [ "Optimizer", "class_t_n_1_1_optimizer.html", "class_t_n_1_1_optimizer" ],
     [ "PoolingKernel_s", "struct_t_n_1_1_pooling_kernel__s.html", "struct_t_n_1_1_pooling_kernel__s" ],

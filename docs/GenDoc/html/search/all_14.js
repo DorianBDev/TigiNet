@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['z',['z',['../class_t_n_1_1_kernel_holder.html#aade3b96f9851407fb8284b3a0583eb49',1,'TN::KernelHolder']]],
-  ['zeroinitializer',['ZeroInitializer',['../class_t_n_1_1_zero_initializer.html',1,'TN']]]
+  ['y',['y',['../class_t_n_1_1_kernel_holder.html#a1c5cf1f023854838901730c9cbe13020',1,'TN::KernelHolder']]]
 ];

@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['pm_5faverage',['PM_AVERAGE',['../namespace_t_n.html#adb17af7f642d2a8fa6197b4ff9da8236ac117a898ab70334ed49edca7e974a5aa',1,'TN']]],
-  ['pm_5fmax',['PM_MAX',['../namespace_t_n.html#adb17af7f642d2a8fa6197b4ff9da8236a0b2aba4bfbb3c283a45966a7e1923567',1,'TN']]],
-  ['poolingkernel',['PoolingKernel',['../struct_pooling_kernel.html',1,'PoolingKernel'],['../namespace_t_n.html#a3ae22527bf5d78fd390c23558ac5143c',1,'TN::PoolingKernel()']]],
-  ['poolingkernel_5fs',['PoolingKernel_s',['../struct_t_n_1_1_pooling_kernel__s.html',1,'TN::PoolingKernel_s'],['../struct_t_n_1_1_pooling_kernel__s.html#ac42e1d6f24575fe0d3973bc65e984b9e',1,'TN::PoolingKernel_s::PoolingKernel_s(const unsigned int x, const unsigned int y)'],['../struct_t_n_1_1_pooling_kernel__s.html#a2a421766321a7a0e6d0eec0bd66b8f2a',1,'TN::PoolingKernel_s::PoolingKernel_s(const PoolingKernel_s &amp;poolingKernel)']]],
-  ['poolinglayer',['PoolingLayer',['../class_t_n_1_1_pooling_layer.html',1,'TN::PoolingLayer&lt; T &gt;'],['../class_t_n_1_1_pooling_layer.html#a89e2b2ef26500c95f73c805d0a321b42',1,'TN::PoolingLayer::PoolingLayer()']]],
-  ['poolinglayer_2ehpp',['PoolingLayer.hpp',['../_pooling_layer_8hpp.html',1,'']]],
-  ['poolinglayer_2einl',['PoolingLayer.inl',['../_pooling_layer_8inl.html',1,'']]],
-  ['poolingmethod',['PoolingMethod',['../namespace_t_n.html#ac003e9a7b6b4b803f3e72840a7817a17',1,'TN']]],
-  ['poolingmethod_5fe',['PoolingMethod_e',['../namespace_t_n.html#adb17af7f642d2a8fa6197b4ff9da8236',1,'TN']]],
-  ['prerequisites_2ehpp',['Prerequisites.hpp',['../_prerequisites_8hpp.html',1,'']]],
-  ['print',['Print',['../class_t_n_1_1_tensor.html#aa7482eec63ce1ca5b7e6e05bfaa027d8',1,'TN::Tensor']]],
-  ['printtensor',['PrintTensor',['../namespace_t_n.html#af826a0797c475916eab909350cefb3e6',1,'TN']]]
+  ['old',['old',['../struct_t_n_1_1gradient__t.html#abf4aa6416fdcc896d17d99fff28e4c94',1,'TN::gradient_t']]],
+  ['operator_28_29',['operator()',['../class_t_n_1_1_tensor.html#ae33bdfeabb3156b9549fe9b7735d695a',1,'TN::Tensor::operator()(unsigned int index=0) const'],['../class_t_n_1_1_tensor.html#a0421212ee7b8c98579e39249a8b5592d',1,'TN::Tensor::operator()(unsigned int index=0)']]],
+  ['operator_3c_3c',['operator&lt;&lt;',['../class_t_n_1_1_logger.html#a25eea1eeb73b7861b369a5b9f2fb4f29',1,'TN::Logger::operator&lt;&lt;(std::ostream &amp;(*arg)(std::ostream &amp;))'],['../class_t_n_1_1_logger.html#ae1bd91938bb8260f589092a54da73ead',1,'TN::Logger::operator&lt;&lt;(const T &amp;arg)'],['../class_t_n_1_1_tigi_net_logger.html#a6d0f2b72429264b39735ba4b64f55cbf',1,'TN::TigiNetLogger::operator&lt;&lt;(std::ostream &amp;(*arg)(std::ostream &amp;))'],['../class_t_n_1_1_tigi_net_logger.html#a38e23b21adbef67e88020b5c1caa4ee5',1,'TN::TigiNetLogger::operator&lt;&lt;(const T &amp;arg)']]],
+  ['operator_5b_5d',['operator[]',['../class_t_n_1_1_tensor.html#a0d4da4fbe600014fc651681951f29036',1,'TN::Tensor::operator[](unsigned int index)'],['../class_t_n_1_1_tensor.html#a008bb7e7a8a032ae4ad4748e85b12403',1,'TN::Tensor::operator[](unsigned int index) const']]],
+  ['optimizer',['Optimizer',['../class_t_n_1_1_optimizer.html',1,'TN']]],
+  ['optimizer_2ehpp',['Optimizer.hpp',['../_optimizer_8hpp.html',1,'']]],
+  ['optimizer_2einl',['Optimizer.inl',['../_optimizer_8inl.html',1,'']]]
 ];

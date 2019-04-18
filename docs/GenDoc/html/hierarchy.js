@@ -34,6 +34,7 @@ var hierarchy =
         [ "TN::TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", null ]
       ] ]
     ] ],
+    [ "TN::MNIST< T >", "class_t_n_1_1_m_n_i_s_t.html", null ],
     [ "TN::Mutex", "class_t_n_1_1_mutex.html", null ],
     [ "TN::Optimizer< T >", "class_t_n_1_1_optimizer.html", [
       [ "TN::StochasticGradientDescent< T >", "class_t_n_1_1_stochastic_gradient_descent.html", null ]
@@ -45,5 +46,6 @@ var hierarchy =
       [ "TN::TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", null ]
     ] ],
     [ "TN::Tensor< T >", "class_t_n_1_1_tensor.html", null ],
+    [ "TN::Tensor< int >", "class_t_n_1_1_tensor.html", null ],
     [ "TN::TensorShape", "class_t_n_1_1_tensor_shape.html", null ]
 ];

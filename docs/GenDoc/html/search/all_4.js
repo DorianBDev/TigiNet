@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['error',['Error',['../class_t_n_1_1_error.html',1,'TN::Error'],['../class_t_n_1_1_error.html#a2cebffab64e0d18a3c0b18469466c511',1,'TN::Error::Error()']]],
-  ['error_2ecpp',['Error.cpp',['../_error_8cpp.html',1,'']]],
-  ['error_2ehpp',['Error.hpp',['../_error_8hpp.html',1,'']]],
-  ['errortype_5fe',['ErrorType_e',['../namespace_t_n.html#a1f5c586829796f73b10fe036f9974539',1,'TN']]],
-  ['et_5fabort',['ET_ABORT',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a626454db94910e19aca65b3bc174b052',1,'TN']]],
-  ['et_5fassertion_5ffailed',['ET_ASSERTION_FAILED',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a3da5abc39bb1006830f65bfcb4103a69',1,'TN']]],
-  ['et_5ferror',['ET_ERROR',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a0411f6dd999cc32fa7f7f9db58873dc7',1,'TN']]],
-  ['et_5fwarning',['ET_WARNING',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a10ac8891a5fb89d025c357b48bde5cbd',1,'TN']]]
+  ['derivation',['Derivation',['../class_t_n_1_1_cost_function.html#a451124e807c01617bb7ecb2eddd599db',1,'TN::CostFunction::Derivation()'],['../class_t_n_1_1_mean_squared_error.html#aab54c9c6480fa112c0c8e1acc420ee0f',1,'TN::MeanSquaredError::Derivation()'],['../class_t_n_1_1_activator_config.html#ad50444f86100a88e204673fee87e0351',1,'TN::ActivatorConfig::Derivation()']]],
+  ['derivativeapproximation',['DerivativeApproximation',['../namespace_t_n.html#ad127742e791509257e2950c8f8d44340',1,'TN']]]
 ];

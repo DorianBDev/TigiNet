@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['kernel',['Kernel',['../class_t_n_1_1_kernel.html',1,'TN::Kernel&lt; T &gt;'],['../class_t_n_1_1_kernel.html#a4b64674d20afed8e8d40d907253cfb79',1,'TN::Kernel::Kernel()']]],
-  ['kernel2d',['Kernel2D',['../class_t_n_1_1_kernel2_d.html',1,'TN::Kernel2D&lt; T &gt;'],['../class_t_n_1_1_kernel2_d.html#aadd5a1b54d3590568c0d106c17486b70',1,'TN::Kernel2D::Kernel2D(const Tensor&lt; T &gt; &amp;kernel)'],['../class_t_n_1_1_kernel2_d.html#a091e0263d2258887b7e566e5fa9b2cf1',1,'TN::Kernel2D::Kernel2D()=default']]],
-  ['kernel3d',['Kernel3D',['../class_t_n_1_1_kernel3_d.html',1,'TN::Kernel3D&lt; T &gt;'],['../class_t_n_1_1_kernel3_d.html#a6ca7ddf59ef92cb60bb0f11969727dfa',1,'TN::Kernel3D::Kernel3D(const Tensor&lt; T &gt; &amp;kernel)'],['../class_t_n_1_1_kernel3_d.html#ae811cff63f93a8206596a714ac7b72de',1,'TN::Kernel3D::Kernel3D()=default']]],
-  ['kernelholder',['KernelHolder',['../class_t_n_1_1_kernel_holder.html',1,'TN::KernelHolder&lt; T &gt;'],['../class_t_n_1_1_kernel_holder.html#a0b1e58861f21e75b0471abe5519b0e2a',1,'TN::KernelHolder::KernelHolder()']]]
+  ['initialize',['Initialize',['../class_t_n_1_1_initializer.html#a2d8b689c7faeba0ce0adc84f0178fa17',1,'TN::Initializer::Initialize()'],['../class_t_n_1_1_zero_initializer.html#a867fa44e0f1b17203533428986e3f689',1,'TN::ZeroInitializer::Initialize()'],['../class_t_n_1_1_uniform_initializer.html#ad28d8e22de300173c693bf80f143a067',1,'TN::UniformInitializer::Initialize()'],['../class_t_n_1_1_random_initializer.html#a0899e4f0044e8bf28b7fbeddc96e9b53',1,'TN::RandomInitializer::Initialize()']]],
+  ['initializer',['Initializer',['../class_t_n_1_1_initializer.html',1,'TN']]],
+  ['initializer_2ehpp',['Initializer.hpp',['../_initializer_8hpp.html',1,'']]],
+  ['initializer_2einl',['Initializer.inl',['../_initializer_8inl.html',1,'']]],
+  ['initializesub',['InitializeSub',['../class_t_n_1_1_tensor.html#ac26564f2389950f62184a1660c9c5037',1,'TN::Tensor']]],
+  ['int_5f16',['int_16',['../namespace_t_n.html#a3b2b7d96e3712d7781f94f74e8ec38b3',1,'TN']]],
+  ['int_5f32',['int_32',['../namespace_t_n.html#aa35deb0214b54cd93ffc21f20235c3a4',1,'TN']]],
+  ['int_5f64',['int_64',['../namespace_t_n.html#a5097e5ce8decd1371165a7643bb711d0',1,'TN']]],
+  ['int_5f8',['int_8',['../namespace_t_n.html#ade8b9562e152cb9ba099b1ab50f19281',1,'TN']]],
+  ['islock',['IsLock',['../class_t_n_1_1_mutex.html#a5819621e2cfa633c37e1a30450f435ab',1,'TN::Mutex']]]
 ];

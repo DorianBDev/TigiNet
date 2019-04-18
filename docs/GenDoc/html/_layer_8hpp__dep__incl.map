@@ -3,5 +3,6 @@
 <area shape="rect" id="node3" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="264,199,427,240"/>
 <area shape="rect" id="node4" href="$_f_c_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FCLayer.hpp" alt="" coords="309,102,528,143"/>
 <area shape="rect" id="node5" href="$_pooling_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/Pooling\lLayer.hpp" alt="" coords="552,95,739,151"/>
-<area shape="rect" id="node6" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="763,102,930,143"/>
+<area shape="rect" id="node6" href="$_layer_8inl.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.inl" alt="" coords="763,102,925,143"/>
+<area shape="rect" id="node7" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="950,102,1117,143"/>
 </map>

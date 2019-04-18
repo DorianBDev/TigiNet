@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['fclayer',['FCLayer',['../class_t_n_1_1_f_c_layer.html',1,'TN::FCLayer&lt; T &gt;'],['../class_t_n_1_1_f_c_layer.html#a92706024e854b155c2562c7b57022191',1,'TN::FCLayer::FCLayer()']]],
-  ['fclayer_2ehpp',['FCLayer.hpp',['../_f_c_layer_8hpp.html',1,'']]],
-  ['fclayer_2einl',['FCLayer.inl',['../_f_c_layer_8inl.html',1,'']]],
-  ['filelogger',['FileLogger',['../class_t_n_1_1_file_logger.html',1,'TN::FileLogger'],['../class_t_n_1_1_file_logger.html#a86222f6db670db2a7704a8e825943d3a',1,'TN::FileLogger::FileLogger()']]],
-  ['functor',['Functor',['../class_t_n_1_1_functor.html',1,'TN::Functor&lt; F, Args &gt;'],['../class_t_n_1_1_functor.html#a487c6660c480f920ca6e3c21bbb08cf5',1,'TN::Functor::Functor()']]],
-  ['functor_2ehpp',['Functor.hpp',['../_functor_8hpp.html',1,'']]],
-  ['functor_2einl',['Functor.inl',['../_functor_8inl.html',1,'']]]
+  ['error',['Error',['../class_t_n_1_1_error.html',1,'TN::Error'],['../class_t_n_1_1_error.html#a2cebffab64e0d18a3c0b18469466c511',1,'TN::Error::Error()']]],
+  ['error_2ecpp',['Error.cpp',['../_error_8cpp.html',1,'']]],
+  ['error_2ehpp',['Error.hpp',['../_error_8hpp.html',1,'']]],
+  ['errortype_5fe',['ErrorType_e',['../namespace_t_n.html#a1f5c586829796f73b10fe036f9974539',1,'TN']]],
+  ['et_5fabort',['ET_ABORT',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a626454db94910e19aca65b3bc174b052',1,'TN']]],
+  ['et_5fassertion_5ffailed',['ET_ASSERTION_FAILED',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a3da5abc39bb1006830f65bfcb4103a69',1,'TN']]],
+  ['et_5ferror',['ET_ERROR',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a0411f6dd999cc32fa7f7f9db58873dc7',1,'TN']]],
+  ['et_5fwarning',['ET_WARNING',['../namespace_t_n.html#aaa786158f5a801cb61113a717b314cb7a10ac8891a5fb89d025c357b48bde5cbd',1,'TN']]]
 ];
