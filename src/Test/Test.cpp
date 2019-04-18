@@ -37,13 +37,6 @@
 
 int main()
 {
-	TN::PoolingLayer<double> p(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), TN::PoolingMethod::PM_MAX, TN::PoolingKernel(5, 5), 5, 0);
-	TN::Tensor<double> none(2, TN::TensorShape({ 3, 3 }));
-	
-	p.Link(none);
-	p.Activate();
-
-
 	TN::KernelHolder<double> k;
 	TN::Tensor<double> f1(2, TN::TensorShape({ 3, 3 }));
 	f1[0](0) = 1;
@@ -71,7 +64,7 @@ int main()
 	k.Add(TN::Kernel2D<double>(f2));
 
 	TN::ConvLayer<double> c(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
-	//TN::FCLayer<double> co1(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 10);
+	TN::PoolingLayer<double> p(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), TN::PoolingMethod::PM_MAX, TN::PoolingKernel(3, 3), 3, 0);
 	TN::FCLayer<double> co2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::RandomInitializer<double>(-10, 10), TN::StochasticGradientDescent<double>(0.0001, 0.9), 2);
 
 	TN::Tensor<double> im1(2, TN::TensorShape({ 3, 3 }));
@@ -88,8 +81,8 @@ int main()
 	cout[1](1) = 1;
 
 	c.Link(im1);
-	//co1.Link(c);
-	co2.Link(c);
+	p.Link(c);
+	co2.Link(p);
 
 	unsigned int index = 0;
 	for (unsigned int i = 0; i < 10000; i++)
