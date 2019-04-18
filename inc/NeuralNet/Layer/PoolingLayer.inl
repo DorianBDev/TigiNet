@@ -92,6 +92,8 @@ namespace TN
 			break;
 		}
 
+		delete[] outShape;
+
 		// The input gradient get the same shape as the input tensor
 		this->m_gradIn = new Tensor<T>(this->m_in->GetRank(), this->m_in->GetShape(), this->m_in->GetRank());
 	}
