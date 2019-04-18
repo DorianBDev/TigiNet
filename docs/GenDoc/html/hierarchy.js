@@ -22,7 +22,8 @@ var hierarchy =
     [ "TN::KernelHolder< T >", "class_t_n_1_1_kernel_holder.html", null ],
     [ "TN::Layer< T >", "class_t_n_1_1_layer.html", [
       [ "TN::ConvLayer< T >", "class_t_n_1_1_conv_layer.html", null ],
-      [ "TN::FCLayer< T >", "class_t_n_1_1_f_c_layer.html", null ]
+      [ "TN::FCLayer< T >", "class_t_n_1_1_f_c_layer.html", null ],
+      [ "TN::PoolingLayer< T >", "class_t_n_1_1_pooling_layer.html", null ]
     ] ],
     [ "TN::LockGuard", "class_t_n_1_1_lock_guard.html", null ],
     [ "TN::Logger", "class_t_n_1_1_logger.html", [
@@ -37,6 +38,8 @@ var hierarchy =
     [ "TN::Optimizer< T >", "class_t_n_1_1_optimizer.html", [
       [ "TN::StochasticGradientDescent< T >", "class_t_n_1_1_stochastic_gradient_descent.html", null ]
     ] ],
+    [ "PoolingKernel", "struct_pooling_kernel.html", null ],
+    [ "TN::PoolingKernel_s", "struct_t_n_1_1_pooling_kernel__s.html", null ],
     [ "TN::Singleton< T >", "class_t_n_1_1_singleton.html", null ],
     [ "TN::Singleton< TigiNetLogger >", "class_t_n_1_1_singleton.html", [
       [ "TN::TigiNetLogger", "class_t_n_1_1_tigi_net_logger.html", null ]

@@ -1,7 +1,8 @@
 <map id="D:/DEV/Projects/TigiNet/inc/NeuralNet/Layer.inl" name="D:/DEV/Projects/TigiNet/inc/NeuralNet/Layer.inl">
-<area shape="rect" id="node2" href="$_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="263,95,428,136"/>
-<area shape="rect" id="node3" href="$_conv_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/ConvLayer.hpp" alt="" coords="5,184,235,225"/>
-<area shape="rect" id="node4" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="191,273,353,315"/>
-<area shape="rect" id="node5" href="$_f_c_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FCLayer.hpp" alt="" coords="309,184,528,225"/>
-<area shape="rect" id="node6" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="553,184,719,225"/>
+<area shape="rect" id="node2" href="$_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer.hpp" alt="" coords="336,95,501,136"/>
+<area shape="rect" id="node3" href="$_conv_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/ConvLayer.hpp" alt="" coords="5,191,235,233"/>
+<area shape="rect" id="node4" href="$_test_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/Test/Test.cpp" alt="" coords="264,288,427,329"/>
+<area shape="rect" id="node5" href="$_f_c_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/FCLayer.hpp" alt="" coords="309,191,528,233"/>
+<area shape="rect" id="node6" href="$_pooling_layer_8hpp.html" title="D:/DEV/Projects/TigiNet\l/inc/NeuralNet/Layer/Pooling\lLayer.hpp" alt="" coords="552,184,739,240"/>
+<area shape="rect" id="node7" href="$_layer_8cpp.html" title="D:/DEV/Projects/TigiNet\l/src/NeuralNet/Layer.cpp" alt="" coords="763,191,930,233"/>
 </map>

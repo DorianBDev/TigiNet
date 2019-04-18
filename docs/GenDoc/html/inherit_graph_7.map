@@ -1,5 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_t_n_1_1_kernel.html" title="A kernel/filter for convolutional layer. " alt="" coords="5,31,120,57"/>
-<area shape="rect" id="node2" href="$class_t_n_1_1_kernel2_d.html" title="A 2D kernel/filter for 2D convolutional layer. " alt="" coords="168,5,299,32"/>
-<area shape="rect" id="node3" href="$class_t_n_1_1_kernel3_d.html" title="A 3D kernel/filter for 3D convolutional layer. " alt="" coords="168,56,299,83"/>
+<area shape="rect" id="node1" href="$class_t_n_1_1_initializer.html" title="Create a virtual initializer for tensors. " alt="" coords="5,56,133,83"/>
+<area shape="rect" id="node2" href="$class_t_n_1_1_random_initializer.html" title="Create an random initializer for tensors. " alt="" coords="181,5,357,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_uniform_initializer.html" title="Create an uniform initializer for tensors. " alt="" coords="183,56,355,83"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_zero_initializer.html" title="Create a zero initializer for tensors. " alt="" coords="193,107,346,133"/>
 </map>

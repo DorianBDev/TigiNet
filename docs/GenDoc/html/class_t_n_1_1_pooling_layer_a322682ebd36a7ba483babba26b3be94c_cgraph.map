@@ -1,0 +1,5 @@
+<map id="TN::PoolingLayer::Link" name="TN::PoolingLayer::Link">
+<area shape="rect" id="node2" href="$class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a" title="Link a layer to this layer. " alt="" coords="239,5,349,32"/>
+<area shape="rect" id="node3" href="$class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="222,56,366,83"/>
+<area shape="rect" id="node4" href="$class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="207,107,381,133"/>
+</map>

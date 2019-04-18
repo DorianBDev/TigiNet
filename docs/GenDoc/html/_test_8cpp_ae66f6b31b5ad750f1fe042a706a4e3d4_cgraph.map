@@ -4,18 +4,19 @@
 <area shape="rect" id="node6" href="$namespace_t_n.html#a9b5c6be76bef97bd6837bdcd2d0b556f" title="The Sigmoide derivative function. " alt="" coords="113,144,267,171"/>
 <area shape="rect" id="node7" href="$class_t_n_1_1_zero_initializer.html#a867fa44e0f1b17203533428986e3f689" title="Initialize a tensor. " alt="" coords="129,195,251,237"/>
 <area shape="rect" id="node10" href="$class_t_n_1_1_conv_layer.html#a4f299daff271be495c35174827b58f67" title="Link a layer to this layer. " alt="" coords="121,261,259,288"/>
-<area shape="rect" id="node12" href="$class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339" title="Link a layer to this layer. " alt="" coords="127,312,253,339"/>
-<area shape="rect" id="node13" href="$class_t_n_1_1_conv_layer.html#a1ce9351a71b22490c0160cad562d0890" title="Forward propagation. " alt="" coords="110,363,270,389"/>
-<area shape="rect" id="node14" href="$class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c" title="Backward propagation. " alt="" coords="118,413,262,440"/>
-<area shape="rect" id="node15" href="$class_t_n_1_1_layer.html#a1b808a608f722ceeac36ec17f2f308c9" title="Get the error of the layer. " alt="" coords="123,464,257,491"/>
-<area shape="rect" id="node16" href="$class_t_n_1_1_conv_layer.html#a93b52f0a2a2809e7728650abb4b1c61b" title="Get the kernel holder. " alt="" coords="104,515,276,557"/>
-<area shape="rect" id="node17" href="$class_t_n_1_1_tensor.html#aa7482eec63ce1ca5b7e6e05bfaa027d8" title="Print the tensor datas. " alt="" coords="130,581,250,608"/>
-<area shape="rect" id="node20" href="$class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f" title="Get the output tensor of the layer. " alt="" coords="117,632,263,659"/>
+<area shape="rect" id="node12" href="$class_t_n_1_1_pooling_layer.html#ad5bc4df567a56e555482811af9cc6107" title="Link a layer to this layer. " alt="" coords="113,312,267,339"/>
+<area shape="rect" id="node13" href="$class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339" title="Link a layer to this layer. " alt="" coords="127,363,253,389"/>
+<area shape="rect" id="node14" href="$class_t_n_1_1_conv_layer.html#a1ce9351a71b22490c0160cad562d0890" title="Forward propagation. " alt="" coords="110,413,270,440"/>
+<area shape="rect" id="node15" href="$class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c" title="Backward propagation. " alt="" coords="118,464,262,491"/>
+<area shape="rect" id="node16" href="$class_t_n_1_1_layer.html#a1b808a608f722ceeac36ec17f2f308c9" title="Get the error of the layer. " alt="" coords="123,515,257,541"/>
+<area shape="rect" id="node17" href="$class_t_n_1_1_conv_layer.html#a93b52f0a2a2809e7728650abb4b1c61b" title="Get the kernel holder. " alt="" coords="104,566,276,607"/>
+<area shape="rect" id="node18" href="$class_t_n_1_1_tensor.html#aa7482eec63ce1ca5b7e6e05bfaa027d8" title="Print the tensor datas. " alt="" coords="130,632,250,659"/>
+<area shape="rect" id="node21" href="$class_t_n_1_1_layer.html#a650ff30568cb3bc6dbe5d0fb5282fa2f" title="Get the output tensor of the layer. " alt="" coords="117,683,263,709"/>
 <area shape="rect" id="node3" href="$class_t_n_1_1_kernel.html#aabfc8e1a46b6fab074906a56fce75756" title="Get the kernel tensor. " alt="" coords="345,5,494,32"/>
 <area shape="rect" id="node4" href="$class_t_n_1_1_kernel.html#a482f58135af6a1bb3022cb9db7ca2069" title="Copy a kernel. " alt="" coords="359,56,480,83"/>
 <area shape="rect" id="node8" href="$class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="347,193,491,220"/>
 <area shape="rect" id="node9" href="$class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="332,244,507,271"/>
-<area shape="rect" id="node11" href="$class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a" title="Link a layer to this layer. " alt="" coords="364,304,475,331"/>
-<area shape="rect" id="node18" href="$class_t_n_1_1_singleton.html#abb4a0b65d41059ce52fb1159275e7042" title="Get the instance of a singleton child. " alt="" coords="324,545,515,586"/>
-<area shape="rect" id="node19" href="$namespace_t_n.html#aebf841f5e1a2d7849dfe26bab59b14b8" title="Get the TigiNet default log header. " alt="" coords="355,611,484,637"/>
+<area shape="rect" id="node11" href="$class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a" title="Link a layer to this layer. " alt="" coords="364,312,475,339"/>
+<area shape="rect" id="node19" href="$class_t_n_1_1_singleton.html#abb4a0b65d41059ce52fb1159275e7042" title="Get the instance of a singleton child. " alt="" coords="324,595,515,637"/>
+<area shape="rect" id="node20" href="$namespace_t_n.html#aebf841f5e1a2d7849dfe26bab59b14b8" title="Get the TigiNet default log header. " alt="" coords="355,661,484,688"/>
 </map>

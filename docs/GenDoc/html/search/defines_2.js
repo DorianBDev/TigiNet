@@ -23,6 +23,7 @@ var searchData=
   ['tn_5fneuralnet_5finitializer_5finl',['TN_NEURALNET_INITIALIZER_INL',['../_initializer_8inl.html#a21850f58be591512163b6ba6003e2d85',1,'Initializer.inl']]],
   ['tn_5fneuralnet_5flayer_5finl',['TN_NEURALNET_LAYER_INL',['../_layer_8inl.html#a334e5eb9227432f7e55a5a8b1c6fb227',1,'Layer.inl']]],
   ['tn_5fneuralnet_5foptimizer_5finl',['TN_NEURALNET_OPTIMIZER_INL',['../_optimizer_8inl.html#a8723424c6aed0e257ec440f0d3779806',1,'Optimizer.inl']]],
+  ['tn_5fneuralnet_5fpoolinglayer_5finl',['TN_NEURALNET_POOLINGLAYER_INL',['../_pooling_layer_8inl.html#abb424db895c1976d2a3cf331d6520c1f',1,'PoolingLayer.inl']]],
   ['tn_5fsafemode_5ftensor',['TN_SAFEMODE_TENSOR',['../_prerequisites_8hpp.html#a675433ba47f4fa1e556bbd0fcd09cea3',1,'Prerequisites.hpp']]],
   ['tn_5fscript',['TN_SCRIPT',['../_prerequisites_8hpp.html#a6dc8d89cfbbbbeebeb1cfe3344a03dc8',1,'Prerequisites.hpp']]],
   ['tn_5fstringify',['TN_STRINGIFY',['../_prerequisites_8hpp.html#a14e1dd2468cf4a4c8a8a0149ad6b9382',1,'Prerequisites.hpp']]],

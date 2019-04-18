@@ -16,5 +16,7 @@ var searchData=
   ['m_5fpreviouslayer',['m_previousLayer',['../class_t_n_1_1_layer.html#a117ab67432b26c0b6b64cfa9dad922ac',1,'TN::Layer']]],
   ['m_5fstream',['m_stream',['../class_t_n_1_1_logger.html#ac70e5ee5e4c702f60fef2b6998ef8e14',1,'TN::Logger']]],
   ['m_5fvariablecount',['m_variableCount',['../class_t_n_1_1_optimizer.html#acb9ffb64454428d04594f1181abae64b',1,'TN::Optimizer']]],
+  ['m_5fx',['m_x',['../struct_t_n_1_1_pooling_kernel__s.html#ac781759ef996244ae00948877d9171d3',1,'TN::PoolingKernel_s']]],
+  ['m_5fy',['m_y',['../struct_t_n_1_1_pooling_kernel__s.html#a0d6e81280bffe37f3bed8cf1e85df180',1,'TN::PoolingKernel_s']]],
   ['m_5fzeroinitializer',['m_zeroInitializer',['../class_t_n_1_1_layer.html#a879a2b051e0c697bb9593464f6190ede',1,'TN::Layer']]]
 ];

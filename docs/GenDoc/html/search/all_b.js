@@ -18,6 +18,8 @@ var searchData=
   ['m_5fstdmutex',['M_STDMUTEX',['../_mutex_8cpp.html#a6f9a534b00f0d100e0ef6a627df29c01',1,'Mutex.cpp']]],
   ['m_5fstream',['m_stream',['../class_t_n_1_1_logger.html#ac70e5ee5e4c702f60fef2b6998ef8e14',1,'TN::Logger']]],
   ['m_5fvariablecount',['m_variableCount',['../class_t_n_1_1_optimizer.html#acb9ffb64454428d04594f1181abae64b',1,'TN::Optimizer']]],
+  ['m_5fx',['m_x',['../struct_t_n_1_1_pooling_kernel__s.html#ac781759ef996244ae00948877d9171d3',1,'TN::PoolingKernel_s']]],
+  ['m_5fy',['m_y',['../struct_t_n_1_1_pooling_kernel__s.html#a0d6e81280bffe37f3bed8cf1e85df180',1,'TN::PoolingKernel_s']]],
   ['m_5fzeroinitializer',['m_zeroInitializer',['../class_t_n_1_1_layer.html#a879a2b051e0c697bb9593464f6190ede',1,'TN::Layer']]],
   ['main',['main',['../_test_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'Test.cpp']]],
   ['math_2ecpp',['Math.cpp',['../_math_8cpp.html',1,'']]],

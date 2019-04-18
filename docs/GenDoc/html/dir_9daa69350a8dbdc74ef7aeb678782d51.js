@@ -11,5 +11,7 @@ var dir_9daa69350a8dbdc74ef7aeb678782d51 =
     [ "FCLayer.hpp", "_f_c_layer_8hpp.html", [
       [ "FCLayer", "class_t_n_1_1_f_c_layer.html", "class_t_n_1_1_f_c_layer" ]
     ] ],
-    [ "FCLayer.inl", "_f_c_layer_8inl.html", "_f_c_layer_8inl" ]
+    [ "FCLayer.inl", "_f_c_layer_8inl.html", "_f_c_layer_8inl" ],
+    [ "PoolingLayer.hpp", "_pooling_layer_8hpp.html", "_pooling_layer_8hpp" ],
+    [ "PoolingLayer.inl", "_pooling_layer_8inl.html", "_pooling_layer_8inl" ]
 ];
