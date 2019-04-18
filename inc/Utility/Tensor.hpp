@@ -99,7 +99,7 @@ namespace TN
 	*
 	* Use : () to access data and [] to access sub-tensor.
 	*
-	* Example : For a 2*2 matrix (2 rank tensor or 2-tensor)
+	* Example : For a 2*2 matrix (2 rank tensor or 2-tensor) with [row](col) usage
 	*
 	* @code
 	* unsigned int shape[] = { 2, 2 };
