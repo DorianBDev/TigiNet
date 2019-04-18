@@ -183,6 +183,31 @@ namespace TN
 	{
 		return m_gradIn;
 	}
+
+	/// @private
+	template<typename T>
+	void Layer<T>::ResetInput(Tensor<T>& tensor)
+	{
+		if (m_in != NULL)
+		{
+			if (tensor.GetRank() != m_in->GetRank())
+			{
+				TN_WARNING("NEURALNET", "Wrong new input tensor");
+				return;
+			}
+
+			for (unsigned int i = 1; i <= tensor.GetRank(); i++)
+			{
+				if (tensor.GetDimension(i) != m_in->GetDimension(i))
+				{
+					TN_WARNING("NEURALNET", "Wrong new input tensor");
+					return;
+				}
+			}
+		}
+
+		m_in = &tensor;
+	}
 }
 
 #endif

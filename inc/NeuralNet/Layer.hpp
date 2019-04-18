@@ -258,6 +258,14 @@ namespace TN
 		*/
 		Tensor<T>* GetInputGradient();
 
+		/**
+		* @brief Change the input tensor by a new one with the same shape.
+		*
+		* @param tensor : the new input tensor.
+		*
+		*/
+		void ResetInput(Tensor<T>& tensor);
+
 	protected:
 		std::shared_ptr<ActivatorConfig<T>> m_activator = NULL;
 		std::shared_ptr<Initializer<T>> m_initializer = NULL;
