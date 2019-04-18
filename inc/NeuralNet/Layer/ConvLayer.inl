@@ -212,7 +212,8 @@ namespace TN
 	std::shared_ptr<KernelHolder<T>> KernelHolder<T>::Copy() const
 	{
 		std::shared_ptr<KernelHolder<T>> res = std::make_shared<KernelHolder<T>>();
-		res->m_kernels = m_kernels;
+		for (unsigned int i = 0; i < m_kernels.size(); i++)
+			res->m_kernels.push_back(m_kernels.at(i)->Copy());
 		res->x = x;
 		res->y = y;
 		res->z = z;
