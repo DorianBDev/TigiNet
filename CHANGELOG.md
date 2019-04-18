@@ -30,6 +30,7 @@
  - Added an approximation function of derivative.
  - Added a gradient struct (old and actual gradient).
  - Added support for the Sigmoid activation function.
+ - Added support to the MNIST database (with a specific loader).
  
 ### NEURALNET :
  - Added a new module : NeuralNet. It will store all neural networks (as a toolkit).
