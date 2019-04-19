@@ -177,6 +177,158 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	Tensor<T>::Tensor(std::ifstream& file)
+	{
+		TN_ASSERT(file.is_open(), "UTILITY", "Open a file before save in");
+
+		file >> m_rank;
+		file >> m_allocationRank;
+
+		if (m_rank > 0)
+		{
+			unsigned int* shape = new unsigned int[m_rank];
+			for (unsigned int i = 0; i < this->GetRank(); i++)
+				file >> shape[i];
+			m_shape = TensorShape(shape).Copy(m_rank);
+			delete[] shape;
+		}
+		else
+		{
+			m_shape = std::make_shared<TensorShape>();
+		}
+
+		if (m_rank == 0)
+		{
+			m_tensors = NULL;
+			m_data = new T;
+			m_allocationRank = 0;
+		}
+		else if (m_rank == 1)
+		{
+			m_tensors = NULL;
+			m_data = new T[m_shape->GetDimension(m_rank)];
+			m_allocationRank = 1;
+		}
+		else
+		{
+			m_tensors = new Tensor[m_shape->GetDimension(m_rank)];
+
+			unsigned int dim = 1;
+
+			for (unsigned int j = 1; j < m_rank; j++)
+			{
+				dim *= m_shape->GetDimension(j);
+			}
+
+			if (m_allocationRank >= m_rank)
+			{
+				m_data = new T[dim * (m_shape->GetDimension(m_rank))];
+				m_allocationRank = m_rank;
+			}
+			else
+			{
+				m_data = NULL;
+			}
+
+			for (unsigned int i = 0; i < m_shape->GetDimension(m_rank); i++)
+				m_tensors[i].InitializeSub(m_rank - 1, m_shape, m_allocationRank, NULL);
+		}
+
+		if (m_rank == 0)
+		{
+			file >> m_data[0];
+		}
+		else if (m_rank == 1)
+		{
+			for (unsigned int i = 0; i < GetDimension(1); i++)
+				file >> m_data[i];
+		}
+		else
+		{
+			for (unsigned int i = 0; i < GetDimension(m_rank); i++)
+				LoadSubTensorsDataFromFile(file, m_tensors[i]);
+		}
+	}
+
+	/// @private
+	template<typename T>
+	Tensor<T>::Tensor(const char* filePath)
+	{
+		std::ifstream file(filePath);
+
+		file >> m_rank;
+		file >> m_allocationRank;
+
+		if (m_rank > 0)
+		{
+			unsigned int* shape = new unsigned int[m_rank];
+			for (unsigned int i = 0; i < this->GetRank(); i++)
+				file >> shape[i];
+			m_shape = TensorShape(shape).Copy(m_rank);
+			delete[] shape;
+		}
+		else
+		{
+			m_shape = std::make_shared<TensorShape>();
+		}
+
+		if (m_rank == 0)
+		{
+			m_tensors = NULL;
+			m_data = new T;
+			m_allocationRank = 0;
+		}
+		else if (m_rank == 1)
+		{
+			m_tensors = NULL;
+			m_data = new T[m_shape->GetDimension(m_rank)];
+			m_allocationRank = 1;
+		}
+		else
+		{
+			m_tensors = new Tensor[m_shape->GetDimension(m_rank)];
+
+			unsigned int dim = 1;
+
+			for (unsigned int j = 1; j < m_rank; j++)
+			{
+				dim *= m_shape->GetDimension(j);
+			}
+
+			if (m_allocationRank >= m_rank)
+			{
+				m_data = new T[dim * (m_shape->GetDimension(m_rank))];
+				m_allocationRank = m_rank;
+			}
+			else
+			{
+				m_data = NULL;
+			}
+
+			for (unsigned int i = 0; i < m_shape->GetDimension(m_rank); i++)
+				m_tensors[i].InitializeSub(m_rank - 1, m_shape, m_allocationRank, NULL);
+		}
+
+		if (m_rank == 0)
+		{
+			file >> m_data[0];
+		}
+		else if (m_rank == 1)
+		{
+			for (unsigned int i = 0; i < GetDimension(1); i++)
+				file >> m_data[i];
+		}
+		else
+		{
+			for (unsigned int i = 0; i < GetDimension(m_rank); i++)
+				LoadSubTensorsDataFromFile(file, m_tensors[i]);
+		}
+
+		file.close();
+	}
+
+	/// @private
+	template<typename T>
 	Tensor<T>::Tensor()
 	{
 		m_tensors = NULL;
@@ -466,6 +618,70 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	void Tensor<T>::SaveInFile(std::ofstream& file)
+	{
+		TN_ASSERT(file.is_open(), "UTILITY", "Open a file before save in");
+
+		file << this->GetRank() << std::endl;
+		file << this->GetAllocationRank() << std::endl;
+
+		if(m_rank > 0)
+		{
+			for (unsigned int i = 1; i <= m_rank; i++)
+				file << this->GetDimension(i) << std::endl;
+		}
+
+		if (m_rank == 0)
+		{
+			file << m_data[0] << std::endl;
+		}
+		else if (m_rank == 1)
+		{
+			for (unsigned int i = 0; i < GetDimension(1); i++)
+				file << m_data[i] << std::endl;
+		}
+		else
+		{
+			for (unsigned int i = 0; i < GetDimension(m_rank); i++)
+				SaveSubTensorsDataInFile(file, m_tensors[i]);
+		}
+	}
+
+	/// @private
+	template<typename T>
+	void Tensor<T>::SaveInFile(const char* filePath)
+	{
+		std::ofstream file(filePath);
+
+		file << this->GetRank() << std::endl;
+		file << this->GetAllocationRank() << std::endl;
+
+		if (m_rank > 0)
+		{
+			for (unsigned int i = 1; i <= m_rank; i++)
+				file << this->GetDimension(i) << std::endl;
+		}
+
+		if (m_rank == 0)
+		{
+			file << m_data[0] << std::endl;
+		}
+		else if (m_rank == 1)
+		{
+			for (unsigned int i = 0; i < GetDimension(1); i++)
+				file << m_data[i] << std::endl;
+		}
+		else
+		{
+			for (unsigned int i = 0; i < GetDimension(m_rank); i++)
+				SaveSubTensorsDataInFile(file, m_tensors[i]);
+		}
+
+		file.close();
+	}
+
+	/// @private
+	template<typename T>
 	void CopySubTensors(Tensor<T>& tensor, Tensor<T>& copy)
 	{
 		unsigned int rank = tensor.GetRank();
@@ -484,6 +700,53 @@ namespace TN
 				CopySubTensors(tensor[i], copy[i]);
 		}
 	}
+
+	/// @private
+	template<typename T>
+	void SaveSubTensorsDataInFile(std::ofstream& file, Tensor<T>& tensor)
+	{
+		TN_ASSERT(file.is_open(), "UTILITY", "Open a file before save in");
+
+		unsigned int rank = tensor.GetRank();
+		if (rank == 0)
+		{
+			file << tensor() << std::endl;
+		}
+		else if (rank == 1)
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(1); i++)
+				file << tensor(i) << std::endl;
+		}
+		else
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(rank); i++)
+				SaveSubTensorsDataInFile(file, tensor[i]);
+		}
+	}
+
+	/// @private
+	template<typename T>
+	void LoadSubTensorsDataFromFile(std::ifstream& file, Tensor<T>& tensor)
+	{
+		TN_ASSERT(file.is_open(), "UTILITY", "Open a file before save in");
+
+		unsigned int rank = tensor.GetRank();
+		if (rank == 0)
+		{
+			file >> tensor();
+		}
+		else if (rank == 1)
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(1); i++)
+				file >> tensor(i);
+		}
+		else
+		{
+			for (unsigned int i = 0; i < tensor.GetDimension(rank); i++)
+				LoadSubTensorsDataFromFile(file, tensor[i]);
+		}
+	}
+
 }
 
 #endif

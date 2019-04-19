@@ -138,6 +138,26 @@ namespace TN
 		*
 		*/
 		Tensor(unsigned int rank, std::shared_ptr<TensorShape> shape, unsigned int allocationRank = 1, T* data = NULL);
+
+		/**
+		* @brief Create a tensor from a file stream.
+		* 
+		* You need to load a saved tensor that is of the same type, it's an essential condition.
+		*
+		* @param file : the opened file stream.
+		*
+		*/
+		Tensor(std::ifstream& file);
+
+		/**
+		* @brief Create a tensor from a file path.
+		* 
+		* You need to load a saved tensor that is of the same type, it's an essential condition.
+		*
+		* @param filePath : the opened file stream.
+		*
+		*/
+		Tensor(const char* filePath);
 		Tensor();
 		~Tensor();
 
@@ -248,9 +268,25 @@ namespace TN
 		*/
 		std::shared_ptr<Tensor<T>> Copy() const;
 
+		/**
+		* @brief Save a tensor in an opened file stream.
+		*
+		* @param file : the opened file stream.
+		*
+		*/
+		void SaveInFile(std::ofstream& file);
+
+		/**
+		* @brief Save a tensor in a file.
+		*
+		* @param filePath : the file path.
+		*
+		*/
+		void SaveInFile(const char* filePath);
+
 
 	private:
-		std::shared_ptr<TensorShape> m_shape;
+		std::shared_ptr<TensorShape> m_shape = NULL;
 		Tensor* m_tensors = NULL;
 		unsigned int m_allocationRank = 0;
 		unsigned int m_rank = 0;
@@ -262,6 +298,8 @@ namespace TN
 	* @brief Print tensor datas.
 	*
 	* @param tensor : the tensor.
+	* 
+	* @see Tensor
 	*
 	*/
 	template<typename T>
@@ -272,10 +310,40 @@ namespace TN
 	*
 	* @param tensor : the tensor to copy.
 	* @param copy : the copy.
+	* 
+	* @see Tensor
 	*
 	*/
 	template<typename T>
 	void CopySubTensors(Tensor<T>& tensor, Tensor<T>& copy);
+
+	/**
+	* @brief Save all sub tensors data in an opened file stream.
+	* 
+	* This function only save the data of the tensor and of all his sub tensors (recursively). To save an entirely tensor use the SaveInFile function of the Tensor class.
+	*
+	* @param file : the opened file stream.
+	* @param tensor : the tensor/sub tensor to save.
+	*
+	* @see Tensor
+	*
+	*/
+	template<typename T>
+	void SaveSubTensorsDataInFile(std::ofstream& file, Tensor<T>& tensor);
+
+	/**
+	* @brief Load all sub tensors data in an opened file stream.
+	*
+	* This function only load the data of the tensor and of all his sub tensors (recursively). To load an entirely tensor use the appropriate constructor of the Tensor class.
+	*
+	* @param file : the opened file stream.
+	* @param tensor : the tensor/sub tensor to load in.
+	*
+	* @see Tensor
+	*
+	*/
+	template<typename T>
+	void LoadSubTensorsDataFromFile(std::ifstream& file, Tensor<T>& tensor);
 
 }
 
