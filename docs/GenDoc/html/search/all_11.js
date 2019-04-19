@@ -2,7 +2,7 @@ var searchData=
 [
   ['tiginet',['TIGINET',['../index.html',1,'']]],
   ['tangente',['Tangente',['../namespace_t_n.html#a9f426d5c61631ed0fa9e4b0a906c3782',1,'TN']]],
-  ['tensor',['Tensor',['../class_t_n_1_1_tensor.html',1,'TN::Tensor&lt; T &gt;'],['../class_t_n_1_1_tensor.html#a154e8bb6d733f91388e33c74fe265f6d',1,'TN::Tensor::Tensor(unsigned int rank, const TensorShape &amp;shape, unsigned int allocationRank=1, T *data=NULL)'],['../class_t_n_1_1_tensor.html#a9e6e6a3e1c925f4c869467e02e0d5b27',1,'TN::Tensor::Tensor(unsigned int rank, std::shared_ptr&lt; TensorShape &gt; shape, unsigned int allocationRank=1, T *data=NULL)'],['../class_t_n_1_1_tensor.html#a694e83fca06a5a0fd082dbf662b9bc28',1,'TN::Tensor::Tensor()']]],
+  ['tensor',['Tensor',['../class_t_n_1_1_tensor.html',1,'TN::Tensor&lt; T &gt;'],['../class_t_n_1_1_tensor.html#a154e8bb6d733f91388e33c74fe265f6d',1,'TN::Tensor::Tensor(unsigned int rank, const TensorShape &amp;shape, unsigned int allocationRank=1, T *data=NULL)'],['../class_t_n_1_1_tensor.html#a9e6e6a3e1c925f4c869467e02e0d5b27',1,'TN::Tensor::Tensor(unsigned int rank, std::shared_ptr&lt; TensorShape &gt; shape, unsigned int allocationRank=1, T *data=NULL)'],['../class_t_n_1_1_tensor.html#a8abd9175da39ad43469dd236f25c8fe9',1,'TN::Tensor::Tensor(std::ifstream &amp;file)'],['../class_t_n_1_1_tensor.html#a0f1c262fe70fbb7349effb80b1983a6a',1,'TN::Tensor::Tensor(const char *filePath)'],['../class_t_n_1_1_tensor.html#a694e83fca06a5a0fd082dbf662b9bc28',1,'TN::Tensor::Tensor()']]],
   ['tensor_2ecpp',['Tensor.cpp',['../_tensor_8cpp.html',1,'']]],
   ['tensor_2ehpp',['Tensor.hpp',['../_tensor_8hpp.html',1,'']]],
   ['tensor_2einl',['Tensor.inl',['../_tensor_8inl.html',1,'']]],

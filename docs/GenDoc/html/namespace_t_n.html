@@ -290,6 +290,14 @@ Functions</h2></td></tr>
 <tr class="memitem:aecd3448e895746550f08d83e61b688f3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_t_n.html#aecd3448e895746550f08d83e61b688f3">CopySubTensors</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;tensor, <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;copy)</td></tr>
 <tr class="memdesc:aecd3448e895746550f08d83e61b688f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy all subtensors.  <a href="#aecd3448e895746550f08d83e61b688f3">More...</a><br /></td></tr>
 <tr class="separator:aecd3448e895746550f08d83e61b688f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc951306b3e3752c0fa5a48431983a55"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:afc951306b3e3752c0fa5a48431983a55"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_t_n.html#afc951306b3e3752c0fa5a48431983a55">SaveSubTensorsDataInFile</a> (std::ofstream &amp;file, <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;tensor)</td></tr>
+<tr class="memdesc:afc951306b3e3752c0fa5a48431983a55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save all sub tensors data in an opened file stream.  <a href="#afc951306b3e3752c0fa5a48431983a55">More...</a><br /></td></tr>
+<tr class="separator:afc951306b3e3752c0fa5a48431983a55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d82ded334aac4e596ad6843cf2bb7b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a93d82ded334aac4e596ad6843cf2bb7b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_t_n.html#a93d82ded334aac4e596ad6843cf2bb7b">LoadSubTensorsDataFromFile</a> (std::ifstream &amp;file, <a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;tensor)</td></tr>
+<tr class="memdesc:a93d82ded334aac4e596ad6843cf2bb7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all sub tensors data in an opened file stream.  <a href="#a93d82ded334aac4e596ad6843cf2bb7b">More...</a><br /></td></tr>
+<tr class="separator:a93d82ded334aac4e596ad6843cf2bb7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Project namespace. </p>
@@ -629,10 +637,11 @@ template&lt;typename T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tensor</td><td>: the tensor to copy. </td></tr>
-    <tr><td class="paramname">copy</td><td>: the copy. </td></tr>
+    <tr><td class="paramname">copy</td><td>: the copy.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -782,6 +791,56 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a93d82ded334aac4e596ad6843cf2bb7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d82ded334aac4e596ad6843cf2bb7b">&#9670;&nbsp;</a></span>LoadSubTensorsDataFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void TN::LoadSubTensorsDataFromFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load all sub tensors data in an opened file stream. </p>
+<p>This function only load the data of the tensor and of all his sub tensors (recursively). To load an entirely tensor use the appropriate constructor of the <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the opened file stream. </td></tr>
+    <tr><td class="paramname">tensor</td><td>: the tensor/sub tensor to load in.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_t_n_a93d82ded334aac4e596ad6843cf2bb7b_cgraph.png" border="0" usemap="#namespace_t_n_a93d82ded334aac4e596ad6843cf2bb7b_cgraph" alt=""/></div>
+<map name="namespace_t_n_a93d82ded334aac4e596ad6843cf2bb7b_cgraph" id="namespace_t_n_a93d82ded334aac4e596ad6843cf2bb7b_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="290,5,434,32"/>
+<area shape="rect" id="node3" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="275,56,449,83"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a836230b32141c07a059357c281f836a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a836230b32141c07a059357c281f836a3">&#9670;&nbsp;</a></span>MatrixProduct()</h2>
 
@@ -852,10 +911,11 @@ template&lt;typename T &gt; </div>
 <p>Print tensor datas. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tensor</td><td>: the tensor. </td></tr>
+    <tr><td class="paramname">tensor</td><td>: the tensor.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -907,6 +967,56 @@ template&lt;typename T , typename G  = std::mt19937&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Return the random result between [a,b]. </dd></dl>
+
+</div>
+</div>
+<a id="afc951306b3e3752c0fa5a48431983a55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc951306b3e3752c0fa5a48431983a55">&#9670;&nbsp;</a></span>SaveSubTensorsDataInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void TN::SaveSubTensorsDataInFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tensor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save all sub tensors data in an opened file stream. </p>
+<p>This function only save the data of the tensor and of all his sub tensors (recursively). To save an entirely tensor use the SaveInFile function of the <a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the opened file stream. </td></tr>
+    <tr><td class="paramname">tensor</td><td>: the tensor/sub tensor to save.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_t_n_1_1_tensor.html" title="A n-tensor class. ">Tensor</a> </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespace_t_n_afc951306b3e3752c0fa5a48431983a55_cgraph.png" border="0" usemap="#namespace_t_n_afc951306b3e3752c0fa5a48431983a55_cgraph" alt=""/></div>
+<map name="namespace_t_n_afc951306b3e3752c0fa5a48431983a55_cgraph" id="namespace_t_n_afc951306b3e3752c0fa5a48431983a55_cgraph">
+<area shape="rect" id="node2" href="class_t_n_1_1_tensor.html#a7c169d718e1057c9661c874933665280" title="Get the rank of this tensor. " alt="" coords="270,5,414,32"/>
+<area shape="rect" id="node3" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="255,56,429,83"/>
+</map>
+</div>
 
 </div>
 </div>
