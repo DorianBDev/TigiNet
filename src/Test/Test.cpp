@@ -38,6 +38,24 @@
 
 int main()
 {
+	TN::Tensor<double> t1(2, TN::TensorShape({ 3, 3 }));
+	t1[0](0) = 10;
+	t1[0](1) = 20;
+	t1[0](2) = 30;
+	t1[1](0) = 40;
+	t1[1](1) = 50;
+	t1[1](2) = 60;
+	t1[2](0) = 70;
+	t1[2](1) = 80;
+	t1[2](2) = 90;
+
+	t1.Print();
+	t1.SaveInFile("tensor.tn");
+
+	TN::Tensor<double> t2("tensor.tn");
+	t2.Print();
+
+	
 	TN::MNIST<double> mnist("img.mnist", "label.mnist", 200);
 
 	TN::KernelHolder<double> k;
