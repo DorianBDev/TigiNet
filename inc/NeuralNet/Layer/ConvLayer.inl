@@ -64,6 +64,32 @@ namespace TN
 
 	/// @private
 	template<typename T>
+	void Kernel<T>::SaveInFile(std::ofstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before save in");
+
+		this->m_kernel->SaveInFile(file);
+		this->m_kernelGradient->SaveInFile(file);
+	}
+
+	/// @private
+	template<typename T>
+	void Kernel<T>::LoadFromFile(std::ifstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before load from it");
+
+		if (this->m_kernel != NULL)
+			this->m_kernel.reset();
+
+		if (this->m_kernelGradient != NULL)
+			this->m_kernel.reset();
+
+		this->m_kernel = std::shared_ptr<Tensor<T>>(new Tensor<T>(file));
+		this->m_kernelGradient = std::shared_ptr<Tensor<T>>(new Tensor<T>(file));
+	}
+
+	/// @private
+	template<typename T>
 	Kernel2D<T>::Kernel2D(const Tensor<T>& kernel)
 	{
 		if (kernel.GetRank() == 2)
@@ -267,6 +293,26 @@ namespace TN
 	{
 		for (unsigned int i = 0; i < m_kernels.size(); i++)
 			initializer.Initialize(*m_kernels.at(i)->GetKernelGradient());
+	}
+
+	/// @private
+	template<typename T>
+	void KernelHolder<T>::SaveInFile(std::ofstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before save in");
+
+		for(unsigned int i = 0; i < m_kernels.size(); i++)
+			m_kernels.at(i)->SaveInFile(file);
+	}
+
+	/// @private
+	template<typename T>
+	void KernelHolder<T>::LoadFromFile(std::ifstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before load from it");
+
+		for (unsigned int i = 0; i < m_kernels.size(); i++)
+			m_kernels.at(i)->LoadFromFile(file);
 	}
 
 	/// @private
@@ -542,6 +588,30 @@ namespace TN
 	KernelHolder<T> ConvLayer<T>::GetKernelHolder()
 	{
 		return *m_kernels;
+	}
+
+	/// @private
+	template<typename T>
+	void ConvLayer<T>::SaveInFile(std::ofstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before save in");
+
+		m_kernels->SaveInFile(file);
+		m_bias->SaveInFile(file);
+	}
+
+	/// @private
+	template<typename T>
+	void ConvLayer<T>::LoadFromFile(std::ifstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before load from it");
+
+		m_kernels->LoadFromFile(file);
+
+		if(m_bias != NULL)
+			delete m_bias;
+
+		m_bias = new Tensor<T>(file);
 	}
 }
 

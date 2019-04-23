@@ -266,6 +266,26 @@ namespace TN
 		*/
 		void ResetInput(Tensor<T>& tensor);
 
+		/**
+		* @brief Save the layer in a file.
+		*
+		* The layer topology need to be exactly the same (pre-linked layer). The function will only save trainable data and not the topology.
+		*
+		* @param file : the file to save in.
+		*
+		*/
+		virtual void SaveInFile(std::ofstream& file) = 0;
+
+		/**
+		* @brief Load the layer from a file.
+		*
+		* The layer topology need to be exactly the same (pre-linked layer). The function will only load trainable data and not the topology.
+		*
+		* @param file : the file to load from.
+		*
+		*/
+		virtual void LoadFromFile(std::ifstream& file) = 0;
+
 	protected:
 		std::shared_ptr<ActivatorConfig<T>> m_activator = NULL;
 		std::shared_ptr<Initializer<T>> m_initializer = NULL;

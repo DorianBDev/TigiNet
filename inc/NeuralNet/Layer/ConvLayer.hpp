@@ -99,6 +99,26 @@ namespace TN
 		*/
 		virtual std::shared_ptr<Kernel<T>> Copy() const = 0;
 
+		/**
+		* @brief Save the kernel in a file.
+		*
+		* The kernel topology need to be exactly the same (pre-setuped kernel). The function will only save trainable data and not the topology.
+		*
+		* @param file : the file to save in.
+		*
+		*/
+		void SaveInFile(std::ofstream& file);
+
+		/**
+		* @brief Load the kernel from a file.
+		*
+		* The kernel topology need to be exactly the same (pre-setuped kernel). The function will only load trainable data and not the topology.
+		*
+		* @param file : the file to load from.
+		*
+		*/
+		void LoadFromFile(std::ifstream& file);
+
 	protected:
 		std::shared_ptr<Tensor<T>> m_kernel = NULL;
 		std::shared_ptr<Tensor<T>> m_kernelGradient = NULL;
@@ -189,7 +209,6 @@ namespace TN
 		*
 		*/
 		std::shared_ptr<Kernel<T>> Copy() const;
-
 	};
 
 	/**
@@ -273,6 +292,26 @@ namespace TN
 		*/
 		void ResetGradient(const Initializer<T>& initializer);
 
+		/**
+		* @brief Save the kernel holder and all his kernels in a file.
+		*
+		* The kernel holder topology need to be exactly the same (pre-setuped kernel holder). The function will only save trainable data and not the topology.
+		*
+		* @param file : the file to save in.
+		*
+		*/
+		void SaveInFile(std::ofstream& file);
+
+		/**
+		* @brief Load the kernel holder and all his kernels from a file.
+		*
+		* The kernel holder topology need to be exactly the same (pre-setuped kernel holder). The function will only load trainable data and not the topology.
+		*
+		* @param file : the file to load from.
+		*
+		*/
+		void LoadFromFile(std::ifstream& file);
+
 	protected:
 		std::vector<std::shared_ptr<Kernel<T>>> m_kernels;
 		int x = -1, y = -1, z = -1;
@@ -346,6 +385,26 @@ namespace TN
 		*
 		*/
 		KernelHolder<T> GetKernelHolder();
+
+		/**
+		* @brief Save the layer in a file.
+		*
+		* The layer topology need to be exactly the same (pre-linked layer). The function will only save trainable data and not the topology.
+		*
+		* @param file : the file to save in.
+		*
+		*/
+		void SaveInFile(std::ofstream& file);
+
+		/**
+		* @brief Load the layer from a file.
+		*
+		* The layer topology need to be exactly the same (pre-linked layer). The function will only load trainable data and not the topology.
+		*
+		* @param file : the file to load from.
+		*
+		*/
+		void LoadFromFile(std::ifstream& file);
 
 	private:
 		Tensor<T>* m_bias = NULL;

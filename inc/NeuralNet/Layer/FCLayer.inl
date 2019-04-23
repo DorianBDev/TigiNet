@@ -396,6 +396,32 @@ namespace TN
 			this->m_previousLayer->Update();
 	}
 
+	/// @private
+	template<typename T>
+	void FCLayer<T>::SaveInFile(std::ofstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before save in");
+
+		m_weight->SaveInFile(file);
+		m_bias->SaveInFile(file);
+	}
+
+	/// @private
+	template<typename T>
+	void FCLayer<T>::LoadFromFile(std::ifstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before load from it");
+
+		if (m_weight != NULL)
+			delete m_weight;
+
+		if (m_bias != NULL)
+			delete m_bias;
+
+		m_weight = new Tensor<T>(file);
+		m_bias = new Tensor<T>(file);
+	}
+
 }
 
 #endif

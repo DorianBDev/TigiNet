@@ -308,6 +308,24 @@ namespace TN
 			this->m_previousLayer->Update();
 	}
 
+	/// @private
+	template<typename T>
+	void PoolingLayer<T>::SaveInFile(std::ofstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before save in");
+
+		// Do nothing because no trainable params.
+	}
+
+	/// @private
+	template<typename T>
+	void PoolingLayer<T>::LoadFromFile(std::ifstream& file)
+	{
+		TN_ASSERT(file.is_open(), "NEURALNET", "Open a file before load from it");
+
+		// Do nothing because no trainable params.
+	}
+
 }
 
 #endif

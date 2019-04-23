@@ -99,6 +99,26 @@ namespace TN
 		*/
 		void Update(Tensor<T>& result, const CostFunction<T>& costFunction);
 
+		/**
+		* @brief Save the layer in a file.
+		*
+		* The layer topology need to be exactly the same (pre-linked layer). The function will only save trainable data and not the topology.
+		*
+		* @param file : the file to save in.
+		*
+		*/
+		void SaveInFile(std::ofstream& file);
+
+		/**
+		* @brief Load the layer from a file.
+		*
+		* The layer topology need to be exactly the same (pre-linked layer). The function will only load trainable data and not the topology.
+		*
+		* @param file : the file to load from.
+		*
+		*/
+		void LoadFromFile(std::ifstream& file);
+
 	private:
 		unsigned int m_neuronsCount;
 		Tensor<T>* m_weight = NULL; // First parameter
