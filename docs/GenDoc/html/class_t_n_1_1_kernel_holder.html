@@ -124,6 +124,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a118670f3e5f26c00b0a78aa0c9612e12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a118670f3e5f26c00b0a78aa0c9612e12">ResetGradient</a> (const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer)</td></tr>
 <tr class="memdesc:a118670f3e5f26c00b0a78aa0c9612e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-initialize all kernels gradients.  <a href="#a118670f3e5f26c00b0a78aa0c9612e12">More...</a><br /></td></tr>
 <tr class="separator:a118670f3e5f26c00b0a78aa0c9612e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f89eeb0e8c6ec44138a50dc198a672b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#a1f89eeb0e8c6ec44138a50dc198a672b">SaveInFile</a> (std::ofstream &amp;file)</td></tr>
+<tr class="memdesc:a1f89eeb0e8c6ec44138a50dc198a672b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the kernel holder and all his kernels in a file.  <a href="#a1f89eeb0e8c6ec44138a50dc198a672b">More...</a><br /></td></tr>
+<tr class="separator:a1f89eeb0e8c6ec44138a50dc198a672b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af89b5b643b06c7d8a4db6d3e048497d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel_holder.html#af89b5b643b06c7d8a4db6d3e048497d8">LoadFromFile</a> (std::ifstream &amp;file)</td></tr>
+<tr class="memdesc:af89b5b643b06c7d8a4db6d3e048497d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the kernel holder and all his kernels from a file.  <a href="#af89b5b643b06c7d8a4db6d3e048497d8">More...</a><br /></td></tr>
+<tr class="separator:af89b5b643b06c7d8a4db6d3e048497d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -325,6 +331,35 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="af89b5b643b06c7d8a4db6d3e048497d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af89b5b643b06c7d8a4db6d3e048497d8">&#9670;&nbsp;</a></span>LoadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_kernel_holder.html">TN::KernelHolder</a>&lt; T &gt;::LoadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load the kernel holder and all his kernels from a file. </p>
+<p>The kernel holder topology need to be exactly the same (pre-setuped kernel holder). The function will only load trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to load from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a118670f3e5f26c00b0a78aa0c9612e12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a118670f3e5f26c00b0a78aa0c9612e12">&#9670;&nbsp;</a></span>ResetGradient()</h2>
 
@@ -352,6 +387,35 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node2" href="class_t_n_1_1_initializer.html#a2d8b689c7faeba0ce0adc84f0178fa17" title="Initialize a tensor. " alt="" coords="264,5,416,32"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a1f89eeb0e8c6ec44138a50dc198a672b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f89eeb0e8c6ec44138a50dc198a672b">&#9670;&nbsp;</a></span>SaveInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_kernel_holder.html">TN::KernelHolder</a>&lt; T &gt;::SaveInFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save the kernel holder and all his kernels in a file. </p>
+<p>The kernel holder topology need to be exactly the same (pre-setuped kernel holder). The function will only save trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to save in. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

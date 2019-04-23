@@ -26,6 +26,7 @@ var namespace_t_n =
     [ "PoolingKernel_s", "struct_t_n_1_1_pooling_kernel__s.html", "struct_t_n_1_1_pooling_kernel__s" ],
     [ "PoolingLayer", "class_t_n_1_1_pooling_layer.html", "class_t_n_1_1_pooling_layer" ],
     [ "RandomInitializer", "class_t_n_1_1_random_initializer.html", "class_t_n_1_1_random_initializer" ],
+    [ "ReluLayer", "class_t_n_1_1_relu_layer.html", "class_t_n_1_1_relu_layer" ],
     [ "Singleton", "class_t_n_1_1_singleton.html", "class_t_n_1_1_singleton" ],
     [ "StochasticGradientDescent", "class_t_n_1_1_stochastic_gradient_descent.html", "class_t_n_1_1_stochastic_gradient_descent" ],
     [ "Tensor", "class_t_n_1_1_tensor.html", "class_t_n_1_1_tensor" ],

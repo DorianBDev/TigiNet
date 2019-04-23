@@ -90,11 +90,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_layer.html#af99458a1a0c3b8e4b564f983cd5fe2e0">TN::Layer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_pooling_layer.html#a0a0372c1cd4f875f1baa50bc76a6da9e">TN::PoolingLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_relu_layer.html#ab58b97074372b9f2f08c9f03816e786c">TN::ReluLayer&lt; T &gt;</a>
 </li>
 <li>Activation()
 : <a class="el" href="class_t_n_1_1_activator_config.html#a3a80c144c4db37d18bd456a321cf66fe">TN::ActivatorConfig&lt; T &gt;</a>
-, <a class="el" href="class_t_n_1_1_cost_function.html#a52105072c0691830256183b109075a18">TN::CostFunction&lt; T &gt;</a>
-, <a class="el" href="class_t_n_1_1_mean_squared_error.html#a48363e0c169f4adf00e49bc8889d3e36">TN::MeanSquaredError&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_cost_function.html#abe7ed3478d25e76c54378a6af1cbd210">TN::CostFunction&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_mean_squared_error.html#a7e353747e27b42e8aa7076c96771d6c9">TN::MeanSquaredError&lt; T &gt;</a>
 </li>
 <li>ActivatorConfig()
 : <a class="el" href="class_t_n_1_1_activator_config.html#afcd153a1387a4d603f756be1c3c7d977">TN::ActivatorConfig&lt; T &gt;</a>
@@ -270,8 +271,18 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>Link()
 : <a class="el" href="class_t_n_1_1_conv_layer.html#a4f299daff271be495c35174827b58f67">TN::ConvLayer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_f_c_layer.html#a474ae2a70656b81c38a8e3cbe10d8339">TN::FCLayer&lt; T &gt;</a>
-, <a class="el" href="class_t_n_1_1_layer.html#a4f4a26884827016ccd0329b20cf4c269">TN::Layer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_layer.html#acd17ced002d3475e1c75d424153d1d6a">TN::Layer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_pooling_layer.html#a322682ebd36a7ba483babba26b3be94c">TN::PoolingLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_relu_layer.html#a3044c85f35bbc6580d679396174f1a6d">TN::ReluLayer&lt; T &gt;</a>
+</li>
+<li>LoadFromFile()
+: <a class="el" href="class_t_n_1_1_conv_layer.html#a6f92d8ce1d3fa11f8a24d02c76cf7687">TN::ConvLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_f_c_layer.html#ae8ce6e50a94ae809cf6c6ed8102f3bd5">TN::FCLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel.html#ac212f0c7c32d687470a13ce4f9e9c20a">TN::Kernel&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel_holder.html#af89b5b643b06c7d8a4db6d3e048497d8">TN::KernelHolder&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_layer.html#aeb3cb88ea06348368483878e879446c8">TN::Layer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_pooling_layer.html#a2e215f5b353d59885cf89d847359ecf3">TN::PoolingLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_relu_layer.html#aa12554d98c6a4b6eea25f3fff099afc3">TN::ReluLayer&lt; T &gt;</a>
 </li>
 <li>Lock()
 : <a class="el" href="class_t_n_1_1_mutex.html#a9c5de53140a24420014cc29c3456012e">TN::Mutex</a>
@@ -326,6 +337,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>RandomInitializer()
 : <a class="el" href="class_t_n_1_1_random_initializer.html#a084433182f29396cfd5e3bf001981be7">TN::RandomInitializer&lt; T &gt;</a>
 </li>
+<li>ReluLayer()
+: <a class="el" href="class_t_n_1_1_relu_layer.html#ac5f3adb18e9f710ce48ac86cfa6a28bf">TN::ReluLayer&lt; T &gt;</a>
+</li>
 <li>ResetGradient()
 : <a class="el" href="class_t_n_1_1_kernel_holder.html#a118670f3e5f26c00b0a78aa0c9612e12">TN::KernelHolder&lt; T &gt;</a>
 </li>
@@ -341,7 +355,14 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 <h3><a id="index_s"></a>- s -</h3><ul>
 <li>SaveInFile()
-: <a class="el" href="class_t_n_1_1_tensor.html#a817057ca1c0f6889afcb8158e39d35b7">TN::Tensor&lt; T &gt;</a>
+: <a class="el" href="class_t_n_1_1_conv_layer.html#af6d0336c3d718d63993797d213f3ceea">TN::ConvLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_f_c_layer.html#aabbc4e80b6737275c272356cb6dd0d01">TN::FCLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel.html#a2ff225ab0bf4321ddb8f3221f258a8c8">TN::Kernel&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_kernel_holder.html#a1f89eeb0e8c6ec44138a50dc198a672b">TN::KernelHolder&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_layer.html#af061a5e35aceeae16041c8148a399abb">TN::Layer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_pooling_layer.html#ae27bc7fd3efc18a13c1570166e389438">TN::PoolingLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_relu_layer.html#ad2cfdaa9d197f4060f04fa6ebc594e38">TN::ReluLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_tensor.html#a817057ca1c0f6889afcb8158e39d35b7">TN::Tensor&lt; T &gt;</a>
 </li>
 <li>Send()
 : <a class="el" href="class_t_n_1_1_error.html#a287a1dba229cf9ec9ff5f2ba865bb48d">TN::Error</a>
@@ -392,6 +413,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="class_t_n_1_1_layer.html#aa7cffde756cb60d026db2eec6f17413e">TN::Layer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_optimizer.html#a00060df0164ab7d52baf9e13bb83cf8e">TN::Optimizer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_pooling_layer.html#ad3b52eeefdbd66e22dcf2459a70eb4c3">TN::PoolingLayer&lt; T &gt;</a>
+, <a class="el" href="class_t_n_1_1_relu_layer.html#aef913c9f24ddbd225e973624b8d6c59a">TN::ReluLayer&lt; T &gt;</a>
 , <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a8f7c9c8ad21033c3c483bde2ecefa77f">TN::StochasticGradientDescent&lt; T &gt;</a>
 </li>
 <li>UpdateCounter()
@@ -448,6 +470,9 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </li>
 <li>~PoolingLayer()
 : <a class="el" href="class_t_n_1_1_pooling_layer.html#adc1bb3f5e69e750693ad26598f15d739">TN::PoolingLayer&lt; T &gt;</a>
+</li>
+<li>~ReluLayer()
+: <a class="el" href="class_t_n_1_1_relu_layer.html#aef47b122855287f28f793c49c1aec5ee">TN::ReluLayer&lt; T &gt;</a>
 </li>
 <li>~StochasticGradientDescent()
 : <a class="el" href="class_t_n_1_1_stochastic_gradient_descent.html#a113e71d9929b0d45e3f3f72c3986c9ac">TN::StochasticGradientDescent&lt; T &gt;</a>

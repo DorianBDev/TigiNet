@@ -16,6 +16,7 @@ var searchData=
   ['_7emnist',['~MNIST',['../class_t_n_1_1_m_n_i_s_t.html#a2790ca85d60893a6cd24952b03732993',1,'TN::MNIST']]],
   ['_7emutex',['~Mutex',['../class_t_n_1_1_mutex.html#aa11641ed8959196c08848d79dec636eb',1,'TN::Mutex']]],
   ['_7epoolinglayer',['~PoolingLayer',['../class_t_n_1_1_pooling_layer.html#adc1bb3f5e69e750693ad26598f15d739',1,'TN::PoolingLayer']]],
+  ['_7erelulayer',['~ReluLayer',['../class_t_n_1_1_relu_layer.html#aef47b122855287f28f793c49c1aec5ee',1,'TN::ReluLayer']]],
   ['_7estochasticgradientdescent',['~StochasticGradientDescent',['../class_t_n_1_1_stochastic_gradient_descent.html#a113e71d9929b0d45e3f3f72c3986c9ac',1,'TN::StochasticGradientDescent']]],
   ['_7etensor',['~Tensor',['../class_t_n_1_1_tensor.html#a5e9c56ded7eae18a606f25591e49001d',1,'TN::Tensor']]],
   ['_7etensorshape',['~TensorShape',['../class_t_n_1_1_tensor_shape.html#aee4f28e7581e1f9911bb3c5c3e556d07',1,'TN::TensorShape']]],

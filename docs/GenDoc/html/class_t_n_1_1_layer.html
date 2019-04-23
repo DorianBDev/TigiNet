@@ -103,6 +103,7 @@ Inheritance diagram for TN::Layer&lt; T &gt;:</div>
 <area shape="rect" id="node2" href="class_t_n_1_1_conv_layer.html" title="Convolutional layer. " alt="" coords="5,80,143,107"/>
 <area shape="rect" id="node3" href="class_t_n_1_1_f_c_layer.html" title="Fully connected layer. " alt="" coords="167,80,293,107"/>
 <area shape="rect" id="node4" href="class_t_n_1_1_pooling_layer.html" title="Pooling layer. " alt="" coords="318,80,470,107"/>
+<area shape="rect" id="node5" href="class_t_n_1_1_relu_layer.html" title="RELU layer. " alt="" coords="495,80,629,107"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -160,6 +161,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac88366fd1345fa09d2ce2bdc86b73f80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#ac88366fd1345fa09d2ce2bdc86b73f80">ResetInput</a> (<a class="el" href="class_t_n_1_1_tensor.html">Tensor</a>&lt; T &gt; &amp;tensor)</td></tr>
 <tr class="memdesc:ac88366fd1345fa09d2ce2bdc86b73f80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the input tensor by a new one with the same shape.  <a href="#ac88366fd1345fa09d2ce2bdc86b73f80">More...</a><br /></td></tr>
 <tr class="separator:ac88366fd1345fa09d2ce2bdc86b73f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af061a5e35aceeae16041c8148a399abb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#af061a5e35aceeae16041c8148a399abb">SaveInFile</a> (std::ofstream &amp;file)=0</td></tr>
+<tr class="memdesc:af061a5e35aceeae16041c8148a399abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the layer in a file.  <a href="#af061a5e35aceeae16041c8148a399abb">More...</a><br /></td></tr>
+<tr class="separator:af061a5e35aceeae16041c8148a399abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3cb88ea06348368483878e879446c8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#aeb3cb88ea06348368483878e879446c8">LoadFromFile</a> (std::ifstream &amp;file)=0</td></tr>
+<tr class="memdesc:aeb3cb88ea06348368483878e879446c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the layer from a file.  <a href="#aeb3cb88ea06348368483878e879446c8">More...</a><br /></td></tr>
+<tr class="separator:aeb3cb88ea06348368483878e879446c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -582,7 +589,7 @@ template&lt;typename T&gt; </div>
 
 <p>Forward propagation. </p>
 
-<p>Implemented in <a class="el" href="class_t_n_1_1_conv_layer.html#a1ce9351a71b22490c0160cad562d0890">TN::ConvLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_pooling_layer.html#a0a0372c1cd4f875f1baa50bc76a6da9e">TN::PoolingLayer&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="class_t_n_1_1_conv_layer.html#a1ce9351a71b22490c0160cad562d0890">TN::ConvLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_pooling_layer.html#a0a0372c1cd4f875f1baa50bc76a6da9e">TN::PoolingLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_f_c_layer.html#a8f21369817434c0824693f9d9fdc5500">TN::FCLayer&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_relu_layer.html#ab58b97074372b9f2f08c9f03816e786c">TN::ReluLayer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
@@ -763,6 +770,45 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
+<a id="aeb3cb88ea06348368483878e879446c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3cb88ea06348368483878e879446c8">&#9670;&nbsp;</a></span>LoadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::LoadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load the layer from a file. </p>
+<p>The layer topology need to be exactly the same (pre-linked layer). The function will only load trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to load from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_t_n_1_1_conv_layer.html#a6f92d8ce1d3fa11f8a24d02c76cf7687">TN::ConvLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_pooling_layer.html#a2e215f5b353d59885cf89d847359ecf3">TN::PoolingLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_f_c_layer.html#ae8ce6e50a94ae809cf6c6ed8102f3bd5">TN::FCLayer&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_relu_layer.html#aa12554d98c6a4b6eea25f3fff099afc3">TN::ReluLayer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
 <a id="ac88366fd1345fa09d2ce2bdc86b73f80"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac88366fd1345fa09d2ce2bdc86b73f80">&#9670;&nbsp;</a></span>ResetInput()</h2>
 
@@ -800,6 +846,45 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="af061a5e35aceeae16041c8148a399abb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af061a5e35aceeae16041c8148a399abb">&#9670;&nbsp;</a></span>SaveInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="class_t_n_1_1_layer.html">TN::Layer</a>&lt; T &gt;::SaveInFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save the layer in a file. </p>
+<p>The layer topology need to be exactly the same (pre-linked layer). The function will only save trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to save in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_t_n_1_1_conv_layer.html#af6d0336c3d718d63993797d213f3ceea">TN::ConvLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_pooling_layer.html#ae27bc7fd3efc18a13c1570166e389438">TN::PoolingLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_f_c_layer.html#aabbc4e80b6737275c272356cb6dd0d01">TN::FCLayer&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_relu_layer.html#ad2cfdaa9d197f4060f04fa6ebc594e38">TN::ReluLayer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
 <a id="aa7cffde756cb60d026db2eec6f17413e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa7cffde756cb60d026db2eec6f17413e">&#9670;&nbsp;</a></span>Update()</h2>
 
@@ -827,7 +912,7 @@ template&lt;typename T&gt; </div>
 
 <p>Backward propagation. </p>
 
-<p>Implemented in <a class="el" href="class_t_n_1_1_conv_layer.html#a8ad2d988d59399ea5c536d61ac6614ae">TN::ConvLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_pooling_layer.html#ad3b52eeefdbd66e22dcf2459a70eb4c3">TN::PoolingLayer&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c">TN::FCLayer&lt; T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="class_t_n_1_1_conv_layer.html#a8ad2d988d59399ea5c536d61ac6614ae">TN::ConvLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_pooling_layer.html#ad3b52eeefdbd66e22dcf2459a70eb4c3">TN::PoolingLayer&lt; T &gt;</a>, <a class="el" href="class_t_n_1_1_f_c_layer.html#ad23d6fcf6df9b5453ad439a3db55180c">TN::FCLayer&lt; T &gt;</a>, and <a class="el" href="class_t_n_1_1_relu_layer.html#aef913c9f24ddbd225e973624b8d6c59a">TN::ReluLayer&lt; T &gt;</a>.</p>
 
 </div>
 </div>

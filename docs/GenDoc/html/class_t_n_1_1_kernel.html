@@ -128,6 +128,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a482f58135af6a1bb3022cb9db7ca2069"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="class_t_n_1_1_kernel.html">Kernel</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a482f58135af6a1bb3022cb9db7ca2069">Copy</a> () const =0</td></tr>
 <tr class="memdesc:a482f58135af6a1bb3022cb9db7ca2069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy a kernel.  <a href="#a482f58135af6a1bb3022cb9db7ca2069">More...</a><br /></td></tr>
 <tr class="separator:a482f58135af6a1bb3022cb9db7ca2069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff225ab0bf4321ddb8f3221f258a8c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#a2ff225ab0bf4321ddb8f3221f258a8c8">SaveInFile</a> (std::ofstream &amp;file)</td></tr>
+<tr class="memdesc:a2ff225ab0bf4321ddb8f3221f258a8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the kernel in a file.  <a href="#a2ff225ab0bf4321ddb8f3221f258a8c8">More...</a><br /></td></tr>
+<tr class="separator:a2ff225ab0bf4321ddb8f3221f258a8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac212f0c7c32d687470a13ce4f9e9c20a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_kernel.html#ac212f0c7c32d687470a13ce4f9e9c20a">LoadFromFile</a> (std::ifstream &amp;file)</td></tr>
+<tr class="memdesc:ac212f0c7c32d687470a13ce4f9e9c20a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the kernel from a file.  <a href="#ac212f0c7c32d687470a13ce4f9e9c20a">More...</a><br /></td></tr>
+<tr class="separator:ac212f0c7c32d687470a13ce4f9e9c20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -283,6 +289,64 @@ template&lt;typename T &gt; </div>
 
 <p>Get the kernel gradient tensor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Return the kernel gradient tensor. </dd></dl>
+
+</div>
+</div>
+<a id="ac212f0c7c32d687470a13ce4f9e9c20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac212f0c7c32d687470a13ce4f9e9c20a">&#9670;&nbsp;</a></span>LoadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::LoadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load the kernel from a file. </p>
+<p>The kernel topology need to be exactly the same (pre-setuped kernel). The function will only load trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to load from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2ff225ab0bf4321ddb8f3221f258a8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ff225ab0bf4321ddb8f3221f258a8c8">&#9670;&nbsp;</a></span>SaveInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_kernel.html">TN::Kernel</a>&lt; T &gt;::SaveInFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Save the kernel in a file. </p>
+<p>The kernel topology need to be exactly the same (pre-setuped kernel). The function will only save trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to save in. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

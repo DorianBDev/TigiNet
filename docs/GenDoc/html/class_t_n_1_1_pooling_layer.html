@@ -130,6 +130,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3b52eeefdbd66e22dcf2459a70eb4c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_pooling_layer.html#ad3b52eeefdbd66e22dcf2459a70eb4c3">Update</a> ()</td></tr>
 <tr class="memdesc:ad3b52eeefdbd66e22dcf2459a70eb4c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backward propagation.  <a href="#ad3b52eeefdbd66e22dcf2459a70eb4c3">More...</a><br /></td></tr>
 <tr class="separator:ad3b52eeefdbd66e22dcf2459a70eb4c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae27bc7fd3efc18a13c1570166e389438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_pooling_layer.html#ae27bc7fd3efc18a13c1570166e389438">SaveInFile</a> (std::ofstream &amp;file)</td></tr>
+<tr class="memdesc:ae27bc7fd3efc18a13c1570166e389438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the layer in a file.  <a href="#ae27bc7fd3efc18a13c1570166e389438">More...</a><br /></td></tr>
+<tr class="separator:ae27bc7fd3efc18a13c1570166e389438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e215f5b353d59885cf89d847359ecf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_pooling_layer.html#a2e215f5b353d59885cf89d847359ecf3">LoadFromFile</a> (std::ifstream &amp;file)</td></tr>
+<tr class="memdesc:a2e215f5b353d59885cf89d847359ecf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the layer from a file.  <a href="#a2e215f5b353d59885cf89d847359ecf3">More...</a><br /></td></tr>
+<tr class="separator:a2e215f5b353d59885cf89d847359ecf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_t_n_1_1_layer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_t_n_1_1_layer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_t_n_1_1_layer.html">TN::Layer&lt; T &gt;</a></td></tr>
 <tr class="memitem:a9aaee6ccbe657c0fc416fa4395c0eec6 inherit pub_methods_class_t_n_1_1_layer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6">Layer</a> (const <a class="el" href="class_t_n_1_1_activator_config.html">ActivatorConfig</a>&lt; T &gt; &amp;activator, const <a class="el" href="class_t_n_1_1_initializer.html">Initializer</a>&lt; T &gt; &amp;initializer, const <a class="el" href="class_t_n_1_1_optimizer.html">Optimizer</a>&lt; T &gt; &amp;optimizer)</td></tr>
 <tr class="memdesc:a9aaee6ccbe657c0fc416fa4395c0eec6 inherit pub_methods_class_t_n_1_1_layer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="class_t_n_1_1_layer.html" title="Neural network virtual class. ">Layer</a>.  <a href="class_t_n_1_1_layer.html#a9aaee6ccbe657c0fc416fa4395c0eec6">More...</a><br /></td></tr>
@@ -386,6 +392,84 @@ Here is the call graph for this function:</div>
 <area shape="rect" id="node4" href="class_t_n_1_1_tensor.html#a2ad50abcf48ba8b039d3c7d7b4f5241a" title="Get the dimension of a rank. " alt="" coords="207,107,381,133"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="a2e215f5b353d59885cf89d847359ecf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e215f5b353d59885cf89d847359ecf3">&#9670;&nbsp;</a></span>LoadFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_pooling_layer.html">TN::PoolingLayer</a>&lt; T &gt;::LoadFromFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load the layer from a file. </p>
+<p>The layer topology need to be exactly the same (pre-linked layer). The function will only load trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to load from. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_t_n_1_1_layer.html#aeb3cb88ea06348368483878e879446c8">TN::Layer&lt; T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ae27bc7fd3efc18a13c1570166e389438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae27bc7fd3efc18a13c1570166e389438">&#9670;&nbsp;</a></span>SaveInFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_t_n_1_1_pooling_layer.html">TN::PoolingLayer</a>&lt; T &gt;::SaveInFile </td>
+          <td>(</td>
+          <td class="paramtype">std::ofstream &amp;&#160;</td>
+          <td class="paramname"><em>file</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save the layer in a file. </p>
+<p>The layer topology need to be exactly the same (pre-linked layer). The function will only save trainable data and not the topology.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>: the file to save in. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="class_t_n_1_1_layer.html#af061a5e35aceeae16041c8148a399abb">TN::Layer&lt; T &gt;</a>.</p>
 
 </div>
 </div>
