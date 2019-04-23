@@ -39,11 +39,12 @@
 
 int main()
 {
-	TN::MNIST<double> mnist("img.mnist", "label.mnist", 10000);
+	TN::MNIST<double> mnist("img.mnist", "label.mnist", 1000);
 
 	TN::KernelHolder<double> k;
 	TN::Tensor<double> t(2, TN::TensorShape({ 5, 5 }));
-	TN::RandomInitializer<double> rand(-10, 10);
+	//TN::RandomInitializer<double> rand(-10, 10);
+	TN::UniformInitializer<double> rand;
 	rand.Initialize(t);
 	k.Add(TN::Kernel2D<double>(t));
 	rand.Initialize(t);
@@ -64,53 +65,27 @@ int main()
 	k.Add(TN::Kernel2D<double>(t));
 	rand.Initialize(t);
 	k.Add(TN::Kernel2D<double>(t));
-
-	TN::KernelHolder<double> k1;
-	TN::Tensor<double> t1(2, TN::TensorShape({ 3, 3 }));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
-	rand.Initialize(t1);
-	k1.Add(TN::Kernel2D<double>(t1));
 
 	TN::ConvLayer<double> c1(TN::UniformInitializer<double>(), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 0);
 	TN::PoolingLayer<double> p1(TN::PoolingMethod::PM_MAX, TN::PoolingKernel(2, 2), 2, 0);
-	TN::ConvLayer<double> c2(TN::UniformInitializer<double>(), TN::StochasticGradientDescent<double>(0.0001, 0.9), k, 1, 1);
-	TN::PoolingLayer<double> p2(TN::PoolingMethod::PM_MAX, TN::PoolingKernel(2, 2), 2, 1);
 	TN::FCLayer<double> f2(TN::ActivatorConfig<double>(TN::Sigmoide, TN::SigmoideDerivative), TN::UniformInitializer<double>(), TN::StochasticGradientDescent<double>(0.0001, 0.9), 10);
 
-	TN::ReluLayer<double> r1, r2;
+	TN::ReluLayer<double> r1;
 
 	c1.Link(mnist.GetImage()[0]);
 	r1.Link(c1);
 	p1.Link(r1);
-	c2.Link(p1);
-	r2.Link(c2);
-	p2.Link(r2);
-	f2.Link(p2);
+	f2.Link(p1);
 
-	/*
+	///*
 	std::ifstream fileIn("net.tn");
 	c1.LoadFromFile(fileIn);
 	p1.LoadFromFile(fileIn);
-	c2.LoadFromFile(fileIn);
-	p2.LoadFromFile(fileIn);
 	f2.LoadFromFile(fileIn);
 	fileIn.close();
-	*/
+	//*/
 
-	/*
+	///*
 	std::ifstream fileData("data.ppm");
 	TN::Tensor<double> data(2, TN::TensorShape({ 28, 28 }));
 	char pixelBuffer[3];
@@ -118,7 +93,7 @@ int main()
 	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip magic number
 	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip #
 	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip size
-	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip^ppp
+	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip ppp
 	for(unsigned int i = 0; i < 28; i++)
 	{
 		for(unsigned int j = 0; j < 28; j++)
@@ -130,13 +105,14 @@ int main()
 		}
 	}
 	data.Print();
+	mnist.GetImage()[0].Print();
 
 	TN_LOG("TEST") << "-------- Prediction --------";
 	c1.ResetInput(data);
 	c1.Activate();
-	f2.GetOutput().Print();*/
+	f2.GetOutput().Print();//*/
 
-	///*
+	/*
 	TN::Tensor<double> res(1, TN::TensorShape({ 10 }), 1);
 	TN::ZeroInitializer<double> zero;
 	zero.Initialize(res);
@@ -145,6 +121,7 @@ int main()
 	int labelRes = 0;
 	unsigned int max = mnist.GetImage().GetDimension(3) - 1;
 	TN::MeanSquaredError<double> err;
+	double error = 0;
 	for (unsigned int i = 0; i < 100000; i++)
 	{
 		index = TN::Random<unsigned int>(0, max);
@@ -156,10 +133,11 @@ int main()
 		res(labelRes) = 1;
 		f2.Update(res, err);
 		res(labelRes) = 0;
-
-		if (i % 1000 == 0)
+		error += f2.GetError();
+		if (i % 10000 == 0)
 		{
-			TN_LOG("TEST") << f2.GetError();
+			TN_LOG("TEST") << "Error : " << (error / 10000.0) * 100 << "%";
+			error = 0;
 		}
 	}
 
@@ -187,12 +165,10 @@ int main()
 	std::ofstream fileOut("net.tn");
 	c1.SaveInFile(fileOut);
 	p1.SaveInFile(fileOut);
-	c2.SaveInFile(fileOut);
-	p2.SaveInFile(fileOut);
 	f2.SaveInFile(fileOut);
 	fileOut.close();
 
-	//*/
+	*/
 
 	TN_LOG("TEST") << "END";
 
