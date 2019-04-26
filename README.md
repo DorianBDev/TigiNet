@@ -11,20 +11,22 @@ By **Dorian'B**.
 
 
 ## About
-TigiNet is a **neural network library** who provide for the moment only support for multilayer perceptron.
+TigiNet is a **neural network library** who provide support for many different layer type (like convolution, fully-connected, pooling, RELU...).
 
 
 ### Features :
  - Support for **Multilayer Perceptron**.
- - **Multithreading** support.
+ - Support for **Convolutional Neural Network**.
+ - Support for **many different layer type** (like pooling, RELU...).
  
 ### Wiki :
 Visit the wiki here : https://github.com/DorianBDev/TigiNet/wiki
  
 ### Todo/Future :
- - [ ] Support more neural network type.
+ - [x] Support more neural network type.
  - [x] Multiplatform support.
  - [ ] **GPU** support *(with OpenCL)*.
+ - [ ] **Real multithreading** support.
  
 [See the trello for more](https://trello.com/b/GPXij9uG/tiginet)
  
@@ -82,4 +84,4 @@ For contact see CONTACT.md file.
 
 ## TIGINET
 
-![TIGINET Logo](res/logo/logo_sp_text.png)
+![TIGINET Logo](res/logo/logo_sp.png)
