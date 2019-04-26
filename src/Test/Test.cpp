@@ -39,7 +39,7 @@
 
 int main()
 {
-	TN::MNIST<double> mnist("img.mnist", "label.mnist", 1000);
+	TN::MNIST<double> mnist("img.mnist", "label.mnist");
 
 	TN::KernelHolder<double> k;
 	TN::Tensor<double> t(2, TN::TensorShape({ 5, 5 }));
@@ -86,31 +86,41 @@ int main()
 	//*/
 
 	///*
-	std::ifstream fileData("data.ppm");
-	TN::Tensor<double> data(2, TN::TensorShape({ 28, 28 }));
-	char pixelBuffer[3];
-
-	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip magic number
-	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip #
-	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip size
-	fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip ppp
-	for(unsigned int i = 0; i < 28; i++)
+	TN_LOG("TEST") << "-------- Prediction --------";
+	while(std::cin.get() != 'q')
 	{
-		for(unsigned int j = 0; j < 28; j++)
+		while (std::cin.get() != '\n')
 		{
-			fileData >> pixelBuffer[0];
-			fileData >> pixelBuffer[1];
-			fileData >> pixelBuffer[2];
-			data[i](j) = (static_cast<double>(pixelBuffer[0] + pixelBuffer[1] + pixelBuffer[2])) / (3.0 * 255.0);
+			TN_LOG("TEST");
+		}
+
+		std::ifstream fileData("data.ppm");
+		TN::Tensor<double> data(2, TN::TensorShape({ 28, 28 }));
+		char pixelBuffer[3];
+
+		fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip magic number
+		fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip #
+		fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip size
+		fileData.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Skip ppp
+		for (unsigned int i = 0; i < 28; i++)
+		{
+			for (unsigned int j = 0; j < 28; j++)
+			{
+				fileData >> pixelBuffer[0];
+				fileData >> pixelBuffer[1];
+				fileData >> pixelBuffer[2];
+				data[i](j) = (static_cast<double>(pixelBuffer[0] + pixelBuffer[1] + pixelBuffer[2])) / (3.0 * 255.0);
+			}
+		}
+		c1.ResetInput(data);
+		c1.Activate();
+
+		for (unsigned int i = 0; i < 10; i++)
+		{
+			TN_LOG("TEST") << "[" << i << "] : " << f2.GetOutput()(i) * 100 << "%";
 		}
 	}
-	data.Print();
-	mnist.GetImage()[0].Print();
-
-	TN_LOG("TEST") << "-------- Prediction --------";
-	c1.ResetInput(data);
-	c1.Activate();
-	f2.GetOutput().Print();//*/
+	//*/
 
 	/*
 	TN::Tensor<double> res(1, TN::TensorShape({ 10 }), 1);
@@ -122,7 +132,7 @@ int main()
 	unsigned int max = mnist.GetImage().GetDimension(3) - 1;
 	TN::MeanSquaredError<double> err;
 	double error = 0;
-	for (unsigned int i = 0; i < 100000; i++)
+	for (unsigned int i = 0; i < 1000000; i++)
 	{
 		index = TN::Random<unsigned int>(0, max);
 		labelRes = mnist.GetLabel()(index);
