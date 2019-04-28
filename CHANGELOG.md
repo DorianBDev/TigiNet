@@ -4,7 +4,7 @@
 # **CHANGELOG**
 
 
-## [v0.1.01-nightly] - 2019-03-05 :
+## [v0.1.01-release] - 2019-04-28 :
 
 ### GENERAL :
  - New philosophy : tensor based library.
