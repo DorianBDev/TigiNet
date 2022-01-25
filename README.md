@@ -1,7 +1,9 @@
 # TIGINET
 **Projet website** : https://dorianbdev.github.io/TigiNet/docs/index.html
 
-By **Dorian Bachelot** and *Mohamed Amtalssi**.
+By **[Dorian Bachelot](https://github.com/DorianBDev)** and **[Mohamed Amtalssi](https://github.com/aamtaa)**.
+
+*The project is no longer maintained.*
 
 | Platform| Status |
 |--|--|
